@@ -29,44 +29,55 @@
 <body>
 	<h1>Directory Tree</h1><p>
 	<a href=".">.</a><br>
-	└── <a href="./CFA/">CFA</a><br>
-	&nbsp;&nbsp;&nbsp; ├── <a href="./CFA/circuitosEletricos.md">circuitosEletricos.md</a><br>
-	&nbsp;&nbsp;&nbsp; ├── <a href="./CFA/componentes/">componentes</a><br>
-	&nbsp;&nbsp;&nbsp; │   ├── <a href="./CFA/componentes/atuadores/">atuadores</a><br>
-	&nbsp;&nbsp;&nbsp; │   ├── <a href="./CFA/componentes/controladores/">controladores</a><br>
-	&nbsp;&nbsp;&nbsp; │   │   ├── <a href="./CFA/componentes/controladores/Arduino/">Arduino</a><br>
-	&nbsp;&nbsp;&nbsp; │   │   ├── <a href="./CFA/componentes/controladores/celular/">celular</a><br>
-	&nbsp;&nbsp;&nbsp; │   │   ├── <a href="./CFA/componentes/controladores/ESP32/">ESP32</a><br>
-	&nbsp;&nbsp;&nbsp; │   │   ├── <a href="./CFA/componentes/controladores/ESP8266/">ESP8266</a><br>
-	&nbsp;&nbsp;&nbsp; │   │   └── <a href="./CFA/componentes/controladores/SingleBoardComputers/">SingleBoardComputers</a><br>
-	&nbsp;&nbsp;&nbsp; │   ├── <a href="./CFA/componentes/interconexoes/">interconexoes</a><br>
-	&nbsp;&nbsp;&nbsp; │   ├── <a href="./CFA/componentes/protocolos/">protocolos</a><br>
-	&nbsp;&nbsp;&nbsp; │   │   ├── <a href="./CFA/componentes/protocolos/Bluetooth/">Bluetooth</a><br>
-	&nbsp;&nbsp;&nbsp; │   │   │   ├── <a href="./CFA/componentes/protocolos/Bluetooth/BLE/">BLE</a><br>
-	&nbsp;&nbsp;&nbsp; │   │   │   └── <a href="./CFA/componentes/protocolos/Bluetooth/Classico/">Classico</a><br>
-	&nbsp;&nbsp;&nbsp; │   │   ├── <a href="./CFA/componentes/protocolos/Ethernet/">Ethernet</a><br>
-	&nbsp;&nbsp;&nbsp; │   │   │   └── <a href="./CFA/componentes/protocolos/Ethernet/wifi/">wifi</a><br>
-	&nbsp;&nbsp;&nbsp; │   │   ├── <a href="./CFA/componentes/protocolos/I2C/">I2C</a><br>
-	&nbsp;&nbsp;&nbsp; │   │   ├── <a href="./CFA/componentes/protocolos/Serial/">Serial</a><br>
-	&nbsp;&nbsp;&nbsp; │   │   ├── <a href="./CFA/componentes/protocolos/SPI/">SPI</a><br>
-	&nbsp;&nbsp;&nbsp; │   │   └── <a href="./CFA/componentes/protocolos/USB/">USB</a><br>
-	&nbsp;&nbsp;&nbsp; │   │   &nbsp;&nbsp;&nbsp; └── <a href="./CFA/componentes/protocolos/USB/HID/">HID</a><br>
-	&nbsp;&nbsp;&nbsp; │   └── <a href="./CFA/componentes/sensores/">sensores</a><br>
-	&nbsp;&nbsp;&nbsp; ├── <a href="./CFA/eletricidade.md">eletricidade.md</a><br>
-	&nbsp;&nbsp;&nbsp; ├── <a href="./CFA/estrategia.md">estrategia.md</a><br>
-	&nbsp;&nbsp;&nbsp; ├── <a href="./CFA/modelos/">modelos</a><br>
-	&nbsp;&nbsp;&nbsp; │   └── <a href="./CFA/modelos/README.md">README.md</a><br>
-	&nbsp;&nbsp;&nbsp; ├── <a href="./CFA/programas/">programas</a><br>
-	&nbsp;&nbsp;&nbsp; │   ├── <a href="./CFA/programas/appInventor/">appInventor</a><br>
-	&nbsp;&nbsp;&nbsp; │   ├── <a href="./CFA/programas/arduinoIDE/">arduinoIDE</a><br>
-	&nbsp;&nbsp;&nbsp; │   ├── <a href="./CFA/programas/fritzing/">fritzing</a><br>
-	&nbsp;&nbsp;&nbsp; │   └── <a href="./CFA/programas/Linux/">Linux</a><br>
-	&nbsp;&nbsp;&nbsp; └── <a href="./CFA/README.md">README.md</a><br>
+	├── <a href="./Captura-de-tela-de-2020-08-08-15-35-33.png">Captura-de-tela-de-2020-08-08-15-35-33.png</a><br>
+	├── <a href="./circuitosEletricos.md">circuitosEletricos.md</a><br>
+	├── <a href="./componentes/">componentes</a><br>
+	│   ├── <a href="./componentes/atuadores/">atuadores</a><br>
+	│   │   └── <a href="./componentes/atuadores/README.md">README.md</a><br>
+	│   ├── <a href="./componentes/controladores/">controladores</a><br>
+	│   │   └── <a href="./componentes/controladores/README.md">README.md</a><br>
+	│   ├── <a href="./componentes/interconexoes/">interconexoes</a><br>
+	│   │   └── <a href="./componentes/interconexoes/README.md">README.md</a><br>
+	│   ├── <a href="./componentes/protocolos/">protocolos</a><br>
+	│   │   ├── <a href="./componentes/protocolos/Bluetooth/">Bluetooth</a><br>
+	│   │   │   ├── <a href="./componentes/protocolos/Bluetooth/BLE/">BLE</a><br>
+	│   │   │   │   └── <a href="./componentes/protocolos/Bluetooth/BLE/README.md">README.md</a><br>
+	│   │   │   ├── <a href="./componentes/protocolos/Bluetooth/Classico/">Classico</a><br>
+	│   │   │   │   └── <a href="./componentes/protocolos/Bluetooth/Classico/README.md">README.md</a><br>
+	│   │   │   └── <a href="./componentes/protocolos/Bluetooth/README.md">README.md</a><br>
+	│   │   ├── <a href="./componentes/protocolos/Ethernet/">Ethernet</a><br>
+	│   │   │   └── <a href="./componentes/protocolos/Ethernet/wifi/">wifi</a><br>
+	│   │   │   &nbsp;&nbsp;&nbsp; └── <a href="./componentes/protocolos/Ethernet/wifi/README.md">README.md</a><br>
+	│   │   ├── <a href="./componentes/protocolos/I2C/">I2C</a><br>
+	│   │   │   └── <a href="./componentes/protocolos/I2C/README.md">README.md</a><br>
+	│   │   ├── <a href="./componentes/protocolos/Serial/">Serial</a><br>
+	│   │   │   └── <a href="./componentes/protocolos/Serial/README.md">README.md</a><br>
+	│   │   ├── <a href="./componentes/protocolos/SPI/">SPI</a><br>
+	│   │   │   └── <a href="./componentes/protocolos/SPI/README.md">README.md</a><br>
+	│   │   └── <a href="./componentes/protocolos/USB/">USB</a><br>
+	│   │   &nbsp;&nbsp;&nbsp; └── <a href="./componentes/protocolos/USB/README.md">README.md</a><br>
+	│   └── <a href="./componentes/sensores/">sensores</a><br>
+	│   &nbsp;&nbsp;&nbsp; └── <a href="./componentes/sensores/README.md">README.md</a><br>
+	├── <a href="./eletricidade.md">eletricidade.md</a><br>
+	├── <a href="./estrategia.md">estrategia.md</a><br>
+	├── <a href="./modelos/">modelos</a><br>
+	│   └── <a href="./modelos/README.md">README.md</a><br>
+	├── <a href="./programas/">programas</a><br>
+	│   ├── <a href="./programas/appInventor/">appInventor</a><br>
+	│   │   └── <a href="./programas/appInventor/README.md">README.md</a><br>
+	│   ├── <a href="./programas/arduinoIDE/">arduinoIDE</a><br>
+	│   │   └── <a href="./programas/arduinoIDE/README.md">README.md</a><br>
+	│   ├── <a href="./programas/fritzing/">fritzing</a><br>
+	│   │   └── <a href="./programas/fritzing/README.md">README.md</a><br>
+	│   └── <a href="./programas/Linux/">Linux</a><br>
+	│   &nbsp;&nbsp;&nbsp; └── <a href="./programas/Linux/README.md">README.md</a><br>
+	├── <a href="./README.md">README.md</a><br>
+	└── <a href="./tree.md">tree.md</a><br>
 	<br><br>
 	</p>
 	<p>
 
-28 directories, 5 files
+21 directories, 23 files
 	<br><br>
 	</p>
 	<hr>
