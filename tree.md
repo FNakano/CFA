@@ -56,8 +56,11 @@
 	│   │   │   └── <a href="./componentes/protocolos/SPI/README.md">README.md</a><br>
 	│   │   └── <a href="./componentes/protocolos/USB/">USB</a><br>
 	│   │   &nbsp;&nbsp;&nbsp; └── <a href="./componentes/protocolos/USB/README.md">README.md</a><br>
-	│   └── <a href="./componentes/sensores/">sensores</a><br>
-	│   &nbsp;&nbsp;&nbsp; └── <a href="./componentes/sensores/README.md">README.md</a><br>
+	│   ├── <a href="./componentes/sensores/">sensores</a><br>
+	│   │   └── <a href="./componentes/sensores/README.md">README.md</a><br>
+	│   └── <a href="./componentes/vestiveis/">vestiveis</a><br>
+	│   &nbsp;&nbsp;&nbsp; └── <a href="./componentes/vestiveis/faixaDePulso/">faixaDePulso</a><br>
+	│   &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; └── <a href="./componentes/vestiveis/faixaDePulso/README.md">README.md</a><br>
 	├── <a href="./eletricidade.md">eletricidade.md</a><br>
 	├── <a href="./estrategia.md">estrategia.md</a><br>
 	├── <a href="./modelos/">modelos</a><br>
@@ -71,13 +74,16 @@
 	│   │   └── <a href="./programas/fritzing/README.md">README.md</a><br>
 	│   └── <a href="./programas/Linux/">Linux</a><br>
 	│   &nbsp;&nbsp;&nbsp; └── <a href="./programas/Linux/README.md">README.md</a><br>
+	├── <a href="./projetos/">projetos</a><br>
+	│   └── <a href="./projetos/RelogioConectado/">RelogioConectado</a><br>
+	│   &nbsp;&nbsp;&nbsp; └── <a href="./projetos/RelogioConectado/README.md">README.md</a><br>
 	├── <a href="./README.md">README.md</a><br>
 	└── <a href="./tree.md">tree.md</a><br>
 	<br><br>
 	</p>
 	<p>
 
-21 directories, 23 files
+25 directories, 25 files
 	<br><br>
 	</p>
 	<hr>
