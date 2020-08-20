@@ -1,6 +1,12 @@
 # CFA
 Computação Física e Aplicações
 
+## Apresentação
+
+Esta é uma coleção de assuntos, perguntas e respostas que surgiram, ou que percebi que poderiam ser melhor trabalhadas, nas ocasiões em que ministrei esta disciplina.
+
+Gostaria de encorajar os leitores a usar os ítens da coleção como referencia nos relatórios de projeto da disciplina, ou mesmo em projetos mais amplos e ambiciosos, bem como aproveitar o formato de documentação dos projetos, apresentados aqui como exemplos, como inspiração para a construção de seus próprios relatórios.
+
 ## Limitações do texto
 
 Este texto objetiva apresentar conceitos e as referências que suportam esses conceitos. Não é intenção apresentar teorias e definições alternativas, nem fazer revisão de toda a literatura sobre o assunto.
@@ -13,8 +19,23 @@ Sugestões de ajustes para aumentar a precisão do texto são bemvindas.
 
 Obrigado a todos que contribuiram para minha formação e contribuem para minha atuação.
 
+## Organização da informação
 
-[Lista de arquivos](tree.md)
+Pode ser mais rápido encontrar uma página usando o [mapa do repositório](tree.md).
+
+... ou procurar alguma dúvida similar à sua:
+
+- [Vou levar choque mexendo na placa controladora (Arduino, NodeMCU, ESP8266, ESP32, ...?}(eletricidade.md#Choque-elétrico)
+- Como posso estragar uma placa controladora?
+- O computador em que conecto a placa controladora pode ser danificado se eu errar alguma conexão na placa controladora?
+- Tenho uma sequência de 200 LEDs em paralelo em uma fita. Da metade do comprimento para a frente, em relação à ponta que liguei na fonte, o brilho é menor. Qual o motivo? Como fazer para o brilho ser mais uniforme?
+- a placa controladora só funciona conectada a um computador?
+- Recebi um sensor sem os pinos soldados. Encostar as ilhas da placa de um sensor aos pinos do controlador é uma 'boa maneira' de ligar o sensor ao controlador?
+
+A leitura linear do texto apresenta os conceitos na sequência de construção: dos mais elementares, combinando-os, até chegar a aplicações que foram usadas ou apresentadas na disciplina.
+
+## Soluções para gerar este documento 
+
 
 **nota** Como gerar a árvore de arquivos
 
