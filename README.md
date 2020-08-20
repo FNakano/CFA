@@ -3,7 +3,11 @@ Computação Física e Aplicações
 
 ## Apresentação
 
+Neste momento, acredito que a característica mais importante deste texto é que ele é um protótipo, um produto mínimo, por isso incompleto, talvez contendo afirmações 'injustas', que talvez necessitem de ajuste contínuo que, espero, venham através de colaborações e sugestões (SP, 20 de agosto de 2020).
+
 Esta é uma coleção de assuntos, perguntas e respostas que surgiram, ou que percebi que poderiam ser melhor trabalhadas, nas ocasiões em que ministrei esta disciplina.
+
+Os assuntos são mais relacionados à eletricidade, eletrônica e computação, que são os que conheço melhor. 
 
 Gostaria de encorajar os leitores a usar os ítens da coleção como referencia nos relatórios de projeto da disciplina, ou mesmo em projetos mais amplos e ambiciosos, bem como aproveitar o formato de documentação dos projetos, apresentados aqui como exemplos, como inspiração para a construção de seus próprios relatórios.
 
@@ -15,9 +19,13 @@ Sugestões de ajustes para aumentar a precisão do texto são bemvindas.
 
 À medida em que este texto for aperfeiçoado, serão agregadas referências pertinentes.
 
-## Agradecimento
+## Agradecimentos (Reconhecimentos) gerais
 
 Obrigado a todos que contribuiram para minha formação e contribuem para minha atuação.
+
+## Agradecimentos (Reconhecimentos) específicos
+
+Obrigado a Isabel Italiano, Luciano Araújo, João Marcicano pelo conhecimento compartilhado e trabalho em conjunto.
 
 ## Organização da informação
 
