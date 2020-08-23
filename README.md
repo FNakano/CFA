@@ -33,7 +33,7 @@ Pode ser mais rápido encontrar uma página usando o [mapa do repositório](tree
 
 ... ou procurar alguma dúvida similar à sua:
 
-- [Vou levar choque mexendo na placa controladora (Arduino, NodeMCU, ESP8266, ESP32, ...?}(eletricidade.md#Choque-elétrico)
+- [Vou levar choque mexendo na placa controladora (Arduino, NodeMCU, ESP8266, ESP32, ...?](eletricidade.md#Choque-elétrico)
 - Como posso estragar uma placa controladora?
 - O computador em que conecto a placa controladora pode ser danificado se eu errar alguma conexão na placa controladora?
 - Tenho uma sequência de 200 LEDs em paralelo em uma fita. Da metade do comprimento para a frente, em relação à ponta que liguei na fonte, o brilho é menor. Qual o motivo? Como fazer para o brilho ser mais uniforme?
