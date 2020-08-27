@@ -4,9 +4,9 @@
 
 ### O resumo de uma história longa
 
-Desde 2012, não ter nenhuma forma de anotar minhas atividades. À época, preocupei-me e comecei a experimentar maneiras de solucionar essa questão.
+Em 2012 comecei a preocupar-me com as atividades do dia e a forma como as organizava, quando possível, ou como elas mudavam meu dia.
 
-A falta de anotações induz especulações como *hoje o dia passou e não fiz nada*, *o dia não rende*, *o tempo passa rápido demais*. Uma mistura de desejo de fazer mais com o desejo de ter feito outra coisa que, no meu caso, leva à frustração.
+A falta de anotações induziu-me a especulações como *hoje o dia passou e não fiz nada*, *o dia não rende*, *o tempo passa rápido demais*. Uma mistura de desejo de fazer mais com o desejo de ter feito outra coisa que, no meu caso, leva à frustração.
 
 Um motivo mais prático: Sem anotações, atividades, a que dediquei tempo e trabalho, são esquecidas. Dentre elas, etapas de projetos profissionais, trechos de livros que seriam úteis em aulas, idéias, soluções de problemas e frases bem construídas. Nestes casos, esquecer resulta em um relatório mal detalhado, em retrabalho para preparar aulas e citar referências, em dedicar mais tempo e trabalho para escrever um novo projeto ou resolver o tal problema.
 
@@ -27,11 +27,39 @@ Cada uma delas tem sua própria história, que será escrita em algum momento. C
 
 Agora, em 2020, são oito anos testando ferramentas. Em uma época em que mudanças são frequentes e rápidas, oito anos é tempo suficiente para existirem vários desdobramentos: idéias novas para usar as ferramentas desenvolvidas para torná-la mais útil, por exemplo gerando esboços de relatórios automaticamente, elucidando atividades para sistematizar processos,....
 
-Este tutorial/documento/site é o registro do estado da experimentação. Mostra o que é, um caso de uso e como reproduzir, sem ocupar-se com justificativas para escolhas de materiais, técnicas e ferramentas nem variações e usos alternativos.
+Este tutorial/documento/site é o registro do estado da experimentação. Também é um exemplo de projeto e documentação para a disciplina CFA. Trata-se de um relógio conecatado. Mostra o que é, um caso de uso e como reproduzir, sem ocupar-se com justificativas para escolhas de materiais, técnicas e ferramentas nem variações e usos alternativos.
 
-## Descrição
+## Resultados
 
-## Caso de uso
+As duas fotos seguintes mostram o dispositivo. O display é usado para mostrar hora, nomes das atividades e mensagens de estado do dispositivo. Na segunda foto, os sete 'botões touch' são indicados pelas setas.
+
+<!--- convert -crop 3368x1800+300+800 IMG_20200817_191645877.jpg relogioNoPulso.jpg --->
+
+![](imagens/relogioNoPulso-1.jpg)
+
+<!--- convert -crop 3368x1800+300+800 IMG_20200817_191704988.jpg relogioACK.jpg --->
+
+![](imagens/desenhando.png)
+
+O dispositivo conecta-se ao aplicativo de celular cuja tela é mostrada abaixo. O aplicativo, além de estabelecer a conexão, armazena em um arquivo texto os dados coletados pelo dispositivo na memória (cartão SD, não volátil) do celular.
+
+![](imagens/Screenshot_20200827-170248.png)
+
+### Amostra dos dados
+
+O arquivo texto, anotacaoRelogio.txt, contém informação em uma tabela *comma separated values* (CSV). A primeira coluna corresponde ao instante em milissegundos, a segunda à data e a terceira ao texto da anotação, se houver.
+
+| instante (ms)   | data                      | texto da anotação |
+| --------------- | ------------------------- | ------ |
+| "1597617666911" | "2020/08/16 19:41:06 BRT" | "[200]" |
+| "1597617939762" | "2020/08/16 19:45:39 BRT" | "atendimento/reunião/aula" |
+| "1597617952294" | "2020/08/16 19:45:52 BRT" | "pausa: relaxamento/refeição" |
+| "1597617952780" | "2020/08/16 19:45:52 BRT" | "pausa: relaxamento/refeição" |
+| "1597617962336" | "2020/08/16 19:46:02 BRT" | "transpo: ônibus/metrô/carro" |
+
+O usuário pode escolher se faz a anotação no início ou no término da atividade, ou se a atividade é instantânea. Desta forma, o intervalo entre eventos, ou a duração da atividade, dependendo do contexto, pode ser calculada como a diferença entre instantes. Por exemplo, caso se convencione que a anotação seja feita no início da atividade, o intervalo entre consultar o horário (texto = "[200]") até o atendimento/reunião/aula foi "1597617939762-1597617666911" milissegundos e a duração do atendimento/reunião/aula foi "1597617952294-1597617962336" milissegundos. Por questões de implementação, o dispositivo envia várias mensagens para o mesmo evento e duas são de fato recebidas pelo celular.
+
+[Amostra de dados](arquivos/anotacaoRelogio.txt)
 
 ## Construção
 
@@ -58,11 +86,24 @@ Este é composto por:
 
 - Arduino IDE com biblioteca ESP32;
 
+https://mit-cml.github.io/extensions/
+
 #### Montagem
 
 #### Carga do programa no dispositivo
 
+[programa](arquivos/Relogio-protocolo-v5.ino)
+
+[fontes tipográficas padrão](arquivos/images.h)
+
+[fonte tipográfica grande](arquivos/roboto3.h)
+
+
 ### App companheiro
+
+[Anotador de atividades](arquivos/Relogio_BLE_V3.aia)
+
+[Configurador de dispositivos](arquivos/BLE_Protocolo.aia)
 
 Celular utilizado
 
@@ -78,6 +119,8 @@ Arquivo de configuração de endereço e serviço do dispositivo no app
 
 ### Sincronização e anotação
 
-### Cópia dos dados e análise
+/Zfiles/BLE.txt
+
+![](imagens/Screenshot_20200827-171327.png)
 
 

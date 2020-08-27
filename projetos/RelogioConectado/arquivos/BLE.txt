@@ -1,0 +1,3 @@
+"24:0A:C4:30:8E:5E"
+"4fafc201-1fb5-459e-8fcc-c5c9c331914b","beb5483e-36e1-4688-b7f5-ea07361b26a8","Unknown Characteristic"
+"4fafc201-1fb5-459e-8fcc-c5c9c331914c","beb5483e-36e1-4688-b7f5-ea07361b26a9","Unknown Characteristic"

@@ -52,6 +52,10 @@ A implementação de um gerador pode ser uma pilha, a tomada de parede, uma bate
 
 É útil notar que em todos os casos, abstrai-se a construção do gerador, interessando somente a tensão ou a corrente entre os terminais do gerador (dipolo). Por isso, para análise elétrica do circuito, dizer *um gerador de 5V* ou *um gerador de 1A* é suficiente. Isto tem consequências na forma como nos comunicamos, por exemplo: 'Esta tomada é 110V" geralmente é informação suficiente.
 
+### Baterias e pilhas
+
+Baterias são bem especificadas pela tensão que fornece e pela carga armazenada. A carga armazenada é medida em Ampére*hora (Ah). Uma bateria de carga de 1Ah fornece 1A durante 1 hora.  
+
 ### Curto-circuito
 
 Curto-circuito é o nome dado à situação em que os terminais do gerador são diretamente conectados.

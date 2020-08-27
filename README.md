@@ -9,6 +9,8 @@ Esta é uma coleção de assuntos, perguntas e respostas que surgiram, ou que pe
 
 Os assuntos são mais relacionados à eletricidade, eletrônica e computação, que são os que conheço melhor. 
 
+Há muitos trechos de texto que trazem a opinião ou a experiência do autor na execução de alguma tarefa. São relatos de experiência, recomendações ou orientações que podem ser usados enquanto não há algo melhor. Na opinião do autor, *quem faz escolhe o que e como fazer*.
+
 Gostaria de encorajar os leitores a usar os ítens da coleção como referencia nos relatórios de projeto da disciplina, ou mesmo em projetos mais amplos e ambiciosos, bem como aproveitar o formato de documentação dos projetos, apresentados aqui como exemplos, como inspiração para a construção de seus próprios relatórios.
 
 ## Limitações do texto
