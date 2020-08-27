@@ -73,7 +73,7 @@ Este é composto por:
 #### Lista de partes
 
 - TTGO T-Display com display OLED e ESP32;
-- Placa de circuito impresso tipo ilha 18mmx80mm;
+- Placa de circuito impresso tipo ilha 18mmx80mm que servirá como 'botoeira';
 - Fio rígido 26 AWG (de par trançado e tronco telefônico);
 - Bateria 3,7V, 720mAh;
 - Conector JST 1.25mm;
@@ -90,6 +90,26 @@ https://mit-cml.github.io/extensions/
 
 #### Montagem
 
+Os pinos touch 2, 4, 5, 6, 7, 8 e 9 são usados para interface com usuário. Em cada um deles soldar fios rígidos que conectarão os pinos à botoeira. Convém medir o comprimento necessário (cerca de 5 a 8 cm em cada pino).
+
+![](imagens/fios-1.jpg)
+
+Inserir as extremidades dos fios nos respectivos furos na botoeira, medir alinhamento das placas, distâncias, margens para costura, cortar, dobrar as pontas para não formar saliências e ganchos que podem prejudicar a parte vestível e o usuário e soldar.
+
+<!--- convert -crop 2000x2500+300+800 IMG_20200816_203421359.jpg botoeira.jpg --->
+
+![](imagens/botoeira-1.jpg)
+
+<!--- convert -crop 2000x2500+700+1200 IMG_20200816_203450772.jpg botoeira-verso.jpg --->
+
+![](imagens/botoeira-verso-1.jpg)
+
+<!--- convert -crop 1500x1000+800+1200 IMG_20200817_103059046.jpg botoeira-soldada.jpg --->
+
+![](imagens/botoeira-soldada.jpg)
+
+Costurar o TTGO em um passador e a botoeira em outro passador. Importante alinhar a passagem da faixa pelos dois passadores. Caso o passador seja de EVA, fazer o ponto também de um furo da placa para o outro. O ponto largo diminui a chance da linha cortar o passador.
+
 #### Carga do programa no dispositivo
 
 [programa](arquivos/Relogio-protocolo-v5.ino)
@@ -100,6 +120,8 @@ https://mit-cml.github.io/extensions/
 
 
 ### App companheiro
+
+Caso precise começar com o app inventor, recomendamos o tutorial <https://github.com/camilabezerril/ImageCV/blob/master/Documentos/primeiroApp/primeiroApp.md>
 
 [Anotador de atividades](arquivos/Relogio_BLE_V3.aia)
 
