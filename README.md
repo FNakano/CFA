@@ -33,15 +33,23 @@ Obrigado a Isabel Italiano, Luciano Araújo, João Marcicano pelo conhecimento c
 
 Pode ser mais rápido encontrar uma página usando o [mapa do repositório](tree.md).
 
-... ou procurar alguma dúvida similar à sua:
+... ou procurar alguma dúvida similar à sua (esta seção será ampliada e as explicações melhor embasadas):
 
 - [Vou levar choque mexendo na placa controladora (Arduino, NodeMCU, ESP8266, ESP32, ...?](eletricidade.md#Choque-elétrico)
 - Como posso estragar uma placa controladora?
+    - Uma resposta muito precisa não é possível. A resposta vaga é: se a placa não estiver recebendo energia (não estiver ligada), o principal motivo para dano é mecânico: flexionar, torcer, vibrar até interromper o circuito. O mesmo com água: imergir em água, quando desligado, não costuma causar dano. A recuperação pode ser feita secando bem a placa. Caso ela seja ligada molhada, ou molhada enquanto ligada, a chance de dano é maior. Outra forma é conectar um pino de *saída* diretamente a um polo da fonte. Embora na maioria dos controladores os pinos tenham circuitos de proteção, a proteção não é permanente e falha em algum momento. Também conectar a uma tensão mais alta que a permitida. A máxima tensão permitida é informação que está na especificação (*datasheet*) da placa.  
 - O computador em que conecto a placa controladora pode ser danificado se eu errar alguma conexão na placa controladora?
+    - a porta USB dos computadores tem proteção contra sobrecarga mas isto não garante de forma absoluta que a porta USB não seja danificada. Isto é mais provável quando se injeta energia através da porta USB. Por exemplo conectando uma bateria à USB, o que pode acontecer caso o Arduino esteja conectado a pilhas e à USB simultaneamente.
 - Tenho uma sequência de 200 LEDs em paralelo em uma fita. Da metade do comprimento para a frente, em relação à ponta que liguei na fonte, o brilho é menor. Qual o motivo? Como fazer para o brilho ser mais uniforme?
+    - Isto pode ser explicado usando para o condutor (o fio ou fita) um modelo mais detalhado que o do condutor ideal, com resistência nula. Neste modelo, chamado *Segunda Lei de Ohm*, que é uma aproximação melhor do comportamento do condutor, a resistência elétrica do condutor depende do material que é feito, do comprimento e da área da secção transversal (ou bitola). Isto explica por quê os LEDs mais próximos da fonte têm brilho maior que os LEDs mais distantes da fonte (distância medida em metros de fio). Uma interpretação possível (para deixar menos árido) é que o fio ou fita 'não está dando conta' de conduzir toda a corrente necessária. A solução é acrescentar condutores (fios) com o menor comprimento e maior bitola possível, da fonte até outros pontos do fio ou fita em que os LEDs estão conectados. Isto equivale a aumentar a bitola do fio.
 - a placa controladora só funciona conectada a um computador?
+    - a placa controladora funciona (executa o programa armazenado mais recentemente) se receber energia, seja pela porta USB (por exemplo com um carregador de celular ou *battery pack*, seja por um conector específico (por exemplo os J4 de algumas placas Arduino). Frequentemente (mas não sempre) é possível fornecer energia através de pinos. Para saber se é realmente possível, melhor **estudar os diagramas esquemáticos da placa que você escolheu**. No arduino UNO, o 5V ou Vcc podem receber 5V.
 - Recebi um sensor sem os pinos soldados. Encostar as ilhas da placa de um sensor aos pinos do controlador é uma 'boa maneira' de ligar o sensor ao controlador?
-
+- Há algum projeto completo neste site?
+    - [Relógio Conectado](projetos/RelogioConectado/README.md)
+- Onde posso aprender como usar git e github?
+    - [Tente aqui: explicação no repositório de um projeto de IC](https://github.com/camilabezerril/ImageCV/tree/master/Documentos/sobreGit)
+        
 A leitura linear do texto apresenta os conceitos na sequência de construção: dos mais elementares, combinando-os, até chegar a aplicações que foram usadas ou apresentadas na disciplina.
 
 ## Soluções para gerar este documento 
