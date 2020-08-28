@@ -52,6 +52,12 @@ Pode ser mais rápido encontrar uma página usando o [mapa do repositório](tree
         
 A leitura linear do texto apresenta os conceitos na sequência de construção: dos mais elementares, combinando-os, até chegar a aplicações que foram usadas ou apresentadas na disciplina.
 
+## Projetos similares orientados
+
+[Rede de sensores - 2018](https://github.com/AlexandreZelante/Rede-de-sensores-ic)
+[ImageCV](https://github.com/camilabezerril/ImageCV)
+[Outra rede de sensores (ainda não público](https://github.com/FNakano/SensoresRemotos)
+
 ## Soluções para gerar este documento 
 
 
