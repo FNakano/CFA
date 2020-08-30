@@ -145,4 +145,22 @@ Arquivo de configuração de endereço e serviço do dispositivo no app
 
 ![](imagens/Screenshot_20200827-171327.png)
 
+## Histórico e método de desenvolvimento
+
+O que eu precisava no dispositivo:
+
+- autonomia da bateria;
+- mostrar informação no display;
+- manter hora;
+- comunicação com celular;
+- botões;
+
+O que eu não queria usar
+
+- armazenamento no dispositivo: [sistema de arquivos](../../componentes/controladores/ESP/sistemasDeArquivos/README.md)
+
+O que eu já tinha como experiência:
+
+- [RelogioV1](../RelogioV1)
+
 
