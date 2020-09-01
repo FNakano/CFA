@@ -51,9 +51,9 @@ O relatório deve contemplar:
     1. Contextualização (o que se sabe) e Motivação (por que se quer)
         1. Revisão Bibliográfica
             1. Conceitos e Terminologia
-    2. ~~~Questão de pesquisa~~~
+    2. ~~Questão de pesquisa~~
     3. Organização do relatório
-2. Objetivos ~~~(questão de pesquisa colocada formal e explicitamente)~~~ (o que quer fazer)
+2. Objetivos ~~(questão de pesquisa colocada formal e explicitamente)~~ (o que quer fazer)
 3. Métodos
 4. Resultados e indicadores de avaliação
     1. Entregáveis previstos
