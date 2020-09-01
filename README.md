@@ -15,7 +15,9 @@ Gostaria de encorajar os leitores a usar os ítens da coleção como referencia 
 
 ## Limitações do texto
 
-Este texto objetiva apresentar conceitos e as referências que suportam esses conceitos. Não é intenção apresentar teorias e definições alternativas, nem fazer revisão de toda a literatura sobre o assunto.
+Este texto objetiva apresentar conceitos e as referências que suportam esses conceitos. Não é intenção apresentar alternativas para as teorias apresentadas, nem defender uma posição (apresentar argumentos, fazer análise crítica), nem fazer revisão de toda a literatura sobre o assunto.
+
+Por enquanto há informação, parte estruturada, parte não estruturada. Em alguns tópicos há estrutura, mas não há detalhamento. É uma meta consolidar estrutura e detalhamento.
 
 Sugestões de ajustes para aumentar a precisão do texto são bemvindas.
 
@@ -30,6 +32,33 @@ Obrigado a todos que contribuiram para minha formação e contribuem para minha 
 Obrigado a Isabel Italiano, Luciano Araújo, João Marcicano pelo conhecimento compartilhado e trabalho em conjunto.
 
 ## Organização da informação
+
+Este texto é o ponto de partida. As ramificações são:
+
+- componentes;
+    - contém informação sobre os componentes utilizados nos projetos;
+- modelos;
+    - contém modelos de documentação de projetos;
+- programas;
+    - contém informação sobre os programas, ou, ferramentas, utilizadas nos projetos e na documentação
+- projetos;
+    - contém as aplicações 
+
+Os componentes são divididos em categorias funcionais: atuadores, controladores, interconexões, protocolos, sensores e vestíveis;
+
+Os modelos estão em elaboração
+
+Os programas, no momento, são app Inventor, arduino IDE, fritzing, Linux.
+
+Os projetos, no momento, são Relógio Conectado e Relógio V1.
+
+Pode interessar dar uma olhada em projetos de Iniciação Científica relacionados ao tema da disciplina:
+
+- [Rede de sensores - 2018](https://github.com/AlexandreZelante/Rede-de-sensores-ic)
+- [ImageCV](https://github.com/camilabezerril/ImageCV)
+- [Actímetro](https://github.com/snorlara/Actimetro)
+- [Outra rede de sensores (ainda não público](https://github.com/FNakano/SensoresRemotos)
+
 
 Pode ser mais rápido encontrar uma página usando o [mapa do repositório](tree.md).
 
@@ -49,14 +78,10 @@ Pode ser mais rápido encontrar uma página usando o [mapa do repositório](tree
     - [Relógio Conectado](projetos/RelogioConectado/README.md)
 - Onde posso aprender como usar git e github?
     - [Tente aqui: explicação no repositório de um projeto de IC](https://github.com/camilabezerril/ImageCV/tree/master/Documentos/sobreGit)
-        
+- Há modelos de documentação de projetos neste site?
+    - [Modelos e Justificativas para os modelos](modelos/README.md)
+    
 A leitura linear do texto apresenta os conceitos na sequência de construção: dos mais elementares, combinando-os, até chegar a aplicações que foram usadas ou apresentadas na disciplina.
-
-## Projetos similares orientados
-
-[Rede de sensores - 2018](https://github.com/AlexandreZelante/Rede-de-sensores-ic)
-[ImageCV](https://github.com/camilabezerril/ImageCV)
-[Outra rede de sensores (ainda não público](https://github.com/FNakano/SensoresRemotos)
 
 ## Soluções para gerar este documento 
 
