@@ -40,6 +40,18 @@ Construir e apresentar um relógio.
 
 ## Resultados e indicadores de avaliação
 
+O circuito realizado foi a solda do conector JST 1.25.
+
+As macros `__DATE__` e `__TIME__` armazenam data e hora de compilação em formato de String. Como o dispositivo pode ser conectado simultaneamente ao programador, através da porta USB, e à bateria, através do conector, e a desconexão da porta USB não desliga o dispositivo pois a bateria 'entra em funcionamento automaticamente', no instante da programação, o relógio apresenta a hora certa.
+
+Uma parte dos métodos faz *parsing* das strings de data e hora em números, que podem ser incrementados de acordo com o horário interno.
+
+O horário interno é acessado pelo método `millis()` que acessa o registrador interno que mantém o tempo transcorrido a partir do início da execução do programa. A precisão desta forma de medir o tempo é alta, mas o controlador precisa estar ativo o tempo todo. Neste modo o consumo é de XXmA.
+
+Usou-se como faixa de pulso um organizador de cabos de 20cm de comprimento e 1cm de largura feito de velcro. A placa controladora foi fixada com linha de costura através dos furos de fixação e de duas ilhas (contatos) não utilizados no circuito. A bateria foi fixada com fita adesiva.
+
+O maior tamanho de letra da biblioteca thingpulse tem 24 pontos, o que ocupa cerca de metade da altura do display. Para melhorar a visualização da hora, foi gerada uma letra a 48 pontos, usando um site indicado no exemplo de uso da bibliotece thingpulse.
+
 ### Entregáveis previstos
 
 ![](imagens/IMG-20190923-WA0005.jpg)
@@ -52,18 +64,6 @@ Construir e apresentar um relógio.
 
 [Código-fonte](arquivos/RelogioV1.ino)
 
-
-O circuito realizado foi a solda do conector JST 1.25.
-
-As macros `__DATE__` e `__TIME__` armazenam data e hora de compilação em formato de String. Como o dispositivo pode ser conectado simultaneamente ao programador, através da porta USB, e à bateria, através do conector, e a desconexão da porta USB não desliga o dispositivo pois a bateria 'entra em funcionamento automaticamente', no instante da programação, o relógio apresenta a hora certa.
-
-Uma parte dos métodos faz *parsing* das strings de data e hora em números, que podem ser incrementados de acordo com o horário interno.
-
-O horário interno é acessado pelo método `millis()` que acessa o registrador interno que mantém o tempo transcorrido a partir do início da execução do programa. A precisão desta forma de medir o tempo é alta, mas o controlador precisa estar ativo o tempo todo. Neste modo o consumo é de XXmA.
-
-Usou-se como faixa de pulso um organizador de cabos de 20cm de comprimento e 1cm de largura feito de velcro. A placa controladora foi fixada com linha de costura através dos furos de fixação e de duas ilhas (contatos) não utilizados no circuito. A bateria foi fixada com fita adesiva.
-
-O maior tamanho de letra da biblioteca thingpulse tem 24 pontos, o que ocupa cerca de metade da altura do display. Para melhorar a visualização da hora, foi gerada uma letra a 48 pontos, usando um site indicado no exemplo de uso da bibliotece thingpulse.
 
 ### Entregáveis não previstos (soluções para problemas colaterais)
 
