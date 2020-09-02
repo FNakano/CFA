@@ -27,12 +27,15 @@ Após a introdução, acima, seguem objetivos, materiais e métodos utilizados, 
 Construir e apresentar um relógio.
 
 ## Materiais e métodos
-- Instalar Arduino IDE
+
+- [Instalar Arduino IDE](../../programas/arduinoIDE/README.md)
 - [Instalar placa ESP32](../../componentes/controladores/ESP/README.md/#Configurar-ArduinoIDE-para-programar-o-ESP8266-ou-o-ESP32)
-- Instalar biblioteca SSD1306 da thingpulse
+- Instalar e testar biblioteca SSD1306 da thingpulse
 - Gerar fonte Roboto 48
+- [Testar o programa do relógio](#Programas-desenvolvidos)
+- soldar conector JST 1.25 <https://github.com/Heltec-Aaron-Lee/WiFi_Kit_series/issues/5> na bateria;
+- testar controlador junto com bateria;
 - Laçar a placa TTGO no organizador de cabos <https://netcomputadores.com.br/p/20002-organizador-de-cabos-clone/4671>
-- soldar conector JST 1.25 <https://github.com/Heltec-Aaron-Lee/WiFi_Kit_series/issues/5> na bateria.
 
 
 ## Resultados e indicadores de avaliação
@@ -44,6 +47,8 @@ Construir e apresentar um relógio.
 ![](imagens/IMG-20190923-WA0007.jpg)
 
 ![](imagens/IMG-20190923-WA0008.jpg)
+
+#### Programas desenvolvidos
 
 [Código-fonte](arquivos/RelogioV1.ino)
 
