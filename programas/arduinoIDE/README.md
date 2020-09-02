@@ -15,9 +15,9 @@ Após baixar a versão da IDE compatível com seu computador, siga as instruçõ
 
 Aqui você aprende como escrever seu primeiro programa (com o material no site arduino.cc).
 
-[Começando com Arduino UNO e ArduinoIDE](https://www.arduino.cc/en/Guide/ArduinoUno)
-[Lista de exemplos para Arduino (não para ESP)](https://www.arduino.cc/en/Tutorial/BuiltInExamples)
-[Piscando um LED - um dos mais simples programas para Arduino](https://www.arduino.cc/en/Tutorial/Blink)
+- [Começando com Arduino UNO e ArduinoIDE](https://www.arduino.cc/en/Guide/ArduinoUno)
+- [Lista de exemplos para Arduino (não para ESP)](https://www.arduino.cc/en/Tutorial/BuiltInExamples)
+- [Piscando um LED - um dos mais simples programas para Arduino](https://www.arduino.cc/en/Tutorial/Blink)
 
 Executar um programa simples é uma forma simples de checar se ArduinoIDE, seu computador, seu Arduino e você 'estão fazendo tudo certo'. No desenvolvimento de um dispositivo, há etapas em que o dispositivo deixa de funcionar e há muitas causas prováveis. O programa simples diminui substancialmente a quantidade de causas prováveis.
 
