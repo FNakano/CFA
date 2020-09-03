@@ -20,7 +20,41 @@ Os dispositivos e componentes são aplicados (costurados) em passadores, proporc
 
 A faixa pode ser lavada sem cuidados especiais e, caso os passadores precisem ser lavados (o que espera-se que seja raro ou desnecessário para os passadores de fita isolante e EVA), os dispositivos podem ser descosturados e recosturados com a maior facilidade possível.
 
+
+
 ## Resultados
+
+Para chegar ao resultado foram avaliadas alternativas: faixa fechada e faixa com fecho em velcro.
+
+### Faixa fechada
+
+![](imagens/faixaFechada.jpg)
+
+Este modelo de faixa, cilíndrica, sem abertura e toda elástica requer expandir para ser vestida. Os dispositivos, ou são costurados diretamente na faixa, ou são montados sobre passadores com fecho. 
+
+No caso da costura direta, isto dificulta a lavagem da faixa e a costura pode romper-se ou ficar folgada para compensar a elasticidade da faixa contraposta à rigidez do dispositivo.
+
+No caso do passador com fecho, transfere trabalho de construção da faixa para o passador. Como pode haver mais de um passador na faixa, acaba aumentando a quantidade de trabalho para chegar ao resultado final.
+
+### Faixa com fecho em velcro
+
+![fecho em velcro](imagens/velcro1-1.jpg)
+
+Consegui um bom ajuste ao fechar este modelo de faixa apoiando o braço na mesa ou segurando com a mão em que a faixa é fechada e então tracionando a outra ponta com a outra mão.
+
+![fecho em velcro](imagens/velcro2-1.jpg)
+
+### Faixa com regulador
+
+![regulador1](imagens/regulador1-1.jpg)
+
+O regulador de metal tem haste central móvel e fina. A inversão de direção da faixa permite que seja fechada e, se necessário, apertada com bastante força. A haste central móvel contribui para a firmeza do ajuste pois pressiona a faixa elástica contra o quadro do regulador.
+
+![regulador2](imagens/regulador2-1.jpg)
+
+Esta foi a construção escolhida.
+
+### Escolha de passador 
 
 <!--- convert -crop 3368x800+300+1300 IMG_20200817_172651874.jpg faixa.jpg --->
 
