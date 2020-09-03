@@ -28,7 +28,7 @@ Para chegar ao resultado foram avaliadas alternativas: faixa fechada e faixa com
 
 ### Faixa fechada
 
-![](imagens/faixaFechada.jpg)
+![](imagens/faixaFechada-1.jpg)
 
 Este modelo de faixa, cilíndrica, sem abertura e toda elástica requer expandir para ser vestida. Os dispositivos, ou são costurados diretamente na faixa, ou são montados sobre passadores com fecho. 
 
@@ -98,6 +98,6 @@ Passando no teste, retirar da faixa e costurar o dispositivo no passador. Pode-s
 
 ## Aplicações
 
-[Relógio Bluetooth](../../../projetos/RelógioConectado/README.md)
+[Relógio Bluetooth](../../../projetos/RelogioConectado/README.md)
 
 
