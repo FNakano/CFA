@@ -74,6 +74,7 @@ Pode ser mais rápido encontrar uma página usando o [mapa do repositório](tree
 - a placa controladora só funciona conectada a um computador?
     - a placa controladora funciona (executa o programa armazenado mais recentemente) se receber energia, seja pela porta USB (por exemplo com um carregador de celular ou *battery pack*, seja por um conector específico (por exemplo os J4 de algumas placas Arduino). Frequentemente (mas não sempre) é possível fornecer energia através de pinos. Para saber se é realmente possível, melhor **estudar os diagramas esquemáticos da placa que você escolheu**. No arduino UNO, o 5V ou Vcc podem receber 5V.
 - Recebi um sensor sem os pinos soldados. Encostar as ilhas da placa de um sensor aos pinos do controlador é uma 'boa maneira' de ligar o sensor ao controlador?
+    - Na minha experiência, não. Detalhes em <contatos.md>.
 - Há algum projeto completo neste site?
     - [Relógio Conectado](projetos/RelogioConectado/README.md)
 - Onde posso aprender como usar git e github?
