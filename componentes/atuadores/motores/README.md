@@ -49,9 +49,11 @@ Os *drivers* desses motores, em drones, são chamados Electronic Speed Control (
 Motores de passo são construídos usando vários enrolamentos (bobinas) que podem ser energizadas independentemente. Isto permite controlar o ângulo de rotação do eixo com grande precisão e repetibilidade.
 
 ### unipolar
-ex. 28byj-48 - o driver mais comum é o UNC2003.
+ex. 28byj-48 - o driver mais comum é o UNC2003. Na minha opinião, um grande atrativo deste motor, além do preço, é a tensão de operação de 5V.
 
 Contém quatro bobinas. Um terminal de cada bobina é ligado em comum (fig). Externamente são 5 fios.
+
+Este tutorial: <https://blog.eletrogate.com/guia-completo-do-motor-de-passo-28byj-48-driver-uln2003/> mostra o 28byj-48 desmontado, as engrenagens, a ligação das bobinas,...
 
 ### bipolar
 ### Servomotor
