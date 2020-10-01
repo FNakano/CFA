@@ -164,18 +164,21 @@ Active task               :active,  des2, 2014-01-09, 3d
 Future task               :         des3, after des2, 5d
 Future task2               :         des4, after des3, 5d
 ```
+![gantt](mermaid-diagram-20201001183040.svg)
+
+```mermaid
+graph TD
+  A[Christmas] -->|Get money| B(Go shopping)
+  B --> C{Let me think}
+  C -->|One| D[Laptop]
+  C -->|Two| E[iPhone]
+  C -->|Three| F[fa:fa-car Car]
+```
 
 <!--- 
 O addon funciona em arquivos armazenados no github, não funciona em arquivos locais (2020-10-01-090920)
 
 
-```mermaid
-graph TD;
-A-->B;
-A-->C;
-B-->D;
-C-->D;
-```
 
  --->
  
