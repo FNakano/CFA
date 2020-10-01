@@ -37,16 +37,16 @@ Este texto é o ponto de partida. As ramificações são:
 
 - componentes;
     - contém informação sobre os componentes utilizados nos projetos;
-- modelos;
-    - contém modelos de documentação de projetos;
+- [modelos](modelos/README.md);
+    - contém modelos para documentação para esta disciplina;
 - programas;
     - contém informação sobre os programas, ou, ferramentas, utilizadas nos projetos e na documentação
 - projetos;
-    - contém as aplicações 
+    - contém as aplicações, algumas feitas para testar os modelos.
 
 Os componentes são divididos em categorias funcionais: atuadores, controladores, interconexões, protocolos, sensores e vestíveis;
 
-Os modelos estão em elaboração
+Os [modelos](modelos/README.md) estão em fase final de elaboração.
 
 Os programas, no momento, são app Inventor, arduino IDE, fritzing, Linux.
 
