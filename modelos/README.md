@@ -109,6 +109,9 @@ Diagramas, como grafos, GANTT, ... podem ser renderizados automaticamente usando
     
 ## Grafos, GANTT e mais...
 
+Funciona no github, não funciona no addon (2020-10-01-090920)
+
+
 ```mermaid
 graph TD;
 A-->B;
@@ -116,7 +119,24 @@ A-->C;
 B-->D;
 C-->D;
 ```
+
+```mermaid
+gantt
+dateFormat  YYYY-MM-DD
+title Adding GANTT diagram to mermaid
+excludes weekdays 2014-01-10
+
+section A section
+Completed task            :done,    des1, 2014-01-06,2014-01-08
+Active task               :active,  des2, 2014-01-09, 3d
+Future task               :         des3, after des2, 5d
+Future task2               :         des4, after des3, 5d
+```
+
 ### Fórmulas matemáticas
+
+Funciona no addon, não funciona no github (2020-10-01-090902)
+
 
 $`\Sigma_{i=1}^{10} i^2`$
 
