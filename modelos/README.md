@@ -96,7 +96,31 @@ O relatório deve contemplar:
 
 há outros stakeholders, como os fornecedores
 
+## Gerar relatórios em pdf a partir das páginas do repositório
 
+Esta é a recomendação para gerar documentos na disciplina.
 
+Trata-se de uma sistematização para criação dos repositórios github onde os projetos podem ser publicados. Não tem código. Se escrever o repositório sabendo previamente quais são as seções do relatório, construi-lo fica mais rápido. O caso que considero 'sucesso' é este: https://github.com/camilabezerril/ImageCV
 
+O relatório: https://github.com/camilabezerril/ImageCV/blob/master/relatorio.md foi criado com uma seleção de parágrafos e seções da documentação (plano de trabalho, ...) que estão no repositório também. A impressão em pdf, removendo a interface do site do github, é feita do arquivo .md em um repositório local, através do browser, usando o addon para renderizar markdown. Por fim, se necessário, acrescenta folha de rosto, sumário e numeração de páginas num editor pdf como https://www.ilovepdf.com/.
+
+Fórmulas matemáticas (em latex) são renderizadas automaticamente usando katex.
+Diagramas, como grafos, GANTT, ... podem ser renderizados automaticamente usando mermaid (ainda não testei...).
+    
+## Grafos, GANTT e mais...
+
+```mermaid
+graph TD;
+A-->B;
+A-->C;
+B-->D;
+C-->D;
+```
+### Fórmulas matemáticas
+
+$`\Sigma_{i=1}^{10} i^2`$
+
+```math
+\Sigma_{i=1}^{10} i^2
+```
 
