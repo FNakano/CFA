@@ -46,4 +46,35 @@ Comigo tem funcionado ter reuniões semanais em que metas para a semana são com
 [Relógio Conectado](RelogioConectado/README.md) é um relógio de pulso que se conecta ao celular por Bluetooth. Ele registra toques em botões e horários em que ocorreram. Criei em torno da temática de anotações, atividades e hábitos.
 
 
+## 2020-10-03-182254
+
+Uma boa condução de um projeto - da concepção até a entrega dos resultados prometidos no projeto -, na minha opinião, está relacionada ao equilíbrio entre *estudar*, *elaborar* e *fazer*.
+
+Frequentemente propõe-se algo sem ter todas as soluções necessárias, ou, até, sem ter todas as atividades definidas e detalhadas, ... há contextos em que é aceitável, noutros, inevitável, e há gradações. O extremo, acredito, reflete-se no argumento:
+
+> ...pode deixar que a gente faz...
+
+... e este argumento é a proposta e o plano de atividades.
+
+Meu objetivo aqui não é elaborar sobre o argumento extremo, mas usá-lo para reforçar uma constatação: `Durante a execução de um projeto, sempre há algo a estudar`. Chamo isto *estudar*. Ele está relacionado a `buscar elementos, subsídios, conhecimento,...`.
+
+À medida que os elementos são encontrados, há o trabalho de compor os elementos de maneira que algo ,outro algo, que acredita-se que seja a solução necessária, seja feito. Chamo isto *elaborar*.
+
+Testar os elementos encontrados, testar as composições dos elementos, testar se a composição é a solução necessária, incorporar a solução necessária ao produto. Chamo isto *fazer*.
+
+Proporções desequilibradas entre *estudar*, *elaborar* e *fazer* podem levar a bons resultados ao custo de desgaste físico e mental, ou como reflexo de sorte ou traços de genialidade. Por exemplo: é possível chegar a bons resultados *fazendo* muito, *estudando* muito e *elaborando* mal. Outro exemplo: *fazer* pouco, *estudar* muito e *elaborar* bem. Na minha opinião, é a condução de quem pensa muito e acerta com poucas tentativas. Outro exemplo: *fazer* muito, *estudar* muito, *elaborar* muito.
+
+Outras proporções, que eu tenha observado, levam a resultados diferentes do planejado, ou levam a resultados aquém do prometido.
+
+---
+
+### Alcance e continuidade
+
+Acredito que todos que se engajam em um projeto desejam que o resultado do projeto, ou o projeto em si, gere benefícios, e beneficie a maior quantidade de pessoas possível. Para os outros perceberem o benefício do que lhes é oferecido, no contexto da disciplina, eles devem conseguir entender o que se conseguiu fazer, como foi feito, como reproduzir. A documentação do projeto é o instrumento disponível para alcançar os outros. A boa documentação facilita que o outro use o que você fez.
+
+A cada turma, o grupo todo é renovado. Sem boa documentação, o novo grupo inicia seu período aproximadamente no mesmo estágio do grupo anterior. Dispendendo aproximadamente o mesmo tempo e esforço, supondo que a tecnologia não mude, os resultados do novo grupo e do grupo anterior terão aproximadamente a mesma qualidade.
+
+Acredito que não precise ser assim. O novo grupo pode construir a partir do que o grupo anterior deixou. Acredito que seja importante dispor de boa documentação, onde para ser boa, requer ser concisa, correta e concentrada (em um repositório).
+
+A administração da coleção de documentos acumulados no tempo acaba sendo do docente, que é o único membro permanente do grupo. Ele também usa a documentação e, pela característica de sua função, é capaz de comparar formas de documentação. Em decorrência dessa função, é conveniente que ele decida como a documentação deve ser feita e forneça modelos e exemplos de uso.
 

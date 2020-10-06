@@ -3,21 +3,23 @@ Computação Física e Aplicações
 
 ## Apresentação
 
-Neste momento, acredito que a característica mais importante deste texto é que ele é um protótipo, um produto mínimo, por isso incompleto, talvez contendo afirmações 'injustas', que talvez necessitem de ajuste contínuo que, espero, venham através de colaborações e sugestões (SP, 20 de agosto de 2020).
+A quem ler este trabalho, gostaria de agradecer a visita e desejar boa leitura.
 
-Esta é uma coleção de assuntos, perguntas e respostas que surgiram, ou que percebi que poderiam ser melhor trabalhadas, nas ocasiões em que ministrei esta disciplina.
+Gostaria, também, de avisar que, a intenção é que este trabalho evolua continuamente, o que, na minha opinião, o caracteriza como um protótipo, um produto mínimo, por isso (sempre) incompleto. Peço que avise se houver aqui algum texto que você considere impreciso, incompleto, ou injusto. (SP, 6 de outubro de 2020).
 
-Os assuntos são mais relacionados à eletricidade, eletrônica e computação, que são os que conheço melhor. 
+Esta é uma coleção de assuntos, conteúdos, perguntas e respostas que surgiram, ou que percebi que poderiam ser melhor trabalhadas, nas ocasiões em que ministrei a disciplina do título. A partir desta página, é possível chegar a todas as outras, e, na falta de página mais adequada para anotar algum assunto, este vem para cá. No contexto de projetos, este trabalho é o projeto que visa detalhar assuntos, conteúdos, perguntas e respostas que surgiram durante a preparação e execução das aulas da disciplina.
 
-Há muitos trechos de texto que trazem a opinião ou a experiência do autor na execução de alguma tarefa. São relatos de experiência, recomendações ou orientações que podem ser usados enquanto não há algo melhor. Na opinião do autor, *quem faz escolhe o que e como fazer*.
+Minha intenção com este material é fornecer modelos testados de projetos e entregas, referências básicas sobre materiais e ferramentas, um pouco dos modelos teóricos que, combinados, fornecem justificativas para escolhas que fiz no planejamento da disciplina, compõe o conteúdo inicial e podem (devem) ser usados por quem cursar a disciplina. No contexto das consequências imediatas, espero que este material lhes permita direcionar tempo e esforço para o que não está resolvido aqui.
 
-Gostaria de encorajar os leitores a usar os ítens da coleção como referencia nos relatórios de projeto da disciplina, ou mesmo em projetos mais amplos e ambiciosos, bem como aproveitar o formato de documentação dos projetos, apresentados aqui como exemplos, como inspiração para a construção de seus próprios relatórios.
+Alguns assuntos que surgiram são muito interessantes e extrapolam (o que eu considero) conteúdos de disciplina pois envolvem escolhas feita no planejamento e teste dos formatos e conteúdos que o ministrante entrega e que o aluno entrega durante a disciplina. Sumariamente, as idéias e experiências sobre organização de equipes, documentação de projetos, gerenciamento da disciplina o conteúdo da discilina: objetivos, conteúdo, material disponível, entregas e seu formato,...
+
+Desejo-lhes 'boa disciplina', com mais momentos gratificantes que frustrações, aprendendo muito e, com sucesso no final!
 
 ## Limitações do texto
 
-Este texto objetiva apresentar conceitos e as referências que suportam esses conceitos. Não é intenção apresentar alternativas para as teorias apresentadas, nem defender uma posição (apresentar argumentos, fazer análise crítica), nem fazer revisão de toda a literatura sobre o assunto.
+Este texto objetiva apresentar conceitos e as referências que suportam esses conceitos. Não é intenção apresentar alternativas para as teorias apresentadas, nem fazer revisão de toda a literatura sobre algum assunto.
 
-Por enquanto há informação, parte estruturada, parte não estruturada. Em alguns tópicos há estrutura, mas não há detalhamento. É uma meta consolidar estrutura e detalhamento.
+Há informação parcialmente estruturada e/ou parcialmente detalhada. Em alguns tópicos há estrutura, mas não há detalhamento. É uma meta consolidar estrutura e detalhamento.
 
 Sugestões de ajustes para aumentar a precisão do texto são bemvindas.
 
@@ -33,24 +35,39 @@ Obrigado a Isabel Italiano, Luciano Araújo, João Marcicano pelo conhecimento c
 
 ## Organização da informação
 
-Este texto é o ponto de partida. As ramificações são:
+Est página é o ponto de partida. As ramificações são:
 
-- componentes;
-    - contém informação sobre os componentes utilizados nos projetos;
-- [modelos](modelos/README.md);
-    - contém modelos para documentação para esta disciplina;
-- programas;
-    - contém informação sobre os programas, ou, ferramentas, utilizadas nos projetos e na documentação
-- projetos;
-    - contém as aplicações, algumas feitas para testar os modelos.
+- [visão geral da disciplina](admin/README.md);
+    - gerenciamento da disciplina
+- organização de equipes
+    - continuous integration;
+    - extreme programming;
+    - scrum;
+- conteúdo da disciplina
+    - O conteúdo, nesta versão, é mais próximo a eletricidade, eletrônica e computação, que são os que conheço melhor. 
+- material disponível
+    - componentes;
+        - inventário;
+        - informação sobre alguns componentes que podem ser utilizados nos projetos;
+    - programas;
+        - contém informação sobre os programas, ou, ferramentas, utilizadas nos projetos e na documentação
+- entregas
+    - o que espera-se que seja entregue
+    - [documentação dos projetos da disciplina](modelos/README.md)
+        - por quê documentar?
+        - o que documentar?
+        - como documentar?
+        - modelos
+    - exemplos de projetos;
+        - contém as aplicações, algumas feitas para testar os modelos.
 
 Os componentes são divididos em categorias funcionais: atuadores, controladores, interconexões, protocolos, sensores e vestíveis;
-
-Os [modelos](modelos/README.md) estão em fase final de elaboração.
 
 Os programas, no momento, são app Inventor, arduino IDE, fritzing, Linux.
 
 Os projetos, no momento, são Relógio Conectado e Relógio V1.
+
+[mapa do repositório](tree.md).
 
 Pode interessar dar uma olhada em projetos de Iniciação Científica relacionados ao tema da disciplina:
 
@@ -59,14 +76,30 @@ Pode interessar dar uma olhada em projetos de Iniciação Científica relacionad
 - [Actímetro](https://github.com/snorlara/Actimetro)
 - [Outra rede de sensores (ainda não público](https://github.com/FNakano/SensoresRemotos)
 
+... ou em projetos apresentados anteriormente...
 
-Pode ser mais rápido encontrar uma página usando o [mapa do repositório](tree.md).
+[PopLaserCat: Exercitador de gatos. A maioria dos gatos permanecem por um bom período de tempo sozinhos em casa esperando seu dono chegar. Tudo bem que os gatos são independentes, brincam e realizam suas atividades vitais sozinhos, mas entretê-los enquanto estão sozinhos seria uma boa maneira de deixar os bichinhos e seus donos mais felizes. Assim, pensamos em uma forma inovadora de entreter o pet com laser, utilizando sensor, de forma que ele possa se divertir mesmo em um momento que estiver sozinho.](https://poplasercat.wordpress.com)
 
-... ou procurar alguma dúvida similar à sua (esta seção será ampliada e as explicações melhor embasadas):
+[Arduvias: Medição de fluxo de veículos. Neste projeto temos como objetivo monitorar a passagem de veículos em vias de acesso de grandes avenidas durante um período de tempo, para retirar dados do fluxo de movimentação do local e mostrar para os motoristas qual o acesso menos congestionado. Com essa monitoração pretendemos passar um olhar expandido de acessos das grandes avenidas de cidades com trânsito intenso, a fim de melhorar o fluxo de carro na cidade.
+](http://arduvias.weebly.com/)
+
+[Cuidador de pessoas: Medidor de batimentos cardíacos, glicose, assistente digital com comunicação bluetooth.](https://projetocoxinha.tumblr.com.br)
+
+[Jardim automatizado: A ideia é criar um automatizador, usando Arduino que regue as plantas automaticamente e que as ilumine de acordo com o horário que foi programado para tal.](http://jardimautomatizado.blogspot.com.br)
+
+[Xilofone Arduino: Xilofone com garrafas PET](xilofonearduino.wordpress.com)
+
+[Damas++: Jogo de damas com assistência do Arduino.](https://drive.google.com/open?id=0B7wgT77H3SLxT3hfVnNvcmswbmIwV2ZaY0Y3Yld4ZnVNMi1n)
+
+[Nosso objetivo é a construção de um espelho "inteligente", que exiba informações úteis ao usuário na própria superfície espelhada. Nossa ideia é motivada pela área de IoT (Internet of Things), que cresce a passos largos nos últimos anos, e que são fundamentais para popularizar ainda mais a tecnologia no uso cotidiano.](http://eachiansmartmirror.blogspot.com.br/)
+
+[Site da disciplina até 2018](http://ach2157.blogspot.com/)
+
+## FAQ
 
 - [Vou levar choque mexendo na placa controladora (Arduino, NodeMCU, ESP8266, ESP32, ...?](eletricidade.md#Choque-elétrico)
 - Como posso estragar uma placa controladora?
-    - Uma resposta muito precisa não é possível. A resposta vaga é: se a placa não estiver recebendo energia (não estiver ligada), o principal motivo para dano é mecânico: flexionar, torcer, vibrar até interromper o circuito. O mesmo com água: imergir em água, quando desligado, não costuma causar dano. A recuperação pode ser feita secando bem a placa. Caso ela seja ligada molhada, ou molhada enquanto ligada, a chance de dano é maior. Outra forma é conectar um pino de *saída* diretamente a um polo da fonte. Embora na maioria dos controladores os pinos tenham circuitos de proteção, a proteção não é permanente e falha em algum momento. Também conectar a uma tensão mais alta que a permitida. A máxima tensão permitida é informação que está na especificação (*datasheet*) da placa.  
+    - Uma resposta muito precisa não é possível. A resposta vaga é: se a placa não estiver recebendo energia (não estiver ligada), o principal motivo para dano é mecânico: flexionar, torcer, vibrar até interromper o circuito. O mesmo com água: imergir em água, quando desligado, não costuma causar dano. A recuperação pode ser feita secando bem a placa. Caso ela seja ligada molhada, ou molhada enquanto ligada, a chance de dano é maior. Outra forma é conectar um pino de *saída* diretamente a um polo da fonte. Embora na maioria dos controladores os pinos tenham circuitos de proteção, a proteção não é permanente e falha em algum momento. Também conectar a uma tensão mais alta que a permitida. A máxima tensão permitida é informação que está na especificação (*datasheet*) da placa.
 - O computador em que conecto a placa controladora pode ser danificado se eu errar alguma conexão na placa controladora?
     - a porta USB dos computadores tem proteção contra sobrecarga mas isto não garante de forma absoluta que a porta USB não seja danificada. Isto é mais provável quando se injeta energia através da porta USB. Por exemplo conectando uma bateria à USB, o que pode acontecer caso o Arduino esteja conectado a pilhas e à USB simultaneamente.
 - Tenho uma sequência de 200 LEDs em paralelo em uma fita. Da metade do comprimento para a frente, em relação à ponta que liguei na fonte, o brilho é menor. Qual o motivo? Como fazer para o brilho ser mais uniforme?
@@ -81,7 +114,7 @@ Pode ser mais rápido encontrar uma página usando o [mapa do repositório](tree
     - [Tente aqui: explicação no repositório de um projeto de IC](https://github.com/camilabezerril/ImageCV/tree/master/Documentos/sobreGit)
 - Há modelos de documentação de projetos neste site?
     - [Modelos e Justificativas para os modelos](modelos/README.md)
-    
+
 A leitura linear do texto apresenta os conceitos na sequência de construção: dos mais elementares, combinando-os, até chegar a aplicações que foram usadas ou apresentadas na disciplina.
 
 ## Soluções para gerar este documento 

@@ -57,13 +57,15 @@ Enfim, poderia ter resolvido isto em dez minutos, lendo o comentário e usando a
 
 O código do arduino é: FSBrowser-FN.ino.
 
-## 2020-10-04-194400 (estimado a partir do timestamp código FSBeLOG.ino)
+## 2020-10-04-194400 
+
+(estimado a partir do timestamp código FSBeLOG.ino)
 
 Notei que o servidor de arquivos recebe dados dos sensores e permite que quem for analisar os dados copie os arquivos. (Isto estava na cara quando escrevi a [proposta das FuncionalidadesRecorrentes](../FuncionalidadesRecorrentes/proposta.md#Caso-seja parte-de-uma-sequência/cadeia/rede,-quais-relações-com-as-outras-atividades/elos-são-conhecidas.)
 
 São duas interfaces independentes: uma com os sensores e uma com o analista de dados.
 
-A interface com o analista de dados pode ser implementada com o [servidor HTTP e curl](README.md#2020-10-02-213534).
+A interface com o analista de dados pode ser implementada com o [servidor HTTP e curl](diario.md#2020-10-02-213534).
 
 Fui ver se havia exemplo sobre leitura/escrita de arquivos no SPIFFS, o que serviria como modelo para a interface com sensores. Tem o SPIFFS_Test. Adaptei o exemplo para criar um arquivo com nome gerado pelo instante em millis e acrescentar ao arquivo um número gerado aleatoriamente aproximadamente a cada segundo. Isto simula o funcionamento de um sensor. Salvei como SPIFFS_Test-FN. A questão de *memory wear out* começou a me preocupar.
 
@@ -79,7 +81,9 @@ Resolvi isso renomeando os dois métodos em um dos arquivos. No teste que fiz, `
 
 Isto feito, invoquei `setupFSB()` de dentro de `setup()` e `loopFSB()` de dentro de `loop()`, compilei e o programa combinado desta forma funcionou como eu esperava: Cria um arquivo e vai armazenando números e, simultaneamente, esse arquivo está na lista de arquivos do sistema e pode ser baixado usando `curl`. O resultado é a pasta Arduino/FSBeLOG.
 
-## 2020-10-05-094248 (estimado)
+## 2020-10-05-094248
+
+(estimado)
 
 Durante os testes de SPIFFS_Test-FN, vi que o ESP32 que uso tem 16MB (128Mb) de memória FLASH, mas os esquemas de memória usando SPIFFS aproveitavam apenas 4MB. Isto me incomoda.
 
@@ -189,4 +193,7 @@ Fechar e abrir a IDE, selecionar o novo esquema de memória e transferir o arqui
 
 ![sucesso](Captura%20de%20tela%20de%202020-10-05%2015-38-08.png)
 
+## 2020-10-06-193628
+
+Terminei de escrever o relatório. Comecei aprox. 15:30 (horário da primeira foto). Gastei 4 horas. 
 

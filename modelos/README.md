@@ -2,7 +2,7 @@
 
 ## Motivação
 
-Estes modelos de documentação foram criados para direcionar a atenção a características importantes para o sucesso do projeto e a avaliação apropriada do desempenho na disciplina, ambos com mínimo desperdício de tempo e esforço.
+Considerando *modelo de documento*, os textos que contém a lista dos elementos que determinados documentos precisam conter, é possível usar os modelos como instrumentos para direcionar a atenção a características importantes para o sucesso do projeto e a avaliação apropriada do desempenho na disciplina. Neste caso, a documentação do projeto demonstra que a equipe dedicou algum tempo e esforço refletindo sobre os elementos da documentação.
 
 As características observadas em todas as etapas de desenvolvimento são `Specific Measurable Attainable Relevant Time-bound` (SMART):
 
@@ -10,7 +10,7 @@ As características observadas em todas as etapas de desenvolvimento são `Speci
 - Measurable: Pouco mensurável (sem resultados ou resultados que dependem de análise qualitativa em que pode haver divergências),..., Muito mensurável
 - Attainable: difícil de atingir - a equipe, no projeto, não mostrou elementos suficientes (conhecimento prévio ou etapas de aquisição de conhecimento no próprio projeto) para o avaliador dizer se a equipe consegue atingir
 - Relevant: Pouco relevante (traz pouco aprendizado, não cumpre a finalidade do aprendizado na disciplina, limitado, pouco ambicioso);
-- Time-bound: Sem prazos definidos, ou prazos muito curtos;
+- Time-bound: Sem prazos definidos, ou prazos muito curtos versus prazos bem definidos e cumpridos;
 
 As características SMART podem ter dependências entre si. Dois exemplos:
 

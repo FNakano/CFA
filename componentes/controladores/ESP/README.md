@@ -41,3 +41,25 @@ Cada um dos tutoriais ilustrados sugere algo ligeiramente diferente. Se você s�
 
 Lembre de selecionar a placa: No ArduinoIDE, vá em Ferramentas -> placas e selecione generic esp8266.
 
+## Características em comum
+
+Memória de programa do tipo FLASH.
+
+### Limite na quantidade de leituras e escritas em memória FLASH
+
+
+
+#### Nivelamento de uso de memória FLASH
+
+Tecnologia em evolução. Em 2017 não havia biblioteca para *wear levelling* <https://forum.micropython.org/viewtopic.php?t=3429>. 
+
+Para o ESP32, o fabricante informa que há biblioteca para *wear levelling* <https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/storage/wear-levelling.html>
+
+## Uso da memória FLASH como sistema de arquivos
+
+<https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/storage/spiffs.html>
+
+<https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/storage/vfs.html>
+
+<https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/storage/fatfs.html>
+
