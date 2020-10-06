@@ -26,7 +26,7 @@ Cliente-Servidor: modelo de interação entre agentes onde o cliente solicita al
 
 emular: imitar
 
-    2. ~~Questão de pesquisa~~
+~~ Questão de pesquisa~~
 
 ### Organização do relatório
 
@@ -53,7 +53,7 @@ Usou-se um computador com sistema operacional Ubuntu-20.04LTS, RAM 8GB e as ferr
 
 ### Especificação das funcionalidades do servidor de arquivos.
 
-O servidor de arquivos recebe dados dos sensores e permite que quem for analisar os dados copie os arquivos <diario.md#2020-10-04-194400>. A API então é CRUD para os sensores e CRUD para o analista de dados. O FSBrowser apresenta CRUD para o analista de dados, que pode usar um navegador, ou, a linha de comando em seu computador <diario#2020-10-02-213534>:
+O servidor de arquivos recebe dados dos sensores e permite que quem for analisar os dados copie os arquivos <./diario.md#2020-10-04-194400>. A API então é CRUD para os sensores e CRUD para o analista de dados. O FSBrowser apresenta CRUD para o analista de dados, que pode usar um navegador, ou, a linha de comando em seu computador <./diario.md#2020-10-02-213534>:
 
 #### C - Para enviar um arquivo do diretório corrente para o ESP32:
 
@@ -214,7 +214,7 @@ O terminal é aberto e o comando para baixar o arquivo `5704.txt` é dado: `curl
 
 #### Solução para arquivos de código muito longos
 
-Ter todo o código-fonte em um arquivo só, quando há muito código, deixa-o difícil de ler, de encontrar os trechos para ajustar. Uma solução simples foi adotada <diario#2020-10-04-194400>:
+Ter todo o código-fonte em um arquivo só, quando há muito código, deixa-o difícil de ler, de encontrar os trechos para ajustar. Uma solução simples foi adotada <./diario.md#2020-10-04-194400>:
 
 A maioria dos exemplos na IDE do Arduino contém apenas um arquivo de extensão `.ino` dentro de uma pasta de mesmo nome. Testei o que ocorre se houver mais de um arquivo. A resposta é: os dois são compilados juntos.
 
@@ -226,7 +226,7 @@ Isto feito, invoquei `setupFSB()` de dentro de `setup()` e `loopFSB()` de dentro
 
 #### Novo esquema de memória
 
-Durante os testes de SPIFFS_Test-FN, vi que o ESP32 que uso tem 16MB (128Mb) de memória FLASH, mas os esquemas de memória usando SPIFFS aproveitavam apenas 4MB. <diario.md#2020-10-05-094248>. Para usar toda a memória disponível, criou-se um novo esquema de memória:
+Durante os testes de SPIFFS_Test-FN, vi que o ESP32 que uso tem 16MB (128Mb) de memória FLASH, mas os esquemas de memória usando SPIFFS aproveitavam apenas 4MB. <./diario.md#2020-10-05-094248>. Para usar toda a memória disponível, criou-se um novo esquema de memória:
 
 A solução consiste em criar a descrição da partição em um arquivo e referenciar essa descrição na informação da placa. A informação da placa é usada para compor o menu ferramentas. Como o esquema de 2M para APP e 9.5M para arquivos me atendia bem, exceto por ser FAT, criei uma cópia do arquivo na pasta referenciada abaixo:
 
@@ -271,15 +271,17 @@ Fechar e abrir a IDE, selecionar o novo esquema de memória e transferir o arqui
 
 
 5. Discussão e Conclusão
-    1. Consequências lógicas dos resultados (resultados deduzidos);
-    3. Dificuldades que levaram às soluções colaterais
-    2. Especulações/questionamentos a partir dos resultados (resultados induzidos);
+
+Baseado no resultado deste projeto, é possível criar dataloggers tanto locais quanto com redundância de armazenamento, em ambos os casos, com a comodidade da transferência de arquivos por wifi.
+
+São resultados adicionais o passo-a-passo para criação de novos esquemas de memória para ESP32 e uma metodologia para combinar código-fonte de forma organizada e com pouco esforço.
+
+Há algumas funcionalidades apresentadas nos exemplos que podem ser exploradas em novos projetos:
 O FSBrowser, além de responder requisições HTTP, parece capaz de descompactar e enviar arquivos `.gz`. Estes arquivos, por sua vez, contém código `javascript` que instruem o navegador a baixar bibliotecas de outros sites e executá-las. Com esse apoio, o servidor é capaz de apresentar gráficos e editar textos. A exploração destas funcionalidades e da forma como são implementadas podem originar outros projetos.
 
-
-    2. Desdobramentos possíveis (próximos passos, possibilidades, *spin-offs*);
 Não há (ou não encontrei) bom tutorial para o exemplo FSBrowser. Caso, com mais algumas buscas, continuar desta forma, escrever esse tutorial pode atender muitas pessoas.
 
+O desenvolvimento deste projeto começou no dia 03 de outubro às 16h com a escrita da proposta e terminou no dia 06 de outubro às 20h. Escrever este relatório levou 4 horas.
 
 6. Referências
 
