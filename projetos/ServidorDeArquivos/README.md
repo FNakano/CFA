@@ -214,7 +214,7 @@ O terminal é aberto e o comando para baixar o arquivo `5704.txt` é dado: `curl
 
 #### Solução para arquivos de código muito longos
 
-Ter todo o código-fonte em um arquivo só, quando há muito código, deixa-o difícil de ler, de encontrar os trechos para ajustar. Uma solução simples foi adotada <./diario.md#2020-10-04-194400>:
+Ter todo o código-fonte em um arquivo só, quando há muito código, deixa-o difícil de ler, de encontrar os trechos para ajustar. Uma [solução simples](./diario.md#2020-10-04-194400) foi adotada:
 
 A maioria dos exemplos na IDE do Arduino contém apenas um arquivo de extensão `.ino` dentro de uma pasta de mesmo nome. Testei o que ocorre se houver mais de um arquivo. A resposta é: os dois são compilados juntos.
 
@@ -226,7 +226,7 @@ Isto feito, invoquei `setupFSB()` de dentro de `setup()` e `loopFSB()` de dentro
 
 #### Novo esquema de memória
 
-Durante os testes de SPIFFS_Test-FN, vi que o ESP32 que uso tem 16MB (128Mb) de memória FLASH, mas os esquemas de memória usando SPIFFS aproveitavam apenas 4MB. <./diario.md#2020-10-05-094248>. Para usar toda a memória disponível, criou-se um novo esquema de memória:
+[Durante os testes de SPIFFS_Test-FN, vi que o ESP32 que uso tem 16MB (128Mb) de memória FLASH, mas os esquemas de memória usando SPIFFS aproveitavam apenas 4MB](./diario.md#2020-10-05-094248). Para usar toda a memória disponível, criou-se um novo esquema de memória:
 
 A solução consiste em criar a descrição da partição em um arquivo e referenciar essa descrição na informação da placa. A informação da placa é usada para compor o menu ferramentas. Como o esquema de 2M para APP e 9.5M para arquivos me atendia bem, exceto por ser FAT, criei uma cópia do arquivo na pasta referenciada abaixo:
 
@@ -268,9 +268,7 @@ Fechar e abrir a IDE, selecionar o novo esquema de memória e transferir o arqui
 
 ![sucesso](Captura%20de%20tela%20de%202020-10-05%2015-38-08.png)
 
-
-
-5. Discussão e Conclusão
+## Discussão e Conclusão
 
 Baseado no resultado deste projeto, é possível criar dataloggers tanto locais quanto com redundância de armazenamento, em ambos os casos, com a comodidade da transferência de arquivos por wifi.
 
@@ -283,7 +281,7 @@ Não há (ou não encontrei) bom tutorial para o exemplo FSBrowser. Caso, com ma
 
 O desenvolvimento deste projeto começou no dia 03 de outubro às 16h com a escrita da proposta e terminou no dia 06 de outubro às 20h. Escrever este relatório levou 4 horas.
 
-6. Referências
+## Referências
 
 [diário de projeto](./diario.md)
 

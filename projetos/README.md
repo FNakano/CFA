@@ -70,7 +70,7 @@ Outras proporções, que eu tenha observado, levam a resultados diferentes do pl
 
 ### Alcance e continuidade
 
-Acredito que todos que se engajam em um projeto desejam que o resultado do projeto, ou o projeto em si, gere benefícios, e beneficie a maior quantidade de pessoas possível. Para os outros perceberem o benefício do que lhes é oferecido, no contexto da disciplina, eles devem conseguir entender o que se conseguiu fazer, como foi feito, como reproduzir. A documentação do projeto é o instrumento disponível para alcançar os outros. A boa documentação facilita que o outro use o que você fez.
+Acredito que todos que se engajam em um projeto desejam que o resultado do projeto, ou o projeto em si, gere benefícios e beneficie a maior quantidade de pessoas possível. Para os outros perceberem o benefício do que lhes é oferecido, no contexto da disciplina, eles devem conseguir entender o que se conseguiu fazer, como foi feito, como reproduzir. A documentação do projeto é o instrumento disponível para alcançar os outros. A boa documentação facilita que o outro use o que você fez.
 
 A cada turma, o grupo todo é renovado. Sem boa documentação, o novo grupo inicia seu período aproximadamente no mesmo estágio do grupo anterior. Dispendendo aproximadamente o mesmo tempo e esforço, supondo que a tecnologia não mude, os resultados do novo grupo e do grupo anterior terão aproximadamente a mesma qualidade.
 
