@@ -33,65 +33,52 @@ Obrigado a todos que contribuiram para minha formação e contribuem para minha 
 
 Obrigado a Isabel Italiano, Luciano Araújo, João Marcicano pelo conhecimento compartilhado e trabalho em conjunto.
 
-## Organização da informação
+## Como navegar neste repositório
 
-Est página é o ponto de partida. As ramificações são:
-
-- [visão geral da disciplina](admin/README.md);
-    - gerenciamento da disciplina
-- organização de equipes
-    - continuous integration;
-    - extreme programming;
-    - scrum;
-- conteúdo da disciplina
-    - O conteúdo, nesta versão, é mais próximo a eletricidade, eletrônica e computação, que são os que conheço melhor. 
-- material disponível
-    - componentes;
-        - inventário;
-        - informação sobre alguns componentes que podem ser utilizados nos projetos;
-    - programas;
-        - contém informação sobre os programas, ou, ferramentas, utilizadas nos projetos e na documentação
-- entregas
-    - o que espera-se que seja entregue
-    - [documentação dos projetos da disciplina](modelos/README.md)
-        - por quê documentar?
-        - o que documentar?
-        - como documentar?
-        - modelos
-    - exemplos de projetos;
-        - contém as aplicações, algumas feitas para testar os modelos.
+Caso esteja interessado na documentação de componentes e ferramentas, pode navegar diretamente para a respectiva pasta.
 
 Os componentes são divididos em categorias funcionais: atuadores, controladores, interconexões, protocolos, sensores e vestíveis;
 
 Os programas, no momento, são app Inventor, arduino IDE, fritzing, Linux.
 
-Os projetos, no momento, são Relógio Conectado e Relógio V1.
+Os projetos completos, no momento, são [Relógio Conectado](projetos/RelogioConectado/README.md), [Relógio V1](projetos/RelogioV1/README.md), [Servidor de Arquivos](projetos/ServidorDeArquivos/README.md), [Sensor meteorológico](projetos/SensorMeteorologico/README.md).
+
+Caso queria saber como é a disciplina, você pode estar interessado em: 
+
+- [visão geral da disciplina](admin/README.md);
+    - justificativas;
+    - critérios;
+    - eventos;
+- [modelos de documentação](modelos/README.md)
+        - por quê documentar?
+        - o que documentar?
+        - como documentar?
+        - modelo para uso em repositório no github.
 
 [mapa do repositório](tree.md).
 
 Pode interessar dar uma olhada em projetos de Iniciação Científica relacionados ao tema da disciplina:
 
 - [Rede de sensores - 2018](https://github.com/AlexandreZelante/Rede-de-sensores-ic)
-- [ImageCV](https://github.com/camilabezerril/ImageCV)
-- [Actímetro](https://github.com/snorlara/Actimetro)
-- [Outra rede de sensores (ainda não público](https://github.com/FNakano/SensoresRemotos)
+- [ImageCV - 2019-2020](https://github.com/camilabezerril/ImageCV)
+- [Actímetro - 2019-2020](https://github.com/snorlara/Actimetro)
 
 ... ou em projetos apresentados anteriormente...
 
-[PopLaserCat: Exercitador de gatos. A maioria dos gatos permanecem por um bom período de tempo sozinhos em casa esperando seu dono chegar. Tudo bem que os gatos são independentes, brincam e realizam suas atividades vitais sozinhos, mas entretê-los enquanto estão sozinhos seria uma boa maneira de deixar os bichinhos e seus donos mais felizes. Assim, pensamos em uma forma inovadora de entreter o pet com laser, utilizando sensor, de forma que ele possa se divertir mesmo em um momento que estiver sozinho.](https://poplasercat.wordpress.com)
+[PopLaserCat](https://poplasercat.wordpress.com): Exercitador de gatos. A maioria dos gatos permanecem por um bom período de tempo sozinhos em casa esperando seu dono chegar. Tudo bem que os gatos são independentes, brincam e realizam suas atividades vitais sozinhos, mas entretê-los enquanto estão sozinhos seria uma boa maneira de deixar os bichinhos e seus donos mais felizes. Assim, pensamos em uma forma inovadora de entreter o pet com laser, utilizando sensor, de forma que ele possa se divertir mesmo em um momento que estiver sozinho.
 
-[Arduvias: Medição de fluxo de veículos. Neste projeto temos como objetivo monitorar a passagem de veículos em vias de acesso de grandes avenidas durante um período de tempo, para retirar dados do fluxo de movimentação do local e mostrar para os motoristas qual o acesso menos congestionado. Com essa monitoração pretendemos passar um olhar expandido de acessos das grandes avenidas de cidades com trânsito intenso, a fim de melhorar o fluxo de carro na cidade.
-](http://arduvias.weebly.com/)
+[Arduvias](http://arduvias.weebly.com/): Medição de fluxo de veículos. Neste projeto temos como objetivo monitorar a passagem de veículos em vias de acesso de grandes avenidas durante um período de tempo, para retirar dados do fluxo de movimentação do local e mostrar para os motoristas qual o acesso menos congestionado. Com essa monitoração pretendemos passar um olhar expandido de acessos das grandes avenidas de cidades com trânsito intenso, a fim de melhorar o fluxo de carro na cidade.
 
-[Cuidador de pessoas: Medidor de batimentos cardíacos, glicose, assistente digital com comunicação bluetooth.](https://projetocoxinha.tumblr.com.br)
 
-[Jardim automatizado: A ideia é criar um automatizador, usando Arduino que regue as plantas automaticamente e que as ilumine de acordo com o horário que foi programado para tal.](http://jardimautomatizado.blogspot.com.br)
+[Cuidador de pessoas](https://projetocoxinha.tumblr.com.br): Medidor de batimentos cardíacos, glicose, assistente digital com comunicação bluetooth.
 
-[Xilofone Arduino: Xilofone com garrafas PET](http://xilofonearduino.wordpress.com)
+[Jardim automatizado](http://jardimautomatizado.blogspot.com.br): A ideia é criar um automatizador, usando Arduino que regue as plantas automaticamente e que as ilumine de acordo com o horário que foi programado para tal.
 
-[Damas++: Jogo de damas com assistência do Arduino.](https://drive.google.com/open?id=0B7wgT77H3SLxT3hfVnNvcmswbmIwV2ZaY0Y3Yld4ZnVNMi1n)
+[Xilofone Arduino](http://xilofonearduino.wordpress.com): Xilofone com garrafas PET
 
-[Nosso objetivo é a construção de um espelho "inteligente", que exiba informações úteis ao usuário na própria superfície espelhada. Nossa ideia é motivada pela área de IoT (Internet of Things), que cresce a passos largos nos últimos anos, e que são fundamentais para popularizar ainda mais a tecnologia no uso cotidiano.](http://eachiansmartmirror.blogspot.com.br/)
+[Damas++](https://drive.google.com/open?id=0B7wgT77H3SLxT3hfVnNvcmswbmIwV2ZaY0Y3Yld4ZnVNMi1n): Jogo de damas com assistência do Arduino.
+
+[EACHian Smart Mirror](http://eachiansmartmirror.blogspot.com.br/): Nosso objetivo é a construção de um espelho "inteligente", que exiba informações úteis ao usuário na própria superfície espelhada. Nossa ideia é motivada pela área de IoT (Internet of Things), que cresce a passos largos nos últimos anos, e que são fundamentais para popularizar ainda mais a tecnologia no uso cotidiano.
 
 [Site da disciplina até 2018](http://ach2157.blogspot.com/)
 
