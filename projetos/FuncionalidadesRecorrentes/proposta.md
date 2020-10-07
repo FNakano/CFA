@@ -2,7 +2,7 @@
 
 # Implementação de Funcionalidades Recorrentes - Proposta
 
-## Objetivo (O que fazer)
+## Objetivo geral (O que fazer)
 
 Construir dispositivos que implementam funcionalidades recorrentes nos (meus) projetos de sensores.
 

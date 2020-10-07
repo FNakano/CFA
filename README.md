@@ -87,7 +87,7 @@ Pode interessar dar uma olhada em projetos de Iniciação Científica relacionad
 
 [Jardim automatizado: A ideia é criar um automatizador, usando Arduino que regue as plantas automaticamente e que as ilumine de acordo com o horário que foi programado para tal.](http://jardimautomatizado.blogspot.com.br)
 
-[Xilofone Arduino: Xilofone com garrafas PET](xilofonearduino.wordpress.com)
+[Xilofone Arduino: Xilofone com garrafas PET](http://xilofonearduino.wordpress.com)
 
 [Damas++: Jogo de damas com assistência do Arduino.](https://drive.google.com/open?id=0B7wgT77H3SLxT3hfVnNvcmswbmIwV2ZaY0Y3Yld4ZnVNMi1n)
 
