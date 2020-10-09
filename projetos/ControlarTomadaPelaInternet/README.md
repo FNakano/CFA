@@ -19,9 +19,10 @@
 
 ### Entregáveis previstos
 
-[vídeo com teste usando app Blynk no celular](2020-10-09-143540.webm)
+[vídeo com teste usando app Blynk no celular](https://youtu.be/cZgetUtyo48)
 
-[vídeo com teste usando curl no console do linux](out.ogv)
+ 
+[vídeo com teste usando curl no console do linux](https://youtu.be/jV4n5LRMwzM)
 
 ### Entregáveis não previstos (soluções para problemas colaterais)
 
