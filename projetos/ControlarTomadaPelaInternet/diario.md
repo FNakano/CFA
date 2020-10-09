@@ -178,6 +178,13 @@ Fazendo vídeos de demonstração, encontrei algo que pode ser um problema: Até
 
 ## 2020-10-09-145437
 
-Terminei de gravar os vídeos. Agora vou divulgar para os colaboradores.
+Terminei de gravar os vídeos. 
+Divulgado para os colaboradores.
+
+## interrompido: 2020-10-09-161952
+
+## início: 2020-10-09-165006
+
+começando relatório.
 
 
