@@ -4,9 +4,9 @@
 
 Acredito que todos que se engajam em um projeto desejam que o resultado do projeto, ou o projeto em si, gere benefícios e beneficie a maior quantidade de pessoas possível. Para os outros perceberem o benefício do que lhes é oferecido, no contexto da disciplina, eles devem conseguir entender o que se conseguiu fazer, como foi feito, como reproduzir. A documentação do projeto é o instrumento disponível para alcançar os outros. A boa documentação facilita que o outro use o que você fez.
 
-A cada turma, o grupo todo é renovado. Sem boa documentação, o novo grupo inicia seu período aproximadamente no mesmo estágio do grupo anterior. Dispendendo aproximadamente o mesmo tempo e esforço, supondo que a tecnologia não mude, os resultados do novo grupo e do grupo anterior terão aproximadamente a mesma qualidade.
+A cada turma, o grupo todo é renovado. O novo grupo inicia seu período aproximadamente com o mesmo conhecimento do grupo anterior. Há uma tendência a passar pelas mesmas dificuldades, fazer as mesmas escolhas,... Ao final, dispendendo aproximadamente o mesmo tempo e esforço, supondo que a tecnologia não mude, os resultados do novo grupo e do grupo anterior terão aproximadamente a mesma qualidade.
 
-Acredito que não precise ser assim. O novo grupo pode construir a partir do que o grupo anterior deixou. Acredito que seja importante dispor de boa documentação, onde para ser boa, requer ser concisa, correta e concentrada (em um repositório).
+Acredito que não precise ser assim. O novo grupo pode construir a partir do que o grupo anterior deixou. Acredito que um elemento necessário para permitir essa evolução seja documentar o projeto com a orientação de transmitir informação ao próximo grupo de forma concisa, correta e concentrada (em um repositório).
 
 A administração da coleção de documentos acumulados no tempo acaba sendo do docente, que é o único membro permanente do grupo. Ele também usa a documentação e, pela característica de sua função, é capaz de comparar formas de documentação. Em decorrência dessa função, é conveniente que ele decida como a documentação deve ser feita e forneça modelos e exemplos de uso.
 
@@ -40,14 +40,13 @@ O resultado das atividades. Como os resultados vão evoluindo à medida que as a
 ### Seções do relatório final
 
 1. Introdução (parte já foi feita na proposta)
-    1. ~~Contextualização (o que se sabe) e Motivação (por que se quer)~~ feito na proposta
+    1. Contextualização (o que se sabe) e Motivação (por que se quer)  (desnecessário, se for o mesmo da proposta)
     1. Revisão Bibliográfica (informação que foi encontrada durante a execução)
         1. Conceitos e Terminologia (glossário)
-    2. ~~Questão de pesquisa~~
-    3. Organização do relatório
+    3. Organização do relatório (links, please)
 2. Objetivos (os gerais foram escritos na proposta, os específicos podem ser acrescentados)
 3. Materiais e Métodos ( quais são os ingredientes e o que fazer com eles para chegar nos resultados)
-4. Resultados e indicadores de avaliação (resultados dos testes dos entregáveis)
+4. Resultados e indicadores de avaliação (resultados dos testes dos entregáveis - cada resultado como uma subseção, para facilitar links para o resultado específico)
     1. Entregáveis previstos (há informação adicional, dependendo do tipo de entregável)
     2. Entregáveis não previstos (soluções para problemas colaterais)
 5. Discussão e Conclusão
@@ -59,20 +58,24 @@ O resultado das atividades. Como os resultados vão evoluindo à medida que as a
 
 ### Informação sobre circuitos e programas (para o desenvolvedor/mantenedor)
 
-Caso o entregável seja um dispositivo, a informação mínima sobre o dispositivo é:
+Caso o entregável seja um dispositivo, a informação **mínima** sobre o dispositivo é:
 
 - Para cada componente;
     - lista de pinos;
     - fotos;
     - links para os documentos, vídeos e tutoriais que usou para aprender a usar o componente;
 - Para a interligação dos componentes;
-    - Lista de componentes que serão interligados;
-    - Lista de conexões;
+    - Lista de componentes que serão interligados (essencial);
+    - Lista de conexões (essencial);
 - Para os programas;
     - Código-fonte 
     - instruções para compilar/transferir para o dispositivo/celular/computador;
     - casos de uso, testes,...
-    
+
+Caso o entregável seja uma placa de circuito impresso, entregar o arquivo do CAD em que foi desenhada e incluir uma foto no relatório.
+
+Informação adicional como fotos, vídeos, diagramas são bemvindos.
+
 ### Informação sobre o vestível (para o desenvolvedor/mantenedor)
 
 ### Informação sobre o produto (para o usuário/cliente)

@@ -1,5 +1,26 @@
 # Blynk
 
+Uso Blynk para ler/escrever dados nos dispositivos através da internet. Até certo uso, o serviço é gratuito.
+
+[Site oficial do Blynk](https://blynk.io/)
+
+Uso o app para celular ([Android](https://play.google.com/store/apps/details?id=cc.blynk&hl=pt_BR), [iOS](https://apps.apple.com/br/app/blynk-iot-for-arduino-esp32/id808760481)) para desenvolver um app personalizado, contendo elementos como chaves, indicadores, LEDs,... 
+
+O desenvolvimento do app cria automaticamente a infraestrutura de nuvem necessária para conectar os elementos do app aos componentes do dispositivo. A URL da infraestrutura é blynk-cloud.com. O protocolo de comunicação com a infraestrutura é HTTP ([Documentação da API](https://blynkapi.docs.apiary.io/#)) e o acesso a um dispositivo específico é especificado por um token enviado por e-mail para o desenvolvedor do app personalizado.
+
+Exemplos de código para diversas plataformas podem ser personalizados e baixados [aqui](https://examples.blynk.cc/?board=ESP8266&shield=ESP8266%20WiFi&example=GettingStarted%2FBlynkBlink).
+
+Eles têm [tutoriais](https://blynk.io/en/getting-started) que mostram passo-a-passo sobre como usar a ferramenta.
+
+Também há uma [comunidade de desenvolvedores](https://community.blynk.cc/).
+
+Essas facilidades não foram suficientes para eu conseguir usar sem precisar codificar e ler a [documentação](http://docs.blynk.cc/). Em alguns momentos tive que entrar no código-fonte das ferramentas deles. [O repositório é github](https://github.com/blynkkk). Por exemplo, precisei de mais ou menos um dia de trabalho (8h) para achar como enviar dados para o dispositivo através do navegador, ou de `curl`, e que o ADC do ESP8266 é acessado pelo 'pino' `d17`. Mais detalhes no projeto para [controlar tomada pela internet](../../projetos/ControlarTomadaPelaInternet/README.md)
+
+Há vários exemplos de uso de blynk com DHTXX. Eles não mostram como consultar através de `curl`, ou `Java`, ou `C`, o que é contemplado no projeto do Controle de Tomada.
+
+- [Node ESP8266 com DHT, em Português](http://www.blogdarobotica.com/2020/07/14/monitorando-temperatura-e-umidade-pelo-celular-utilizando-a-plataforma-blynk/)
+- [Node ESP8266 com DHT, em Inglês](https://www.hackster.io/Manoranjan2050/dht11-and-nodemcu-with-blynk-10e6b1)
+- [Node 32s com DHT, sensor de chuva e BMP280](https://www.curtocircuito.com.br/blog/analise-climatica-esp32-blynk)
 
 
 sites em que pesquisei:

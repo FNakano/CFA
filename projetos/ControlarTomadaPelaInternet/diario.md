@@ -122,6 +122,20 @@ HTTP/1.1 200 OK
 
 </pre>
 
+## 2020-10-12-200954
+
+Hoje de manhã tive um contratempo: a placa de chapadur molhou com a água que vazou do umidificador.
+
+Para manter a programação (interna) de terminar hoje, cortei uma chapa nova, cortei as barras roscadas de 1/8pol. para fazer os 'parafusos' das tomadas;
+
+As derivações nos jumpers quebraram: os fios eram muito finos, o corte do isolamento atingiu o fio também. Eu não consigo fazer derivações em fio 26 trançado, consigo em cabo de 2,5mm^2. Material para a parte sobre conexões. Ao invés de derivações, melhor usar headers soldados a uma placa-padrão. Usei uma recuperada de projeto antigo.
+
+Como no projeto do DHT o sensor DHT estava na GPIO5, que estava desocupada, juntar este projeto com o do DHT foi quase fácil. A biblioteca do DHT mudou - tive que ajustar o código para funcionar com a nova biblioteca. É um 'a mais'. A vantagem é liberar um ESP e uns créditos no blynk.
+
+Estou desde as 10h alternando entre várias atividades - este projeto entre elas. Vou computar umas 3h no projeto.
+
+
+
 sites em que pesquisei:
 
 https://mail.google.com/mail/u/0/#search/blynk/FMfcgxwKhqdfPzCwMRlrvRhFRJqQdzMW
@@ -186,5 +200,71 @@ Divulgado para os colaboradores.
 ## início: 2020-10-09-165006
 
 começando relatório.
+
+## interrompido: 2020-10-09-184500
+(estimado pelo horário de salvamento do README)
+
+## início: 2020-10-11-090000
+(estimado de memória)
+
+Fui comprar peças para completar a montagem.
+
+## interrompido: 2020-10-11-103000
+(estimado pelo horário de fim do GP Eifel)
+
+parafuso 5/32
+
+## início: 2020-10-11-131000
+(estimado pelo horário de início do filme FF4 na record)
+
+montei a placa com 3 atuadores e testei o conjunto. Funciona. Preciso encontrar um lugar para deixar montado e ligado.
+
+## término: 2020-10-11-184702
+
+## 2020-10-14-195226
+
+Reunião do grupo de pesquisa. Vi que se digitar a URL na barra de endereço do navegador também funciona:
+
+`http://blynk-cloud.com/o08E8QWoQlbKcuiS-LIGpqyXyooRft5x/get/v6`
+`http://blynk-cloud.com/o08E8QWoQlbKcuiS-LIGpqyXyooRft5x/get/v5`
+`http://blynk-cloud.com/o08E8QWoQlbKcuiS-LIGpqyXyooRft5x/update/d15?value=0`
+
+## 2020-10-15-150000
+
+Este projeto tornou-se bastante extenso pois eu quis fazer algo que eu sentisse que me fosse útil. É uma escolha diferente de ater-me a cumprir o objetivo.
+
+Para 'ser útil' precisa contemplar um vídeo do dispositivo funcionando com as leituras dos sensores variando em função do controle dos atuadores.
+
+A solução simples seria levar o computador com a webcam, abrir cheese, gravar o desktop e ir fazendo as requisições pelo teclado.
+
+MAS eu tenho que complicar...
+
+A imagem da webcam não é das melhores, o lugar onde quero fazer a filmagem não tem mesa, enviar os comandos 'na mão' não é tão sexy...
+
+Tenho duas ESP-CAM - uma que testei, a imagem é boa - outra que não testei. Alguma poderia substituir a webcam. BOM... nisso foram dois dias de trabalho, renderam mais dois projetos no site e mais trabalho para documentar os projetos, mas se não documentar, daqui um mês não vou mais lembrar o que fiz...
+
+A linguagem de programação que meus colaboradores no projeto que precisa deste é Java. Então passou a fazer parte deste, saber como comunicar com o dispositivo usando Java... Isto deu no `Gurl`, no `Reminder` e no `AnnoyingBeep`.
+
+O Gurl vem deste post: <https://stackoverflow.com/questions/1485708/how-do-i-do-a-http-get-in-java>. É muito simples, funciona, mas não trata codificação de caracteres, proxy, ... o que apontaram e disseram que a solução seria Apache Http Client. Este post <https://mkyong.com/java/how-to-send-http-request-getpost-in-java/> indica algumas alternativas. Neste outro post: <https://www.baeldung.com/java-http-request>, há indicação que o código que usei talvez se torne obsoleto logo...
+
+Criei Atua e Sense para a interface com os atuadores e sensores, ajustei annoyingbeep para usar sense.
+
+## 2020-10-15-201519
+
+Programas testados e funcionando.
+
+## 2020-10-16-153145
+
+Comando/Programa para gravar o vídeo: `recordmydesktop --fps=1 --v_quality=32 --no-sound`
+
+Comando/Programa para acelerar o video 4x: `ffmpeg -i out.ogv -filter:v "setpts=0.25*PTS" out4x.ogv`
+
+Referência para edição de vídeo: <https://trac.ffmpeg.org/wiki/How%20to%20speed%20up%20/%20slow%20down%20a%20video>
+
+Como inserir foto no yEd: <https://yed.yworks.com/support/qa/1133/can-i-add-an-image-to-a-flowchart-diagram>
+
+
+ 
+
 
 

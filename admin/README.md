@@ -13,6 +13,13 @@ O tempo do semestre será dividido em partes:
 5. Desenvolvimento e orientação;
 6. Entrega;
 
+Acredito que todos que se engajam em construir algo desejam que o resultado, ou o processo de produção, gere benefícios e beneficie a maior quantidade de pessoas possível. Para os outros perceberem o benefício do que lhes é oferecido, no contexto da disciplina, eles devem conseguir entender o que se conseguiu fazer, como foi feito, como reproduzir.
+
+A cada turma, o grupo todo é renovado. O novo grupo inicia seu período aproximadamente com o mesmo conhecimento do grupo anterior. Há uma tendência a passar pelas mesmas dificuldades, fazer as mesmas escolhas,... Ao final, dispendendo aproximadamente o mesmo tempo e esforço, supondo que a tecnologia não mude, os resultados do novo grupo e do grupo anterior terão aproximadamente a mesma qualidade.
+
+Acredito que não precise ser assim. O novo grupo pode construir a partir do que o grupo anterior deixou. Acredito que um elemento necessário para permitir essa evolução seja documentar o projeto com a orientação de transmitir informação ao próximo grupo de forma concisa, correta e concentrada. Por isso construí o conteúdo do repositório CFA e peço para usar determinadas ferramentas e seguir determinados formatos.
+
+
 ## Avaliação
 
 Os eventos de avaliação são:
