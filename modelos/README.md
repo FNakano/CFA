@@ -21,7 +21,7 @@ Algumas estratégias de documentação foram pensadas e testadas com o objetivo 
 
 ### Seções da proposta
 
-No processo de construção da proposta, espera-se que o proponente reflita sobre sua motivação, capacidade de realização, ganhos e chance de sucesso naquilo que propõe fazer; Que se permita pesquisar que recursos necessita e que recursos tem à disposição; Que o que tem em mente é suficientemente claro para ser comunicado por escrito. Espera-se que o tempo e esforço dispendido nesta etapa seja pequeno, e que poupe tempo e esforço cuidando de imprevistos nas etapas seguintes.
+No processo de construção da proposta, espera-se que o proponente reflita sobre sua motivação, capacidade de realização, ganhos e chance de sucesso naquilo que propõe fazer; Que se permita pesquisar que recursos necessita e que recursos tem à disposição; Que o que tem em mente é suficientemente claro para ser comunicado por escrito. Espera-se que o tempo e esforço dispendido nesta etapa seja pequeno, e que poupe tempo e esforço cuidando de imprevistos nas etapas seguintes. O texto não precisa ser longo, nem usar linguagem sofisticada/rebuscada.
 
 1. Título
 2. Objetivo Gerais (O que fazer)
@@ -39,14 +39,16 @@ O resultado das atividades. Como os resultados vão evoluindo à medida que as a
 
 ### Seções do relatório final
 
+O texto não precisa ser longo, nem usar linguagem sofisticada/rebuscada.
+
 1. Introdução (parte já foi feita na proposta)
     1. Contextualização (o que se sabe) e Motivação (por que se quer)  (desnecessário, se for o mesmo da proposta)
     1. Revisão Bibliográfica (informação que foi encontrada durante a execução)
         1. Conceitos e Terminologia (glossário)
     3. Organização do relatório (links, please)
 2. Objetivos (os gerais foram escritos na proposta, os específicos podem ser acrescentados)
-3. Materiais e Métodos ( quais são os ingredientes e o que fazer com eles para chegar nos resultados)
-4. Resultados e indicadores de avaliação (resultados dos testes dos entregáveis - cada resultado como uma subseção, para facilitar links para o resultado específico)
+3. Materiais e Métodos ( quais são os ingredientes e o que fazer com eles para chegar nos resultados - esta parte precisa ser bem detalhada)
+4. Resultados e indicadores de avaliação (resultados dos testes dos entregáveis - cada resultado como uma subseção, para facilitar links para o resultado específico - esta parte precisa ser bem detalhada)
     1. Entregáveis previstos (há informação adicional, dependendo do tipo de entregável)
     2. Entregáveis não previstos (soluções para problemas colaterais)
 5. Discussão e Conclusão
