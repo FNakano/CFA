@@ -263,6 +263,9 @@ Referência para edição de vídeo: <https://trac.ffmpeg.org/wiki/How%20to%20sp
 
 Como inserir foto no yEd: <https://yed.yworks.com/support/qa/1133/can-i-add-an-image-to-a-flowchart-diagram>
 
+## 2020-10-16-192347
+
+Terminei de escrever o relatório.
 
  
 

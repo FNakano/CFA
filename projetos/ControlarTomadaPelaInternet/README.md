@@ -40,7 +40,7 @@ Ferro de solda, solda, alicates, chaves de fenda e phillips.
 
 Preparação
 
-- Instalar Arduino IDE;
+- [Instalar Arduino IDE](/programas/arduinoIDE/README.md);
     - Instalar pacote para placa ESP8266;
     - Instalar biblioteca para DHT22;
     - Instalar biblioteca Blynk;
