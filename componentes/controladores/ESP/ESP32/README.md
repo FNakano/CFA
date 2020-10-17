@@ -10,3 +10,5 @@
 - [URL do esquemático do SparkFun Thing](https://cdn.sparkfun.com/assets/learn_tutorials/5/0/7/esp32-thing-schematic.pdf)
 - [Cópia local do esquemático do SparkFun Thing](esp32-thing-schematic.pdf)
 
+Mais modelos no projeto [ESP32-CAM](/projetos/ESP32-CAM/README.md)
+

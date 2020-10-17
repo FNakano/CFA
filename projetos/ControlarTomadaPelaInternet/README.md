@@ -96,11 +96,14 @@ O dispositivo é programado usando [Arduino IDE](README.md#programa-arduino). Ci
 | header Vcc | + | +  | + |
 | header GND | - | -  | - |
 
-A placa de distribuição distribui Vcc e GND para vários componentes. A placa apóia duas fileiras de pinos (dois headers). Os pinos em cada fileira são curto-circuitados. A energia é fornecida pelo carregador de celular, através do WittyBoard e distribuída. Foi a solução que encontrei quando tentei fazer derivações dos jumpers mas as soldas quebraram.
+A placa de distribuição distribui Vcc e GND para vários componentes. A placa apóia duas fileiras de pinos (dois headers), na foto, uma no fundo, uma na frente. Os pinos em cada fileira são soldados juntos. A energia é fornecida pelo carregador de celular, através do WittyBoard e distribuída. Foi a solução que encontrei quando tentei fazer derivações dos jumpers mas as soldas quebraram.
+
 
 ![placa de distribuição](IMG_20201016_181147909.jpg)
 
 ![derivações quebradas](IMG_20201012_153949868.jpg)
+
+[sobre interconexões](/componentes/interconexoes/README.md)
 
 Conexões com a rede elétrica (CUIDADO! Fazê-las com o plugue desligado e checar para evitar curto-circuitos e conexões estranhas)
 
