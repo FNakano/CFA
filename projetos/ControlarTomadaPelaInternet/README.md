@@ -40,16 +40,19 @@ Ferro de solda, solda, alicates, chaves de fenda e phillips.
 
 Preparação
 
-- [Instalar Arduino IDE](/programas/arduinoIDE/README.md);
-    - Instalar pacote para placa ESP8266;
-    - Instalar biblioteca para DHT22;
-    - Instalar biblioteca Blynk;
-        - Baixar e instalar o programa no ESP8266
-- Instalar Blynk no celular;
+- [Instalar Arduino IDE](/programas/arduinoIDE/README.md); <!--- o link absoluto funcionou! --->
+    - [Instalar pacote para placa ESP8266](/componentes/controladores/ESP/README.md#configurar-arduinoide-para-programar-o-ESP8266-ou-o-ESP32);
+    - [Instalar biblioteca para DHT22](Captura%20de%20tela%20de%202020-10-17%2011-02-52.png);
+    - [Instalar biblioteca Blynk](Captura%20de%20tela%20de%202020-10-17%2011-03-19.png);
+- [Instalar Blynk no celular](/programas/blynk/README.md);
     - Instalar usando o celular e acessando Play Store no Android ou App Store no iOS.
     - Criar o app no Blynk;
+- [Baixar e instalar o programa no ESP8266](blynkTresLEDeDHT22-limpo.ino);
+    - Inserir no programa nome e senha da rede local e token do app Blynk;
 - Instalar `curl` 
-- Instalar `Java`
+    - no Ubuntu 20.04LTS: `sudo apt install curl`
+- Instalar o ambiente de programação (SDK) `Java`
+    - No Ubuntu 20.04LTS: `sudo apt install openjdk-11-jdk`
 
 ## Resultados e indicadores de avaliação 
 (resultados dos testes dos entregáveis)
