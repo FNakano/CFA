@@ -78,6 +78,12 @@ Foi isto que me fez passar para o TTGO-Camera.
 
 ![RSSI](Captura%20de%20tela%20de%202020-10-17%2019-32-08.png)
 
+#### mDNS
+
+Em redes com suporte a [mDNS](/componentes/protocolos/Ethernet/README.md#mdns), é possível associar um nome ao IP. No caso deste código, o nome é `esp-cam.local`. Digitando esse nome na barra de endereços do navegador, se a rede tiver suporte, a página da câmera será mostrada.
+
+[Código-fonte](/projetos/ESP32-CAM/CameraWebServerMDNS-FN)
+
 ## Discussão e Conclusão
 
 Na minha opinião, dificultam o uso do ESP-CAM.

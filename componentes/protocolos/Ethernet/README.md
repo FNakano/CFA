@@ -1,4 +1,12 @@
-#mDNS
+# Ethernet
+
+IEEE 802
+
+IEEE 802.11 = wifi
+
+IEEE 802.14 = Zigbee
+
+## mDNS
 
 Domain Name System (DNS) é o sistema que associa nomes de domínio, por exemplo voce.com.br, com um IP, por exemplo 192.168.1.1 .
 
