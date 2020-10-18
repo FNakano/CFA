@@ -38,6 +38,8 @@ TTGO-Camera
 
 Código-fonte do exemplo que funcionou para ESP-CAM - usei o exemplo que vem com a biblioteca da placa ESP32. A placa que selecionei é ESP-CAM. Para programar, conectar GPIO0 a GND, clicar no upload do programa e resetar o ESP-CAM (apertar o botão de reset).
 
+[Código-fonte do programa que usei para ESP-CAM](CameraWebServer-FN)
+
 [Código-fonte do exemplo que funcionou para TTGO-CAMERA](TTGO-Camera-FN)
 
 No código do exemplo, ajustar nome da rede e senha.
@@ -54,7 +56,7 @@ No código do exemplo, ajustar nome da rede e senha.
 
 #### Programação do ESP-CAM
 
-Para programar, conectar GPIO0 a GND, clicar no upload do programa e resetar o ESP-CAM (apertar o botão de reset).
+Para enviar programa, conectar GPIO0 a GND, clicar no upload do programa e resetar o ESP-CAM (apertar o botão de reset).
 
 #### Conexão do ESP-CAM à porta USB
 
@@ -70,9 +72,19 @@ Isto faz o framerate em resolução VGA ser aprox. 1fps.
 
 Foi isto que me fez passar para o TTGO-Camera.
 
+**novidade**: Mudei a conexão da antena. Foi escolha melhor que comprar antena (prazo,tempo), encostar o componente (desperdício), ou jogá-lo no lixo - tive vontade pois nessa mudança de conexão sofri para desconectar o 'jumper' e sofri mais ainda para colocar o fio que serve como jumper para a antena F invertida. Arranquei um pod da PCI. Só valeu a pena porque deu certo. A intensidade do sinal foi de -80 para -60. Agora consegui -50dBm, framerate em VGA de 12fps.
+
+![jumper](IMG_20201017_193522844.jpg)
+
+![RSSI](Captura%20de%20tela%20de%202020-10-17%2019-32-08.png)
+
 ## Discussão e Conclusão
 
-Na minha opinião, a falta da conexão USB e/ou de um pino de RESET no header dificulta o uso do ESP-CAM.
+Na minha opinião, dificultam o uso do ESP-CAM.
+
+- a falta da conexão USB
+- a falta de pino de RESET no header
+- o posicionamento do botão de reset no lado do header ('costas') da placa.
 
 ### Consequências lógicas dos resultados (resultados deduzidos);
 ### Dificuldades que levaram às soluções colaterais

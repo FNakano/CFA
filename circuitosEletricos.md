@@ -93,17 +93,49 @@ Usando a fórmula de outra forma possível, diferentes materiais submetidos à m
 
 ### Prática: Acender um LED
 
+Este é um dos primeiros objetivos no aprendizado do uso de microcontroladores. É uma espécie de 'Olá Mundo'.
+
+Três exemplos:
+
+- <https://www.arduino.cc/en/Tutorial/BuiltInExamples/Blink>
+- <https://brasilrobotics.blogspot.com/2011/02/pisca-led-o-primeiro-exemplo-para.html>
+- <https://learn.adafruit.com/adafruit-arduino-lesson-2-leds/blinking-the-led>
+
+A pergunta que não quer calar:
+
+> Por quê em um exemplo o resisitor tem 220ohm, no outro 270ohm e no outro 1000ohm?
+
+Resposta abaixo...
+
 #### A teoria 
 
-Condições extremas de funcionamento (como queimar um LED).
+A intensidade de emissão (brilho) de um LED, dentro de uma certa faixa(!), é diretamente proporcional à corrente que passa por ele. 
 
-    Em geral peças são fabricadas para funcionar em determinadas condições e suportam algumas condições extremas. Os manuais das peças trazem essas condições. Em componentes eletrônicos, as condições extremas estão em um quadro marcado "Absolute Maximum Ratings". Nessas condições o componente pode queimar ou ter sua vida útil reduzida significativamente.
+1. Abaixo de um certo valor de corrente, nossos olhos não percebem o brilho do LED. Vamos convencionar que esse valor seja 1mA. 
+2. Acima de um certo valor de corrente, o aumento no brilho torna-se imperceptível, e um pouco mais além, o LED queima.
 
-    Em um manual de um LED (https://www.vishay.com/docs/83171/tlur640.pdf) tem-se Vr=6V, ou seja, se esse LED for ligado com os terminais invertidos, a maior tensão que ele suporta é 6V. If=20mA acima de 20mA constante o LED pode queimar ou ter sua vida útil reduzida significativamente. Ifsm=1A caso receba um pico de corrente acima de 1A o LED pode queimar. Pv=60mW a potência sobre o LED deve ser no máximo 60mW. É muito provável que este componente queime imediatamente se conectado com a polaridade certa diretamente na USB (por exemplo os pinos 5V e GND do arduino) pois a USB fornece 5V e até 500mA.
+##### Condições extremas de funcionamento (como queimar um LED).
+
+Em geral peças são fabricadas para funcionar em determinadas condições e suportam algumas condições extremas. Os manuais das peças trazem essas condições. Em componentes eletrônicos, as condições extremas estão em um quadro marcado "Absolute Maximum Ratings". Nessas condições o componente pode queimar ou ter sua vida útil reduzida significativamente.
+
+Em um manual de um LED (https://www.vishay.com/docs/83171/tlur640.pdf) tem-se Vr=6V, ou seja, se esse LED for ligado com os terminais invertidos, a maior tensão que ele suporta é 6V. If=20mA acima de 20mA constante o LED pode queimar ou ter sua vida útil reduzida significativamente. Ifsm=1A caso receba um pico de corrente acima de 1A o LED pode queimar. Pv=60mW a potência sobre o LED deve ser no máximo 60mW. É muito provável que este componente queime imediatamente se conectado com a polaridade certa diretamente na USB (por exemplo os pinos 5V e GND do arduino) pois a USB fornece 5V e até 500mA.
+
+**Questão**: Para que valores de resistor, enxergamos o brilho do LED?
+ 
+1. Se queremos enxergar o LED acender, sem queimá-lo, deduz-se das condições 1 e 2, que a corrente sobre o LED deve estar entre 1mA e 20mA.
+2. Segundo o manual, um LED vermelho, na faixa de funcionamento, requer Vf=1,7V (esta aproximação é suficiente para o objetivo, mas existem formas mais acuradas de obter Vf);
+3. A tensão que a porta USB fornece é 5V;
+4. Então, pela lei das malhas, a tensão no resistor é Vr=5-1,7=3,3V;
+5. Pela lei dos nós, a corrente no resistor é a mesma corrente no LED;
+6. A lei de Ohm estabelece uma relação linear entre tensão e corrente, portanto só precisamos calcular os valores extremos. Os valores intermediários são obtidos por interpolação linear;
+7. No extremo de mínima corrente, R=3,3V/1mA=3300ohm;
+8. No extremo de máxima corrente, R=3,3V/20mA=165ohm;
+9. Logo, **qualquer resistor entre 165ohm e 3300ohm serve para acender o LED, observadas as condições de funcionamento que convencionamos.**.
+
 
 ### Entradas e Saídas
 
-   Outro exemplo: um pino do arduino configurado para saída digital suporta até 5V e 40mA (https://playground.arduino.cc/Main/ArduinoPinCurrentLimitations). Em tese, conectar um LED diretamente ao pino de saída vai queimar ou o LED ou o pino do arduino ou os dois. Não se recomenda fazer isto MAS...
+Outro exemplo: um pino do arduino configurado para saída digital suporta até 5V e 40mA (https://playground.arduino.cc/Main/ArduinoPinCurrentLimitations). Em tese, conectar um LED diretamente ao pino de saída vai queimar ou o LED ou o pino do arduino ou os dois. Não se recomenda fazer isto MAS...
 ... os pinos do arduino (especificamente do ATMega328 têm proteção contra sobrecorrente, o que geralmente evita que a saída do arduino e o LED queimem.
 
    Componentes robustos como arduino e boas placas USB têm circuitos que evitam que sofram danos. Usar um hub USB entre o computador e o arduino ou outro componente pode trazer um pouco mais de segurança.
