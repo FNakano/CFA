@@ -41,7 +41,14 @@ Os componentes são divididos em categorias funcionais: atuadores, controladores
 
 Os programas, no momento, são app Inventor, arduino IDE, fritzing, Linux.
 
-Os projetos completos, no momento, são [Relógio Conectado](projetos/RelogioConectado/README.md), [Relógio V1](projetos/RelogioV1/README.md), [Servidor de Arquivos](projetos/ServidorDeArquivos/README.md), [Sensor meteorológico](projetos/SensorMeteorologico/README.md).
+Os projetos completos, no momento, são:
+1. [Relógio Conectado](projetos/RelogioConectado/README.md), 
+2. [Relógio V1](projetos/RelogioV1/README.md), 
+3. [Sensor meteorológico](projetos/SensorMeteorologico/README.md).
+1. [Funcionalidades Recorrentes](../projetos/FuncionalidadesRecorrentes/README.md), 
+2. seu sub-projeto [Servidor de Arquivos](../projetos/ServidorDeArquivos/README.md)
+3. [Tomada conectada](/projetos/ControlarTomadaPelaInternet/README.md)
+4. [ESP32-CAM](/projetos/ESP32-CAM/README.md)
 
 Caso queria saber como é a disciplina, você pode estar interessado em: 
 
