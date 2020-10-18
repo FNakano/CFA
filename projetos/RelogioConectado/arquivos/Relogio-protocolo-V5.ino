@@ -63,8 +63,8 @@ long lastInteractionInstant;
 #include <WiFi.h>
 #include "time.h"
 
-const char* ssid       = "andro";
-const char* password   = "AoInfinitoEAl3m";
+const char* ssid       = "nome da rede wifi";
+const char* password   = "senha da rede";
 
 const char* ntpServer = "pool.ntp.org";
 const long  gmtOffset_sec = -3*3600;     // GMT-3

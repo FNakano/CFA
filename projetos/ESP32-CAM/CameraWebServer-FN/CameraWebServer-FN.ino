@@ -15,8 +15,8 @@
 
 #include "camera_pins.h"
 
-const char* ssid = "andro";
-const char* password = "AoInfinitoEAl3m";
+const char* ssid = "nome da rede wifi";
+const char* password = "senha da rede";
 
 void startCameraServer();
 
