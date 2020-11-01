@@ -80,7 +80,7 @@ Foi isto que me fez passar para o TTGO-Camera.
 
 #### mDNS
 
-Em redes com suporte a [mDNS](/componentes/protocolos/Ethernet/README.md#mdns), é possível associar um nome ao IP. No caso deste código, o nome é `esp-cam.local`. Digitando esse nome na barra de endereços do navegador, se a rede tiver suporte, a página da câmera será mostrada.
+Em redes com suporte a [mDNS](/componentes/protocolos/Ethernet/README.md#mdns), é possível associar um nome ao IP. No caso deste código, o nome é `esp32-cam.local`. Digitando esse nome na barra de endereços do navegador, se a rede tiver suporte, a página da câmera será mostrada.
 
 [Código-fonte](/projetos/ESP32-CAM/CameraWebServerMDNS-FN)
 
