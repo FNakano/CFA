@@ -14,15 +14,15 @@ O ESP32 tem wi-fi, bluetooth low-energy e pinos touch. Sua capacidade de process
 
 Atualmente isto está mais estável e com referências consistentes, assim, quem precisa fazer um tutorial não precisa aplicar muito tempo. Considerando como ponto de partida que ArduinoIDE versão 1.6.5 ou mais recente já esteja instalado:
 
-1. [] Entre em Arquivo->preferências;
-2. [] na linha **URLs adicionais de gerenciador de placas** acrescente 
+1. Entre em Arquivo->preferências;
+2. na linha **URLs adicionais de gerenciador de placas** acrescente 
     1. para ESP8266: `http://arduino.esp8266.com/stable/package_esp8266com_index.json`
     2. para ESP32: `https://dl.espressif.com/dl/package_esp32_index.json`
     3. Caso queira os dois, acrescente as duas URLs, separadas por vírgula
-3. [] clique ok;
-4. [] Entre em Ferramentas->placa->gerenciador de placas (talvez leve um tempinho até carregar as placas novas);
-5. [] busque por ESP8266 ou ESP32;
-6. [] instale ESP8266 ou ESP32;
+3. clique ok;
+4. Entre em Ferramentas->placa->gerenciador de placas (talvez leve um tempinho até carregar as placas novas);
+5. busque por ESP8266 ou ESP32;
+6. instale ESP8266 ou ESP32;
 
 (isto já foi testado em Windows, Linux e Raspbian Stretch no raspberry pi 4)
 
@@ -37,21 +37,21 @@ Há tutoriais ilustrados para ESP8266 em:
 
 Consiste em conectar um LED à placa do ESP8266 e fazer o LED acender ou piscar. É uma forma simples, rápida e boa de checar que você achou e ajustou adequadamente as configurações do seu ambiente de desenvolvimento e ele está funcionando bem e se todo seu procedimento para programar o ESP8266 chega ao resultado desejado.
 
-0. [] monta o circuito;
-1. [] conecta o ESP ao computador usando o cabo USB; 
+0. monta o circuito;
+1. conecta o ESP ao computador usando o cabo USB; 
    - apesar do ESP ter o modem wi-fi embutido, a conexão não é automática e a programação é feita pela USB. É possível atualizar o programa *over the air* (OTA) há exemplo para isso.
    - no linux, um indicador que a conexão foi feita é aparecer em /dev um arquivo ttyUSBn ou ttyACMn onde n é um número;
-2. [] abre IDE do Arduino;
-3. [] seleciona porta;
+2. abre IDE do Arduino;
+3. seleciona porta;
    - no windows deve aparecer um COMn, onde n é um número. Esta porta representa seu dispositivo. Caso não apareça, pode ser mau-contato no cabo, ou ESP defeituoso, ou falta instalar algum driver no Windows;
    - no linux, deve aparecer ttyUSBn ou ttyACMn; 
-4. [] seleciona placa; 
+4. seleciona placa; 
    - para o ESP8266, costuma funcionar a escolha por `generic ESP8266`;
-4. [] Abre o programa que você deseja executar;
-5. [] compila, 
+4. Abre o programa que você deseja executar;
+5. compila, 
    - botão com um *checkmark*;
    - se alguma ferramenta de programação não estiver instalada, geralmente ocorre erro nesta etapa;
-6. [] envia programa.
+6. envia programa.
    - botão com uma *seta*;
    - se alguma ferramenta de programação não estiver instalada, ou o cabo estiver com mau-contato, ou o ESP estiver defeituoso, ocorre erro nesta etapa.
    - há modelos de ESP em que, após clicar na *seta*, é necessário apertar o botão de reset no ESP.
