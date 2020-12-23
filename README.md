@@ -45,10 +45,12 @@ Os projetos completos, no momento, são:
 1. [Relógio Conectado](projetos/RelogioConectado/README.md), 
 2. [Relógio V1](projetos/RelogioV1/README.md), 
 3. [Sensor meteorológico](projetos/SensorMeteorologico/README.md).
-1. [Funcionalidades Recorrentes](../projetos/FuncionalidadesRecorrentes/README.md), 
-2. seu sub-projeto [Servidor de Arquivos](../projetos/ServidorDeArquivos/README.md)
-3. [Tomada conectada](/projetos/ControlarTomadaPelaInternet/README.md)
-4. [ESP32-CAM](/projetos/ESP32-CAM/README.md)
+1. [Funcionalidades Recorrentes](projetos/FuncionalidadesRecorrentes/README.md), 
+2. seu sub-projeto [Servidor de Arquivos](projetos/ServidorDeArquivos/README.md)
+3. [Tomada conectada](projetos/ControlarTomadaPelaInternet/README.md)
+3. [Prototipagem com Witty board](projetos/PrototipagemWitty/README.md)
+3. [ESP32 Crossover](projetos/ESP32Crossover/README.md)
+4. [ESP32-CAM](projetos/ESP32-CAM/README.md)
 
 Caso queria saber como é a disciplina, você pode estar interessado em: 
 
@@ -70,7 +72,7 @@ Pode interessar dar uma olhada em projetos de Iniciação Científica relacionad
 - [ImageCV - 2019-2020](https://github.com/camilabezerril/ImageCV)
 - [Actímetro - 2019-2020](https://github.com/snorlara/Actimetro)
 
-... ou em projetos apresentados anteriormente...
+... ou em projetos apresentados na disciplina em oferecimentos anteriores...
 
 [PopLaserCat](https://poplasercat.wordpress.com): Exercitador de gatos. A maioria dos gatos permanecem por um bom período de tempo sozinhos em casa esperando seu dono chegar. Tudo bem que os gatos são independentes, brincam e realizam suas atividades vitais sozinhos, mas entretê-los enquanto estão sozinhos seria uma boa maneira de deixar os bichinhos e seus donos mais felizes. Assim, pensamos em uma forma inovadora de entreter o pet com laser, utilizando sensor, de forma que ele possa se divertir mesmo em um momento que estiver sozinho.
 
