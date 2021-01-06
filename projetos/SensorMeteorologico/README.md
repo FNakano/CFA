@@ -162,7 +162,7 @@ Feito o ajuste, salve, compile, envie para a placa e veja os dados no monitor se
 Medir umidade, temperatura e pressão atmosférica e enviar para o ThingSpeak.
 O código é uma junção dos exemplos de comunicação com ThingSpeak e de leitura do BME280. Em algum momento explicá-lo-ei. No momento, ofereço o [*download*](thingspeak-bme-fn-26-05.ino)
 
-
+Caso 'falte' o arquivo `secrets.h`, é o mesmo arquivo do código exemplo do ThingSpeak, ajustado segundo [instruções acima, nesta mesma página](#programar-o-esp8266-para-enviar-n%C3%BAmeros-para-o-canal). O arquivo deve estar na mesma pasta do seu *sketch* (arquivo `.ino`).
 
 ## Anotações
 
