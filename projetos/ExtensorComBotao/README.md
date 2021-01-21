@@ -1,13 +1,5 @@
 # Extensor com botão
 
-x-special/nautilus-clipboard
-copy
-file:///home/fabio/Documentos/git/CFA/projetos/ExtensorWiFi/README.md
-
-x-special/nautilus-clipboard
-copy
-file:///home/fabio/Documentos/git/CFA/projetos/ControlarTomadaPelaInternet/README.md
-
 ## Materiais
 
 - Placa baseada em ESP8266 - usei [Witty board](/componentes/controladores/ESP/ESP8266/README.md#wittyboard). Uso os LEDs do Wittyboard para indicar estado e o botão como sensor. Para usar outras placas, como Node8266, TTGO8266, montar ao menos o botão na GPIO4 com um resistor *pull-up*.
@@ -16,7 +8,7 @@ file:///home/fabio/Documentos/git/CFA/projetos/ControlarTomadaPelaInternet/READM
 
 ## Método
 
-A partir do código do Extensor, adaptar e acrescentar o código de cliente HTTP (dos exemplos da IDE do Arduino), usar a requisição do controle de tomadas.
+A partir do código do [Extensor WiFi](/projetos/ExtensorWiFi/README.md), adaptar e acrescentar o código de cliente HTTP (dos exemplos da IDE do Arduino), usar a requisição do [controle de tomadas](/projetos/ControlarTomadaPelaInternet/README.md).
 
 ## Resultados
 
