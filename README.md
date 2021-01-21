@@ -52,6 +52,7 @@ Os projetos completos, no momento, são:
 3. [ESP32 Crossover](projetos/ESP32Crossover/README.md)
 4. [ESP32-CAM](projetos/ESP32-CAM/README.md)
 5. [Extensor/Repetidor WiFi](projetos/ExtensorWiFi/README.md)
+6. [Extensor com botão](projetos/ExtensorComBotao/README.md)
 
 Caso queria saber como é a disciplina, você pode estar interessado em: 
 
