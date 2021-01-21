@@ -23,6 +23,12 @@ A anotação do Martin Ger no projeto 2, transcrita abaixo, indica que, em vers�
 
 Localizar, configurar, compilar, executar, documentar o exemplo de repetidor wifi no exemplo da IDE do Arduino.
 
+## Materiais
+
+- Placa baseada em ESP8266 - usei [Witty board](/componentes/controladores/ESP/ESP8266/README.md#wittyboard). Outras, como Node8266, TTGO8266 devem servir;
+- [Arduino IDE](/componentes/controladores/ESP#configurar-arduinoide-para-programar-o-esp8266-ou-o-esp32) - interface de programação.
+- Cabo USB para energia e dados, compatível com a placa - usado para conectar a placa ao computador;
+
 ## Resultados
 
 ### Localizar
