@@ -51,6 +51,7 @@ Os projetos completos, no momento, são:
 3. [Prototipagem com Witty board](projetos/PrototipagemWitty/README.md)
 3. [ESP32 Crossover](projetos/ESP32Crossover/README.md)
 4. [ESP32-CAM](projetos/ESP32-CAM/README.md)
+5. [Extensor/Repetidor WiFi](projetos/ExtensorWiFi/README.md)
 
 Caso queria saber como é a disciplina, você pode estar interessado em: 
 

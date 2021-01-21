@@ -84,6 +84,8 @@ Em redes com suporte a [mDNS](/componentes/protocolos/Ethernet/README.md#mdns), 
 
 [Código-fonte](/projetos/ESP32-CAM/CameraWebServerMDNS-FN)
 
+Dispositivos Android não oferecem suporte para mDNS. Neste caso é necessário acessar por IP. Para saber o IP, fazer ping para a câmera a partir de um computador que tenha acessado a câmera através do nome mDNS.
+
 ## Discussão e Conclusão
 
 Na minha opinião, dificultam o uso do ESP-CAM.

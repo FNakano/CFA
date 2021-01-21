@@ -87,8 +87,18 @@ Esta com comparativo e programas de várias câmeras: <https://github.com/lewisx
 
 Todas as alternativas que encontrei expõe toda a rede local.
 
+## 2021-01-18-091117
 
+Instalei a câmera em local permanente no sábado. Hoje (segunda) tentei acessá-la mas não consegui. O navegador informava que o servidor não era atingível. Desliguei e liguei a câmera e consegui acessá-la.
 
+Coisas que notei:
+- Faltam indicadores de estado do dispositivo, como:
+    - se está ligado;
+    - se está conectado à rede;
+    - qual a intensidade do sinal;
+- mDNS não funciona no android (segundo um post, o google construiu o android para usar determinados servidores DNS - importante: isto dá a eles informação sobre cada site acessado por dispositivos android.);
+    - para acessar o esp32-cam.local do celular, tem que ser pelo IP. Para saber o IP, fazer ping usando o notebook.
+ 
 
 
 

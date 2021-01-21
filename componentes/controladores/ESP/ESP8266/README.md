@@ -83,3 +83,65 @@ Projetos neste repositório que usam esta placa:
 
 1. [Sensor meteorológico](../../../../projetos/SensorMeteorologico/README.md).
 
+## Problemas frequentes e suas soluções
+
+Há uma variedade de ferramentas de programação para ESP8266 e elas nem sempre são baseadas no mesmo núcleo (no ESP32, a Espressif padroniza o núcleo das ferramentas de programação).
+
+Até onde eu sei, diferentes núcleos, entre outras coisas, implicam em diferentes **bootloaders**, diferentes segmentações da memória flash, ... o que pode levar a uma variedade de contratempos, por exemplo, instabilidade no funcionamento, dificuldade em transferir o programa,...
+
+Isto aconteceu comigo.
+
+Emprestei Witty boards para um desenvolvedor usar num projeto dele. Não dei instruções sobre como programá-los. O desenvolvedor encontrou na internet uma ferramenta de programação e programou os Witty boards, usou e depois os devolveu a mim.
+
+Um tempo depois peguei um para testar um programa. Uso Arduino IDE com placa Generic ESP8266. Eu não conseguia enviar o programa (já não tenho o traceback, acho que o erro era *invalid packet header*). Então vi a opção 'Erase Flash: "erase all flash content"'. Ativei essa opção e programei. As mensagens são as mesmas abaixo:
+
+```
+Archiving built core (caching) in: /tmp/arduino_cache_660514/core/core_esp8266_esp8266_generic_xtal_80,vt_flash,exception_legacy,ssl_all,ResetMethod_nodemcu,CrystalFreq_26,FlashFreq_40,FlashMode_dout,eesz_1M64,led_2,sdk_nonosdk_190703,ip_lm2f,dbg_Disabled,lvl_None____,wipe_all,baud_115200_5e3949df3ec8afd6d2f23643e15ed1c3.a
+Executable segment sizes:
+IROM   : 234152          - code in flash         (default or ICACHE_FLASH_ATTR) 
+IRAM   : 27864   / 32768 - code in IRAM          (ICACHE_RAM_ATTR, ISRs...) 
+DATA   : 1280  )         - initialized variables (global, static) in RAM/HEAP 
+RODATA : 740   ) / 81920 - constants             (global, static) in RAM/HEAP 
+BSS    : 25248 )         - zeroed variables      (global, static) in RAM/HEAP 
+O sketch usa 264036 bytes (27%) de espaço de armazenamento para programas. O máximo são 958448 bytes.
+Variáveis globais usam 27268 bytes (33%) de memória dinâmica, deixando 54652 bytes para variáveis locais. O máximo são 81920 bytes.
+esptool.py v2.8
+Serial port /dev/ttyUSB0
+Connecting....
+Chip is ESP8266EX
+Features: WiFi
+Crystal is 26MHz
+MAC: a0:20:a6:0f:58:99
+Uploading stub...
+Running stub...
+Stub running...
+Configuring flash size...
+Auto-detected Flash size: 4MB
+Erasing flash (this may take a while)...
+Chip erase completed successfully in 11.9s
+Flash params set to 0x0340
+Compressed 268192 bytes to 197544...
+
+Writing at 0x00000000... (7 %)
+Writing at 0x00004000... (15 %)
+Writing at 0x00008000... (23 %)
+Writing at 0x0000c000... (30 %)
+Writing at 0x00010000... (38 %)
+Writing at 0x00014000... (46 %)
+Writing at 0x00018000... (53 %)
+Writing at 0x0001c000... (61 %)
+Writing at 0x00020000... (69 %)
+Writing at 0x00024000... (76 %)
+Writing at 0x00028000... (84 %)
+Writing at 0x0002c000... (92 %)
+Writing at 0x00030000... (100 %)
+Wrote 268192 bytes (197544 compressed) at 0x00000000 in 17.5 seconds (effective 122.8 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...
+```
+
+Fazendo isto o programa foi transmitido e executado com sucesso. **Como há limite ,aprox. 10000 vezes, na quantidade de vezes que a memória flash pode ser apagada**, recomendo voltar para  'Erase Flash: "Only sketch"' para as próximas vezes em que programas forem enviados.
+
+
