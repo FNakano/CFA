@@ -67,11 +67,21 @@ LEDs WS2812 (os neopixel) necessitam de 5V em Vcc para operar, mas isso não é 
 
 Um caso em que, misturando, funciona conforme normalmente se espera, é o de conectar ESP com *shield* de relé. O circuito mais comum para esse *shield* tem um transistor para aumentar a corrente controlada e energizar a bobina do relé. Quando usado com ESP, além de aumentar a corrente, ele também ajusta os 3.3V para 5V. Tecnicamente, funciona como *level shifter* ou *level converter* unidirecional, o que é suficiente para que o relé ligue e desligue conforme o esperado.
 
-Projetos neste repositório que usam esta placa:
+### Projetos neste repositório que usam esta placa
 
 1. [Tomada conectada](../../../../projetos/ControlarTomadaPelaInternet/README.md)
 3. [Prototipagem com Witty board](../../../../projetos/PrototipagemWitty/README.md)
 3. [ESP32 Crossover](../../../../projetos/ESP32Crossover/README.md)
+5. [Extensor/Repetidor WiFi](/projetos/ExtensorWiFi/README.md)
+6. [Extensor com botão](/projetos/ExtensorComBotao/README.md)
+
+### Referências externas
+
+- https://www.kuongshun-ks.com/uno/uno-board-shield/esp8266-wifi-witty-cloud-development-board.html
+- https://br.pinterest.com/pin/306878162103086054/
+- https://www.instructables.com/Witty-Cloud-Module-Adapter-Board/
+- https://www.schatenseite.de/en/2016/04/22/esp8266-witty-cloud-module/
+
 
 ## TTGO ESP8266
 
