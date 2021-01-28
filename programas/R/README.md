@@ -120,6 +120,8 @@ Com isto, selecionar a hora da coluna Data/Hora é feito assim: `hour(M$'Data/Ho
 
 ## Como faço para agregar os valores por hora?
 
+### Primeira abordagem
+
 Aproveitando que a folha de dados de 2014 contém somente alguns dias de dezembro, criar uma tabela contendo dia, hora e chuva acumulada na hora fica:
 
 ``` R
@@ -129,6 +131,10 @@ b = tapply(hour(M$'Data/Hora'), hour(M$'Data/Hora')+24*day(M$'Data/Hora'), mean)
 c = tapply(M$'Valor Medida', hour(M$'Data/Hora')+24*day(M$'Data/Hora'), sum)
 )
 ```
+
+**nota**: nesta abordagem, a linha de `H` contém dia, hora e volume medido durante a hora, de hora:00 até hora:59:59.9999....
+
+**nota2**: checar qual a referência da hora (ou fuso, ou timezone).
 
 Os 'truque's que não estão nas referências: 
 
@@ -143,9 +149,51 @@ Cada 24*dia+hora tem até seis valores (por causa dos intervalos de 10 minutos o
  
 - fim dos truques.
 
+### Segunda abordagem
+
+trabalhando...
+
+https://www.google.com/search?channel=fs&client=ubuntu&q=R+accumulated+sum
+https://stackoverflow.com/questions/40042711/how-to-calculate-cumulative-sum
+https://www.google.com/search?channel=fs&client=ubuntu&q=r+integer+part
+https://stat.ethz.ch/R-manual/R-devel/library/base/html/Round.html
+https://www.google.com/search?client=ubuntu&hs=smr&channel=fs&sxsrf=ALeKk02m8SXEEcwxDn19mO-6hyMQiUPHWQ%3A1611846409350&ei=CdMSYMCCFbTX5OUPnK25oAo&q=lubridate+datediff&oq=lubridate+datediff&gs_lcp=CgZwc3ktYWIQAzIFCAAQywEyBggAEBYQHjoHCAAQRxCwAzoGCCMQJxATOgQIIxAnOggIABCxAxCDAToFCC4QsQM6CwgAELEDEMcBEKMCOggILhCxAxCDAToCCAA6BAgAEAM6BAgAEEM6BQgAELEDOgcIABCxAxBDOgQILhBDOgQIABAKOgQIABANOgYIABANEB46CAgAEA0QChAeUK6VAVjiuAFgqboBaAJwAngAgAH0AYgBxhOSAQYxLjE2LjGYAQCgAQGqAQdnd3Mtd2l6yAEEwAEB&sclient=psy-ab&ved=0ahUKEwiAq6Xl877uAhW0K7kGHZxWDqQQ4dUDCAw&uact=5
+https://data.library.virginia.edu/working-with-dates-and-time-in-r-using-the-lubridate-package/
+
+library(readxl)
+library(tidyverse)
+library(lubridate)
+M <- read_excel("Planilha Dados Pluviômetro.xlsx")
+H <- tibble (
+a = tapply(day(M$'Data/Hora'), hour(M$'Data/Hora')+24*day(M$'Data/Hora'), mean),
+b = tapply(hour(M$'Data/Hora'), hour(M$'Data/Hora')+24*day(M$'Data/Hora'), mean),
+c = tapply(M$'Valor Medida', hour(M$'Data/Hora')+24*day(M$'Data/Hora'), sum)
+)
+H %>% print (n=Inf, width=Inf)
+M$'Data/Hora'
+M$'Data/Hora'[2:200]-M$'Data/Hora'[1:199]
+
+M$'Data/Hora'[1:200]-M$'Data/Hora'[1]
+(M$'Data/Hora'[1:200]-M$'Data/Hora'[1])/(24*3600)
+int((M$'Data/Hora'[1:200]-M$'Data/Hora'[1])/(24*3600))
+trunc((M$'Data/Hora'[1:200]-M$'Data/Hora'[1])/(24*3600))
+
+(M$'Data/Hora'[1:200]-M$'Data/Hora'[1])
+
+as.duration(M$'Data/Hora'[1:200]-M$'Data/Hora'[1])/ddays(1)
+trunc(as.duration(M$'Data/Hora'[1:200]-M$'Data/Hora'[1])/ddays(1))
+trunc(as.duration(M$'Data/Hora'[1:200]-M$'Data/Hora'[1])/dhours(1))
+mean(M$'Data/Hora'[1:200])
+max(M$'Data/Hora'[1:200])
+
+
+## Como faço para imprimir a tabela toda na tela? (a tabela é um tibble)
+
 Imprimir a tabela toda na tela: `H %>% print (n=Inf, width=Inf)`
 
 [Referência](https://r4ds.had.co.nz/tibbles.html)
+
+### Juntando tudo para ter volume acumulado de chuva por hora usando a primeira abordagem
 
 O script inteiro fica:
 
