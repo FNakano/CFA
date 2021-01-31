@@ -19,6 +19,26 @@ Há muito material gratuito  na internet. Uma busca por `R tutorials` mostra iss
 3. [Este PDF está no e-disciplinas e explica bem as janelas no R-Studio, antes de mostrar e explicar os comandos básicos](https://edisciplinas.usp.br/pluginfile.php/4883125/mod_resource/content/1/Tutorial.pdf).
 4. [Este é um tutorial gratuito bastante completo usado para promover livros sobre tópicos mais avançados](http://www.r-tutor.com/r-introduction).
 
+### Comentários sobre construção e manutenção de programas de computador
+
+Esta é minha opinião...
+
+Construir e manter programas com código-fonte volumoso, baseado em outros programas (que podem mudar ou deixar de ser mantidos), é uma empreitada trabalhosa. Talvez sirva como balizador que empresas de software, como MS, G, F, ... mantém uma grande quantidade de programadores, normalmente bastante ocupados, seja para manter um programa funcionando, seja corrigindo a versão atual, seja preparando a próxima versão,... Importante: essas empresas ganham dinheiro e ordenam aos programadores o que deve ser feito (através de uma hierarquia de empresa privada).
+
+R é um *software livre*, uma expressão que indica que a intenção dos desenvolvedores e mantenedores é que o código-fonte seja público, que todos sejam livres para usar e modificar. A orientação do desenvolvimento e manutenção do software é coordenado por uma fundação. Quando o software é financeiramente bem sucedido, a fundação consegue contratar pessoas para trabalhar, caso contrário, ela é movida por voluntários. É um modelo de negócio diferente do de uma empresa privada.
+
+O desenvolvimento de R é feito, principalmente, por contribuições de usuários, que podem ser indivíduos ou grupos, estarem ligados a empresas ou não. Essas contribuições podem ser feitas escrevendo uma biblioteca, que pode então ser incorporada ao programa, dedicando algum tempo a alguma funcionalidade do programa,... Há outras formas de contribuir, claro.
+
+Isto torna comum que vários colaboradores escrevam bibliotecas para tratar a mesma questão, por exemplo, **datas**.
+
+Neste caso, as bibliotecas podem atender necessidades diferentes, ou necessidades parcialmente coincidentes, ... e fazê-lo de maneiras diferentes. Por exemplo, uma biblioteca pode tratar datas usando código próprio, outra pode aproveitar código de alguém e disponibilizado em uma biblioteca muito usada por desenvolvedores Python, outro aproveita uma biblioteca popular entre desenvolvedores C, outro aproveita as funções de data/hora do sistema operacional,...
+
+Também não há garantia que o desenvolvedor de uma biblioteca a tenha construído de maneira a ser compatível com o restante do programa.
+
+Isto significa trabalho adicional para quem desenvolve *scripts*, pois, mesmo que dois comandos diferentes tenham documentado que apresentam o mesmo resultado, estes podem não ser compatíveis, por exemplo porque um retorna o resultado como palavras, outro como números.
+
+Por outro lado, o trabalho investido no R e o resultado obtido é muito significativo, não se justifica, na minha opinião, deixar de usá-lo pelas incompatibilidade internas que ele tenha neste momento.
+
 ## Como começar com o R?
 
 Depois de baixar e instalar, iniciar e aprender alguns comandos básicos. Na lista acima, [1,3] mostram o passo a passo para baixar, instalar e iniciar. Caso goste do material, siga com ele para os comandos básicos.
@@ -29,7 +49,11 @@ Depois de baixar e instalar, iniciar e aprender alguns comandos básicos. Na lis
 
 - Em que pasta estou: `getwd()`
 - Que arquivos tem na pasta: `dir()`
-- Quero ir para *C:\outraPasta*: `setwd("C:\outraPasta"`
+- Quero ir para *C:\outraPasta*: `setwd("C:\outraPasta")` (se for Windows, no Linux a barra é a direita, não a barra invertida.)
+
+Frequentemente ocorrem problemas com a forma como o nome da pasta é escrito. É possível saber qual é o formato usando `setwd()`, ou `dir()`, e vendo como são os nomes que eles listam (por exemplo, se a barra é direita ou invertida, como os caracteres acentuados e espaços aparecem, ...), então, copiar o formato, ou marcar o texto com o mouse, copiar, e colar no `setwd(`, ajustando o que for necessário. 
+
+Os comandos do R aceitam argumentos dentro dos parêntesis. Esses argumentos podem ter várias linhas, ou seja, se você estiver digitando um argumento para um comando e, por acidente, acertar o ENTER, continue digitando o restante do argumento, feche os parêntesis e aperte ENTER para executar o comando. O sinal que se estão em um argumento é o `prompt` que muda de `&lt;` para `+`.
 
 ## Dá para carregar arquivos do Excel?
 
@@ -84,7 +108,82 @@ Error in read_excel(&quot;Planilha Dados Pluviômetro.xlsx&quot;) :
 
 </pre>
 
-## Quando carrego um Excel, Como trabalho com data e hora?
+## Como carregar uma folha de dados que não seja a primeira
+
+Em `read_excel`, acrescentar o argumento `sheet=x`. Se `x` for um número, carrega a folha de número `x`. Se `x` for uma palavra (algum texto entre double-quotes), carrega a folha de nome `x`.
+
+<pre>&gt; M &lt;- read_excel(&quot;Planilha Dados Pluviômetro.xlsx&quot;, sheet=&quot;2015&quot;)            
+&gt; dim(M)                                                                      
+[1] 5212   10
+&gt; colnames(M)
+ [1] &quot;Município&quot;        &quot;Cód Estação&quot;      &quot;UF&quot;               &quot;Nome da Estação&quot; 
+ [5] &quot;Latutude&quot;         &quot;Longitude&quot;        &quot;Data/Hora&quot;        &quot;Valor Medida&quot;    
+ [9] &quot;Mês&quot;              &quot;Acumulado Mensal&quot;
+&gt; 
+</pre>
+
+## Como saber quantas linhas e colunas tem a tabela?
+
+`dim(M)`
+
+Às vezes, a variável não é uma tabela, então o comando acima retorna `NULL`. Caso seja uma lista, o comando `length(L)` deve resolver. `nrow(M)` e `ncol(M)` acessam os mesmos atributos que `dim()` acessa, então se `dim(M)` retorna `NULL`, `nrow(M)` e `ncol(M)` também retornarão `NULL`. Referências:
+
+- https://www.google.com/search?channel=fs&client=ubuntu&q=R+number+of+rows+in+a+list
+- https://stackoverflow.com/questions/7340197/how-to-count-rows
+- https://stats.stackexchange.com/questions/5253/how-do-i-get-the-number-of-rows-of-a-data-frame-in-r
+- https://stat.ethz.ch/R-manual/R-devel/library/base/html/nrow.html
+
+
+
+
+Às vezes a informação que queremos é uma tabela dentro de uma lista, aí é necessário acessar o elemento da lista e então testar o tamanho.
+
+às vezes queremos saber qual é o tipo de dados de alguma variável. Referências sobre como R define os tipos durante a execução:
+
+- https://www.rdocumentation.org/packages/lambda.r/versions/1.2.4/topics/duck-typing
+- https://stat.ethz.ch/R-manual/R-devel/library/base/html/typeof.html
+- https://cran.r-project.org/doc/manuals/R-lang.html#Basic-types
+- https://stackoverflow.com/questions/49757080/check-the-type-of-a-vector-variable-in-r
+- https://stackoverflow.com/questions/12693908/get-type-of-all-variables/12694054
+- https://en.wikipedia.org/wiki/Duck_typing
+- https://www.datacamp.com/community/tutorials/data-types-in-r
+
+## Como saber os nomes das colunas?
+
+`colnames(M)`
+
+## Como referenciar uma coluna?
+
+`M$'nome_da_coluna'`
+
+## Como acessar/referenciar uma linha em uma coluna?
+
+`M$'nome_da_coluna'[10]` retorna o valor armazenado na linha 10 da coluna. 
+
+## Como colocar caracteres especiais, como 'grau', letras gregas,... nas legendas dos gráficos
+
+`expression(paste(...))`
+
+Referências:
+
+- https://stackoverflow.com/questions/51799118/writing-the-symbol-degrees-celsius-in-axis-titles-with-r-plotly/51799161
+- https://stats.idre.ucla.edu/r/codefragments/greek_letters/
+- https://lukemiller.org/index.php/2010/05/modifying-basic-plots-in-r/
+
+
+## Como trabalho com data e hora?
+
+### Data/Hora em programas de computador
+
+A forma como a humanidade trata o tempo contém muitas peculiaridades. Seja pelo desenvolvimento científico-tecnológico (ex. relógio atômico) seja pelo desenvolvimento social (ex. adoção do calendário Gregoriano no lugar do calendário Juliano, existência de outros sistemas, como o chinês, ...).
+
+Essas peculiaridades dificultam a construção de bons programas de computador para lidar com datas, e multiplicam a quantidade soluções particulares.
+
+No R, existem algumas funções para manipulação de data em R.base, outras em Tibble.time, outras em Lubridate, pior, elas se sobrepõe e são parcialmente compatíveis. Portanto, cabe ter cuidado e paciência quando lidar com datas.
+
+A escolha por lubridate não tem uma boa justificativa. Apenas foi a primeira que apareceu quando procurei como lidar com datas no R.
+
+### Arquivo gerado por pluviômetro do CEMADEN
 
 No caso dos arquivos gerados pelo CEMADEN, Data/Hora estão em um formato padronizado (ISO8601), o que facilita sua carga no R.
 
@@ -146,10 +245,22 @@ como são data/hora de um único mês, um número que é 24*dia+hora é suficien
 - https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/tapply
 
 Cada 24*dia+hora tem até seis valores (por causa dos intervalos de 10 minutos ou de 1 hora usados pelo instrumento). Se esses valores forem o dia de cada medida, todos os valores são iguais e iguais à média.
+
+Esta forma de trabalhar funciona, mas como ela mistura datas com escalares sem considerar meses de 30 ou 31 dias, anos bissextos, etc, resultados inesperados podem ocorrer.
  
 - fim dos truques.
 
 ### Segunda abordagem
+
+
+#### funções de agregação como mean, min e max funcionam com lubridate
+
+- https://community.rstudio.com/t/to-find-maximum-date/57790
+- https://rawgit.com/rstudio/cheatsheets/master/lubridate.pdf
+- https://r4ds.had.co.nz/dates-and-times.html
+- https://cran.r-project.org/web/packages/lubridate/lubridate.pdf
+- https://stackoverflow.com/questions/53561299/rmin-and-max-of-a-date-column-in-a-dataframe/53561477
+
 
 trabalhando...
 
@@ -159,6 +270,22 @@ https://www.google.com/search?channel=fs&client=ubuntu&q=r+integer+part
 https://stat.ethz.ch/R-manual/R-devel/library/base/html/Round.html
 https://www.google.com/search?client=ubuntu&hs=smr&channel=fs&sxsrf=ALeKk02m8SXEEcwxDn19mO-6hyMQiUPHWQ%3A1611846409350&ei=CdMSYMCCFbTX5OUPnK25oAo&q=lubridate+datediff&oq=lubridate+datediff&gs_lcp=CgZwc3ktYWIQAzIFCAAQywEyBggAEBYQHjoHCAAQRxCwAzoGCCMQJxATOgQIIxAnOggIABCxAxCDAToFCC4QsQM6CwgAELEDEMcBEKMCOggILhCxAxCDAToCCAA6BAgAEAM6BAgAEEM6BQgAELEDOgcIABCxAxBDOgQILhBDOgQIABAKOgQIABANOgYIABANEB46CAgAEA0QChAeUK6VAVjiuAFgqboBaAJwAngAgAH0AYgBxhOSAQYxLjE2LjGYAQCgAQGqAQdnd3Mtd2l6yAEEwAEB&sclient=psy-ab&ved=0ahUKEwiAq6Xl877uAhW0K7kGHZxWDqQQ4dUDCAw&uact=5
 https://data.library.virginia.edu/working-with-dates-and-time-in-r-using-the-lubridate-package/
+about:home
+https://www.google.com/search?channel=fs&client=ubuntu&q=R+accumulated+sum
+https://stackoverflow.com/questions/40042711/how-to-calculate-cumulative-sum
+https://www.google.com/search?channel=fs&client=ubuntu&q=r+integer+part
+https://stat.ethz.ch/R-manual/R-devel/library/base/html/Round.html
+https://www.google.com/search?client=ubuntu&hs=smr&channel=fs&sxsrf=ALeKk02m8SXEEcwxDn19mO-6hyMQiUPHWQ%3A1611846409350&ei=CdMSYMCCFbTX5OUPnK25oAo&q=lubridate+datediff&oq=lubridate+datediff&gs_lcp=CgZwc3ktYWIQAzIFCAAQywEyBggAEBYQHjoHCAAQRxCwAzoGCCMQJxATOgQIIxAnOggIABCxAxCDAToFCC4QsQM6CwgAELEDEMcBEKMCOggILhCxAxCDAToCCAA6BAgAEAM6BAgAEEM6BQgAELEDOgcIABCxAxBDOgQILhBDOgQIABAKOgQIABANOgYIABANEB46CAgAEA0QChAeUK6VAVjiuAFgqboBaAJwAngAgAH0AYgBxhOSAQYxLjE2LjGYAQCgAQGqAQdnd3Mtd2l6yAEEwAEB&sclient=psy-ab&ved=0ahUKEwiAq6Xl877uAhW0K7kGHZxWDqQQ4dUDCAw&uact=5
+https://data.library.virginia.edu/working-with-dates-and-time-in-r-using-the-lubridate-package/
+https://www.google.com/search?channel=fs&client=ubuntu&q=concatenate+tibbles+R
+https://dplyr.tidyverse.org/reference/bind.html
+https://garthtarr.github.io/meatR/merging.html
+https://stackoverflow.com/questions/51673607/combine-two-data-frames-or-tibbles
+https://github.com/FNakano/CFA/tree/master/programas/R
+https://www.google.com/search?channel=fs&client=ubuntu&q=barplot+r
+https://www.r-graph-gallery.com/barplot.html
+https://www.google.com/search?channel=fs&client=ubuntu&q=r+concatenate+string
+https://stat.ethz.ch/R-manual/R-patched/library/base/html/paste.html
 
 library(readxl)
 library(tidyverse)
@@ -185,6 +312,7 @@ trunc(as.duration(M$'Data/Hora'[1:200]-M$'Data/Hora'[1])/ddays(1))
 trunc(as.duration(M$'Data/Hora'[1:200]-M$'Data/Hora'[1])/dhours(1))
 mean(M$'Data/Hora'[1:200])
 max(M$'Data/Hora'[1:200])
+
 
 
 ## Como faço para imprimir a tabela toda na tela? (a tabela é um tibble)
@@ -292,8 +420,17 @@ The downloaded source packages are in
 [Referência](https://stackoverflow.com/questions/43592316/warning-in-install-packages-installation-of-package-tidyverse-had-non-zero-e)
 
 
-**notas para desenvolvedores e usuários do R de antes de 2016** ainda não sei o que é um `tibble`...
-*tibble* é o jeito moderno dos dataframes. 
+## Projetos
+
+[Ajusta dados da estação meteorológica para resolução horária](/projetos/DadosMeteorologica/README.md)
+[Ajusta dados da estação de iluminância para resolução horária](/projetos/DadosMeteorologica/README.md)
+[join (merge, fundir) dataframes](/projetos/Join/README.md)
+
+## notas para desenvolvedores e usuários do R de antes de 2016
+
+**ainda não sei o que é um `tibble`...**
+
+[*tibble* é o jeito moderno dos dataframes](https://tibble.tidyverse.org/). 
 
 A justificativa que, para mim, faz essa explicação ter algum sentido tem a ver com desenvolvimento de programas: As versões iniciais de R (lá pelos 2000), usavam dataframes como estrutura de armazenamento dos valores nas variáveis, por exemplo, tabelas eram dataframes. À medida que R foi evoluindo, a implementação dos dataframes no programa foi evoluindo, e ficando complicada, às vezes por funcionalidades que poucos aproveitavam. Em um momento, os usuários/mantenedores/programadores de R resolveram limpar o código-fonte, mantendo compatibilidade com versões anteriores. Para isso, criaram o conceito de *tibble*.
 
