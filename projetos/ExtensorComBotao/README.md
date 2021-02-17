@@ -25,6 +25,7 @@ A partir do código do [Extensor WiFi](/projetos/ExtensorWiFi/README.md), adapta
     - Por conta do circuito do botão, quando ele não está pressionado, o valor retornado por `digitalRead` é HIGH(1) e quando está pressionado é LOW(0).
     - O LED vermelho copia o nível lógico do botão, então fica aceso quando o botão não está pressionado e apaga quando o botão é pressionado.
     - O LED verde é apagado na entrada do *loop()*, e é acesso quando *wifiRequest(s)* é executado (agora que vi que seria melhor apagá-lo no *loop()*, logo depois de *wifiRequest(s)*.
+       - **nota**: o LED do wittyboard é RGB, como se fossem três LEDs com uma única lente. Desta forma, as cores se combinam. Caso verde e vermelho estejam acesos simultaneamente, o que se vê é **amarelo**.
     - Este código só funciona sem interromper a comunicação wifi quando o botão é pressionado porque o subsistema do wifi do ESP é assíncrono, ou seja, depois de configurado no *setup()*, funciona independente do programa do usuário (por isso o *loop()* do Extensor wifi está vazio). Eu não tinha certeza que seria assim, mas achava provável que fosse.
 
 ### Pontos de configuração do código-fonte
@@ -38,7 +39,7 @@ linha 116: inserir a requisição (HTTP:GET) que altera o valor da variável no 
 
 - 0:00 - À esquerda imagem de vídeo capturado por câmera contendo, à esquerda, o witty board, inicialmente desligado, e um telefone celular mostrando as redes wifi disponíveis. A rede extendedAndro não está listada. Ao centro, editor da IDE do Arduino apresentando parte do código-fonte. À direita, terminal executando capturador de tela.
 - 0:10 - cabo USB é conectado, ligando o witty board.
-- 0:13 - LED acende amarelo: verde porque enviou requisição, vermelho porque botão não está pressionado.
+- 0:13 - LED acende amarelo: combinação de verde porque enviou requisição, vermelho porque botão não está pressionado.
 - 0:17 - abre monitor serial;
 - 0:19 - a tela do celular atualiza, apresentando a rede `extendedandro`
 - a cada segundo uma requisição HTTP:GET é feita, o código de resposta HTTP:200 indica que a mensagem atingiu o servidor;
@@ -49,7 +50,52 @@ linha 116: inserir a requisição (HTTP:GET) que altera o valor da variável no 
 - 1:13 - o botão físico é pressionado, consequentemente no monitor serial a mensagem muda para `Botao = 0`, a cor do LED vai para verde, em seguida o botão (virtual) vermelho é desligado.
 - 1:16 - o botão físico é solto, consequentemente no monitor serial a mensagem volta para `Botao = 1`, a cor do LED vai para amarelo, em seguida o botão (virtual) vermelho é ligado.
 
+### Diagrama de sequência baseado no vídeo
 
+![alt text](botao.svg)
+
+Código-fonte do diagrama de sequência
+
+``` mermaid
+sequenceDiagram
+  participant Pessoa
+  participant Witty
+  participant Celular
+  participant Access Point
+  Note left of Pessoa: 0:00 wittyboard está desligado<br />celular mostra lista de redes wifi detectadas<br />o botão não está pressionado.
+  Pessoa->>Witty: 0:10 liga
+  Note left of Witty: linha 52 de RangeExtender-NAPTcomBotao-2-limpo-FN.ino<br /> enquanto não conecta no AP, o LED não acende<br />quando conecta, acende verde.
+  Witty->>Access Point: conecta WPA2 com<br /> senha e password
+  Access Point-->>Witty: conectado
+  Note left of Witty: linha 116 de RangeExtender-NAPTcomBotao-2-limpo-FN.ino<br />a cada segundo atualiza servidor.
+  Witty->>Servidor Blynk: vermelho
+  Witty->>Pessoa: 0:13 amarelo
+  Note left of Pessoa: o LED do wittyboard é RGB, como se<br />fossem três LEDs com uma única lente.<br />Desta forma, as cores se combinam.<br />Caso verde e vermelho estejam acesos simultaneamente,<br />o que se vê é **amarelo**. O LED vermelho<br />acende quando o botão físico não está pressionado. 
+  Witty->>Celular: sinal wifi<br />repetidor ligado
+  Celular->>Pessoa: 0:19 Mostra que a rede extendedAndro existe
+  Pessoa->>Celular: troca para aplicativo Blynk
+  Celular-->>Pessoa: 0:48 vermelho aceso<br /> botão físico não pressionado
+  Pessoa->>Witty: 0:58 pressiona botão físico
+  Witty-->>Pessoa: verde
+  Witty->>Servidor Blynk: não vermelho
+  Servidor Blynk->>Celular: não vermelho
+  Celular-->>Pessoa: apaga botão virtual vermelho
+  Pessoa->>Witty: 1:03 solta botão físico
+  Witty-->>Pessoa: amarelo
+  Witty->>Servidor Blynk: vermelho
+  Servidor Blynk->>Celular: vermelho
+  Celular-->>Pessoa: acende botão virtual vermelho
+  Pessoa->>Witty: 1:13 pressiona botão físico
+  Witty-->>Pessoa: verde
+  Witty->>Servidor Blynk: não vermelho
+  Servidor Blynk->>Celular: não vermelho
+  Celular-->>Pessoa: apaga botão virtual vermelho
+  Pessoa->>Witty: 1:16 solta botão físico
+  Witty-->>Pessoa: amarelo
+  Witty->>Servidor Blynk: vermelho
+  Servidor Blynk->>Celular: vermelho
+  Celular-->>Pessoa: acende botão virtual vermelho
+```
 
 ## Referências
 
