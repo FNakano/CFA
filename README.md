@@ -145,3 +145,5 @@ config    HEAD         index  <font color="#3465A4"><b>logs</b></font>  packed-r
 
 **nota** git não põe pastas vazias no repositório remoto, mesmo que existam no repositório local.
 
+**nota** testando com termux no android.
+
