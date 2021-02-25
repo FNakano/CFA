@@ -1,8 +1,12 @@
 # Interconexões
 
+Frequentemente recebo placas de sensores sem as barras de pinos soldadas (foto, placa acima). Infelizmente os contatos não se estabelecem se apenas colocarmos os pinos nas ilhas (foto, placa abaixo). Se o caso é esse, o que dá menos trabalho é soldar a barra de pinos, ou pedir para alguém fazer.
+
+![alt text](h2.jpg)
+
 Existe uma variedade de componentes para conectar eletricamente outros componentes.
 
-Na foto: 
+Na foto abaixo: 
 
 - à esquerda conector Sindal, frequentemente usado para conectar chuveiro à rede elétrica. As três linhas horizontais de dois parafusos são, cada uma, um contato, os fios a conectar são inseridos pelas laterais, os pararfusos devem ser afrouxados para inserir os fios e apertados para firmar os fios e a conexão. Os outros dois furos são usados para fixar fisicamente o conector em uma caixa ou placa;
 - no alto, azuis, conectores parafusados usados em módulos de relé. Os parafusos são afrouxados para permitir a conexão pela lateral e apertados para fixar a conexão;
@@ -16,6 +20,21 @@ Na foto:
     - [wikipedia](https://pt.wikipedia.org/wiki/Placa_de_Ensaio)
 
 ![interconexões](IMG_20201017_121308263.jpg)
+
+## Soldar barras de pinos
+
+Quando for soldar, nao aqueça o pino por muito tempo pois o plástico (preto) derrete muito fácil e o pino fica torto em relação aos outros, ou se destaca da barra (com o característico cheiro de plástico derretido).
+
+Também, numa barra, quando soldar uma sequência de pinos, dê um tempo entre uma solda e outra, para o plástico esfriar e não derreter.
+
+Barras de pinos soldadas muito inclinadas em relação ao plano da placa podem gerar falta de espaço: O conjunto de placas não encaixa (porque uma placa atrapalha o encaixe da outra), ou o conjunto não cabe na caixa (porque tem uma placa torta que faz o conjunto não caber na caixa). Fora isso, não deve haver maiores problemas. Por via das dúvidas e das mudanças, procure soldar as barras de pinos na posição certa (tem manha para isso). Na foto abaixo, a barra de pinos da placa da esquerda está (razoavelmente) perpendicular à placa, como costuma se esperar. Na placa da direita ela está suficientemente 'torta' para ser fonte potencial de problemas de espaço.
+
+![alt text](torto.jpg)
+
+A manha: quando for soldar uma barra de pinos, comece soldando o pino de alguma das extremidades (um só!). Espere o plástico esfriar, veja se precisa acertar (raramente fica bom de primeira). Se precisar acertar, aqueça o pino novamente (e rapidamente) e acerte a inclinação. Outras plaquinhas, suportes, etc. podem ser úteis para apoiar a placa que vai ter a barra de pinos soldada. Na foto abaixo usei um espelho de caixa de luz como apoio. Depois que a barra estiver acertada e bem apoiada na placa, solde o restante dos pinos (sempre com o cuidado de não derreter o plástico da barra).
+
+![alt text](apoio.jpg)
+
 
 ## Derivações
 
@@ -36,3 +55,4 @@ Uma solução é construir distribuidores com headers soldados em placas de circ
 ![distribuidor](/projetos/ControlarTomadaPelaInternet/IMG_20201012_154010890.jpg)
 
 Conversor de bitola de fio: <https://www.areaseg.com/awg.html>
+
