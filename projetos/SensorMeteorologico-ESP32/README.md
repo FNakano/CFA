@@ -23,10 +23,12 @@ Rigorosamente, este é o código do sensor, que é um dos componentes da placa. 
 Aproveitando a oportunidade, os outros componentes da placa:
 
 Provavelmente um regulador de tensão (ele converte a tensão de entrada, seja 3,3V, seja 5V para uma tensão em que o BME280 funcione (o componente queima se for ligado direto em 5V):
+
 ![alt text](my_photo-2.jpg)
 
 Rede de resistores (em conjunto com o *level shifter*, compatibiliza a tensão da sinalização (SCL, SDA) entre o BME e o controlador):
-![alt text](my_photo3-.jpg)
+
+![alt text](my_photo-3.jpg)
 
 À esquerda capacitores, acima a rede de resistores, à direita, *level shifter* como o deste [link da Pololu](https://www.pololu.com/product/2595)
 
