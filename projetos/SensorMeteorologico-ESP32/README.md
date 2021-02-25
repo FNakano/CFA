@@ -18,21 +18,32 @@ Este modelo é novo para mim. Neste projeto esta placa opera alimentada por 3.3V
 
 Rigorosamente, este é o código do sensor, que é um dos componentes da placa. Frequentemente, por "abuso de notação", uso esse código para referir-me à placa que contém o sensor. Veja o sensor na foto abaixo.
 
-![alt text](my-photo1.jpg)
+![alt text](my_photo-1.jpg)
 
 Aproveitando a oportunidade, os outros componentes da placa:
 
 Provavelmente um regulador de tensão (ele converte a tensão de entrada, seja 3,3V, seja 5V para uma tensão em que o BME280 funcione (o componente queima se for ligado direto em 5V):
-![alt text](my-photo2.jpg)
+![alt text](my_photo-2.jpg)
 
 Rede de resistores (em conjunto com o *level shifter*, compatibiliza a tensão da sinalização (SCL, SDA) entre o BME e o controlador):
-![alt text](my-photo3.jpg)
+![alt text](my_photo3-.jpg)
 
 À esquerda capacitores, acima a rede de resistores, à direita, *level shifter* como o deste [link da Pololu](https://www.pololu.com/product/2595)
 
-![alt text](my-photo4.jpg)
+![alt text](my_photo-4.jpg)
 
 Os capacitores são usados para filtrar ruído elétrico, que pode interferir no funcionamento do sensor e na comunicação entre o sensor e o controlador.
+
+## Lista de peças
+
+- uma caixa de luz 4x2, 
+- um espelho-cego, ou de antena, ou de conector de rede, 4x2, furado para atar as placas (furos feitos com furadeira e broca 2.5mm), 
+- um ESP32 DevKit, 
+- um BME280,
+- quatro jumpers fêmea fêmea e
+- um carrregador de celular.
+
+(Ver peças nas fotos da montagem abaixo)
 
 ## Lista de conexões
 
@@ -49,7 +60,7 @@ Os capacitores são usados para filtrar ruído elétrico, que pode interferir no
 
 ## Vistas do protótipo.
 
-Caixa de luz, espelho furado (furos feitos com furadeira), ESP32 DevKit, BME280.
+Caixa de luz, espelho furado (furos feitos com furadeira), ESP32 DevKit, BME280. Os 4 jumpers fêmea fêmea e o carrregador de celular, não mostrados, completam a lista de componentes.
 
 ![alt text](inicial.jpg)
 
@@ -57,7 +68,7 @@ Vou amarrar as placas com linha pois não encontrei parafusos de tamanho certo (
 
 ![alt text](amarra.jpg)
 
-Placas montadas e atadas ao espelho.
+Placas montadas e atadas ao espelho, jumpers conectando 3.3V, GND, SDA e SCL.
 
 ![alt text](montado.jpg)
 
