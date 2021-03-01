@@ -6,6 +6,20 @@ Aproveitar a oportunidade de analisar dados usando R para documentar etapas de a
 
 Documentar os pedidos e as soluções feitos por colaboradores.
 
+### Comparando R e Excel
+
+Uma pergunta que facilmente ocorre é: `Qual a diferença entre R e Excel?`
+
+Acho a diferença mais fácil de notar e de explicar envolve quantidade de dados e facilidade de operação:
+
+Concordo que muito do que é possível fazer com R também é possível com Excel. Concordo que este segundo é mais agradável aos olhos, que a interface com menus, botões, a visualização das tabelas, a operação por seleção com ponteiro do mouse é (ou tornou-se) mais intuitiva,... concordo muito que planilha é mais agradável de usar para lidar com umas três folhas de dados, cada uma com da ordem de uma dezena de colunas e da ordem de uma centena de linhas (embora selecionar uma centena de linhas para fazer um gráfico já não seja tão confortável).
+
+A planilha eletrônica já não é tão conveniente quando trabalha-se com muitas tabelas (algo como dez ou mais), cada uma com muitas colunas (algo como mais de dez) e muitas linhas (algo como umas milhares). Neste caso, selecionar o que operar clicando e arrastando com o mouse não é a forma mais rápida, e talvez não seja a mais conveniente. Por exemplo, digitar `A$temperatura[1:10000]` para selecionar as primeiras dez mil linhas da coluna `temperatura` da tabela `A`, ou, criar um gráfico de uma parte de uma tabela digitando `plot(A$temperatura[1:10000])` certamente é mais rápido e talvez seja mais conveniente.
+
+Quando, na planilha, aquilo que queremos realizar, requer que digitemos algo como `=soma(A10:A10000)`, ou requer clicar o botão para criar gráfico e preencher as faixas de dados (ao invés de selecionar com o mouse, porque as faixas são muito extensas), a operação da planilha se aproxima da operação de R: torna-se, em algum sentido, mais fácil digitar que arrastar o mouse.
+
+Em resumo e, superficialmente, a diferença é que numa a principal forma de especificar o que fazer é através de texto que obedece as regras de uma linguagem que, em princípio não conhecemos, noutra a principal forma de especificar o que fazer é gráfica, através de botões e gestos usando o mouse. A primeira é mais conveniente para grandes quantidades de dados, a segunda é conveniente para operar visualmente sobre quantidades menores de dados.
+
 ## Introdução
 
 R é um ambiente para análise estatística. Com ele é possível carregar dados armazenados em tabelas e manipulá-las, por exemplo, fazendo gráficos, aplicando testes e modelos estatísticos em poucos comandos. 
@@ -39,6 +53,12 @@ Isto significa trabalho adicional para quem desenvolve *scripts*, pois, mesmo qu
 
 Por outro lado, o trabalho investido no R e o resultado obtido é muito significativo, não se justifica, na minha opinião, deixar de usá-lo pelas incompatibilidade internas que ele tenha neste momento.
 
+### Estratégias para seguir acompanhando este material
+
+O restante desta página segue no formato Pergunta-Resposta. Em algum momento a página pode ficar longa demais, o que tornará conveniente criar algum tipo de índice ou de categorização. Enquanto isso não acontece, vamos trabalhando.
+
+Projetos com sensores são uma boa oportunidade para apresentar um pouco de análise de dados. As necessidades, consequentemente as soluções, vão surgindo dentro de um contexto, quase linearmente.
+
 ## Como começar com o R?
 
 Depois de baixar e instalar, iniciar e aprender alguns comandos básicos. Na lista acima, [1,3] mostram o passo a passo para baixar, instalar e iniciar. Caso goste do material, siga com ele para os comandos básicos.
@@ -53,7 +73,7 @@ Depois de baixar e instalar, iniciar e aprender alguns comandos básicos. Na lis
 
 Frequentemente ocorrem problemas com a forma como o nome da pasta é escrito. É possível saber qual é o formato usando `setwd()`, ou `dir()`, e vendo como são os nomes que eles listam (por exemplo, se a barra é direita ou invertida, como os caracteres acentuados e espaços aparecem, ...), então, copiar o formato, ou marcar o texto com o mouse, copiar, e colar no `setwd(`, ajustando o que for necessário. 
 
-Os comandos do R aceitam argumentos dentro dos parêntesis. Esses argumentos podem ter várias linhas, ou seja, se você estiver digitando um argumento para um comando e, por acidente, acertar o ENTER, continue digitando o restante do argumento, feche os parêntesis e aperte ENTER para executar o comando. O sinal que se estão em um argumento é o `prompt` que muda de `&lt;` para `+`.
+Os comandos do R aceitam argumentos dentro dos parêntesis. Esses argumentos podem ter várias linhas, ou seja, se você estiver digitando um argumento para um comando e, por acidente, acertar o ENTER, continue digitando o restante do argumento, feche os parêntesis e aperte ENTER para executar o comando. O sinal que se estão em um argumento é o `prompt` que muda de `>` para `+`.
 
 ## Dá para carregar arquivos do Excel?
 
@@ -217,7 +237,7 @@ Com isto, selecionar a hora da coluna Data/Hora é feito assim: `hour(M$'Data/Ho
 &gt; 
 </pre>
 
-## Como faço para agregar os valores por hora?
+## Como faço para agregar os valores nas linhas por hora?
 
 ### Primeira abordagem
 
@@ -338,6 +358,95 @@ c = tapply(M$'Valor Medida', hour(M$'Data/Hora')+24*day(M$'Data/Hora'), sum)
 H %>% print (n=Inf, width=Inf)
 ```
 
+## Como concatenar novas colunas em um tibble
+
+Esta é para colocar uma tabela ao lado da outra, sem precisar checar que linhas estão sendo colocadas lado-a-lado. 
+
+`R  <- bind_cols(J,tibble(CAD)) # https://dplyr.tidyverse.org/reference/bind.html`
+
+## Como faço para fundir duas tabelas, sincronizando as linhas.
+
+Esta é quando as linhas colocadas lado-a-lado precisam ter algumas cararcterísticas iguais - por exemplo alinhar linhas com dados da mesma hora.
+
+Exemplo: Uma tabela, T1, tem duas colunas: horaMinuto e temperatura, outra tabela, T2, tem duas colunas: horaMinuto e umidade relativa do ar. Elas estão na mesma escala de tempo, mas às vezes faltam leituras (em qualquer uma das duas). Como juntar T1 e T2 em uma tabela só, mantendo a correspondência entre horaMinuto?
+
+Com o `tidyverse`, é possível fazer isso usando `joins`, como na terceira linha do código abaixo:
+
+```R
+M <- read_csv("2020.csv")
+
+N <- read_csv("feeds-BME280.csv")
+
+J <- inner_join(M, N, by = c("Ano", "Mes", "Dia", "HoraInicio")) # https://rpubs.com/CristianaFreitas/311735
+
+```
+
+No código, M e N são as tabelas que deseja-se juntar. Das várias colunas das tabelas, elas têm colunas com nomes em comum: `$Ano`, `$Mes`, `$Dia`, `$HoraInicio`. No conjunto de dados, às vezes faltam linhas em M, às vezes em N e só interessam as datas em que as colunas de M **E** as colunas de N estão presentes. O comando que faz isso é `inner_join`.
+
+Há situações em que deseja-se que todas as linhas da primeira tabela estejam presentes. O comando que faz isso é `right_join`. Neste caso, os elementos da tabela que não tem a linha são preenchidos com `NA`.
+
+Há situações em que deseja-se que todas as linhas das DUAS tabelaS estejam presentes. O comando que faz isso é `external_join`. Neste caso, os elementos da tabela que não tem a linha são preenchidos com `NA`.
+
+
+### Referências
+
+- https://rpubs.com/CristianaFreitas/311735
+- https://www.fulljoin.com.br/posts/2016-05-12-tudo-sobre-joins/
+- https://dplyr.tidyverse.org/reference/join.html
+- https://www.r-bloggers.com/2020/05/create-and-convert-tibbles/
+
+
+**sugestão**: Pense como fazer isso numa planilha: fazer a operação equivalente a `join` entre duas folhas de dados de uma planilha.
+
+## Como gerar uma tabela (tibble) com todas as horas dentro de um intervalo (ex. de um mês)?
+
+Isto pode ser usado, por exemplo, como referência de tempo de observações em uma sequência temporal. Caso a sequência tenha algum valor faltante, a tabela que contém as observações pode simplesmente não conter a respectiva linha. Alinhar a tabela de observações com esta referência elicita os valores faltantes e permite que o analista escolha a forma adequada para tratá-los.
+
+```R
+library(tidyverse)
+library(lubridate)
+
+inicio <- ymd_hm("2020-06-01 0:00");
+fim <- ymd_hm("2020-07-01 0:00");
+
+S <- seq(inicio, fim, by='hour');
+
+# Ref.: http://uc-r.github.io/date_sequences/
+
+```
+
+## Gráficos em R
+
+Buscando `R plot examples` uma quantidade de referências com código aparecem. Vou deixar duas aqui:
+
+- https://sites.harding.edu/fmccown/r/  (mais simples)
+- https://www.r-graph-gallery.com/      (mais exemplos)
+
+Um ponto de partida pode ser: `plot(1:100)`, que faz o gráfico de uma sequência de 1 até 100. A partir daí, com `help(plot)` é possível ver outros tipos de gráficos. Outro ponto de partida é:
+
+```R
+amostras <- rnorm(100); # gera 100 observações (números) a partir de uma distribuição Normal Padrão ( média zero e variância 1). 
+hist(amostras); # gera o histograma das amostras, contando quantas "caem" em cada uma de 10 divisões)
+```
+
+![alt text](seq.png)
+![alt text](norm.png)
+
+Para criar o gráfico em um arquivo:
+
+```R
+png ("seq.png");    # cria e abre o arquivo
+plot (1:100)        # gera o gráfico no arquivo
+dev.off()           # fecha o arquivo (informa que o arquivo não receberá mais dados desta vez.
+```
+
+```R
+png ("norm.png");   # cria e abre o arquivo
+amo<-rnorm(100);    # gera 100 observações a partir de uma Normal Padrão 
+hist(amo)           # gera o gráfico no arquivo
+dev.off()           # fecha o arquivo (informa que o arquivo não receberá mais dados desta vez.
+```
+
 ## Como faço para ver todos os comandos que usei durante a seção?
 
 `history()`
@@ -423,8 +532,9 @@ The downloaded source packages are in
 ## Projetos
 
 [Ajusta dados da estação meteorológica para resolução horária](/projetos/DadosMeteorologica/README.md)
-[Ajusta dados da estação de iluminância para resolução horária](/projetos/DadosMeteorologica/README.md)
-[join (merge, fundir) dataframes](/projetos/Join/README.md)
+
+[Ajusta dados da estação de iluminância para resolução horária](/projetos/DadosIluminancia/README.md)
+
 
 ## notas para desenvolvedores e usuários do R de antes de 2016
 
