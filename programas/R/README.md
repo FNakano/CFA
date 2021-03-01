@@ -416,6 +416,10 @@ fim <- ymd_hm("2020-07-01 0:00");
 
 S <- seq(inicio, fim, by='hour');
 
+T <- tibble(S);
+
+colnames(T) <- c("dataHora");   # troca o nome da coluna por dataHora
+
 # Ref.: http://uc-r.github.io/date_sequences/
 
 ```
