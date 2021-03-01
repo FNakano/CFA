@@ -385,7 +385,7 @@ No código, M e N são as tabelas que deseja-se juntar. Das várias colunas das 
 
 Há situações em que deseja-se que todas as linhas da primeira tabela estejam presentes. O comando que faz isso é `right_join`. Neste caso, os elementos da tabela que não tem a linha são preenchidos com `NA`.
 
-Há situações em que deseja-se que todas as linhas das DUAS tabelaS estejam presentes. O comando que faz isso é `external_join`. Neste caso, os elementos da tabela que não tem a linha são preenchidos com `NA`.
+Há situações em que deseja-se que todas as linhas das DUAS tabelas estejam presentes. O comando que faz isso é `full_join`. Neste caso, os elementos da tabela que não tem a linha são preenchidos com `NA`.
 
 
 ### Referências
@@ -394,6 +394,11 @@ Há situações em que deseja-se que todas as linhas das DUAS tabelaS estejam pr
 - https://www.fulljoin.com.br/posts/2016-05-12-tudo-sobre-joins/
 - https://dplyr.tidyverse.org/reference/join.html
 - https://www.r-bloggers.com/2020/05/create-and-convert-tibbles/
+- https://dplyr.tidyverse.org/reference/join.html
+- https://rpubs.com/williamsurles/293454
+- https://r4ds.had.co.nz/relational-data.html
+- https://stackoverflow.com/questions/1299871/how-to-join-merge-data-frames-inner-outer-left-right
+- https://www.datasciencemadesimple.com/join-in-r-merge-in-r/
 
 
 **sugestão**: Pense como fazer isso numa planilha: fazer a operação equivalente a `join` entre duas folhas de dados de uma planilha.
