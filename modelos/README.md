@@ -142,6 +142,8 @@ Trata-se de uma sistematização para criação dos repositórios github onde os
 O relatório: https://github.com/camilabezerril/ImageCV/blob/master/relatorio.md foi criado com uma seleção de parágrafos e seções da documentação (plano de trabalho, ...) que estão no repositório também. A impressão em pdf, removendo a interface do site do github, é feita do arquivo .md em um repositório local, através do browser, usando o addon para renderizar markdown. Por fim, se necessário, acrescenta folha de rosto, sumário e numeração de páginas num editor pdf como https://www.ilovepdf.com/.
 
 - Instalar o Gitlab Markdown Viewer addon/plugin no navegador;
+- criar o mimetype para renderizar o arquivo;    
+   - receita: https://superuser.com/questions/696361/how-to-get-the-markdown-viewer-addon-of-firefox-to-work-on-linux
 - exibir no navegador o arquivo .md do repositório **local**;
 - imprimir para pdf;
 - acrescentar folha de rosto, sumário e numeração de páginas num editor pdf como <https://www.ilovepdf.com/>;
