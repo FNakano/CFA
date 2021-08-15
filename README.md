@@ -55,6 +55,10 @@ Os projetos completos, no momento, são:
 6. [Extensor com botão](projetos/ExtensorComBotao/README.md)
 6. [Sensor meteorológico com ESP32 DevKit](projetos/SensorMeteorologico-ESP32/README.md)
 
+Estes são projetos incompletos - em andamento ou abortados
+1. [Suporte de peito para dispositivos](projetos/suportePeitoCostas/README.md)
+2. [Color Timer](projetos/colorTimer)
+
 Caso queria saber como é a disciplina, você pode estar interessado em: 
 
 - [visão geral da disciplina](admin/README.md);
