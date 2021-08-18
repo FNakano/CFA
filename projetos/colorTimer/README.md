@@ -11,3 +11,4 @@
 
 [Código do sketch](strandtest-ParaColorTimer-ArduinoMega-2021-07-20.ino)
 
+Por conta da novidade do Mozilla Web of Things, fiz o color timer baseado em witty board, controlado por shell script colortimer.sh.

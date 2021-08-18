@@ -42,21 +42,23 @@ Os componentes são divididos em categorias funcionais: atuadores, controladores
 Os programas, no momento, são app Inventor, arduino IDE, fritzing, Linux.
 
 Os projetos completos, no momento, são:
-1. [Relógio Conectado](projetos/RelogioConectado/README.md), 
-2. [Relógio V1](projetos/RelogioV1/README.md), 
-3. [Sensor meteorológico](projetos/SensorMeteorologico/README.md).
-1. [Funcionalidades Recorrentes](projetos/FuncionalidadesRecorrentes/README.md), 
-2. seu sub-projeto [Servidor de Arquivos](projetos/ServidorDeArquivos/README.md)
-3. [Tomada conectada](projetos/ControlarTomadaPelaInternet/README.md)
-3. [Prototipagem com Witty board](projetos/PrototipagemWitty/README.md)
-3. [ESP32 Crossover](projetos/ESP32Crossover/README.md)
-4. [ESP32-CAM](projetos/ESP32-CAM/README.md)
-5. [Extensor/Repetidor WiFi](projetos/ExtensorWiFi/README.md)
-6. [Extensor com botão](projetos/ExtensorComBotao/README.md)
-6. [Sensor meteorológico com ESP32 DevKit](projetos/SensorMeteorologico-ESP32/README.md)
+1. [Relógio Conectado](projetos/RelogioConectado), 
+2. [Relógio V1](projetos/RelogioV1), 
+3. [Sensor meteorológico](projetos/SensorMeteorologico).
+1. [Funcionalidades Recorrentes](projetos/FuncionalidadesRecorrentes), 
+2. seu sub-projeto [Servidor de Arquivos](projetos/ServidorDeArquivos)
+3. [Tomada conectada](projetos/ControlarTomadaPelaInternet)
+3. [Prototipagem com Witty board](projetos/PrototipagemWitty)
+3. [ESP32 Crossover](projetos/ESP32Crossover)
+4. [ESP32-CAM](projetos/ESP32-CAM)
+5. [Extensor/Repetidor WiFi](projetos/ExtensorWiFi)
+6. [Extensor com botão](projetos/ExtensorComBotao)
+6. [Sensor meteorológico com ESP32 DevKit](projetos/SensorMeteorologico-ESP32)
+7. [Suporte para "janela" de texto rolável com display OLED SSD 1306](/projetos/DisplayRolavel)
+
 
 Estes são projetos incompletos - em andamento ou abortados
-1. [Suporte de peito para dispositivos](projetos/suportePeitoCostas/README.md)
+1. [Suporte de peito para dispositivos](projetos/suportePeitoCostas)
 2. [Color Timer](projetos/colorTimer)
 
 Caso queria saber como é a disciplina, você pode estar interessado em: 
