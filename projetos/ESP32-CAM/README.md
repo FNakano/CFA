@@ -1,5 +1,7 @@
 # Título
 
+**nota**: em 2021-09-11 usei este projeto como referência. Senti falta de alguma informação (que está no diário, felizmente). Aproveitei e fiz a revisão deste documento.
+
 ## Introdução (parte já foi feita na proposta)
 
 [Proposta](proposta.md)
@@ -15,7 +17,7 @@
 - [Revisão do ESP32-CAM](https://makeradvisor.com/esp32-cam-ov2640-camera/)
 - [Tutorial em Português para ESP32-CAM (Fernando K.)](https://www.fernandok.com/2019/04/esp32-com-camera-e-reconhecimento-facial.html)
 - [Tutorial em Portuguès para TTGO-Camera](https://www.dobitaobyte.com.br/ttgo-t-camera-com-esp32-wrover/)
-- [Repositório com exemplo ara TTGO-Camera](https://github.com/lewisxhe/esp32-camera-series.git)
+- [Repositório com exemplo para TTGO-Camera](https://github.com/lewisxhe/esp32-camera-series.git)
 
 #### Conceitos e Terminologia (glossário)
 ### Organização do relatório (links, please)
@@ -36,9 +38,12 @@ TTGO-Camera
 ## Resultados e indicadores de avaliação (resultados dos testes dos entregáveis - cada resultado como uma subseção, para facilitar links para o resultado específico)
 ### Entregáveis previstos (há informação adicional, dependendo do tipo de entregável)
 
-Código-fonte do exemplo que funcionou para ESP-CAM - usei o exemplo que vem com a biblioteca da placa ESP32. A placa que selecionei é ESP-CAM. Para programar, conectar GPIO0 a GND, clicar no upload do programa e resetar o ESP-CAM (apertar o botão de reset).
+Código-fonte do exemplo que funcionou para ESP-CAM - usei o exemplo que vem com a biblioteca da placa ESP32. A placa que selecionei é ESP-CAM. Para programar, conectar GPIO0 a GND, clicar no upload do programa e resetar o ESP-CAM (apertar o botão de reset), [conforme a referência](https://randomnerdtutorials.com/esp32-cam-ai-thinker-pinout/).
 
 [Código-fonte do programa que usei para ESP-CAM](CameraWebServer-FN)
+
+Para o TTGO-CAM usei [este código](https://github.com/lewisxhe/esp32-camera-series/tree/master/sketch), [desta referência](https://github.com/lewisxhe/esp32-camera-series).
+ 
 
 [Código-fonte do exemplo que funcionou para TTGO-CAMERA](TTGO-Camera-FN)
 

@@ -353,6 +353,11 @@ Depois de compilar e enviar o programa para o Node, o monitor serial exibe a men
 
 |[Monitor Serial](Captura%20de%20tela%20de%202021-08-13%2012-07-34.png)
 
+**nota**: Ainda não tenho lugar melhor para deixar esta anotação: para ESP8266, a biblioteca se chama ESPAsyncTCP. para ESP32 a biblioteca se chama AsyncTCP. Notei isso quando portei o código do exemplo do WebThings do BME280 para o ESP32. Acho que o autor das bibliotecas resolveu o *name-clash* desta forma.
+
+- https://github.com/me-no-dev/ESPAsyncTCP - para ESP8266
+- https://github.com/me-no-dev/AsyncTCP - para ESP32
+
 
 ### Incluir o dispositivo no gateway
 
@@ -370,7 +375,7 @@ A inclusão do dispositivo é feita a partir da seção III de https://webthings
 
 Seção III: Acrescentar o add-on Web Thing, que contém informação sobre como comunicar com dispositivos do tipo que foi construído e saltar para a sub-seção [Scan For and Add Smart Devices](https://webthings.io/docs/gateway-user-guide.html#scan-for-and-add-smart-devices)
 
-A busca pelo dispositivo deve retornar `My Lamp`. Acrescente o dispositivo e o controle, como mostrado no [vídeo]().
+A busca pelo dispositivo deve retornar `My Lamp`. Acrescente o dispositivo e o controle.
 
 ## Conclusão e discussão
 
