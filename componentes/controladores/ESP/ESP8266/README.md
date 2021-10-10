@@ -75,6 +75,9 @@ Um caso em que, misturando, funciona conforme normalmente se espera, é o de con
 5. [Extensor/Repetidor WiFi](/projetos/ExtensorWiFi/README.md)
 6. [Extensor com botão](/projetos/ExtensorComBotao/README.md)
 
+[Ao menos uma boa história sobre um fim de semana perdido...](fds.md)
+
+
 ### Referências externas
 
 - https://www.kuongshun-ks.com/uno/uno-board-shield/esp8266-wifi-witty-cloud-development-board.html
