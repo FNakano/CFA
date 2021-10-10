@@ -39,3 +39,12 @@ Neste circuito resulta:
 Os níveis são compatíveis, mas a imunidade a ruído e frequência de operação, provavelmente, são piores comparados a conversores de nível propriamente ditos. (Isto não deve ter repercussão na aplicação do grupo).
 
 [Vídeo ilustrando o funcionamento](https://drive.google.com/file/d/1CXx0jf5LLD1OFlHDYG9Z94WVD7AAV0Im/view?usp=sharing).
+
+[Placa - foto 1](20211010_140349.jpg)
+
+
+[Placa - foto 2](20211010_141218.jpg)
+
+
+[Programa do ESP32](strandtest-ParaESP32-2021-10-10.ino)
+
