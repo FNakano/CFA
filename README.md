@@ -81,7 +81,26 @@ Pode interessar dar uma olhada em projetos de Iniciação Científica relacionad
 - [ImageCV - 2019-2020](https://github.com/camilabezerril/ImageCV)
 - [Actímetro - 2019-2020](https://github.com/snorlara/Actimetro)
 
-... ou em projetos apresentados na disciplina em oferecimentos anteriores...
+... ou em projetos apresentados na disciplina no oferecimento corrente ou nos anteriores...
+
+### 2021
+
+[UOLI](https://github.com/artcupelli/uoli)
+
+[Dragão do tempo](https://github.com/dudagarcia/environment-meter-chicken)
+
+[Injeção eletrônica](https://github.com/TsuHub/ComputacaoFisica)
+
+[Reconhecedor de máscara com ESPCAM e Amazon IoT](https://github.com/JgSeike/cf-each)
+
+[Campainha com câmera e assistência remota usando WebThings](https://github.com/danielyujiyamada/CFA-Projetos/projects/1)
+
+[TwitchCar](https://github.com/rokrz/CompFisi_Nakano)
+
+
+
+
+### Anteriores
 
 [PopLaserCat](https://poplasercat.wordpress.com): Exercitador de gatos. A maioria dos gatos permanecem por um bom período de tempo sozinhos em casa esperando seu dono chegar. Tudo bem que os gatos são independentes, brincam e realizam suas atividades vitais sozinhos, mas entretê-los enquanto estão sozinhos seria uma boa maneira de deixar os bichinhos e seus donos mais felizes. Assim, pensamos em uma forma inovadora de entreter o pet com laser, utilizando sensor, de forma que ele possa se divertir mesmo em um momento que estiver sozinho.
 
