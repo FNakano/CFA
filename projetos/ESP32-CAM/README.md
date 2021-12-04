@@ -43,7 +43,13 @@ Código-fonte do exemplo que funcionou para ESP-CAM - usei o exemplo que vem com
 [Código-fonte do programa que usei para ESP-CAM](CameraWebServer-FN)
 
 Para o TTGO-CAM usei [este código](https://github.com/lewisxhe/esp32-camera-series/tree/master/sketch), [desta referência](https://github.com/lewisxhe/esp32-camera-series).
- 
+
+###### <a id="2021-12-03-153820" href="#2021-12-03-153820">2021-12-03-153820</a> 
+
+Com ajuda de JgSeike: para o programa TTGO-CAM compilar, precisa das bibliotecas [OneButton](https://github.com/mathertel/OneButton)
+ e [ESP8266 and ESP32 OLED driver for SSD1306 displays](https://github.com/ThingPulse/esp8266-oled-ssd1306)
+. Uma busca no gerenciador de bibliotecas deve permitir que sejam identificadas univocamente e instaladas. Os links são os mesmos apresentados no gerenciador de bibliotecas (em *more info*) e são fornecidos aqui para maior detalhamento.
+
 
 [Código-fonte do exemplo que funcionou para TTGO-CAMERA](TTGO-Camera-FN)
 

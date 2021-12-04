@@ -87,7 +87,7 @@ Pode interessar dar uma olhada em projetos de Iniciação Científica relacionad
 
 [UOLI](https://github.com/artcupelli/uoli)
 
-[Dragão do tempo](https://github.com/dudagarcia/environment-meter-chicken)
+[Dragão do tempo](https://github.com/dudagarcia/environment-meter-dragon)
 
 [Injeção eletrônica](https://github.com/TsuHub/ComputacaoFisica)
 
