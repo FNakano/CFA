@@ -60,6 +60,7 @@ Os projetos completos, no momento, são:
 Estes são projetos incompletos - em andamento ou abortados
 1. [Suporte de peito para dispositivos](projetos/suportePeitoCostas)
 2. [Color Timer](projetos/colorTimer)
+3. [Usar celular como câmera IP que emula uma webcam no Linux](/projetos/webcam)
 
 Caso queria saber como é a disciplina, você pode estar interessado em: 
 
