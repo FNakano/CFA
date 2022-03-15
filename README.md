@@ -55,6 +55,7 @@ Os projetos completos, no momento, são:
 6. [Extensor com botão](projetos/ExtensorComBotao)
 6. [Sensor meteorológico com ESP32 DevKit](projetos/SensorMeteorologico-ESP32)
 7. [Suporte para "janela" de texto rolável com display OLED SSD 1306](/projetos/DisplayRolavel)
+8. [Programando ESP em Python](/projetos/ProgramandoESPEmPython)
 
 
 Estes são projetos incompletos - em andamento ou abortados
