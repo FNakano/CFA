@@ -1,4 +1,4 @@
-# Programando ESP32 em Python.
+# Programando ESP32-NodeMCU em Python.
 
 ## Motivação
 
@@ -8,11 +8,13 @@
 - Dispensa IDE do Arduino
    - requer algum programa de comunicação como `PuTTy`, `minicom` ou `picocom`
 
-## Objetivo
+## Objetivo geral
 
 Criar cliente e servidor web usando variações de Python.
 
-O ESP32 executa um cliente web escrito em (Micro)Python, que se comunica com 
+## Objetivo específico
+
+O ESP32-NodeMCU executa um cliente web escrito em (Micro)Python, que se comunica com servidor web escrito em Flask/Python.
 
 ## Procedimento
 
@@ -64,7 +66,7 @@ python app.py
 
 O programa inicia e ocupa o terminal, como mostrado na captura de tela no terminal da esquerda.
 
-### Testar o servidor no próprio PC
+### Testar o servidor com navegador no próprio desktop
 
 O teste pode ser feito com o navegador. Abra o navegador e navegue para (digite o endereço na barra de endereço): `http://localhost:5000`. O navegador deve mostrar `Hello world`, como mostrado na captura de tela, lado direito da metade para baixo.
 
@@ -153,9 +155,9 @@ Hard resetting via RTS pin...
 
 </pre>
 
-### Programar o ESP32
+### Ferramenta para programar o ESP32
 
-Para comunicar-se com o interpretador (enviar comandos, ver respostas), instalar um emulador de terminal, como `minicom`.
+Para comunicar-se com o interpretador MicroPython (enviar comandos, ver respostas), através da porta USB, instalar *no desktop* um emulador de terminal, como `minicom`. (Há outras formas, como usar rshell ou Thonny)
 
 Instalação com `sudo apt install minicom`.
 
@@ -165,13 +167,13 @@ No meu caso, dei vários `ENTER`, como sugerido em https://docs.micropython.org/
 
 Tive que mudar as configurações de comunicação para tirar o controle de fuxo por hardware. No minicom, teclar `CTRL-A o` selecionar `Configuração da porta serial` desabilitar controle de fluxo. Sair do menu apertando `ENTER`, selecionar `salvar com dfl` (ref: https://forums.raspberrypi.com/viewtopic.php?t=310339#p1856626). Depois disso com um `ENTER` já aparece o prompt `>>>`.
 
-#### Teste simples: Controlar o LED embutido
+#### Teste simples do ESP32, MicroPython: Controlar o LED embutido
 
 Depois disso, fui acender e apagar um LED enviando comandos pelo REPL (https://docs.micropython.org/en/latest/esp8266/quickref.html#pins-and-gpio)
 
 **nota**: REPL é o nome dado à interface interativa de Python.
 
-Na janela do `minicom`, conectado ao ESP32, digitar as linhas abaixo, ou copiar e colar:
+Na janela do `minicom`, desktop conectado ao ESP32 através da USB, digitar as linhas abaixo, ou copiar e colar:
 
 ```
 from machine import Pin
@@ -209,7 +211,7 @@ A conexão leva um tempo para estabelecer-se. Se copiar e colar o código, o tes
 
 #### Testar ESP32 como cliente Web e Desktop como servidor Web
 
-Trocar o `app.py` do servidor web pelo abaixo (que é capaz de responder a requisições GET e POST) e executar usando `python app.py`
+Trocar o `app.py` do servidor web (desktop) pelo abaixo (que é capaz de responder a requisições GET e POST) e executar usando `python app.py`
 
 ```python
 # Referência: https://projects.raspberrypi.org/en/projects/python-web-server-with-flask/1
@@ -259,9 +261,11 @@ if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
 ```
 
+#### HTTP no MicroPython, ESP32
+
 No ESP32 a biblioteca urequest ( https://makeblock-micropython-api.readthedocs.io/en/latest/public_library/Third-party-libraries/urequests.html) facilita enviar e receber requisições.
 
-##### HTTP GET
+##### Requisição HTTP GET no ESP32
 
 No ESP32, após conectar ao Wi-Fi, na mesma rede (roteador, ponto de acesso) em que está o Desktop executando o servidor, executar os seguintes comandos:
 
@@ -274,7 +278,7 @@ print (response.text)
 ![Tela](./Tela2022-03-15-16-21-46.png)
 
 
-##### HTTP POST
+##### Requisição HTTP POST no MicroPython, ESP32
 
 No ESP32, após conectar ao Wi-Fi, na mesma rede (roteador, ponto de acesso) em que está o Desktop executando o servidor, executar os seguintes comandos:
 
@@ -299,3 +303,46 @@ print (response.text)
 Não existe Flask para MicroPython
 
 `urequests` e `requests` têm incompatibilidades no que se refere a envio de arquivos e `Content-Type:mixed/multipart`. Parecem ser compatíveis para GET e POST com JSON.
+
+O uso do MicroPython na disciplina será ampliado.
+
+WebThings usa uma versão personalizada de microPython. A referência para WebThings: https://github.com/WebThingsIO/webthing-upy/ contém os links para a versão personalizada que é usada. SÓ QUE ess versão personalizada foi atualizada, o que quebrou o upyWebThings que não foi atualizado. Por outro lado, muitos dos programas em MicroPython escritos para WebThings funciona, inclusive em MicroPython padrão. Por exemplo: `config.py`, `connect.py`, que servem como exemplos de programas para ESP32. Outro programa que escrevi faz o LED azul do ESP32 piscar:
+
+```python
+from machine import Pin
+import time 
+
+class blinkPin :
+
+    bPin = None
+    bDur = 0
+    bLeaveOn = False
+    def __init__(self, num, duration, leaveOn) :
+        self.bPin = Pin(num, Pin.OUT)
+        self.bDur = duration
+        self.bLeaveOn = leaveOn
+
+    def blink(self) :
+        self.bPin.off()
+        time.sleep_ms(self.bDur)
+        self.bPin.on()
+        time.sleep_ms(self.bDur)
+        self.bPin.off()
+        time.sleep_ms(self.bDur)
+        self.bPin.value(self.bLeaveOn)
+
+    def nBlink(self, n) :
+        self.bPin.off()
+        time.sleep_ms(self.bDur)
+        for i in range(n) :
+			self.bPin.on()
+			time.sleep_ms(self.bDur)
+			self.bPin.off()
+			time.sleep_ms(self.bDur)
+        self.bPin.value(self.bLeaveOn)
+		 
+b = blinkPin(2,100,False)
+b.blink()
+
+```
+  
