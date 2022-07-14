@@ -8,10 +8,17 @@ Esta forma de programar o microcontrolador é diferente da forma de programar qu
 
 1. A interação do programador com o dispositivo pode ser explicada com menos etapas "difíceis de entender", como compilar e enviar o programa para o dispositivo;
 2. O resultado da execução do comando *aparece* mais rápido;
-3. Alguns usos tecnicamente sofisticados, como o envio dos comandos pela Internet, podem ser configurados por um programador mais experiente e usados, de maneira transparente, por outros programadores (ex. webREPL).
+3. Alguns usos tecnicamente sofisticados, como o envio dos comandos por WiFi, podem ser configurados por um programador mais experiente e usados, de maneira transparente, por outros programadores (ex. webREPL).
 
 Por outro lado, há diferenças que podem dificultar certos usos e a criação de produtos.
 
+### A fazer
+
+- Guia sobre como instalar Micropython no ESP8266;
+
+### Feito
+
+- [Guia mostrando como usar webREPL](./webREPL).
 
 A maneira mais comum para executar comandos em Python é digitando no interpretador: um programa em linha de comando que lê o comando digitado, avalia (executa) o comando e imprime o resultado. Interpretadores desse tipo, comumente são designados REPL (Read-Evaluate-Print Loop) (pronúncia: http://www.howtopronounce.cc/repl). Nos microcontroladores com micropyton instalado o interpretador é executado continuamente, "só" precisa ser acessado.
 
