@@ -12,23 +12,34 @@ Esta forma de programar o microcontrolador é diferente da forma de programar qu
 
 Por outro lado, há diferenças que podem dificultar certos usos e a criação de produtos.
 
-### A fazer
+### Como instalar Micropython no ESP8266
 
-- Guia sobre como instalar Micropython no ESP8266;
+Resumo das instruções em https://docs.micropython.org/en/latest/esp8266/tutorial/intro.html
 
-### Feito
+1. Instalar `esptool` com `pip install esptool` (https://docs.espressif.com/projects/esptool/en/latest/esp32/)
+2. Baixar a imagem do micropython de https://micropython.org/download/?port=esp8266 (eu usei a de 1MB, a de 2MB não executou, embora o ESP8266 que usei tenha 4MB)
+3. Conectar o ESP (seja Node-MCU, seja outro) pela porta USB;
+4. Checar em que porta o ESP foi detectado (ex. /dev/ttyUSB0)
+5. Limpar o conteúdo da memória FLASH do ESP com `esptool.py --port /dev/ttyUSB0 erase_flash`
+6. Transferir a imagem com `esptool.py --port /dev/ttyUSB0 --baud 460800 write_flash --flash_size=detect 0 esp8266-20170108-v1.8.7.bin` (ajustar o nome do arquivo, se necessário)
+7. Instalar `minicom` com `sudo apt install minicom`
+8. Conectar com o dispositivo usando o comando `minicom -D /dev/ttyUSB0 -b 115200` (ajustar se necessário)
+9. No minicom, se não aparecer o prompt (>>>) digitar ENTER (para aparecer o prompt).
+
+### Desdobramentos
 
 - [Guia mostrando como usar webREPL](./webREPL).
+- Projeto Efeitos coloridos (dispositivo feito, documentação por fazer)
+- Projeto controlar tomadas (dispositivo feito, documentação por fazer)
 
 A maneira mais comum para executar comandos em Python é digitando no interpretador: um programa em linha de comando que lê o comando digitado, avalia (executa) o comando e imprime o resultado. Interpretadores desse tipo, comumente são designados REPL (Read-Evaluate-Print Loop) (pronúncia: http://www.howtopronounce.cc/repl). Nos microcontroladores com micropyton instalado o interpretador é executado continuamente, "só" precisa ser acessado.
 
 O acesso ao interpretador é feito através de uma ferramenta de comunicação. Se o microcontrolador está conectado  ao computador por uma porta USB, ferramentas comuns são PuTTY (Windows), minicom (Linux), picocom (Linux).
 
-Após instalar, o resultado é este:
-
+### Informação adicional
 
 - Captura da tela feita com `recordmydesktop --fps=15 --no-sound --v_quality=32`
-- Conversão para gif animado feito com `ffmpeg -i out.ogv -s 640x480 -r 7 -ss 00:00:01 -t 00:00:16.5 output.gif`
+- Conversão para gif animado feita com `ffmpeg -i out.ogv -s 640x480 -r 7 -ss 00:00:01 -t 00:00:16.5 output.gif`
 - Referências sobre vídeo:
    - https://linuxhint.com/make-animated-gif-ubuntu/
    - https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality
