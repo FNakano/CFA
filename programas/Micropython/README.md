@@ -12,6 +12,13 @@ Esta forma de programar o microcontrolador é diferente da forma de programar qu
 
 Por outro lado, há diferenças que podem dificultar certos usos e a criação de produtos.
 
+1. O código-fonte de um programa é uma especificação de alguma atividade ou processo. Essa especificação é explícita, autocontida e essencial (ou mandatória), mas não completa, nem amigável. O código-fonte é armazenado em arquivo texto, o que permite repassar o trabalho de programação a outros programadores (ao custo de muito trabalho para os programadores que receberão o trabalho). Na linguagem popular, é *melhor que zero*. No ciclo de desenvolvimento em linguagem interpretada, se o programador memorizar os comandos (ou usar o histórico de comandos), não é necessário haver um arquivo contendo o código-fonte. Nesta situação, o trabalho se perde com o programador original;
+2. Um interpretador acumula informação como que bibliotecas foram carregadas, que variáveis foram criadas, que valores essas variáveis contém,... e "transporta" essa informação entre os programas que executar. Nesse contexto, é muito fácil usar funções e variáveis criadas para um programa em outro programa. Isto cria dependências implícitas entre os programas. Em um novo uso de algum programa, pode ser necessário reproduzir todo o histórico de comandos, algo que o programador terá dificuldade em lembrar;
+3. Usar linguagem interpretada em um produto implica em embarcar no produto tanto o interpretador quanto o código-fonte (script) (portanto, é essencial que o programador que criou o produto saiba administrar o código-fonte que criou) e
+4. Embarcar interpretador e código-fonte pode não ser desejado, dependendo do produto. 
+
+Ainda assim, o uso de linguagem interpretada acelera a criação de protótipos. Tendo em vista aproveitar esta vantagem, segue-se, com as instruções de instalação do MicroPython. 
+
 ### Como instalar Micropython no ESP8266
 
 Resumo das instruções em https://docs.micropython.org/en/latest/esp8266/tutorial/intro.html
@@ -29,8 +36,10 @@ Resumo das instruções em https://docs.micropython.org/en/latest/esp8266/tutori
 ### Desdobramentos
 
 - [Guia mostrando como usar webREPL](./webREPL).
+   - Usar webREPL permite enviar comandos para o dispositivo através de WiFi, prescindindo da conexão cabeada entre o computador e o dispositivo (ex. USB);
 - Projeto Efeitos coloridos (dispositivo feito, documentação por fazer)
 - Projeto controlar tomadas (dispositivo feito, documentação por fazer)
+- Projeto ler sensores (dispositivo feito, documentação por fazer)
 
 A maneira mais comum para executar comandos em Python é digitando no interpretador: um programa em linha de comando que lê o comando digitado, avalia (executa) o comando e imprime o resultado. Interpretadores desse tipo, comumente são designados REPL (Read-Evaluate-Print Loop) (pronúncia: http://www.howtopronounce.cc/repl). Nos microcontroladores com micropyton instalado o interpretador é executado continuamente, "só" precisa ser acessado.
 
