@@ -8,11 +8,13 @@ Na animação abaixo o Witty Board está conectado por wifi à minha rede domés
 
 ### O que é webREPL
 
-webREPL é uma ferramenta que permite usar um navegador web para enviar comandos Python através da conexão de rede para um dispositivo (ex. Witty Board).
+webREPL é uma ferramenta que permite usar um computador com navegador web para enviar comandos Python através da conexão de rede para um dispositivo (ex. Witty Board). Este envio pode (ou não) ser intermediado por um servidor Web.
+
+![Exemplo de Rede](./Rede.png)
 
 A fim de entender o funcionamento e explicar a implantação da ferramenta, assume-se que esta tem duas partes. Uma parte, "C", é executada no computador e outra, "D", é executada no dispositivo. "D" consiste em módulos do Python, requer algumas configurações E uma conexão WiFi ativa. "C" consiste em uma página html e scripts JavaScript.
 
-A conexão WiFi é ativada por estes comandos:
+A conexão WiFi no dispositivo é ativada por estes comandos:
 
 ```python
 import network, time
@@ -57,4 +59,13 @@ ffmpeg -i out.ogv -s 640x480 -r 7 -filter:v "setpts=PTS/3" -ss 00:00:01 -t 00:00
 ```
 
 Referência sobre como acelerar o vídeo: https://superuser.com/questions/1261678/how-do-i-speed-up-a-video-by-60x-in-ffmpeg
+
+Referência com módulos para micropython: https://awesome-micropython.com/
+
+mDNS facilitaria o uso de WebREPL, mas parece que não há implementação de mDNS para ESP8266...
+
+- https://github.com/cbrand/micropython-mdns
+- https://github.com/micropython/micropython/issues/2875
+- https://github.com/micropython/micropython/issues/4912
+- https://community.hiveeyes.org/t/esp32-network-discovery-through-mdns-with-micropython/2253
 

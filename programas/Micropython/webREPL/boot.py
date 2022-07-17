@@ -10,9 +10,13 @@ gc.collect()
 # FN 20220713
 import network, time
 
-staif=network.WLAN(network.STA_IF) 
+wifi_if=network.WLAN(network.STA_IF) 
 #staif.connect('SSID', 'PASSWORD') # preenche se quiser mudar
-staif.active(True) # conecta ao ap conectado anteriormente
+wifi_if.active(True) # conecta ao ap conectado anteriormente
 time.sleep(5)
-staif.isconnected()
-staif.ifconfig()
+if (wifi_if.isconnected() == False) :
+   wifi_if.active(False)
+   wifi_if=network.WLAN(network.AP_IF) 
+   wifi_if.config('esp8266', '');
+   wifi_if.active(True)
+wifi_if.ifconfig()
