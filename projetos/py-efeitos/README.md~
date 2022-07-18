@@ -70,17 +70,17 @@ Diagramas e fotos: Baseado neste outro projeto: https://github.com/FNakano/CFA/t
 O fecho foi mudado para a lateral da cinta, tornando o uso da cinta mais confortável, mas traz alguma dificuldade para vestir. As medidas e a forma de fixação das tiras por alfinete de segurança foi mantido. 
 
 A placa de circuito impresso é alinhavada na cinta, próximo à axila, o powerbank também. A matriz de LEDs é costurada na cinta, no centro do peito.
+ 
+![Frente](IMG_20220718_164141279.jpg)
 
-![Frente](https://drive.google.com/file/d/10hNEh6yYWNALGImoCYnydPBSDGtNASbe/view?usp=sharing)
-
-![Trás](https://drive.google.com/file/d/10nvDZwDSo8FLQoKbu7TZ0e3xBX9CHaLE/view?usp=sharing)
+![Trás](IMG_20220718_164220078.jpg)
  
 
 #### Como vestir
 
-![Encaixe no ombro esquerdo](https://drive.google.com/file/d/10rpfX1JgO0xtNAqFo_oneJ0LDCIwpE4N/view?usp=sharing)
+![Encaixe no ombro esquerdo](IMG_20220718_163556752.jpg)
 
-![Fecho](https://drive.google.com/file/d/10vKpKVcUdRd3S88G-RFdXFjHElv4VY1b/view?usp=sharing)
+![Fecho](IMG_20220718_163703765.jpg)
 
 
 ### Dispositivo
@@ -98,9 +98,9 @@ Usa um wittyboard: https://github.com/FNakano/CFA/tree/master/componentes/contro
 
 A placa de circuito impresso é uma placa-padrão tipo ilha de 5x10cm e contém as ligações acima.
 
-![PCI com wittyboard encaixado](https://drive.google.com/file/d/10lLu3OmmvkxEfGXj1GqmyRKZ1B9qvtXw/view?usp=sharing)
+![PCI com wittyboard](IMG_20220718_163556752.jpg)
 
-![PCI com wittyboard sacado](https://drive.google.com/file/d/10mXzIYQfElPmij-SFHs4DhObBmdSPMo3/view?usp=sharing)
+![PCI sem wittyboard](IMG_20220718_163703765.jpg)
 
 
 Na matriz de LEDs todos os Vcc são interconectados e todos os GND são interconectados. O pod Dout do primeiro LED é conectado ao Din do segunodo LED e repetido para os LEDs seguintes (ié Dout do LED 2 conectado no Din do LED 3, Dout do LED 3 conectado no Din do LED 4, ..., até o LED 8. Dout do LED 9 é deixado desconectado).
