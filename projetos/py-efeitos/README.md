@@ -9,7 +9,9 @@ Apresentar um dispositivo computacional vestível.
 
 ## Introdução 
 
-Um dispositivo vestível é ...
+Um dispositivo vestível é um dispositivo computacional que é vestido perto ou sobre a pele.
+
+> Wearable technology, wearables, fashion technology, smartwear, tech togs, streetwear tech, skin electronics or fashion electronics are smart electronic devices (electronic device with micro-controllers) that are worn close to and/or on the surface of the skin, where they detect, analyze, and transmit information concerning e.g. body signals such as vital signs, and/or ambient data and which allow in some cases immediate biofeedback to the wearer. (https://en.wikipedia.org/wiki/Wearable_technology)
 
 Construir um dispositivo vestível traz desafios multidisciplinares: têxtil (materiais e modelagem) e computação (hardware, software, redes, sistemas de informação)
 
@@ -57,6 +59,10 @@ Referencial, produtos similares, diferenciais, ... em detalhes
 
 Fotos, vídeos e instruções sobre como reproduzir os testes e usar o produto
 
+[Video](https://drive.google.com/file/d/1XfDgYsSXnj1F_F6q1SkpMstZR6KSU3PC/view?usp=sharing)
+
+Envia o arquivo `Efeitos.py` para o wittyBoard através de WebREPL e chama as funções definidas no arquivo.
+
 ### Vestível
 
 Diagramas e fotos: Baseado neste outro projeto: https://github.com/FNakano/CFA/tree/master/projetos/suportePeitoCostas.
@@ -64,6 +70,18 @@ Diagramas e fotos: Baseado neste outro projeto: https://github.com/FNakano/CFA/t
 O fecho foi mudado para a lateral da cinta, tornando o uso da cinta mais confortável, mas traz alguma dificuldade para vestir. As medidas e a forma de fixação das tiras por alfinete de segurança foi mantido. 
 
 A placa de circuito impresso é alinhavada na cinta, próximo à axila, o powerbank também. A matriz de LEDs é costurada na cinta, no centro do peito.
+
+![Frente](https://drive.google.com/file/d/10hNEh6yYWNALGImoCYnydPBSDGtNASbe/view?usp=sharing)
+
+![Trás](https://drive.google.com/file/d/10nvDZwDSo8FLQoKbu7TZ0e3xBX9CHaLE/view?usp=sharing)
+ 
+
+#### Como vestir
+
+![Encaixe no ombro esquerdo](https://drive.google.com/file/d/10rpfX1JgO0xtNAqFo_oneJ0LDCIwpE4N/view?usp=sharing)
+
+![Fecho](https://drive.google.com/file/d/10vKpKVcUdRd3S88G-RFdXFjHElv4VY1b/view?usp=sharing)
+
 
 ### Dispositivo
 
@@ -78,7 +96,15 @@ Usa um wittyboard: https://github.com/FNakano/CFA/tree/master/componentes/contro
 | GPIO5 | D |  |
 | GPIO12 |  | Din (do LED 1) |
 
+A placa de circuito impresso é uma placa-padrão tipo ilha de 5x10cm e contém as ligações acima.
+
+![PCI com wittyboard encaixado](https://drive.google.com/file/d/10lLu3OmmvkxEfGXj1GqmyRKZ1B9qvtXw/view?usp=sharing)
+
+![PCI com wittyboard sacado](https://drive.google.com/file/d/10mXzIYQfElPmij-SFHs4DhObBmdSPMo3/view?usp=sharing)
+
+
 Na matriz de LEDs todos os Vcc são interconectados e todos os GND são interconectados. O pod Dout do primeiro LED é conectado ao Din do segunodo LED e repetido para os LEDs seguintes (ié Dout do LED 2 conectado no Din do LED 3, Dout do LED 3 conectado no Din do LED 4, ..., até o LED 8. Dout do LED 9 é deixado desconectado).
+
 
 
 ### Programa

@@ -24,7 +24,7 @@ def anima():
   np=neopixel.NeoPixel(machine.Pin(12),9)
   b=(0,0,255)
   z=(0,0,0)
-  for i in [0, 1, 2, 5, 8, 7, 6, 3]:
+  for i in [0, 1, 2, 5, 9, 8, 7, 6, 3]:
     for j in range(9):
       if i==j :
         # https://www.w3schools.com/python/python_conditions.asp
