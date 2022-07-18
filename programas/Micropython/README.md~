@@ -21,17 +21,28 @@ Ainda assim, o uso de linguagem interpretada acelera a criação de protótipos.
 
 ### Como instalar Micropython no ESP8266
 
-Resumo das instruções em https://docs.micropython.org/en/latest/esp8266/tutorial/intro.html
+Este procedimento deve ser feito quando o dispositivo não tem MicroPython instalado ou o Micropython apresenta mau funcionamento. Ou seja, geralmente, só é feito uma vez durante o ciclo de vida do dispositivo.
 
-1. Instalar `esptool` com `pip install esptool` (https://docs.espressif.com/projects/esptool/en/latest/esp32/)
-2. Baixar a imagem do micropython de https://micropython.org/download/?port=esp8266 (eu usei a de 1MB, a de 2MB não executou, embora o ESP8266 que usei tenha 4MB)
+1. Instalar `esptool` com `pip install esptool`; (https://docs.espressif.com/projects/esptool/en/latest/esp32/);
+2. Baixar a imagem do micropython de https://micropython.org/download/?port=esp8266 (eu usei a de 1MB, a de 2MB não executou, embora o ESP8266 que usei tenha 4MB);
 3. Conectar o ESP (seja Node-MCU, seja outro) pela porta USB;
-4. Checar em que porta o ESP foi detectado (ex. /dev/ttyUSB0)
+4. Checar em que porta o ESP foi detectado (ex. /dev/ttyUSB0);
 5. Limpar o conteúdo da memória FLASH do ESP com `esptool.py --port /dev/ttyUSB0 erase_flash`
-6. Transferir a imagem com `esptool.py --port /dev/ttyUSB0 --baud 460800 write_flash --flash_size=detect 0 esp8266-20170108-v1.8.7.bin` (ajustar o nome do arquivo, se necessário)
-7. Instalar `minicom` com `sudo apt install minicom`
-8. Conectar com o dispositivo usando o comando `minicom -D /dev/ttyUSB0 -b 115200` (ajustar se necessário)
+6. Transferir a imagem com `esptool.py --port /dev/ttyUSB0 --baud 460800 write_flash --flash_size=detect 0 esp8266-20170108-v1.8.7.bin` (ajustar o nome do arquivo, se necessário).
+
+Detalhes em: https://docs.micropython.org/en/latest/esp8266/tutorial/intro.html
+
+
+### Como comunicar com Micropython no ESP8266
+
+Micropython e seu interpretador são executados no (pelo) dispositivo. O envio de comandos para o dispositivo, usando um computador, é feito atraves de um programa de comunicação como PuTTy (Windows) ou Minicom (Linux). Seguem as instruções para Linux:
+
+7. Instalar `minicom` com `sudo apt install minicom`;
+8. Conectar o dispositivo ao computador usando um cabo de dados USB;
+8. Conectar com o dispositivo usando o comando `minicom -D /dev/ttyUSB0 -b 115200` (ajustar se necessário);
 9. No minicom, se não aparecer o prompt (>>>) digitar ENTER (para aparecer o prompt).
+
+Nota: no windows a porta é algo como `comN:`, como `com3:`, `com4:`, ...
 
 ### Desdobramentos
 
@@ -39,6 +50,7 @@ Resumo das instruções em https://docs.micropython.org/en/latest/esp8266/tutori
    - Usar webREPL permite enviar comandos para o dispositivo através de WiFi, prescindindo da conexão cabeada entre o computador e o dispositivo (ex. USB);
 - Projeto Efeitos coloridos (dispositivo feito, documentação por fazer)
 - Projeto controlar tomadas (dispositivo feito, documentação por fazer)
+- Projeto ler sensores (dispositivo feito, documentação por fazer)
 
 A maneira mais comum para executar comandos em Python é digitando no interpretador: um programa em linha de comando que lê o comando digitado, avalia (executa) o comando e imprime o resultado. Interpretadores desse tipo, comumente são designados REPL (Read-Evaluate-Print Loop) (pronúncia: http://www.howtopronounce.cc/repl). Nos microcontroladores com micropyton instalado o interpretador é executado continuamente, "só" precisa ser acessado.
 

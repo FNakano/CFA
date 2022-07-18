@@ -1,0 +1,12 @@
+
+```python
+ldr=machine.ADC(0)
+print(ldr.read())
+```
+
+Não testei mas deve ler o valor do botão (solto = True, pressionado = False)
+
+```python
+botao=machine.Pin(4, machine.Pin.INPUT)
+print(botao.value())
+```
