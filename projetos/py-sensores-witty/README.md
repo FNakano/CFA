@@ -1,6 +1,6 @@
 ## Objetivo
 
-Um parágrafo, sem detalhes de implementação (que devem ser detalhados na introdução)
+Um parágrafo, sem  estender-se com explicações (que devem ser apresentadas na introdução)
 
 ## Objetivos específicos
 
