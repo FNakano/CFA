@@ -49,9 +49,11 @@ Referencial, produtos similares, diferenciais, ... em detalhes
 - Instalar Micropython, conforme https://github.com/FNakano/CFA/tree/master/programas/Micropython;
 - Instalar WebREPL, conforme https://github.com/FNakano/CFA/tree/master/programas/Micropython/webREPL
 - Construir programa inicial;
+   - manter algum diário sobre o desenvolvimento, para não perder informação relevante para o relatório;
 - Construir vestível inicial;
-- Refinar (ou usar SCRUM,...)
-- ...
+   - manter algum diário sobre o desenvolvimento, para não perder informação relevante para o relatório;
+- Refinar (ex.: usar SCRUM,...);
+- Elaborar documentação (este arquivo, código-fonte e manuais)
 
 ## Resultados
 
@@ -109,10 +111,12 @@ Na matriz de LEDs todos os Vcc são interconectados e todos os GND são intercon
 
 ### Programa
 
-História sobre o desenvolvimento do programa, resumo de sua organização e arquitetura, ou, interface (API);
+O arquivo `Efeitos.py` define algumas funções. Estas, quando executadas, apresentam alguns efeitos de luz na matriz de LEDs. Manuais estão nos links abaixo, o teste foi apresentado neste documento, na seção correspondente.
+
 
 - [Manual de Referência](Ref.md)
 - [Manual do Usuário (API)](API.md)
 
 ## Discussão e Conclusão
 
+Ainda por fazer.
