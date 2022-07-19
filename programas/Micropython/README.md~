@@ -48,9 +48,9 @@ Nota: no windows a porta é algo como `comN:`, como `com3:`, `com4:`, ...
 
 - [Guia mostrando como usar webREPL](./webREPL).
    - Usar webREPL permite enviar comandos para o dispositivo através de WiFi, prescindindo da conexão cabeada entre o computador e o dispositivo (ex. USB);
-- Projeto Efeitos coloridos (dispositivo feito, documentação por fazer)
-- Projeto controlar tomadas (dispositivo feito, documentação por fazer)
-- Projeto ler sensores (dispositivo feito, documentação por fazer)
+- Projeto Efeitos coloridos (dispositivo feito, [documentação iniciada](/projetos/py-efeitos))
+- Projeto controlar tomadas (dispositivo feito, [documentação iniciada](/projetos/py-tomadas))
+- Projeto ler sensores (dispositivo feito, [documentação iniciada](/projetos/py-sensores-witty))
 
 A maneira mais comum para executar comandos em Python é digitando no interpretador: um programa em linha de comando que lê o comando digitado, avalia (executa) o comando e imprime o resultado. Interpretadores desse tipo, comumente são designados REPL (Read-Evaluate-Print Loop) (pronúncia: http://www.howtopronounce.cc/repl). Nos microcontroladores com micropyton instalado o interpretador é executado continuamente, "só" precisa ser acessado.
 
@@ -112,3 +112,52 @@ gc.mem_free()
 &gt;&gt;&gt; gc.mem_free()
 35920
 &gt;&gt;&gt; </pre>
+
+### Processo para instalar micropython e webrepl - resumo, sem explicações
+
+No terminal
+
+```
+esptool.py --port /dev/ttyUSB0 erase_flash
+cd ~/Documentos/Anotacoes/ESP32MicroPython/
+cd esp8266/
+esptool.py --port /dev/ttyUSB0 --baud 460800 write_flash --flash_size=detect 0 esp8266-1m-20220618-v1.19.1.bin 
+minicom -D /dev/ttyUSB0 -b 115200
+```
+
+No REPL do ESP
+
+```python
+import webrepl_setup
+```
+
+Responder E, ajustar password, responder para carregar ao reiniciar, deixar reiniciar
+
+```python
+import network, time
+staif=network.WLAN(network.STA_IF) 
+staif.active(True) # conecta ao ap conectado anteriormente
+staif.connect('NameOfNetworkTP', '0123456789') # preenche se quiser mudar
+time.sleep(5)
+staif.isconnected() # True se conectou
+staif.ifconfig()    # Mostra o IP para conexão da parte "C" - anotar o IP
+CTRL-A X yes
+```
+
+No terminal
+
+```
+firefox ~/Documentos/git/webrepl/webrepl.html
+```
+
+No webrepl
+
+Preenche IP com IP mostrado; clica em connect; digita senha
+
+```python
+import os
+os.listdir()
+os.rename('boot.py', 'originalboot.py')
+# envia novo boot.py pela página web
+
+```

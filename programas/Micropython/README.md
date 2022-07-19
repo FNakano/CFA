@@ -112,3 +112,51 @@ gc.mem_free()
 &gt;&gt;&gt; gc.mem_free()
 35920
 &gt;&gt;&gt; </pre>
+
+### Processo para instalar micropython e webrepl - resumo, sem explicações
+
+No terminal
+
+```
+esptool.py --port /dev/ttyUSB0 erase_flash
+cd ~/Documentos/Anotacoes/ESP32MicroPython/
+cd esp8266/
+esptool.py --port /dev/ttyUSB0 --baud 460800 write_flash --flash_size=detect 0 esp8266-1m-20220618-v1.19.1.bin 
+minicom -D /dev/ttyUSB0 -b 115200
+```
+
+No REPL do ESP
+
+```python
+import webrepl_setup
+```
+
+Responder E, ajustar password, responder para carregar ao reiniciar, deixar reiniciar
+
+```python
+import network, time
+staif=network.WLAN(network.STA_IF) 
+staif.active(True) # conecta ao ap conectado anteriormente
+staif.connect('NameOfNetworkTP', '0123456789') # preenche se quiser mudar
+time.sleep(5)
+staif.isconnected() # True se conectou
+staif.ifconfig()    # Mostra o IP para conexão da parte "C" - anotar o IP
+CTRL-A X yes
+```
+
+No terminal
+
+```
+firefox ~/Documentos/git/webrepl/webrepl.html
+```
+
+No webrepl
+
+Preenche IP com IP mostrado; clica em connect; digita senha
+
+```python
+import os
+os.listdir()
+os.rename('boot.py', 'originalboot.py')
+# envia novo boot.py pela página web
+```

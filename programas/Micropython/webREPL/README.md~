@@ -12,9 +12,11 @@ webREPL é uma ferramenta que permite usar um computador com navegador web para 
 
 ![Exemplo de Rede](./Rede.png)
 
-A fim de entender o funcionamento e explicar a implantação da ferramenta, assume-se que esta tem duas partes. Uma parte, "C", é executada no computador e outra, "D", é executada no dispositivo. "D" consiste em módulos do Python, requer algumas configurações E uma conexão WiFi ativa. "C" consiste em uma página html e scripts JavaScript.
+A fim de entender o funcionamento e explicar a implantação da ferramenta, assume-se que esta tem duas partes. Uma parte, "C", que pode ser baixada de: https://github.com/micropython/webrepl, é executada no computador e outra, "D", faz parte do micropyton, é executada no dispositivo depois de configurada.
 
-A conexão WiFi no dispositivo é ativada por estes comandos:
+A configuração de "D" é feita com o dispositivo conectado por cabo USB, executando `import webrepl_setup` e respondendo às perguntas exibidas. Anote o password cadastrado. Ele será solicitado na conexão com o computador.
+
+Após a configuração, de "D", configura-se e ativa-se a conexão WiFi no dispositivo com estes comandos:
 
 ```python
 import network, time
@@ -23,26 +25,18 @@ staif.connect('SSID', 'PASSWORD') # preenche se quiser mudar
 staif.active(True) # conecta ao ap conectado anteriormente
 time.sleep(5)
 staif.isconnected() # True se conectou
-staif.ifconfig()    # Mostra o IP para conexão da parte "C"
+staif.ifconfig()    # Mostra o IP para conexão da parte "C" - anotar o IP
 ```
 Referência: https://docs.micropython.org/en/latest/esp8266/tutorial/network_basics.html, 
 
-O módulo webREPL é configurado com o comando abaixo e respondendo para habilitar o webrepl e entrar com um password:
+Após sucesso nas etapas, o dispositivo está pronto para conectar.Se o dispositivo for reiniciado ou se a energia desligar e retornar, a conexão WiFi precisará ser (novamente) ativada. Isto pode ser contornado. É mais fácil fazer isso usando webREPL por isso adia-se o passo de tornar a conexão permanente.
 
-```
-import webrepl_setup
-
-```
-Referência: https://learn.adafruit.com/micropython-basics-esp8266-webrepl/access-webrepl, https://www.srccodes.com/setup-web-repl-esp8266-12e-connect-micro-python-prompt-repl-wifi-access-point-ap-hello-world/
-
-Após estes passos, o dispositivo está pronto para receber comandos pelo WiFi, o que conclui a parte "D", mas, se o dispositivo for reiniciado ou se a energia desligar e retornar, a conexão WiFi precisará ser (novamente) ativada. É mais fácil fazer isso usando webREPL por isso adia-se o passo de tornar a conexão permanente.
-
-A parte "C" consiste em clonar o repositório https://github.com/micropython/webrepl e abrir `webrepl.html` no navegador. Uma página com aparência semelhante à apresentada na figura abaixo deve ser mostrada.
+A parte "C" é executada no computador e pode ser baixada de https://github.com/micropython/webrepl. Depois de baixada, abrir o arquivo `webrepl.html` com o navegador. A página no navegador mostra deve ser semelhante à apresentada na figura abaixo:
 
 ![webREPL e boot.py](./Captura2022-07-13-22-37-39.png)
-
-Para conectar, substituir o IP na caixa de texto ao lado do botão Connect pelo IP apresentado pelo dispositivo durante a configuração do wifi. Manter o `:8266`. Clicar em Connect, digitar a senha usada na execução de `webrepl_setup`, deve aparecer a mensagem WebREPL Connected e o prompt (>>>).
-
+ 
+Para conectar, substituir o IP na caixa de texto ao lado do botão Connect pelo IP apresentado pelo dispositivo durante a configuração do wifi. Manter o `:8266`. Clicar em Connect, digitar a senha usada na execução de `webrepl_setup`, deve aparecer a mensagem WebREPL Connected e o prompt (>>>). Através desse prompt enviam-se comandos, em Python, para o dispositivo.
+ 
 
 ### Tornar a conexão permanente.
 
@@ -50,6 +44,7 @@ Para tornar a conexão permanente, acrescentar a ativação da rede no arquivo `
 
 Nesta pasta há uma cópia do `boot.py` resultante desse acréscimo. Caso este sirva, usando webREPL, renomeie o `boot.py` original usando o comando `os.rename()` (https://docs.micropython.org/en/v1.7/esp8266/library/os.html), depois, transfira o novo `boot.py` para o dispositivo usando o botão `Send a file`.
 
+O arquivo `boot.py` não precisa conter o SSID e o password do ponto de acesso pois o dispositivo armazena a última conexão wifi feita e, na ativação, tenta conectar-se a esse mesmo ponto de acesso. Caso a conexão não seja possível, o dispositivo entra em modo ponto de acesso. Neste caso, a conexão é feita pelo SSID `esp8266`, sem senha.
 
 ### Comandos usados para gravar vídeo e converter em gif animado:
 

@@ -21,8 +21,8 @@ Após a configuração, de "D", configura-se e ativa-se a conexão WiFi no dispo
 ```python
 import network, time
 staif=network.WLAN(network.STA_IF) 
-staif.connect('SSID', 'PASSWORD') # preenche se quiser mudar
 staif.active(True) # conecta ao ap conectado anteriormente
+staif.connect('SSID', 'PASSWORD') # preenche se quiser mudar
 time.sleep(5)
 staif.isconnected() # True se conectou
 staif.ifconfig()    # Mostra o IP para conexão da parte "C" - anotar o IP

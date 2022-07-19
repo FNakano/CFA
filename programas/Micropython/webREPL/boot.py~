@@ -11,8 +11,8 @@ gc.collect()
 import network, time
 
 wifi_if=network.WLAN(network.STA_IF) 
-wifi_if.active(True) # conecta ao ap conectado anteriormente
 #staif.connect('SSID', 'PASSWORD') # preenche se quiser mudar
+wifi_if.active(True) # conecta ao ap conectado anteriormente
 time.sleep(5)
 if (wifi_if.isconnected() == False) :
    wifi_if.active(False)
