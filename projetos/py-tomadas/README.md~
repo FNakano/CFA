@@ -22,26 +22,36 @@ O ambiente de negócios está cada vez mais volátil, com empresas e produtos su
 
 Ambientes de programação estão cada vez mais complexos, com camadas de programas montadas umas sobre as outras, desempenhando tarefas cada vez mais sofisticadas. Quando algum programa é descontinuado, há um problema para os programadores das camadas superiores, que precisam procurar outros programas equivalentes e *migrar* seu programa para usar o programa substituito, frequentemente incorrendo em custos imprevistos (risco financeiro).
 
+Do ponto de vista do ensino de tecnologias, não convém ensinar algo que em pouco tempo fique desatualizado, mesmo que os conceitos sobre os quais a tecnologia foi construída sejam mantidos. Logo, convém usar tecnologias amplamente usadas e mantidas. Python e ambientes suportados por navegadores (HTTP, Javascript) parecem ser suficientemente permanentes. 
+
 
 ## Resultados
+
 
 ### Testes executados
 
 ### Vestível
 
+Não tem
+
 ### Dispositivo
 
 Apresentar diagrama ou tabela de ligações e foto. Caso seja idêntico a algum projeto anterior, citar o projeto anterior, que DEVE conter esta informação.
 
+Usando a mesma montagem de [Tomada](/projetos/ControlarTomadaPelaInternet), [instalando MicroPython no Witty board](/programas/Micropython) e [instalando WebREPL](/programas/Micropython/webREPL), o computador pode enviar, pelo wifi, comandos Python ligar ou desligar os pinos (GPIO) conectados aos LEDs (GPIO15 conectado ao LED vermelho, GPIO12 contectado ao LED verde, GPIO13 conectado ao LED azul). Como os relés estão conectados aos mesmos pinos, eles são ligados ou desligados da mesma maneira com que os LEDs são. 
+
 Fotos e vídeos
 
 ### Código usado
+
+Para ler o LDR:
 
 ```python
 ldr=machine.ADC(0)
 print(ldr.read())
 ```
 
+Para acender e apagar os LEDs e ligar/desligar os relés:
 
 ```python
 pR=machine.Pin(15, machine.Pin.OUT)
@@ -49,10 +59,22 @@ pG=machine.Pin(12, machine.Pin.OUT)
 pB=machine.Pin(13, machine.Pin.OUT)
 pR.on()
 pR.off()
+pG.on()
+pG.off()
+pB.on()
+pB.off()
 
 ```
 
 ## Discussão e Conclusão
+
+O controle através do wifi está feito. Resta criar o app para celular e controlar pela Internet (no momento o controle é feito pelo wifi local).
+
+Para controlar pela Internet, substituir o módulo C pelo envio direto de comandos - talvez cURL seja suficiente, e conectar o computador (que executa C) a um servidor (Proxy), por exemplo, num SSH reverso. Desta forma, executa-se um terminal no servidor, este envia comandos de shell para o computador (C). Esses comandos podem ser cURL direcionados para o dispositivo.
+
+Para o aplicativo, criar um aplicativo que se conecta ao servidor web (do parágrafo acima) e envia os mesmos comandos de shell, por exemplo, quando o usuário do aplicativo apertar um botão.
+
+O ajuste de C, a prospecção sobre cURL, de outras ferramentas que sejam, porventura, necessárias, e a criação do app podem ser projetos futuros.
 
 -----------------
 
