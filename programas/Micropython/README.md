@@ -30,6 +30,8 @@ Este procedimento deve ser feito quando o dispositivo não tem MicroPython insta
 5. Limpar o conteúdo da memória FLASH do ESP com `esptool.py --port /dev/ttyUSB0 erase_flash`
 6. Transferir a imagem com `esptool.py --port /dev/ttyUSB0 --baud 460800 write_flash --flash_size=detect 0 esp8266-20170108-v1.8.7.bin` (ajustar o nome do arquivo, se necessário).
 
+Caso seu usuário não tenha acesso a `/dev/ttyUSB0` (permission denied) pode ser que precise acrescentar o seu usuário ao grupo `dialout`. No Ubuntu e no Mint isto é feito como o comando: `sudo usermod -a -G dialout <your-username>`. Talvez funcione em outras distribuições baseadas em Debian.
+
 Detalhes em: https://docs.micropython.org/en/latest/esp8266/tutorial/intro.html
 
 
