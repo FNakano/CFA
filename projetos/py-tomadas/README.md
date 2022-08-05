@@ -103,6 +103,8 @@ Referencial, produtos similares, diferenciais, ... em detalhes
 
 ## Materiais e métodos
 
+Se optou por documentar o projeto em um diário, no diário devem constar que programas usou, instruções ou links indicando como instalar, o código-fonte criado, como enviar o código-fonte para o dispositivo, como preparar o dispositivo para reproduzir o teste e o teste propriamente dito (vídeo?)
+
 ### Listas de equipamentos e materiais
 
 ### Etapas do desenvolvimento

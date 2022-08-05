@@ -34,6 +34,8 @@ Caso seu usuário não tenha acesso a `/dev/ttyUSB0` (permission denied) pode se
 
 Detalhes em: https://docs.micropython.org/en/latest/esp8266/tutorial/intro.html
 
+Para instalar Micropython do ESP32, o passo 6 deve ser algo como: `esptool.py --chip esp32 --port /dev/ttyUSB0 write_flash -z 0x1000 esp32-20180511-v1.9.4.bin`. Ref.: https://docs.micropython.org/en/latest/esp32/tutorial/intro.html
+
 
 ### Como comunicar com Micropython no ESP8266
 

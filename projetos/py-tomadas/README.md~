@@ -30,6 +30,8 @@ Do ponto de vista do ensino de tecnologias, não convém ensinar algo que em pou
 
 ### Testes executados
 
+[Vídeo mostrando funcionamento](https://youtu.be/6GJUOkk_Wr0)
+
 ### Vestível
 
 Não tem
@@ -39,6 +41,13 @@ Não tem
 Apresentar diagrama ou tabela de ligações e foto. Caso seja idêntico a algum projeto anterior, citar o projeto anterior, que DEVE conter esta informação.
 
 Usando a mesma montagem de [Tomada](/projetos/ControlarTomadaPelaInternet), [instalando MicroPython no Witty board](/programas/Micropython) e [instalando WebREPL](/programas/Micropython/webREPL), o computador pode enviar, pelo wifi, comandos Python ligar ou desligar os pinos (GPIO) conectados aos LEDs (GPIO15 conectado ao LED vermelho, GPIO12 contectado ao LED verde, GPIO13 conectado ao LED azul). Como os relés estão conectados aos mesmos pinos, eles são ligados ou desligados da mesma maneira com que os LEDs são. 
+
+[Caixa](IMG_20220718_205333365.jpg)
+
+![Vista por cima](IMG_20220718_205342583.jpg)
+
+[Vista lateral do witty board](IMG_20220718_205358960.jpg)
+
 
 Fotos e vídeos
 
