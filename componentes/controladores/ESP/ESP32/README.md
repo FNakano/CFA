@@ -151,3 +151,27 @@ Para testar o encaminhamento criei um servidor `flask` no computador doméstico 
 
 O que falta agora é criar uma página com botões que quando clicados executam os comandos Python para enviar comandos webREPL.
 
+## <a id="2022-08-07-092719" href="#2022-08-07-092719">2022-08-07-092719</a>
+
+Com mais 4 horas de trabalho fechei uma história. Usei umas três horas para colocar uma página com dois botões funcionando. São muitos posts em foruns e muita documentação que *bate na trave* pois ou não explica algo (falta informação, contexto incompleto, falta a mim algum conhecimento óbvio,...) ou baseia-se em bibliotecas auxiliares que não quero usar. Usei um pouco mais de meia hora para ajustar o código para enviar comandos para o dispositivo. Usei o restante (uns 10 minutos) para testar o proxy e ajustar o template (`/templates/botoes.html`).
+
+São muitos detalhes, acho que vou levar o resto do dia para explicar o que fiz...
+
+
+
+https://www.google.com/search?channel=fs&client=ubuntu&q=python+flask+create+button
+https://stackoverflow.com/questions/19794695/flask-python-buttons
+https://www.tutorialspoint.com/flask/flask_quick_guide.htm
+https://predictivehacks.com/?all-tips=how-to-add-action-buttons-in-flask
+https://www.google.com/search?channel=fs&client=ubuntu&q=python+pass+command
+https://www.google.com/search?channel=fs&client=ubuntu&q=flask+render_template
+https://flask.palletsprojects.com/en/2.1.x/quickstart/
+https://www.google.com/search?q=flask+template+NameError%3A+name+%27form%27+is+not+defined&client=ubuntu&hs=M8M&channel=fs&ei=I5jvYqmnKeCQ4dUP1aaQqAU&ved=0ahUKEwjpxNnZxrT5AhVgSLgEHVUTBFUQ4dUDCA0&uact=5&oq=flask+template+NameError%3A+name+%27form%27+is+not+defined&gs_lcp=Cgdnd3Mtd2l6EAM6BwgAEEcQsANKBAhBGABKBAhGGABQ3QlYzRJg7hRoAXABeACAAYoBiAGSCJIBAzAuOJgBAKABAcgBCMABAQ&sclient=gws-wiz
+https://python-adv-web-apps.readthedocs.io/en/latest/flask_forms.html
+https://python-adv-web-apps.readthedocs.io/en/latest/flask_forms.html#id1
+https://www.google.com/search?channel=fs&client=ubuntu&q=flask+template+method+not+allowed
+https://thewebdev.info/2022/04/03/how-to-fix-post-error-405-method-not-allowed-with-flask-python/
+http://192.168.1.1/NHMLZKBBNVUCLBNA/userRpm/Index.htm
+
+Aplicando mais meia hora, consegui escrever e testar o `apprgb.py` e melhorar o `/templates/botoes.html` para enviar comandos, tanto locais quanto remotos, para o ESP32 com matriz RGB. Isto fecha a meta mínima para terça, agora vou trabalhar na meta para segunda-feira.
+
