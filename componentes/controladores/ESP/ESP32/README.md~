@@ -173,5 +173,15 @@ https://www.google.com/search?channel=fs&client=ubuntu&q=flask+template+method+n
 https://thewebdev.info/2022/04/03/how-to-fix-post-error-405-method-not-allowed-with-flask-python/
 http://192.168.1.1/NHMLZKBBNVUCLBNA/userRpm/Index.htm
 
-Aplicando mais meia hora, consegui escrever e testar o `apprgb.py` e melhorar o `/templates/botoes.html` para enviar comandos, tanto locais quanto remotos, para o ESP32 com matriz RGB. Isto fecha a meta mínima para terça, agora vou trabalhar na meta de segunda-feira.
+Aplicando mais meia hora, consegui escrever e testar o `apprgb.py` e melhorar o `/templates/botoes.html` para enviar comandos, tanto locais quanto remotos, para o ESP32 com matriz RGB. Isto fecha a meta mínima para terça, agora vou trabalhar na meta para segunda-feira.
 
+### Teste
+
+1. Ligar o dispositivo;
+2. Checar a conexão no AP;
+   - verificar se os IPs não mudaram. Se mudaram, precisa mudar em app???.py
+3. Checar o funcionamento do dispositivo e da conexão local através do webREPL
+4. *Levantar o servidor* `python app???.py` em `ExplorarFlask/webapp`
+5. Testar servidor local com navegador local conectado a `localhost:5000/botoes` usar os botões da linha de baixo;
+6. Criar tunel reverso SSH (comando logo acima);
+7. Testar tunel e conexão remota com navegador (remoto ou local) conectado a `ip-50-...:5000/botoes` usar os botões da linha de cima;
