@@ -12,7 +12,7 @@
 
 Mais modelos no projeto [ESP32-CAM](/projetos/ESP32-CAM/README.md)
 
-## ESP32-C3
+## ESP32-C3 (Aprox. 4h de trabalho e documentação)
 
 ## 12F (AiThinker)
 
@@ -67,4 +67,87 @@ Writer.set_textpos(oled,0,0) # posiciona o cursor do framebuffer em 0,0
 wri.printstring('22:22') # escreve a string no framebuffer
 oled.show() # envia o conteúdo do framebuffer para o oled
 ```
+
+## <a id="2022-08-06-205959" href="#2022-08-06-205959">2022-08-06-205959</a>
+
+### Estou acumulando informação para fechar mais um ponto.
+
+O objetivo é enviar, de qualquer computador na internet, através do navegador, comandos para um dispositivo, conectado à minha rede doméstica, que executa webrepl. 
+
+O que sei até agora:
+
+Segundo os detalhes técnicos de webREPL (https://github.com/micropython/webrepl#technical-details), ele é baseado no protocolo websockets (https://websockets.readthedocs.io/en/stable/). A documentação é muito volumosa pois o protocolo pode ser usado de várias formas.
+
+Eu quero usar comandos Python para enviar, como cliente, comandos para o webREPL (que está atrás de um servidor websocket). O mais comum é usar comandos Python para criar um servidor websocket. Logo, leva mais tempo até encontrar o que quero (pois os buscadores retornam o que é mais frequente). 
+
+O exemplo que me ajudou está em https://pypi.org/project/websocket-client/. Ajustando, cheguei aos comandos que uso no Python do notebook:
+
+```python
+from websocket import create_connection
+ws=create_connection("ws://192.168.1.101:8266")
+print(ws.recv())
+Password: 
+ws.send('star\r')
+print(ws.recv())
+WebREPL connected
+ws.send('oled.fill(0)\r')
+ws.send('import roboto28\r')
+ws.send('from writer import Writer\r')
+ws.send('wri=Writer(oled, roboto28)\r')
+ws.send('wri.printstring("22:22")\r')
+ws.send('oled.show()\r')
+>>> print(ws.recv())
+o
+>>> print(ws.recv())
+l
+>>> print(ws.recv())
+e
+>>> print(ws.recv())
+d
+>>> print(ws.recv())
+.
+>>> print(ws.recv())
+f
+>>> print(ws.recv())
+i
+>>> print(ws.recv())
+l
+>>> print(ws.recv())
+l
+>>> print(ws.recv())
+(
+>>> print(ws.recv())
+0
+>>> print(ws.recv())
+)
+>>> 
+```
+
+Apanhei um bocado até perceber que a mensagem para o webREPL precisava conter o `\r` para o comando ser executado.
+
+Algumas mensagens aparecem no REPL do minicom conectado à USB. Também ajudou um pouco.
+
+A API do websocket está documentada aqui: https://websockets.readthedocs.io/en/8.1/api.html.
+
+Websocket foi proposto/definido/normatizado (no IETF) através de RFC: https://www.rfc-editor.org/rfc/rfc6455.html#section-4
+
+## <a id="2022-08-06-212738" href="#2022-08-06-212738">2022-08-06-212738</a>
+
+O passo (anterior? posterior?) é enviar esses comandos através de um servidor web. Como os comandos que testei são Python, então deve ser mais fácil usar Django ou Flask. Conheço nada de Django e pouco de Flask, então vai Flask. AINDA NÃO IMPLEMENTEI ESTE PASSO!!
+
+Quero executar o servidor web num computador na minha rede doméstica. Não tenho IP público nela. Tenho um servidor em um provedor privado, então vou ver como configurá-lo para encaminhar as conexões (HTTP) que ele receber na Web para o meu computador doméstico. Parece que há várias maneiras de fazer isso. A que achei mais simples (e por isso resolvi investir em aprender) é fazer um tunel reverso com SSH.
+
+A documentação sobre como criar o tunel é vasta e confusa. Para fazer a coisa parecer fácil, vai o comando:
+
+```
+ssh -R 5000:192.168.1.106:5000 fabio@ip-50-62-81-50.ip.secureserver.net
+```
+
+executado no terminal da máquina doméstica, cria o túnel através do qual o servidor `ip-50-...` encaminha os pacotes TCP que chegam na porta 5000 para o computador doméstico no IP (doméstico) `192.168...`, também na porta 5000.
+
+O daemon ssh do servidor precisa ser configurado. Colocar no arquivo `\etc\ssh\sshd_config` uma linha contendo `GatewayPorts yes` (https://www.ssh.com/academy/ssh/tunneling/example, https://www.ssh.com/academy/ssh/sshd_config)
+
+Para testar o encaminhamento criei um servidor `flask` no computador doméstico e executei. Detalhes ainda não estão no repositório, estão no arquivo local `ExplorarFlask/diario.md`. Apontei o navegador para `http://ip-50-62-81-50.ip.secureserver.net:5000` e voilá: o navegador abriu a página "olá mundo" do servidor `flask`.
+
+O que falta agora é criar uma página com botões que quando clicados executam os comandos Python para enviar comandos webREPL.
 
