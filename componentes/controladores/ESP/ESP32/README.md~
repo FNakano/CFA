@@ -177,7 +177,7 @@ Aplicando mais meia hora, consegui escrever e testar o `apprgb.py` e melhorar o 
 
 ### Teste
 
-1. Ligar o dispositivo;
+1. Ligar o(s) dispositivo(s);
 2. Checar a conexão no AP;
    - verificar se os IPs não mudaram. Se mudaram, precisa mudar em app???.py
 3. Checar o funcionamento do dispositivo e da conexão local através do webREPL
@@ -185,3 +185,27 @@ Aplicando mais meia hora, consegui escrever e testar o `apprgb.py` e melhorar o 
 5. Testar servidor local com navegador local conectado a `localhost:5000/botoes` usar os botões da linha de baixo;
 6. Criar tunel reverso SSH (comando logo acima);
 7. Testar tunel e conexão remota com navegador (remoto ou local) conectado a `ip-50-...:5000/botoes` usar os botões da linha de cima;
+
+```mermaid
+sequenceDiagram
+    Actor Dib
+    Dib-->>Navegador: browse ip-50-...:5000/botoes
+    Navegador->>SSHD: GET ip-50-...:5000/botoes
+    SSHD->>+Flask: GET ip-50-...:5000/botoes
+    Note left of Flask: apprgb.botoes()
+    Flask-->>-SSHD: botoes.html
+    SSHD-->>Navegador: botoes.html
+    Navegador-->>Dib: render botoes.html  
+    Dib-->>Navegador: click botao1
+    Navegador->>SSHD: POST ip-50-...:5000/botoes botao1
+    SSHD->>+Flask: POST ip-50-...:5000/botoes botao1
+    Note right of Flask: apprgb.botoes().action1
+    Flask-->>+ESP32: ws.open,ws.send,...
+    Note left of Flask: apprgb.botoes()
+    Flask-->>SSHD: botoes.html
+    deactivate Flask
+    Note right of ESP32: Efeitos.animan(10)
+    SSHD-->>Navegador: botoes.html
+    ESP32-->>-Neopixels: blip!
+    Navegador-->>Dib: render botoes.html  
+```
