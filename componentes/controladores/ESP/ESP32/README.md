@@ -36,6 +36,9 @@ Esta placa controladora contém uma matriz de LEDs RGB compatíveis com NeoPixel
    - para fins de arquivamento, renomeei `boot.py` para `bootRGB.py`;
 3. Fiz esses ajustes em `Efeitos.py`;
 
+O regulador de voltagem da entrada é potencial fonte de problemas. Não consegui identificar qual é o regulador, mas os candidatos são Texas Instruments lp2980 e Microchip TC1186. Os dois tem dropout da ordem de 0.3V, logo, permitem ligar 3,6V na linha de 5V e fornecer os ao menos 3,3V nominais para o ESP32. Acontece que a corrente máxima é da ordem de 150mA, o que é pouco quando o wifi está ligado, logo, pode acontecer brownout.
+
+
 ### ESP32-C3-0.42LCD
 
 https://github.com/01Space/ESP32-C3-0.42LCD

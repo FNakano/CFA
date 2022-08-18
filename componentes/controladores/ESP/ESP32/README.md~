@@ -45,13 +45,17 @@ Esta placa controladora contém um display OLED com controlador SSD1306. Para te
 1. Instalei Micropython [Referência neste repositório](https://github.com/FNakano/CFA/tree/master/programas/Micropython);
    - captura de tela de 01space mostrando que é esse firmware mesmo: https://github.com/01Space/ESP32-C3-0.42LCD/blob/main/micropython/image/4.png
    - firmware sem conversor serial para usb: https://micropython.org/download/esp32c3-usb/
+   - usei um comando para apagar a memória flash e outro para gravar o firmware. IMPORTANTE: não mudar o endereço de gravação. Se fizer isso não dá para gravar outro firmware - o `esptool.py` falha com mensagens na operação de leitura, tentando ler o efuse de habilitação de criptografia. Corrigi isso instalando a placa na IDE do Arduino e enviando `blink`. Por sorte, isto reescreveu o programa, o que  "consertou" o problema.
+   - `esptool.py -p /dev/ttyACM0 erase_flash`, `esptool.py --chip esp32c3 --port /dev/ttyACM0 --baud 460800 write_flash -z 0x0 esp32c3-usb-20220618-v1.19.1.bin`
 2. Configurei webREPL [Referência neste repositório](https://github.com/FNakano/CFA/tree/master/programas/Micropython/webREPL);
 3. Ajustei o `boot.py` para reconectar ao meu WiFi e escrever no display qual é o IP;
    - enviei o `boot.py` para a placa através do webREPL;
       - este boot cria a variável `oled`, que é a representação do display no programa;
    - para fins de arquivamento, renomeei `boot.py` para `bootOLED.py`;
+      - é possível que a execução desse script sem ter instalado o módulo ssd1306 cause alguma escrita ilegal na memória, contribuindo para o dispositivo não permitir que o firmware seja regravado;
 3. Testei a biblioteca padrão para SSD1306 (https://docs.micropython.org/en/latest/esp8266/tutorial/ssd1306.html);
    - tem somente fonte 8 pixels monospace;
+   - por maior que seja o cuidado, a gente sempre esquece algo... o `driver` do ssd1306 não vem pré-compilado no firmware, então precisa copiar na raiz do sistema de arquivos do ESP32-C3. Para isso, usar webrepl, localizar o driver na árvore de arquivos do micropython (deve ser algum lugar como `/home/fabio/Documentos/git/micropython/drivers/display/ssd1306.py`) e enviar o arquivo;
 3. Usei um gerador de fontes (https://github.com/peterhinch/micropython-font-to-py), usei o `writer.py` desse mesmo projeto (https://github.com/peterhinch/micropython-font-to-py/blob/master/writer/WRITER.md) e adaptei o exemplo `writer_demo.py` (https://github.com/peterhinch/micropython-font-to-py/blob/master/writer/writer_demo.py) para usar com a biblioteca padrão.
 
 O conversor de fonte é um programa em Python3 executado em desktop. Para instalá-lo, clonei o repositório https://github.com/peterhinch/micropython-font-to-py, instalei a dependência `freetype-py` e executei `./font_to_py.py -x ~/R/x86_64-pc-linux-gnu-library/3.6/rmarkdown/rmd/h/bootstrap/css/fonts/RobotoBold.ttf 28 roboto28.py`. Isto usa o fonte, codificado em `ttf` e cria um fonte bitmap codificado em Python. A opção `-x` é obrigatória. Sua falta causa o erro `ValueError: Font must be horizontally mapped`. Achar o tamanho certo foi por tentativa e erro.
