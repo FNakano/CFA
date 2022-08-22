@@ -37,6 +37,26 @@ A parte "C" é executada no computador e pode ser baixada de https://github.com/
  
 Para conectar, substituir o IP na caixa de texto ao lado do botão Connect pelo IP apresentado pelo dispositivo durante a configuração do wifi. Manter o `:8266`. Clicar em Connect, digitar a senha usada na execução de `webrepl_setup`, deve aparecer a mensagem WebREPL Connected e o prompt (>>>). Através desse prompt enviam-se comandos, em Python, para o dispositivo.
  
+### Multitarefa
+
+Note que WebREPL mantém a conexão com a interface do navegador (via websocket), ao mesmo tempo executa o interpretador para o qual enviamos comandos. ié: algum suporte para multitarefa existe e é usado para WebREPL funcionar dessa forma.
+
+Buscando um pouco mais, chega-se à informação: usa `asyncio` (https://docs.micropython.org/en/latest/library/uasyncio.html, https://github.com/peterhinch/micropython-async/blob/master/v3/docs/TUTORIAL.md).
+
+Pensei que, talvez, executar um loop como:
+
+```python
+import time
+while (True):
+  i=0
+  time.sleep(1)
+
+```
+
+fizesse o repl "travar". MAS `CTRL-C` interrompe (talvez seja uma interrupção mesmo). Se o objetivo fosse "travar" o controlador, poderia desabilitar as interrupções de teclado, mas não é a idéia.
+
+Testei também com `webrepl`. `CTRL-C` também interrompe nesse caso.
+
 
 ### Tornar a conexão permanente.
 

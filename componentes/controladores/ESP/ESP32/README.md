@@ -18,6 +18,18 @@ Mais modelos no projeto [ESP32-CAM](/projetos/ESP32-CAM/README.md)
 
 ## 01Space
 
+Começo a achar estes controladores interessantes (2022-08-21). Explico:
+
+Até agora, é o único controlador que aceita, de maneira descomplicada, ser ligado a baterias de 3,6V, usuais em telefones celulares.
+
+Descomplicado = liga a bateria direto na linha de 5V (https://github.com/01Space/ESP32-C3FH4-RGB/issues/9).
+
+Ligar bateria de 3,6V direto não é muito comum porque a tensão nominal de alimentação do ESP é 3,3V, então resta 0,3V para a tensão (mínima) de dropout do regulador de tensão. Não é todo regulador de tensão que faz isso e os que o fazem, controlam correntes muito baixas. O ESP32 com processador e wifi ligados chega a 500mA de consumo (https://www.cnx-software.com/2022/01/12/esp32-s3-esp32-c3-esp8266-modules-comparison/). 01Space coloca no github um pdf com o esquemático. O regulador de tensão é SPX3819 que, segundo o fabricante, fornece 500mA e, nessa condição, tem dropout de 0,34V, o que ainda permite ao ESP32 operar.
+
+Outra caracteristica interessante é o tipo de LED RGB endereçável. É uma versão de WS2812B que aceita tensão de alimentação a partir de 3,6V (https://pt.aliexpress.com/item/4000262327171.html). Em geral, a tensão de operação desse tipo de LED é 5V+-10%.
+
+A placa com display tem um LED RGB endereçável ligado ao pino 2.
+
 ### ESP32-C3FH4-RGB
 
 https://github.com/01Space/ESP32-C3FH4-RGB
@@ -74,6 +86,8 @@ Writer.set_textpos(oled,0,0) # posiciona o cursor do framebuffer em 0,0
 wri.printstring('22:22') # escreve a string no framebuffer
 oled.show() # envia o conteúdo do framebuffer para o oled
 ```
+
+A placa com display tem um LED RGB endereçável ligado ao pino 2.
 
 ## <a id="2022-08-06-205959" href="#2022-08-06-205959">2022-08-06-205959</a>
 
