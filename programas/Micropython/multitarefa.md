@@ -57,6 +57,76 @@ Um tutorial sobre `uasyncio`: https://gpiocc.github.io/learn/micropython/esp/202
 
 módulo `_thread`: Contém exemplo de uso. Seria uma alternativa? será que permite acessar o RTOS? Iniciar outra instância de REPL?: https://forum.micropython.org/viewtopic.php?t=4867#p27999
 
+###### <a id="2022-08-25-094855" href="#2022-08-25-094855">2022-08-25-094855</a>
+
+Outros tutoriais sobre `uasyncio`: https://medium.com/dev-bits/a-minimalistic-guide-for-understanding-asyncio-in-python-52c436c244ea, https://realpython.com/async-io-python/
+
+Acho que encontrei uma boa analogia para asyncio. É como executar um servidor em Flask. O servidor aceita multiplos clientes (possibilitado pelo uso de asyncio) mas a linha de comando, em princípio, é exclusiva para esse processo. A tarefa/possibilidade de executar em background é delegada, por exemplo, para o SO. No micropython, se usar multitarefa com uasyncio, para poder usar o REPL, é necessário interromper o que estiver sendo executado com uasyncio.
+
+```python
+import util, display, uasyncio
+
+async def showTime() :
+	while (True) :
+		display.displayTime()
+		await uasyncio.sleep(60)
+
+def clock() :
+	util.syncRTCUsingNTP() # suppose WIFI is connected
+	display.displayInit()
+	uasyncio.run(showTime()) # bloqueia (não libera) REPL, continua executando mesmo depois de desconectar webrepl. Quando conecta webrepl (novamente), o console inicia travado (o que digitar não é colocado na tela) e as mensagens são mostradas nesse repl.
+
+# no webREPL/REPL, executar importar e executar a função clock.clock()
+```
+
+O conceito em que se baseia asyncio é o de loop de eventos. Não explorei os detalhes, mas li de passagem que `uasyncio.run()` cria loops de eventos. Para usar um mesmo, ou um único, precisa obter um "ponteiro" para o loop de eventos, o que é feito com `get_event_loop()`, ou algo assim... talvez se eu fizer isso, consiga executar o relógio "em paralelo" com o REPL...
+
+A documentação de `asyncio` para CPython: https://docs.python.org/3.8/library/asyncio-llapi-index.html. A documentação de `uasyncio` para MicroPython: https://docs.micropython.org/en/latest/library/uasyncio.html. As implementações são compatíveis, mas algumas funções não foram implementadas em Micropython. Por exemplo, `get_running_loop()` (use `get_event_loop()`), `loop.is_running()`, `loop.is_closed()`.
+
+Tentei seguir a idéia apresentada em: https://gpiocc.github.io/learn/micropython/esp/2020/06/13/martin-ku-asynchronous-programming-with-uasyncio-in-micropython.html#schedule-and-run-the-tasks.
+
+```
+>>> import uasyncio
+>>> loop=uasyncio.get_event_loop()
+>>> import clock
+>>> clock.clock()
+E (197077) i2c: i2c_set_timeout(817): i2c timing value error
+Orientation: Horizontal. Reversal: False. Width: 72. Height: 40.
+Start row = 0 col = 0
+Orientation: Horizontal. Reversal: False. Width: 72. Height: 40.
+Start row = 0 col = 68
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "clock.py", line 11, in clock
+  File "uasyncio/core.py", line 1, in run
+  File "uasyncio/core.py", line 1, in run_until_complete
+  File "uasyncio/core.py", line 1, in wait_io_event
+KeyboardInterrupt: 
+>>> loop.create_task(clock.showTime())
+<Task>
+>>> loop.run_forever()
+Orientation: Horizontal. Reversal: False. Width: 72. Height: 40.
+Start row = 28 col = 49
+Orientation: Horizontal. Reversal: False. Width: 72. Height: 40.
+Start row = 0 col = 68
+Orientation: Horizontal. Reversal: False. Width: 72. Height: 40.
+Start row = 28 col = 49
+Orientation: Horizontal. Reversal: False. Width: 72. Height: 40.
+Start row = 0 col = 68
+
+```
+
+... acontece que `loop.run_forever()` não libera o prompt, `CTRL-D` não faz soft-reset, hard reset reinicia todo o ambiente (desfaz a inclusão da tarefa). Usar somente `create_task` não provoca a execução da tarefa.
+
+Informação colateral que pode ser útil: Existe um webserver, segundo o autor, é parecido com Flask, baseado em `uasyncio`. Ref.: https://github.com/pfalcon/picoweb
+
+Tem uma boa documentação sobre uasyncio: https://github.com/peterhinch/micropython-async/blob/master/v3/docs/TUTORIAL.md#221-queueing-a-task-for-scheduling. Nela, menciona-se que `create_task` cria a tarefa para ser executada ASAP e não bloqueia:
+
+> asyncio.create_task Arg: the coro to run. The scheduler converts the coro to a Task and queues the task to run ASAP. Return value: the Task instance. It returns immediately. The coro arg is specified with function call syntax with any required arguments passed.  
+
+Só que ASAP, neste contexto, no ESP, parece significar nunca...
+
+
 #### Interrupções
 
 É independente de, e, numa camada abaixo de `uasyncio`.
