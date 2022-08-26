@@ -126,6 +126,7 @@ Tem uma boa documentação sobre uasyncio: https://github.com/peterhinch/micropy
 
 Só que ASAP, neste contexto, no ESP, parece significar nunca...
 
+Entendi mais uma coisa que me incomoda com `uasyncio`. Não dá para usar `deepsleep()` combinado com interrupções para, por exemplo, economizar energia. Por falar nisso, acho que atender interrupção de hardware em Python (escrever a ISR propriamente dita) deve ser difícil, ou impossível, já que o intepretador, que é um programa volumoso, precisa ser executado para intepretar o código da ISR. O que dá para fazer, na minha opinião, é ter no código executável do Micropython, *stubs*. Quando a interrupção é programada, o registrador que aponta para a ISR aponta para um desses *stubs*, que ajusta uma ou mais variáveis de ambiente do micropython. Assim que o interpretador estiver rodando ele lê essas variáveis e chama a função, codificada em Python, que atende a interrupção. Quer dizer que quando a interrupção é programada, em alguma porção não volátil de memória, o ponteiro/referência/nome da função Python que trata a interrupção, deve estar. O atendimento de uma interrupção consiste em: Interrupção de hardware ocorre -> processador é acordado -> stub (ISR na linguagem nativa) é executada -> micropython é carregado -> micropython lê variáveis (modificadas pelo stub) -> micropython chama função de tratamento escrita em Python. Alternativamente, pode haver um arquivo de configuração, ou o próprio `boot.py` que contém a configuração. 
 
 #### Interrupções
 
@@ -138,6 +139,29 @@ Timers e multiprogramação (tipo uasyncio) explícita (apresenta explicitamente
 Orientação para escrever ISRs: https://docs.micropython.org/en/latest/reference/isr_rules.html#isr-rules
 
 `schedule` em Micropyton internals: https://docs.micropython.org/en/latest/library/micropython.html#micropython.schedule.
+
+No 01Space, o pino 9 está conectado a um botão e tem um pull-up. Usei a receita de: https://microcontrollerslab.com/micropython-interrupts-esp32-esp8266-pir-sensor-interfacing-example/. Funcionou. O REPL fica livre e quando aperto o botão o display é atualizado. MAS, se eu mandar um deepsleep(), perde os import e as variáveis criadas. MAS tudo bem porque posso ficar criando.
+
+É questão da forma de pensar. Se eu codificar o restante do relógio de maneira a deixar REPL disponível, consigo codificar o relógio do jeito que estou imaginando.
+
+```python
+from machine import Pin
+nove=Pin(9, Pin.IN)
+import display
+display.displayInit() # aloca memória aqui
+display.displayTime() # testa a função de mostrar
+def handle (Pin) :
+	display.displayTime()
+
+nove.irq(trigger=Pin.IRQ_FALLING,handler=handle)
+```
+
+wakeup com ESP32-S: https://www.engineersgarage.com/micropython-esp32-modem-light-deep-sleep-modes-timer-external-touch-wake-up/
+
+Ler I2C dentro de ISR: https://github.com/micropython/micropython/issues/2859
+
+Ler I2C: https://docs.micropython.org/en/latest/library/machine.I2C.html
+
 
 ### Referências
 
