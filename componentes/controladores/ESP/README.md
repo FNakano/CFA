@@ -26,6 +26,12 @@ Atualmente isto está mais estável e com referências consistentes, assim, quem
 
 (isto já foi testado em Windows, Linux e Raspbian Stretch no raspberry pi 4)
 
+**IMPORTANTE**
+
+- 2022-09-24: A versão 2.0.X da IDE para Ubuntu tem bugs que me fizeram voltar para 1.8.19, que é distribuída junto com Ubuntu 22.04;
+- 2022-09-24: A porta USB (ex. /dev/ttyUSB0) pode não ser acessível no Ubuntu 22.04 pois o teclado braille impede a montagem. Só consegui fazer funcionar removendo o pacote do teclado braille, com `sudo apt remove brltty` e rebootando. Ref.: https://askubuntu.com/questions/1410062/installed-arduino-cant-find-dev-usb0-or-dev-acm0)
+- O comando para acrescentar usuário ao grupo dialout é: `sudo usermod -a -G dialout <username>`. Ref.: https://support.arduino.cc/hc/en-us/articles/360016495679-Fix-port-access-on-Linux
+
 Há tutoriais ilustrados para ESP8266 em:
 
 - [filipeflop](https://www.filipeflop.com/blog/programar-nodemcu-com-ide-arduino/) 
