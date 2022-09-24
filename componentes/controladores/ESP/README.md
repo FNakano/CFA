@@ -17,7 +17,7 @@ Atualmente isto está mais estável e com referências consistentes, assim, quem
 1. Entre em Arquivo->preferências;
 2. na linha **URLs adicionais de gerenciador de placas** acrescente 
     1. para ESP8266: `http://arduino.esp8266.com/stable/package_esp8266com_index.json`
-    2. para ESP32: `https://dl.espressif.com/dl/package_esp32_index.json`
+    2. ~~para ESP32: `https://dl.espressif.com/dl/package_esp32_index.json`~~ referência mais recente, da documentação do fabricante: https://espressif-docs.readthedocs-hosted.com/projects/arduino-esp32/en/latest/installing.html, indica para usar `https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json`  
     3. Caso queira os dois, acrescente as duas URLs, separadas por vírgula
 3. clique ok;
 4. Entre em Ferramentas->placa->gerenciador de placas (talvez leve um tempinho até carregar as placas novas);
