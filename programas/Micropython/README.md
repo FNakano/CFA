@@ -39,14 +39,19 @@ Para instalar Micropython do ESP32, o passo 6 deve ser algo como: `esptool.py --
 
 ### Como comunicar com Micropython no ESP8266
 
-Micropython e seu interpretador são executados no (pelo) dispositivo. O envio de comandos para o dispositivo, usando um computador, é feito atraves de um programa de comunicação como PuTTy (Windows) ou Minicom (Linux). Seguem as instruções para Linux:
+Micropython e seu interpretador são executados no (pelo) dispositivo. O envio de comandos para o dispositivo, usando um computador, é feito atraves de um programa de comunicação como PuTTy (Windows) ou ~~Minicom (Linux)~~ (ver NOTA). Seguem as instruções para Linux:
 
 7. Instalar `minicom` com `sudo apt install minicom`;
 8. Conectar o dispositivo ao computador usando um cabo de dados USB;
 8. Conectar com o dispositivo usando o comando `minicom -D /dev/ttyUSB0 -b 115200` (ajustar se necessário);
 9. No minicom, se não aparecer o prompt (>>>) digitar ENTER (para aparecer o prompt).
 
+NOTA: Em outro computador, com Ubuntu 22.04LTS, estou apanhando para encontrar uma configuração do minicom que o faça *enviar o que digito no teclado para o ESP*. Achei curioso que alguns colaboradores usavam o monitor serial da IDE do Arduino para comunicar-se com o ESP32 rodando Micropython. Mais curioso ainda é que o minicom (depois de ajustar e salvar os ajustes feitos com `sudo mincom -s` - se não for sudo não salva a configuração) e depois do ESP32 ser acessado usando o monitor serial, passou a comuncar-se com o `minicom`. Os ajustes foram na seção de teclado, adicionar quebra de linha e adicionar carriage return.
+
+Começo a achar que programas de comunicação serial (minicom, picocom) não são boas escolhas para programar placas com Micropython embarcado... A vantagem desses programas é que os executáveis são pequenos, necessitam de poucas bibliotecas adicionais e precisam de poucos recursos da máquina para executar. MAS, até onde vi, não há atualizações há anos (hoje=2022-10-03). Isto, para mim, indica que o programa foi "abandonado". Usando esse mesmo critério, descartei `uPyCraft´ pois o repositório https://github.com/DFRobot/uPyCraft teve o commit mais recente em 2018. Já `Mu-editor` (https://codewith.mu/) parece ativo, mas requer download de mais de 1GB (no momento meu sistema está bem enxuto). Então fui com `Thonny IDE` (https://github.com/thonny/thonny), que tem pacote para Linux (`apt install thonny` - dowload de 24MB). Thonny inicia usando o REPL do Ubuntu. Para usar o REPL do ESP, ir em Tools->Options->Interpreter e selecionar MicroPython(ESP32).
+
 Nota: no windows a porta é algo como `comN:`, como `com3:`, `com4:`, ...
+
 
 ### Desdobramentos
 
