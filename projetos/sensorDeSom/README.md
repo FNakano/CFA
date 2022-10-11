@@ -4,6 +4,12 @@
 
 ## Motivação
 
+Apresentar uma alternativa para os sensores de som mais comuns para Arduino (e que são difíceis de trabalhar).
+
+Figura 2: Sensor proposto neste projeto. Sua montagem e uso serão detalhados a seguir.
+
+![montagem](fisico.jpeg)
+
 Os sensores de som para arduino mais comuns, como o desta foto do site da eletrogate: 
 
 ![Sensor de som](https://blog.eletrogate.com/wp-content/webpc-passthru.php?src=https://blog.eletrogate.com/wp-content/uploads/2020/07/detalhamento-sensor-de-som.png), segundo 
@@ -102,5 +108,6 @@ void loop() {
 
 ![esquemático](esquematico.jpeg)
 
-[montagem](fisico.jpeg)
+## Resultado
+
 
