@@ -4,11 +4,13 @@
 
 ## Motivação
 
-Apresentar uma alternativa para os sensores de som mais comuns para Arduino (e que são difíceis de trabalhar).
+Apresentar uma alternativa mais intuitiva (fácil de trabalhar) para os sensores de som mais comuns para Arduino (e que são difíceis de trabalhar).
 
 Figura 2: Sensor proposto neste projeto. Sua montagem e uso serão detalhados a seguir.
 
 ![montagem](fisico.jpeg)
+
+## Introdução
 
 Os sensores de som para arduino mais comuns, como o desta foto do site da eletrogate: 
 
@@ -18,7 +20,7 @@ https://oshwlab.com/adrirobot/KY_038_Microphone_sound_sensor_module-283a631354c2
 
 ![Schematics](https://image.easyeda.com/histories/1d9fba31b4c049af8964b4b309c44646.png).
 
-O circuito usa os amplificadores sem realimentação e com o microfone acoplado em DC (sem capacitor de desacoplamento), o que o faz muito sensível (provavelmente, inclusive a mudanças de temperatura) e, na minha opinião, difícil de calibrar e trabalhar.
+O circuito usa os amplificadores sem realimentação e com o microfone acoplado em DC (sem capacitor de desacoplamento), o que o faz muito sensível (provavelmente, inclusive a mudanças de temperatura). Nesta configuração, a resposta é muito não-linear e, às vezes, não determinística (porque não controlamos temperatura, ruído ambiente, ...). Isto dificulta a interpretação das medidas geradas pelo sensor. Consequemente, na minha opinião, tornando o sensor difícil de calibrar e trabalhar.
 
 Por outro lado, há demanda por sensores de som, baratos, para Arduino, e preferencialmente que permitam medidas proporcionais, comparáveis entre si, ainda que um pouco distorcidas.
 
