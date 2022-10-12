@@ -116,6 +116,6 @@ Request-response está além do escopo do protocolo I2C, mas é implementado no 
 
 #### Próximos passos
 
-Estudar o código-fonte de `requestFrom()` e de `onRequest()` para implementar funcionamento equivalente no ESP32 (https://forum.arduino.cc/t/understanding-wire-requestfrom-timing/152773, https://forum.arduino.cc/t/avoid-wire-requestfrom-in-program/872436).
+Estudar o código-fonte de `requestFrom()` e de `onRequest()` para implementar funcionamento equivalente no ESP32 (https://forum.arduino.cc/t/understanding-wire-requestfrom-timing/152773, https://forum.arduino.cc/t/avoid-wire-requestfrom-in-program/872436, https://forum.arduino.cc/t/wire-requestfrom-details-of-function/599753).
 
 
