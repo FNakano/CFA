@@ -4,7 +4,7 @@
 
 ## Motivação
 
-Apresentar uma alternativa mais intuitiva (fácil de trabalhar) para os sensores de som mais comuns para Arduino (e que são difíceis de trabalhar).
+Apresentar uma alternativa mais intuitiva (fácil de trabalhar) para os sensores de som mais comuns ((e que são difíceis de trabalhar)) para Arduino e ESP32.
 
 Figura 2: Sensor proposto neste projeto. Sua montagem e uso serão detalhados a seguir.
 
@@ -35,7 +35,8 @@ O seguinte circuito capta som e gera sinais com amplitude maior. Talvez seja um 
 | Quantidade | Código | orientação adicional |
 | --- | --- | --- |
 | 1 | Transistor BC548 | --- |
-| 1 | Resistor 2,7MOhm | verm-lilas-verde |
+| 1 | Resistor ~~2,7~~ 2,2MOhm | ~~verm-lilas-verde~~ verm-verm-verde SE FOR ARDUINO UNO/MEGA |
+| 1 | Resistor 1,3MOhm | marrom-laranja-verde SE FOR ESP32 |
 | 1 | Resistor 10kOhm | marrom-preto-laranja |
 | 1 | Resistor 2,2kOhm | vermelho-vermelho-vermelho |
 | 1 | Resistor 100Ohm | marrom-preto-marrom |
@@ -45,9 +46,9 @@ O seguinte circuito capta som e gera sinais com amplitude maior. Talvez seja um 
 
 ### Ferramentas
 
-Arduino UNO e IDE do Arduino
+Arduino UNO OU ESP32 e IDE do Arduino
 
-### Programa
+### Programa para Arduino UNO e MEGA
 
 O exemplo sobre entrada analógica foi adaptado para gerar o programa abaixo:
 
@@ -105,11 +106,77 @@ void loop() {
   Serial.println(sensMax);
 }
 ```
+### Programa para ESP32-C3 (deve ser o mesmo para ESP32 em geral)
+
+O exemplo sobre entrada analógica foi adaptado para gerar o programa abaixo:
+
+```c
+// Adaptado do exemplo esp32->AnalogRead.
+
+int sensorValue = 0;  // variable to store the value coming from the sensor
+int sensMin = 4095;
+int sensMax = 0;
+
+void setup() {
+  // initialize serial communication at 115200 bits per second:
+  Serial.begin(115200);
+  
+  //set the resolution to 12 bits (0-4096)
+  analogReadResolution(12);
+}
+
+void loop() {
+  // read the analog / millivolts value for pin 2:
+  sensorValue = analogRead(2);
+  
+  // print out the values you read:
+  // Serial.printf("ADC analog value = %d\n",analogValue);
+  // Serial.printf("ADC millivolts value = %d\n",analogVolts);
+  sensMin=(sensorValue<sensMin)?sensorValue:sensMin;
+  sensMax=(sensorValue>sensMax)?sensorValue:sensMax;
+  Serial.print(sensorValue);
+  Serial.print(" ");
+  Serial.print(sensMin);
+  Serial.print(" ");
+  Serial.println(sensMax);
+
+  // delay(100);  // delay in between reads for clear read from serial
+}
+```
 
 ### Montagem do circuito
 
 ![esquemático](esquematico.jpeg)
 
+O conversor AD do Arduino UNO/MEGA usa 5V, logo, a faixa dinâmica deve ir de 0V a 5V. Para otimizar o uso da faixa dinâmica, convém que a tensão de saída do sensor de som seja próxima de 2,5V. Para fazer isso, usar o resistor de ~~2,7~~ 2,2MOhm. Caso use ESP32, a tensão de saída do sensor de som deve ser próxima de 1,65V, o que é obtido usando, no lugar do resistor de 2,2MOhm, o resistor de 1,3MOhm.
+
+O sensor de som recebe energia por VCC e GND e apresenta o sinal analógico em A0 (coletor do transistor).
+
+#### Conexão do sensor de som com Arduino UNO/MEGA
+
+| UNO/MEGA | Sensor de som |
+| --- | --- |
+| 5V | Vcc |
+| GND | GND |
+| A0 | A0 |
+
+
+#### Conexão do sensor de som com ESP32
+
+| ESP32-C3 | Sensor de som |
+| --- | --- |
+| 3.3V | Vcc |
+| GND | GND |
+| IO2 | A0 |
+
+
 ## Resultado
 
+![Vídeo de demonstração (com ESP32-C3)](https://youtu.be/fI7quz5zYcw)
+
+## Referências
+
+1. https://docs.espressif.com/projects/esp-idf/en/v4.3/esp32c3/api-reference/peripherals/adc.html
+2. https://randomnerdtutorials.com/esp32-adc-analog-read-arduino-ide/
+3. https://docs.ai-thinker.com/_media/esp32/docs/esp-c3-32s-kit-v1.0_specification.pdf
 
