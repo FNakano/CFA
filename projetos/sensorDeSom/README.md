@@ -187,7 +187,10 @@ Conectar os resistores conforme a tabela de ligações abaixo:
 
 ## Resultado
 
-[Vídeo de demonstração (com ESP32-C3) no youtube](https://youtu.be/fI7quz5zYcw)
+[Vídeo de demonstração (com ESP32-C3) no youtube (sem som, por falha)](https://youtu.be/fI7quz5zYcw)
+
+[Vídeo de demonstração (com ESP32-C3) (com som, somente para pessoas da universidade.)](https://drive.google.com/file/d/1Twy3252Y2PdBNPnNFj-U5Zq8askQVqfS/view?usp=sharing)
+
 
 ## Referências
 
