@@ -160,6 +160,21 @@ O sensor de som recebe energia por VCC e GND e apresenta o sinal analógico em A
 | GND | GND |
 | A0 | A0 |
 
+Alternativamente pode-se usar o circuito do sensor de som para ESP32 e aplicar 3,3V na entrada de referência do ADC do Arduino. ié, acrescentar um divisor de tensão e ligá-lo a AREF. O divisor de tensão é construído com um resistor de 1,1kOhm e um resistor de 2,2kOhm.
+
+| Quantidade | Código | orientação adicional |
+| --- | --- | --- |
+| 1 | Resistor 1,1kOhm | marrom-marrom-vermelho |
+| 1 | Resistor 2,2kOhm | vermelho-vermelho-vermelho |
+
+Conectar os resistores conforme a tabela de ligações abaixo:
+
+| UNO/MEGA | Outro componente |
+| --- | --- |
+| 5V | um terminal do resistor de 1,1kOhm |
+| AREF | outro terminal do resistor de 1,1kOhm E um terminal do resistor de 2,2kOhm |
+| GND | outro terminal do resistor de 2,2kOhm |
+
 
 #### Conexão do sensor de som com ESP32
 
