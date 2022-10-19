@@ -191,6 +191,17 @@ Conectar os resistores conforme a tabela de ligações abaixo:
 
 [Vídeo de demonstração (com ESP32-C3) (com som, somente para pessoas da universidade.)](https://drive.google.com/file/d/1Twy3252Y2PdBNPnNFj-U5Zq8askQVqfS/view?usp=sharing)
 
+## Próximos passos
+
+1. Encontrar uma forma simples de controlar o ganho do amplificador;
+   - um colaborador observou que o amplificador satura quando a intensidade é muito alta (ex. ao lado do alto-falante do celular) - consegui reproduzir o experimento;
+   - testei colocar um trimpot no resistor de coletor mas parecia não ser boa solução pois é somente um divisor de tensão, a saturação poderia ser causada pelo (excesso de) ganho do transistor, aí o divisor de tensão não adiantaria - abandonei a idéia;
+   - testei variar a resistência de emissor. Isso tem influência na tensão de coletor e no ganho do circuito. A influência na tensão de coletor parece pequena, a variação do ganho é grande. Resolve adequadamente o caso de teste. Parece ser boa solução.
+2. Criar protótipo em placa padrão de circuito impresso;
+   - da maneira como monto circuitos no protoboard, maus-contatos e curto-circuitos são frequentes. Uma forma "barata" (baixo custo) de resolver isso é montar em placa padrão, soldando os componentes;
+   - é uma passo anterior à produção de placas de circuito impresso específicas - algo que tem custo mais elevado e só se justifica se a quantidade de placas for maior. 
+
+[Link para Parte 2](Parte2.md) - Estes próximos passos foram realizados.
 
 ## Referências
 
