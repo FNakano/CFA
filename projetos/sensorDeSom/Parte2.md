@@ -15,7 +15,8 @@ Desenhei no papel o leiaute e dispus na placa de circuito impresso (https://curt
 
 Peguei outra placa, cortei no tamanho que queria, posicionei os componentes mais baixo (no caso, os resistores), pelo avesso, dobrei os terminais, com o cuidado de manter os componentes no lugar, conforme as ligações que deveriam ser feitas.
  
-/home/fabio/MeuGit/CFA/projetos/sensorDeSom/photo1666217077(1).jpeg
+![Terminais dos resistores dobrados](photo16662170771.jpeg)
+
 
 Soldei um dos terminais, posicionei, sequencialmente, os componentes mais altos, repetindo a operação de dobrar o terminal e soldar até que todos os componentes estivessem soldados. Isso resultou na montagem apresentada na primeira figura.
 
