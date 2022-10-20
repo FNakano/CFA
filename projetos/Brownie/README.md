@@ -1,5 +1,8 @@
 # Fazer Brownie
 
+![Foto](photo1666285829.jpeg)
+
+
 ## Motivação
 
 - Porque é gostoso;
@@ -46,9 +49,9 @@ Dica: untar a forma com chocolate em pó.
 - Acrescenta chocolate [Foto](photo1666283923.jpeg)
 - Acrescenta farinha [Intermediário](photo1666284065.jpeg)  [Final](photo1666284135.jpeg)
 - Acrescenta o amendoim quebrado (não mostrado)
-- Despeja na forma [Foto](photo1666285593.jpeg)
+- Despeja na forma [Foto](photo1666284393.jpeg)
 - Põe no forno [Foto](photo1666284462.jpeg)
-- Verifica se formou casquinha     [2](photo1666285829.jpeg)
+- Verifica se formou casquinha [Foto](photo1666285593.jpeg)
 
 ## Comentários
 
