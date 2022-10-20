@@ -1,4 +1,4 @@
-# Esboço de documentação sobre construção de um "sensor de som".
+# Construção de um "sensor de som".
 
 ![Som](Som2022-10-11.png)
 
@@ -24,9 +24,9 @@ O circuito usa os amplificadores sem realimentação e com o microfone acoplado 
 
 Por outro lado, há demanda por sensores de som, baratos, para Arduino, e preferencialmente que permitam medidas proporcionais, comparáveis entre si, ainda que um pouco distorcidas.
 
-Ligar diretamente um microfone de computador a uma entrada analógica do arduino, até funciona, mas a variação do valor lido na entrada analógica é muito pequena (para alguma aplicação, isso pode ser suficiente).
+Ligar diretamente um microfone de computador a uma entrada analógica do arduino até funciona, mas a variação do valor lido na entrada analógica é muito pequena (para alguma aplicação, isso pode ser suficiente).
 
-O seguinte circuito capta som e gera sinais com amplitude maior. Talvez seja um "sensor de som" mais adequado.
+O seguinte circuito capta som e gera sinais com amplitude maior (é um amplificador a transistor). É um "sensor de som" mais adequado para determinadas aplicações.
 
 ## Montagem
 
@@ -175,6 +175,8 @@ Conectar os resistores conforme a tabela de ligações abaixo:
 | AREF | outro terminal do resistor de 1,1kOhm E um terminal do resistor de 2,2kOhm |
 | GND | outro terminal do resistor de 2,2kOhm |
 
+Equivale ao uso do divisor de tensão a conexão de AREF, através de um resistor (limitador de corrente) diga-se de 4,7kOhm, à linha de 3,3V do Arduino.
+
 
 #### Conexão do sensor de som com ESP32
 
@@ -201,7 +203,7 @@ Conectar os resistores conforme a tabela de ligações abaixo:
    - da maneira como monto circuitos no protoboard, maus-contatos e curto-circuitos são frequentes. Uma forma "barata" (baixo custo) de resolver isso é montar em placa padrão, soldando os componentes;
    - é uma passo anterior à produção de placas de circuito impresso específicas - algo que tem custo mais elevado e só se justifica se a quantidade de placas for maior. 
 
-[Link para Parte 2](Parte2.md) - Estes próximos passos foram realizados.
+Estes próximos passos foram realizados. [Link para Parte 2](Parte2.md)
 
 ## Referências
 
