@@ -1,4 +1,5 @@
 # Fazer Brownie
+**nota**: Tive problema com o corte. O resultado ficou entre brownie e cookie. Antes de fazer, leia até o fim.
 
 ![Foto](photo1666285829.jpeg)
 
@@ -25,7 +26,7 @@ Tigelas, espátulas, colheres, medidas (xícara), batedeira.
 - 1 xícara de açúcar
 - 1 ½ xícara de farinha de trigo
 - 1 colher de café de sal
-- 1 xícara de nozes ou avelãs picadas (opcional)
+- ~~1 xícara de nozes ou avelãs picadas (opcional)~~ substituí por meia xícara de amendoim torrado, descascado, sem sal picado em pedaços;
 
 [Foto com ingredientes](photo1666281350.jpeg)
 
@@ -53,11 +54,26 @@ Dica: untar a forma com chocolate em pó.
 - Põe no forno [Foto](photo1666284462.jpeg)
 - Verifica se formou casquinha [Foto](photo1666285593.jpeg)
 
+### Resultado imprevisto
+
+Não desenformou e, tanto quente quanto depois de esfriar, ficou mole demais para cortar e levantar a fatia. [Foto](msg-691578869-724.jpg)
+
+
+Acrescentei os seg. passos:
+
+- colocar na geladeira (ficou uma noite, para dar um descanso na cabeça).  [Foto](msg-691578869-722.jpg)
+- cortar [Foto](msg-691578869-721.jpg)
+- dispor os pedaços em assadeira com distância suficiente para não grudar um pedaço no outro, caso derreta um pouco  [Foto](msg-691578869-720.jpg)
+- assar a 200 graus por 17 minutos (15 ficou mole demais, 20, depois de esfriar, vira cookie  [Foto](msg-691578869-719.jpg)
+
 ## Comentários
 
 A execução foi acompanhada por quem deu a receita, fui recebendo informação adicional.
 
 O meio ficou muito mole para cortar. Devolvi ao forno por uns minutos. Na próxima vez observar o ponto para corte.
 
+Ainda assim, não firmou. Ao corte a massa não escorre, mas é difícil tirar uma fatia, por isso fiz mais uns passos.
 
+No fim, quem comeu gostou e não sobrou.
 
+![Foto fim](photo1666532025.jpeg)
