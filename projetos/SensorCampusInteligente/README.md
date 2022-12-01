@@ -17,3 +17,13 @@
    - Acrescentar funcionalidades nos dispositivos implantados;
    - Implantar mais dispositivos;
 - Manutenção;
+
+# Etiquetas QR-code.
+
+https://www.qualitylaserbr.com.br/produto/gravacao-a-laser-de-qr-code/
+
+Channel Sharing Settings
+
+- [ ] Keep channel view private
+- [X] Share channel view with everyone
+- [ ] Share channel view only with the following users:
