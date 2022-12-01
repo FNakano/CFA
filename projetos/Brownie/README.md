@@ -88,5 +88,5 @@ No fim, quem comeu gostou e não sobrou.
 ![Foto fim](photo1666532025.jpeg)
 
 - Diminuir a quantidade de gordura (de 340 para 200) muda muito a consistência do brownie;
-- Trocar de margarina para manteiga faz diferença. Com manteiga, dá para assar duas vezes e fazer cookie, com margarina, a impressão que tenho, é que não dá;
+- Com manteiga, dá para assar duas vezes e fazer cookie, o que não tentei com margarina;
 - O tipo de forma é importante - para brownie, forma de metal é melhor. Se a intenção é fazer cookie, o primeiro cozimento pode ser feito em refratário de vidro;
