@@ -2,9 +2,23 @@
 
 Acho que concluí uma história, agora vou contar...
 
-Na animação abaixo o Witty Board está conectado por wifi à minha rede doméstica, tal como o computador que estou usando. Eles estão a uns dois metros de distância um do outro e não estão interconectados por cabos de comunicação (ex. USB - o cabo USB conectado ao witty board está conectado a uma fonte de alimentação). Consigo acender e apagar o LED através da conexão WiFi.
+Na animação abaixo o Witty Board está conectado por wifi à minha rede doméstica, tal como o computador que estou usando. Eles estão a uns dois metros de distância um do outro e não estão interconectados por cabos de comunicação (ex. USB - o cabo USB conectado ao witty board está conectado a uma fonte de alimentação). Consigo acender e apagar o LED **através da conexão WiFi**.
 
 ![webREPL em ação](./output.gif)
+
+### Procedimento (sem muitas explicações)
+
+1. Instalar na placa controladora o firmware Micropython apropriado;
+	- ajuda em ../README.md
+2. Com a placa controladora conectada pela porta USB, executar no REPL `webrepl_setup`;
+	- responder às perguntas, anotar/lembrar a senha;
+	- ao final o setup reinicia a placa microcontroladora;
+3. Com a placa controladora conectada pela porta USB, conectar ao wifi;
+	- anotar o endereço IP da placa controladora;
+4. Abrir o arquivo `webrepl.html` no navegador;
+	- o arquivo (e scripts associados) podem ser clonados(baixados) de https://github.com/micropython/webrepl;
+5. Digitar na caixa de texto do alto à esquerda `ws//<IP>:8266` e clicar no botão connect;
+6. Enviar comandos Python para, por exemplo, acender e apagar o LED embutido.
 
 ### O que é webREPL
 
