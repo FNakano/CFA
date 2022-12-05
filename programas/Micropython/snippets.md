@@ -1,5 +1,5 @@
 # índice de snippets
 
-- [configAsAP](configAsAP/configAsAP.py)
-- [configAsSta](configAsAP/configAsSta.py)
+- [configAsAP](snippets/configAsAP/configAsAP.py)
+- [configAsSta](snippets/configAsAP/configAsSta.py)
 
