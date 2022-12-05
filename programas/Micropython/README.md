@@ -34,10 +34,13 @@ Caso seu usuário não tenha acesso a `/dev/ttyUSB0` (permission denied) pode se
 
 Detalhes em: https://docs.micropython.org/en/latest/esp8266/tutorial/intro.html
 
+### Como instalar Micropython no ESP32
+
 Para instalar Micropython do ESP32, o passo 6 deve ser algo como: `esptool.py --chip esp32 --port /dev/ttyUSB0 write_flash -z 0x1000 esp32-20180511-v1.9.4.bin`. Ref.: https://docs.micropython.org/en/latest/esp32/tutorial/intro.html
 
+Testei esse procedimento com NodeMCU-32s e com MH-ET Live ESP32-MiniKit.
 
-### Como comunicar com Micropython no ESP8266
+### Como comunicar com Micropython no ESP8266 e no ESP32
 
 Micropython e seu interpretador são executados no (pelo) dispositivo. O envio de comandos para o dispositivo, usando um computador, é feito atraves de um programa de comunicação como PuTTy (Windows) ou ~~Minicom (Linux)~~ (ver NOTA). Seguem as instruções para Linux:
 
@@ -60,6 +63,8 @@ Nota: no windows a porta é algo como `comN:`, como `com3:`, `com4:`, ...
 - Projeto Efeitos coloridos (dispositivo feito, [documentação iniciada](/projetos/py-efeitos))
 - Projeto controlar tomadas (dispositivo feito, [documentação iniciada](/projetos/py-tomadas))
 - Projeto ler sensores (dispositivo feito, [documentação iniciada](/projetos/py-sensores-witty))
+- snippets (./snippets.md)
+	- snippets são fragmentos de código;
 
 A maneira mais comum para executar comandos em Python é digitando no interpretador: um programa em linha de comando que lê o comando digitado, avalia (executa) o comando e imprime o resultado. Interpretadores desse tipo, comumente são designados REPL (Read-Evaluate-Print Loop) (pronúncia: http://www.howtopronounce.cc/repl). Nos microcontroladores com micropyton instalado o interpretador é executado continuamente, "só" precisa ser acessado.
 

@@ -6,7 +6,7 @@ Na animação abaixo o Witty Board está conectado por wifi à minha rede domés
 
 ![webREPL em ação](./output.gif)
 
-### Procedimento (sem muitas explicações)
+### Instruções Rápidas (sem muitas explicações)
 
 1. Instalar na placa controladora o firmware Micropython apropriado;
 	- ajuda em ../README.md
