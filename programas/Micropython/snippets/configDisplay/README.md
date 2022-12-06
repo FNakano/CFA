@@ -20,7 +20,7 @@ Depois, para instalar a biblioteca do display, usar o comando `upip.install('mic
 
 Em suma, o código para instalar a biblioteca é:
 	
-```
+```python
 import network, time
 staif=network.WLAN(network.STA_IF) 
 staif.active(True) # conecta ao ap conectado anteriormente
@@ -46,9 +46,9 @@ No ESP32S, os pinos usuais para I2C são 21=SDA e 22=SCL. Mais informação sobr
 
 ## Enviar os comandos através de REPL
 
-Os comandos estão em configDisplay.py
+Os comandos estão em configDisplay.py . Copiar e colar no REPL.
 
 ## Referências
 
 - https://docs.micropython.org/en/latest/esp8266/tutorial/ssd1306.html
-- 
+

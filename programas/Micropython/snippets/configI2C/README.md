@@ -41,7 +41,7 @@ Linguagens de programação implementam funcionalidades através de bibliotecas.
 
 A placa microcontroladora, geralmente, também fornece energia para o dispositivo, logo, além de conectar SDA e SCL, os pinos 3.3V e GND também devem ser conectados. O GND serve tanto para energia quanto como tensão de referência (por exemplo, corresponde ao nível lógico ZERO).
 
-| Display | Placa Microcontroladora (ESP32S) | ccc |
+| Dispositivo | Placa Microcontroladora (ESP32S) | ccc |
 | --- | --- | --- |
 | VCC | 3.3 | --- |
 | GND | GND | --- |

@@ -1,5 +1,7 @@
 # Composição de snippets
 
+![](teste.gif)
+
 ## Objetivo
 
 Criar um programa que permita acessar o ESP32 quando ele recebe energia de uma bateria de 3.6V conectada a Vin.
@@ -35,4 +37,31 @@ O hardware ficou como o do snippet /programas/MicroPython/snippets/configDisplay
 
 ### Testar
 
-(amanhã)
+Ligar o hardware à bateria. No caso usei uma Li-Ion que, sem carga, fornecia um pouco mais de 4.0V. Conectei em Vcc e GND. Em pouco tempo o ESP32 iniciou e o display mostrou IP, nome da rede e senha. O ESP32 foi iniciado como Access Point wifi.
+
+Às 8:28 conectei ao webREPL, pelo wifi, usando um desktop como estação wifi (cliente) e executando um navegador. Pelo webREPL enviei os comandos abaixo:
+
+```python
+import machine, time
+p2=machine.Pin(2,machine.Pin.OUT)
+while True :
+	p2.on()
+	time.sleep(1)
+	p2.off()
+	time.sleep(1)
+
+```
+
+às 9:50 interrompi e digitei estes:
+
+```python
+while True :                                                                                                                                      
+    oled.fill(1)                                                                                                                                  
+    oled.show()                                                                                                                                   
+    time.sleep(1)                                                                                                                                 
+    oled.fill(0)                                                                                                                                  
+    oled.show()                                                                                                                                   
+    time.sleep(1)  
+
+```
+
