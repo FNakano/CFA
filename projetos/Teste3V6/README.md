@@ -14,14 +14,18 @@ A maioria das placas baseadas em ESP32 usa reguladores de tensão similares a AM
 
 Há placas com outros modelos de regulador de tensão e há reguladores de tensão com dropout da ordem de 0.3V. Estes outros modelos de placas não tem diagrama esquemático na web, mas o regulador de tensão embutido tem encapsulamento diferente dos AMS1117 e similares, sendo mais parecidos com os de dropout da ordem de 0.3V.
 
-Na dúvida, convém testar se uma bateria com tensão de 3.6V conectada a Vin é capaz de ligar o ESP. 
+Na dúvida, convém testar se uma bateria com tensão de 3.6V conectada a Vcc é capaz de ligar o ESP. 
 
 ## Procedimento
 
 - Desenvolver a plataforma de teste;
 - Testar;
 
+## Resultados
+
 ### Desenvolver a plataforma de teste
+
+A placa que será testada é MH-ET Live ESP32 Minikit (http://esp32.net/images/MH-ET-LIVE/ESP32-MiniKit/MH-ET-LIVE_ESP32-MiniKit.jpg, https://doc.riot-os.org/group__boards__esp32__mh-et-live-minikit.html).
 
 Para testar se uma bateria com tensão de 3.6V conectada a Vcc é capaz de ligar o ESP, a energia não pode ser fornecida pela porta USB pois a energia fornecida pela porta também passa pelo pino Vcc. A conexão da bateria causaria um curto-circuito que pode danificar a porta USB.
 
@@ -64,4 +68,14 @@ while True :                                 
     time.sleep(1)  
 
 ```
+
+Chequei às 10:28 e a placa continua respondendo a comandos enviados através de webREPL.
+
+## Discussão e Conclusão
+
+A placa MH-ET Live ESP32 Minikit funciona adequadamente quando recebe energia de uma bateria de 3V6 através do pino Vcc. A autonomia da bateria testada supera duas horas. 
+
+- mantém comunicação por wifi;
+- recebe comandos através de webREPL;
+- executa comandos de GPIO e display (SSD1306);
 
