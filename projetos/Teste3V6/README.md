@@ -4,7 +4,7 @@
 
 ## Objetivo
 
-Criar um programa que permita acessar o ESP32 quando ele recebe energia de uma bateria de 3.6V conectada a Vin.
+Criar um programa que permita acessar o ESP32 quando ele recebe energia de uma bateria de 3.6V conectada a Vcc.
 
 ## Justificativa
 
@@ -23,13 +23,13 @@ Na dúvida, convém testar se uma bateria com tensão de 3.6V conectada a Vin é
 
 ### Desenvolver a plataforma de teste
 
-Para testar se uma bateria com tensão de 3.6V é capaz de ligar o ESP, a energia não pode ser fornecida pela porta USB. Talvez seja fácil adaptar (quebrar) um cabo USB para fazer esse teste, porém, a comunicação pelo cabo USB ficaria comprometida pois os níveis de tensão do protocolo USB não são atingidos quando fornece-se 3.6V (e não 5V) através de Vin.
+Para testar se uma bateria com tensão de 3.6V conectada a Vcc é capaz de ligar o ESP, a energia não pode ser fornecida pela porta USB pois a energia fornecida pela porta também passa pelo pino Vcc. A conexão da bateria causaria um curto-circuito que pode danificar a porta USB.
 
-Sem comunicação pela USB, uma alternativa seria wifi.
+Com Vcc a 3.6V os níveis de tensão dos sinais USB não são atingidos. Provavelmente a comunicação pela USB não funcionaria. Outras formas de comunicação com usuário são necessárias. Há várias alternativas (wifi, bluetooth, LEDs, displays,...). Neste caso escolheu-se wifi, pela flexibilidade (wifi modos access point e station; web server e client; webREPL). 
 
 Micropython permite programar o dispositivo por WebREPL. Uma alternativa seria escrever um servidor web que executaria os testes, mas, escrever o servidor web que cobre todas as funcionalidades cobertas por WebREPL seria muito complicado.
 
-A plataforma de teste mais conveniente, então, é composta por um ESP32 executando Micropython e WebREPL. Isto seria suficiente para um teste com um único ESP pois o nome da rede (AP) seria único e, conectado à essa rede, o IP seria o padrão. Em um contexto com vários ESP32, aumenta a chance de erros de conexão de rede, que seriam difíceis de detectar sem algum tipo de mensagem no dispositivo e que fosse legível por pessoas. Por isso acrescentou-se um display.
+A plataforma de teste mais conveniente, então, é composta por um ESP32 executando Micropython e WebREPL. Isto seria suficiente para um teste com um único ESP pois o nome da rede (AP) seria único e, conectado à essa rede, o IP seria o padrão. Como, antes de estabelecer a conexão por WebREPL, podem ocorrer erros e variações nas configurações de wifi, esses erros e variações poderiam passar despercebidos, então acrescentou-se ao circuito um display.
 
 O programa deve ser executado na inicialização do dispositivo, logo, modificou-se `boot.py` para cumprir essa função. O arquivo está na mesma pasta deste README.
 
