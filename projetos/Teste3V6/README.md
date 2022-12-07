@@ -59,17 +59,31 @@ while True :
 às 9:50 interrompi e digitei estes:
 
 ```python
-while True :                                                                                                                                      
-    oled.fill(1)                                                                                                                                  
-    oled.show()                                                                                                                                   
-    time.sleep(1)                                                                                                                                 
-    oled.fill(0)                                                                                                                                  
-    oled.show()                                                                                                                                   
-    time.sleep(1)  
-
+while True :
+	oled.fill(1)
+	oled.show()
+	time.sleep(1)
+	oled.fill(0)
+	oled.show()                                                                                                                                   
+	time.sleep(1)
 ```
 
-Chequei às 10:28 e a placa continua respondendo a comandos enviados através de webREPL.
+- Chequei às 10:28 e a placa continua respondendo a comandos enviados através de webREPL.
+- Chequei às 13:10 e a placa apagada.
+
+Novo teste, começando às 7:55, após carga completa da bateria;
+Continua piscando às 11:48
+Continua piscando e conectado com webREPL às 12:30
+- Chequei às 13:58 e a placa apagada.
+
+Para facilitar, encapsulei os snippets acima em funções que defino em `teste3V6.py`. Desta forma posso importar o módulo e executar com uma chamada de função. As funções que defino são:
+	
+- piscaLED()
+	- A maioria dos ESP32 tem um LED conectado à GPIO2.
+	- Esta função configura a GPIO2 como saída e, a cada segundo, alterna entre HIGH e LOW, fazendo o LED piscar.
+- piscaDisplay(oled)
+	- o paraâmetro oled é a referência para o display. Corresponde à variável `oled` definida em `boot.py`;
+	- acende e apaga todos os pixels do display a intervalos de 1 segundo;
 
 ## Discussão e Conclusão
 

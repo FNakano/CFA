@@ -59,6 +59,17 @@ Nota: no windows a porta é algo como `comN:`, como `com3:`, `com4:`, ...
 
 Bibliotecas podem ser acrescentadas usando `upip` (https://docs.micropython.org/en/v1.15/reference/packages.html#upip-package-manager) ou `mip` (https://docs.micropython.org/en/latest/reference/packages.html#installing-packages-with-mip)
 
+### Problemas
+
+1. Sintaxe: codificação do caracter "espaço", espaços depois dos comandos, copiar do webrepl;
+	- Quando uso webREPL, copiar código do frame que emula o terminal com CTRL-C e colar em um editor de texto local com CTRL-V carrega espaços depois dos comandos, fazendo as linhas ficarem muito mais longas do que o necessário. Caso essa linha seja devolvida para o webREPL, ou colocada dentro de um script, a presença dos espaços pode causar erro de sintaxe na linha posterior pois python depende de espaços (white spaces) para definir escopo.
+	- Em alguns comandos, por exemplo, `while True:`, o espaço entre `while` e `True` é substituido por algum outro caracter que também representa um whitespace, mas quando copia do webREPL e cola em um editor de texto, esse caracter "some", causando um erro.
+2. Mensagens de erro de sintaxe dentro de módulos (import);
+	- como Python é linguagem interpretada e a interpretação só ocorre quando da execução do comando em uma linha do código, há erros de sintaxe que só são reportados quando a linha contendo sintaxe inválida é executada. 
+3. Escopo de variáveis;
+	- Há algo entre o escopo do webREPL, o escopo do `boot.py` e o escopo dos módulos que escrevo (e importo), que não entendi. Consequentemente, não sei explicar por que uma variável criada em `boot.py` pode ser usada no webREPL (depois da execução do `boot.py`), mas não pode ser usada dentro de outro módulo. O erro que ocorre é o de variável inexistente. Os autores e mantenedores de Micropython fogem de dar explicações sobre o assunto com o argumento que variáveis globais não devem ser usadas: https://forum.micropython.org/viewtopic.php?t=4638, https://forum.micropython.org/viewtopic.php?t=4814. Concordo que variáveis globais, geralmente, causam problemas, mas isso não serve como desculpa para não explicar direito o outro assunto (escopo de variáveis entre webREPL, `boot.py` e outros módulos).
+	- Na falta de explicações, sou forçado a usar a receita dada pelos desenvolvedores.
+
 
 ### Desdobramentos
 
