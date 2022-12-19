@@ -1,6 +1,8 @@
-# ampy
+# Ampy
 
 O **ampy** é uma ferramenta simples que permite enviar arquivos e scripts para a placa que utiliza o MicroPython, além de manipular arquivos de código utilizando a conexão serial. 
+
+<br/>
 
 ## :inbox_tray: Instalação
 
@@ -11,6 +13,8 @@ Para instalar a ferramenta, você precisa ter Python 2.7.x or 3.x instalado. Bas
 ou
 
 `pip3 install --user adafruit-ampy`
+
+<br/>
 
 ## :keyboard: Comandos
 
@@ -50,6 +54,8 @@ Roda um script e printa a saída
 
 Substitua PORTA pela porta serial utilizada para comunicação com a placa e ARQUIVO pelo arquivo correspondente.
 
+<br/>
+
 ## :desktop_computer: Uso
 
 1. Conecte sua placa ao computador e encontre a saída serial na qual sua placa está conectada (geralmente, /dev/ttyUSB0)
@@ -59,6 +65,8 @@ Substitua PORTA pela porta serial utilizada para comunicação com a placa e ARQ
 Exemplo: `ampy -p /dev/ttyUSB0 put boot.py`
 
 ***Observação:*** às vezes, o comando "trava". Caso aconteça, retire o cabo e conecte novamente à placa, repetindo todos os passos de uso.
+
+<br/>
 
 ## :card_index_dividers: Referências bibliográfias
 
