@@ -85,6 +85,28 @@ Pode interessar dar uma olhada em projetos de Iniciação Científica relacionad
 
 ... ou em projetos apresentados na disciplina no oferecimento corrente ou nos anteriores...
 
+### 2022
+
+[Jaqueta para proteção pessoal](https://github.com/Raposo4/jaqueta_protecao_pessoal)
+
+[Brinquedo vestível](https://github.com/AdrianoFA/WearableGenius)
+
+[Módulo de segurança para malas e mochilas](https://github.com/IgorAugst/Mochila)
+
+[EcoPee](https://github.com/bambans/EcoPee)
+
+[SMAC - Sistema de Monitoramento para Assentos de Cadeiras de Rodas](https://github.com/Anemaygi/SMAC/tree/master/projeto)
+
+[Projeto Protetor Solar](https://github.com/T16K/ACH2157)
+
+[Baby Alarm](https://github.com/SystemGuuh/Computacao-Fisica/tree/main/BabyAlarm)
+
+[Dispositivo de Sobrevivência](https://github.com/raphancusp/DispositivoDeSobrevivencia)
+
+[Seta e alerta de som para corredores, ciclistas e motociclistas](https://github.com/tio-bryan/wearables-2022)
+
+[Bolt - tornozeleira inteligente](https://github.com/JadnoABS/bolt)
+
 ### 2021
 
 [UOLI](https://github.com/artcupelli/uoli)

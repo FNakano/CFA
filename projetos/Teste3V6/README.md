@@ -76,6 +76,8 @@ Continua piscando às 11:48
 Continua piscando e conectado com webREPL às 12:30
 - Chequei às 13:58 e a placa apagada.
 
+- A carga completa da bateria acontece em 4 horas. Desconfio que ela não é totalmente descarregada.
+
 Para facilitar, encapsulei os snippets acima em funções que defino em `teste3V6.py`. Desta forma posso importar o módulo e executar com uma chamada de função. As funções que defino são:
 	
 - piscaLED()
