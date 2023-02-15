@@ -197,3 +197,58 @@ config    HEAD         index  <font color="#3465A4"><b>logs</b></font>  packed-r
 
 **nota** testando com termux no android.
 
+## Alternativas para programar ESP32
+
+- Espressif Integrated Development Framework (IDF);
+- Arduino Integrated Development Environment (IDE) (https://arduino.cc);
+- Micro Pyton (https://www.micropython.org);
+- ESPruino (https://www.espruino.com/ESP32#firmware-updates);
+
+## Altenrnativas para programar Arduino UNO/MEGA/NANO
+
+- Arduino IDE;
+
+## Fontes de energia
+
+Na minha opinião, a falha no fornecimento de energia a um dispositivo é uma das causas de mau-funcionamento (comportamento/funcionamento inesperado) mais difíceis de detectar pois:
+
+- Eventos com a mesma causa tem diferentes efeitos, mesmo para um particular dispositivo (ex. o particular Arduino UNO que alguém possui);
+- Algumas causas são eliminadas com um simples manuseio (ex. um conector levemente desencaixado que com um pequeno movimento permite que energia suficiente chege ao dispositivo);
+- Os efeitos são difíceis de reproduzir, logo, a estratégia de provocar o mesmo tipo de erro para, então, depurar o sistema, geralmente não é eficaz;
+- Frequentemente requer conhecimento mais detalhado sobre eletro-eletrônica (ex. entender os diagramas esquemáticos do dispositivo, identificar componentes, entender a documentação (datasheet, manuais,...) de cada componente.
+
+Isto posto, vamos compartilhar experiências
+
+### Pilha fraca
+
+Geralmente as pilhas são desconectadas do circuito e mede-se a tensão entre os polos - a corrente drenada da pilha é quase zero, como num circuito aberto. Por isso também chama-se teste *em aberto*. Se a tensão medida está perto da tensão nominal, admite-se que elas estão boas.
+
+... mas esse teste falha em um caso: Quando as pilhas estão fracas, elas podem ter carga suficiente para apresentar tensão perto da nominal em um teste em aberto, mas a tensão da pilha cai bastante quando a corrente drenada da pilha é significativa.
+
+É difícil apresentar uma demonstração crível de um argumento tão qualitativo, por outro lado, aproveitando um acidente, consegui uma demonstração que me parece muito razoável: <a id="2023-02-14-161757" href="/projetos/Teste3V/README.md">Teste3V</a>
+
+### Fio corroído
+
+Frequentemente componentes de baixo custo têm esse custo porque foram recuperados de equipamentos descartados ou porque estão no estoque (da cadeia de venda) há muito tempo. Nos dois casos, os elementos do componente podem deteriorar. Por exemplo, os fios e conectores podem oxidar.
+
+Em várias ocasiões usei pilhas para fornecer energia, mas o circuito não funcionava. As pilhas eram recém adquiridas, mas comecei a acreditar que estavam sem carga e que o vendedor das pilhas havia me enganado. Mas, mesmo trocando as pilhas (sair do lab, comprar, voltar), o circuito não funcionou. Depolis de mais uns minutos checando o circuito notei que os contatos do suporte com as pilhas estavam oxidados. Girei (várias vezes) as pilhas no suporte para gastar a camada de óxido, então o circuito funcionou.
+
+Noutra ocasião com pilhas, o circuito não funcionava. Desta vez era mau contato entre o ilhós e o fio. Explico: o contato do suporte no lado positivo da pilha é um ilhós. Geralmente ele é prensado no corpo plástico do suporte junto com o fio que conectará o suporte ao resto do circuito. Essa prensagem foi feita na parte do fio que estava encapada, então não havia contato elétrico.
+
+Ainda com pilhas, recuperei um suporte de pilhas de um aparelho quebrado e montei o circuito, que não funcionava. Desta vez tinha um multímetro à mão e vi que não havia tensão entre os fios do suporte. Liguei as pontas de prova do multímetro nos contatos (ilhós e mola) do suporte e havia tensão. Tirei as pilhas e testei a continuidade (elétrica) dos fios. Um deles estava interrompido. MAS o contato parecia bem prensado. Quando fui desencapar um pouco mais do fio para continuar testando, usei um alicate e puxei a capa. O condutor saiu "inteiro" da capa. Sobre o condutor, pó branco e verde. O fio sofreu corrosão e estava interrompido, mas, por fora, parecia bem.
+
+### Porta USB - limites conforme a norma
+
+### Carregadores "turbo" (micro USB)
+
+### Carregadores USB-C
+
+
+## Cabos, mau-contato e efeitos experimentados
+
+### Cabos de energia e cabos de dados
+
+### Conector micro USB (V8)
+
+### Conector USB (tipo A)
+

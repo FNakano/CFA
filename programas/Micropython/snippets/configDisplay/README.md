@@ -35,7 +35,7 @@ upip.install('micropython-ssd1306')
 
 ## Conectar o display à placa controladora
 
-No ESP32S, os pinos usuais para I2C são 21=SDA e 22=SCL. Mais informação sobre I2C em snippets/configI2C. A placa microcontroladora também fornece energia para o display, logo, além de conectar esses pinos, os pinos 3.3V e GND também devem ser conectados. O GND serve tanto para energia quanto como tensão de referência (por exemplo, corresponde ao nível lógico ZERO).
+No ESP32S, os pinos usuais para I2C são 21=SDA e 22=SCL. Mais informação sobre I2C em [snippets/configI2C](https://github.com/FNakano/CFA/tree/master/programas/Micropython/snippets/configI2C). A placa microcontroladora também fornece energia para o display, logo, além de conectar esses pinos, os pinos 3.3V e GND também devem ser conectados. O GND serve tanto para energia quanto como tensão de referência (por exemplo, corresponde ao nível lógico ZERO).
 
 | Display | Placa Microcontroladora (ESP32S) | ccc |
 | --- | --- | --- |
@@ -46,7 +46,7 @@ No ESP32S, os pinos usuais para I2C são 21=SDA e 22=SCL. Mais informação sobr
 
 ## Enviar os comandos através de REPL
 
-Os comandos estão em configDisplay.py . Copiar e colar no REPL.
+Os comandos estão no arquivo ./configDisplay.py . Copiar e colar no REPL.
 
 ## Referências
 

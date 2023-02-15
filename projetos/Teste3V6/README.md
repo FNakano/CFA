@@ -8,11 +8,13 @@ Criar um programa que permita acessar o ESP32 quando ele recebe energia de uma b
 
 ## Justificativa
 
-O ESP32 tem tensão de operação nominal de 3.3V, com tensão máxima de 3.6V. Quando conectado à porta USB, usa um regulador de tensão que ajusta os 5V da USB para 3.3V. Entretanto, 5V não é um valor de tensão de alimentação muito prático pois requer ou um gerador stepup (ex. power bank) ou quatro pilhas AA/AAA ou duas baterias LiPo ou LiIon (ex.:18650 e baterias para telefone celular). Essas soluções tornam o dispositivo grande e caro. Existe um agravante pois a tensão dessas baterias pode chegar a 4.2V (LiPo) quando completamente carregadas, logo, algum tipo de regulador de tensão é necessário.
+O ESP32 tem tensão de operação nominal de 3.3V, com tensão máxima de 3.6V. Ligar o ESP32 a mais de 3,6V pode reduzir sua vida útil (o que pode não ser tão ruim) ou pode danificá-lo imediatamente (o que é ruim).
 
-A maioria das placas baseadas em ESP32 usa reguladores de tensão similares a AMS1117. Este tem dropout da ordem de 1.6V. Nestas placas é certo que uma única bateria LiPo ou LiIon não será capaz de ligar o ESP - não por falta de tensão, mas porque o dropout é muito alto.
+Quando o ESP32 está em uma placa de desenvolvimento que se conectada à porta USB, na placa existe um regulador de tensão que ajusta os 5V da USB para 3.3V. Entretanto, 5V não é um valor de tensão de alimentação muito prático pois requer ou um gerador stepup (ex. power bank) ou quatro pilhas AA/AAA ou duas baterias LiPo ou LiIon (ex.:18650 e baterias para telefone celular). Essas soluções tornam o dispositivo completo grande e caro. Existe um agravante pois a tensão dessas baterias pode chegar a 4.2V (LiPo) quando completamente carregadas, logo, algum tipo de regulador de tensão é necessário.
 
-Há placas com outros modelos de regulador de tensão e há reguladores de tensão com dropout da ordem de 0.3V. Estes outros modelos de placas não tem diagrama esquemático na web, mas o regulador de tensão embutido tem encapsulamento diferente dos AMS1117 e similares, sendo mais parecidos com os de dropout da ordem de 0.3V.
+A maioria das placas baseadas em ESP32 usa reguladores de tensão similares a AMS1117. Este tem tensão de dropout mínima da ordem de 1.6V. Tensão de dropout é a tensão entre a entrada e a saída do regulador. Desta forma, a tensão de entrada mínima é 3,3V+1,6V=4,9V. Nestas placas é certo que uma única bateria LiPo (3,7-4,2V) ou LiIon (3,6V) não será capaz de ligar o ESP - não por falta de tensão, mas porque o dropout é muito alto.
+
+Há placas com outros modelos de regulador de tensão e há reguladores de tensão com dropout da ordem de 0.3V. Estes outros modelos de placas não tem diagrama esquemático na web, mas o regulador de tensão embutido tem encapsulamento diferente dos AMS1117 e similares, sendo mais parecidos com os de dropout da ordem de 0.3V. Isto torna viável o funcionamento do ESP32 alimentado por baterias LiPo ou LiIon passando pelo regulador de tensão.
 
 Na dúvida, convém testar se uma bateria com tensão de 3.6V conectada a Vcc é capaz de ligar o ESP. 
 
@@ -29,7 +31,7 @@ A placa que será testada é MH-ET Live ESP32 Minikit (http://esp32.net/images/M
 
 Para testar se uma bateria com tensão de 3.6V conectada a Vcc é capaz de ligar o ESP, a energia não pode ser fornecida pela porta USB pois a energia fornecida pela porta também passa pelo pino Vcc. A conexão da bateria causaria um curto-circuito que pode danificar a porta USB.
 
-Com Vcc a 3.6V os níveis de tensão dos sinais USB não são atingidos. Provavelmente a comunicação pela USB não funcionaria. Outras formas de comunicação com usuário são necessárias. Há várias alternativas (wifi, bluetooth, LEDs, displays,...). Neste caso escolheu-se wifi, pela flexibilidade (wifi modos access point e station; web server e client; webREPL). 
+Com Vcc a 3.6V os níveis de tensão dos sinais USB não são atingidos. Provavelmente a comunicação pela USB não funciona. Outras formas de comunicação com usuário são necessárias. Há várias alternativas (wifi, bluetooth, LEDs, displays,...). Neste caso escolheu-se wifi no modo *access point*, como em https://github.com/FNakano/CFA/tree/master/programas/Micropython/snippets/configAsAP . Depois de conectar é possível usar WebREPL.
 
 Micropython permite programar o dispositivo por WebREPL. Uma alternativa seria escrever um servidor web que executaria os testes, mas, escrever o servidor web que cobre todas as funcionalidades cobertas por WebREPL seria muito complicado.
 
@@ -74,7 +76,7 @@ while True :
 Novo teste, começando às 7:55, após carga completa da bateria;
 Continua piscando às 11:48
 Continua piscando e conectado com webREPL às 12:30
-- Chequei às 13:58 e a placa apagada.
+- Chequei às 13:58 e a placa estava apagada.
 
 - A carga completa da bateria acontece em 4 horas. Desconfio que ela não é totalmente descarregada.
 
@@ -94,4 +96,8 @@ A placa MH-ET Live ESP32 Minikit funciona adequadamente quando recebe energia de
 - mantém comunicação por wifi;
 - recebe comandos através de webREPL;
 - executa comandos de GPIO e display (SSD1306);
+
+## Veja também
+
+[ESP32 a 3V (duas pilhas secas)]()
 
