@@ -180,7 +180,7 @@ Outro exemplo: um pino do arduino configurado para saída digital suporta até 5
 - [modus ponens](https://en.wikipedia.org/wiki/Modus_ponens)
 - [Philosophy portal](https://en.wikipedia.org/wiki/Portal:Philosophy)
 - [wikipedia:Philosophy ](https://en.wikipedia.org/wiki/Philosophy)
-- [what is a model](file:///home/fabio/Downloads/whatisamodel.pdf)
+- [what is a model](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiEmYTVz6f9AhWCs5UCHWrFD-kQFnoECAkQAQ&url=https%3A%2F%2Fwww.researchgate.net%2Fpublication%2F30814656_What_is_a_Model&usg=AOvVaw0yxXppDLxWVeEAZjlHHCvu)
 - [models in science](https://plato.stanford.edu/entries/models-science/)
 - [mathematical model](https://en.wikipedia.org/wiki/Mathematical_model)
 - [conceptual model](https://en.wikipedia.org/wiki/Conceptual_model)
