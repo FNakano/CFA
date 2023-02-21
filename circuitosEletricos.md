@@ -22,7 +22,7 @@ No contexto de um conjunto de componentes elétricos interconectados aonde os fe
 
 Componente elétrico é um componente que modifica a passagem de corrente de forma significativa para quem observa (estuda, analisa, constrói) o circuito. Os componentes de (inter)conexão (ou, simplesmente, conexões) conectam componentes, sem outro efeito significativo (idealmente, têm resistência, capacitância e indutância nulos). Existe uma grande variedade de componentes e de conexões.
 
-Circuito elétrico é definido como um conjunto de componentes elétricos e conexões.
+Circuito elétrico é definido como um conjunto de componentes elétricos conectados entre si.
 
 A maioria dos circuitos elétricos de interesse contém ao menos um caminho fechado. Por este pode circular corrente elétrica.
 
