@@ -13,7 +13,7 @@ Minha intenção com este material é fornecer modelos testados de projetos e en
 
 Alguns assuntos que surgiram são muito interessantes e extrapolam (o que eu considero) conteúdos de disciplina pois envolvem escolhas feita no planejamento e teste dos formatos e conteúdos que o ministrante entrega e que o aluno entrega durante a disciplina. Sumariamente, as idéias e experiências sobre organização de equipes, documentação de projetos, gerenciamento da disciplina o conteúdo da discilina: objetivos, conteúdo, material disponível, entregas e seu formato,...
 
-Desejo-lhes 'boa disciplina', com mais momentos gratificantes que frustrações, aprendendo muito e, com sucesso no final!
+Desejo-lhes 'boa disciplina', com mais momentos gratificantes que frustrações, aprendendo muito, e, com sucesso no final!
 
 ## Limitações do texto
 

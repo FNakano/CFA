@@ -1,20 +1,30 @@
 ## Limitações do texto
 
-Este texto objetiva apresentar os conceitos e as referências que suportam esses conceitos. Não é intenção apresentar teorias e definições alternativas, nem fazer revisão de toda a literatura sobre o assunto.
+Este texto objetiva apresentar conceitos sobre circuitos elétricos úteis na disciplina CFA. Não é intenção apresentar teorias e definições alternativas, nem fazer revisão de toda a literatura sobre o assunto.
 
 Sugestões de ajustes para aumentar a precisão do texto são bemvindas.
 
 À medida em que este texto for aperfeiçoado, serão agregadas referências pertinentes.
 
+
 # Circuitos Elétricos
 
-É possível controlar o ambiente (contexto) em que processos ocorrem de maneira que o processo no ambiente seja modelado por simplificações da teoria geral. No desenvolvimento do conhecimento científico, é frequente que modelos para determinadas condições sejam propostos, temporalmente, antes dos modelos gerais, e, baseado nos modelos simplificados, por um processo de generalização, seja proposto um modelo geral.
+## Modelos em geral, eletricidade e conceitos
 
-No contexto de um conjunto de componentes elétricos interconectados e com ao menos um caminho fechado, onde os fenômenos elétricos de interesse estão restritos ao que ocorre nos componentes e inteconexões, o modelo pode ser simplificado e, na opinião do autor, entendido com menos dificuldade por uma audiência mais ampla.
+É possível controlar o ambiente (contexto) onde ocorrem processos de maneira que o processo no ambiente possa ser modelado por simplificações da teoria geral. No desenvolvimento do conhecimento científico, é frequente que modelos para determinadas condições sejam propostos, temporalmente, antes dos modelos gerais, e, baseado nos modelos simplificados, por um processo de generalização, seja proposto um modelo geral.
 
-Componente elétrico é um componente que modifica a passagem de corrente de forma significativa para quem observa (estuda, analisa, constrói) o circuito. Os componentes de interconexão conectam componentes, sem outro efeito significativo. Existe uma grande variedade de componentes e de interconexões.
+O (um?) modelo geral sobre eletricidade nos informa que todos os corpos no universo contém cargas elétricas (mesmo que estas se anulem na construção do corpo como um todo). Cargas interagem entre si, mesmo a longas distâncias e através do vácuo. Essa interação é descrita pela teoria de campos escalares. A aplicação dessa teoria sobre (o fenômeno) eletricidade induz conceitos como diferença de potencial elétrico (também chamada tensão elétrica). Uma consequência imediata é que entre dois corpos pode haver diferença de potencial elétrico. Outra é que se há um único corpo, não há diferença de potencial.
 
-Circuito elétrico é definido como um conjunto de componentes elétricos e suas interconexões, com ao menos um caminho fechado por onde pode circular corrente elétrica.
+
+ 
+
+No contexto de um conjunto de componentes elétricos interconectados aonde os fenômenos elétricos de interesse estão restritos ao que ocorre nos componentes e conexões, o modelo pode ser simplificado e, na opinião do autor, entendido com menos dificuldade por uma audiência mais ampla.
+
+Componente elétrico é um componente que modifica a passagem de corrente de forma significativa para quem observa (estuda, analisa, constrói) o circuito. Os componentes de (inter)conexão (ou, simplesmente, conexões) conectam componentes, sem outro efeito significativo (idealmente, têm resistência, capacitância e indutância nulos). Existe uma grande variedade de componentes e de conexões.
+
+Circuito elétrico é definido como um conjunto de componentes elétricos e conexões.
+
+A maioria dos circuitos elétricos de interesse contém ao menos um caminho fechado. Por este pode circular corrente elétrica.
 
 Neste contexto valem modelos baseados em hipóteses de conservação de energia como as [Leis de Kirchoff](https://en.wikipedia.org/wiki/Kirchhoff%27s_circuit_laws), que serão apresentada no momento oportuno.
 
@@ -30,9 +40,35 @@ a definição apresentada também é diferente da apresentada na wikipedia <http
 
 ... pois dá a entender que o circuito é a ligação, e que os componentes não fazem parte do circuito.
 
+## Sub-circuitos
+
+Voltando à maioria dos circuitos de interesse, afirma-se que estes têm ao menos um caminho fechado onde a corrente circula. Esta definição permite que a união de vários caminhos fechados seja chamada *circuito*. Neste contexto, pode ser conveniente definir sub-circuitos como subconjuntos próprios dos caminhos de um circuito. Por exemplo, se um circuito tem cem caminhos fechados, pode-se usar *sub-circuito* para referir-se a dois desses cem caminhos.
+
+## Curto-circuito
+
+Curto-circuito é o nome dado à situação em que uma conexão (espúria) é acrescentada ao circuito, encurtando-o. A ocorrência de um curto-circuito pode danificar componentes.
+
+
+O curto-circuito do gerador de energia (pilha, bateria, tomada, porta USB) pode ser especialmente perigoso.
+
+Nesta situação, a corrente que passa pelos terminais é máxima. Em pouco tempo o gerador e a interconexão esquentam, podendo fundir, pegar fogo, explodir, ... 
+
+A maioria dos (sub-)circuitos por onde passa a energia para alimentar circuitos conta com componentes de proteção (fusíveis, disjuntores, polyfuses, circuitos crowbar, ...).
+
+Sugestão para *makers*: a porta USB de um computador bem construído tem circuitos cuja função é proteger a porta, e o computador, contra curto-circuito e sobrecarga, MAS, os cicuitos podem falhar e os computadores podem não ser tão bem construídos. Por segurança, evite curto-circuitar ou sobrecarregar a porta USB.
+
+## Circuito aberto
+
+É o nome dado à situação em que uma conexão é desfeita. A corrente elétrica deixa de passar por algum (sub-)circuito. Sua ocorrência também pode danificar componentes mas, na minha experiência, é mais fácil danificar componentes com curtos que abrindo circuitos.
+
+São exemplos de circuitos abertos os aparelhos e circuitos domiciliares quando o interruptor está desligado, quando o fusível está queimado, quando o disjuntor está aberto, ...
+
+Quando mede-se a resistência de um resistor com um ohmímetro, o resistor faz parte do circuito do qual o medidor faz parte. O circuito do ohmímetro sem o resistor é um circuito aberto.
+
+
 ## Símbolos, diagramas e linguagem
 
-Representações são criadas para simplificar objetos e processos. Através delas é possível isolar as características que importam para uma determinada finalidade e abstrair, ou desprezar as que não importam. Descrições, diagramas, desenhos, fotografias são representações. Estas permitem que pessoas comuniquem e elaborem sobre os objetos e processos. Existem representações definidas por normas seguidas pelas comunidades de indivíduos interessados no objeto/processo. É assim, também, com componentes, interconexões e circuitos elétricos.
+Representações são criadas para simplificar objetos e processos. Através delas é possível isolar as características que importam para uma determinada finalidade e abstrair, ié desprezar, as que não importam. Descrições, diagramas, desenhos, fotografias são representações. Estas permitem que pessoas comuniquem e elaborem sobre os objetos e processos. Existem representações definidas por normas seguidas pelas comunidades de indivíduos interessados no objeto/processo. É assim, também, com componentes, interconexões e circuitos elétricos.
 
 Em circuitos elétricos, interessa apresentar por onde pode passar corrente. Nos componentes a corrente passa pelos terminais. Num componente, usualmente, cada terminal está conectado em alguma parte de seu circuito interno, por isso, terminais de um particular componente são eletricamente distintos, o que gera a necessidade de identificá-los para serem corretamente conectados externamente.
 
@@ -55,16 +91,6 @@ A implementação de um gerador pode ser uma pilha, a tomada de parede, uma bate
 ### Baterias e pilhas
 
 Baterias são bem especificadas pela tensão que fornece e pela carga armazenada. A carga armazenada é medida em Ampére*hora (Ah). Uma bateria de carga de 1Ah fornece 1A durante 1 hora.  
-
-### Curto-circuito
-
-Curto-circuito é o nome dado à situação em que os terminais do gerador são diretamente conectados.
-
-Nesta situação, a corrente que passa pelos terminais é máxima. Em pouco tempo o gerador e a interconexão esquentam, podendo fundir, pegar fogo, explodir. O gerador é inutilizado.
-
-No modelo usual (ingênuo) para circuitos elétricos, um gerador em curto entregaria corrente infinita. Isto não ocorre em casos reais. Pode-se usar isto como um exemplo de caso em que o modelo não corresponde adequadamente ao processo.
-
-Sugestão para *makers*: a porta USB de um computador bem construído tem circuitos cuja função é proteger a porta, e o computador, contra curto-circuito e sobrecarga, MAS, os cicuitos podem falhar e os computadores podem não ser tão bem construídos. Por segurança, evite curto-circuitar ou sobrecarregar a porta USB.
 
 ## Receptores (componentes em geral) parte I
 
@@ -148,7 +174,7 @@ Outro exemplo: um pino do arduino configurado para saída digital suporta até 5
 
 #### Anotações
 
-[For a Philosophy of Representation](file:///home/fabio/Downloads/proceedings-01-00857.pdf)
+[For a Philosophy of Representation](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwiWvb_Bzaf9AhVYLLkGHb26BMEQFnoECAoQAQ&url=https%3A%2F%2Fmdpi-res.com%2Fd_attachment%2Fproceedings%2Fproceedings-01-00857%2Farticle_deploy%2Fproceedings-01-00857.pdf%3Fversion%3D1513936465&usg=AOvVaw0-hfjXks1gvQE6cnJxXVAa)
 [Stoic Logic](https://en.wikipedia.org/wiki/Stoic_logic)
 [modus tollens](https://en.wikipedia.org/wiki/Modus_tollens)
 [modus ponens](https://en.wikipedia.org/wiki/Modus_ponens)
