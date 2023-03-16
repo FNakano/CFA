@@ -59,6 +59,14 @@ Chequei o circuito ligando na USB. O wifi ligou, consegui conectar-me ao webrepl
 Voltei às pilhas, pareceu funcionar, consegui conectar-me ao webrepl e enviar comandos. Quando tentei reproduzir, para gravar um vídeo, não consegui.
 
 Pensei que poderia ser mau contato, até deu essa impressão pois quando desconectei e reconectei um pino de energia, consegui testar com sucesso, mas, novamente, quando montei para gravar o vídeo, o display não acendeu, ou, o ap wifi não iniciou e não apareceu na lista de redes do computador (que usei como apoio).
+## Vídeos
+
+https://youtu.be/By90tkBp8Sw - Falha 2
+
+https://youtu.be/pNeKKAd_duc - Falha 1
+
+https://youtu.be/qMzEqPYUp4k - teste ligado na USB
+
 
 ## Discussão e Conclusão
 
