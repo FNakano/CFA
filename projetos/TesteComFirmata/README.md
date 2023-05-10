@@ -38,20 +38,20 @@ board.analog[0].read()
 Como a leitura de tensão deve ser bem controlada, convém prestar atenção às especificações do ADC do Arduino. O ADC do Arduino tem resolução de 10 bits (ié 1024 passos) e, segundo o fabricante:
 
 23.1 Features
-● 10-bit resolution
-● 0.5 LSB integral non-linearity
-● ±2 LSB absolute accuracy
-● 65 to 260μs conversion time
-● Up to 15kSPS
-● 6 multiplexed single ended input channels
-● 2 additional multiplexed single ended input channels
-● Temperature sensor input channel
-● Optional left adjustment for ADC result readout
-● 0 to V CC ADC input voltage range
-● Selectable 1.1V ADC reference voltage
-● Free running or single conversion mode
-● Interrupt on ADC conversion complete
-● Sleep mode noise canceler
+- 10-bit resolution
+- 0.5 LSB integral non-linearity
+- ±2 LSB absolute accuracy
+- 65 to 260μs conversion time
+- Up to 15kSPS
+- 6 multiplexed single ended input channels
+- 2 additional multiplexed single ended input channels
+- Temperature sensor input channel
+- Optional left adjustment for ADC result readout
+- 0 to V CC ADC input voltage range
+- Selectable 1.1V ADC reference voltage
+- Free running or single conversion mode
+- Interrupt on ADC conversion complete
+- Sleep mode noise canceler
 
 (Fonte: https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf)
 
@@ -72,3 +72,8 @@ Ajustes feitos, fiz vários testes com duas baterias, uma CR2032 e uma LR41 e as
 
 ![](./Firmata-2023-05-10-18-11-51.png)
 
+Sobre o ADC do ESP32:
+	
+- https://docs.espressif.com/projects/esp-idf/en/v4.3/esp32c3/api- reference/peripherals/adc.html
+- https://docs.espressif.com/projects/esp-idf/en/v4.4/esp32c3/api-reference/peripherals/adc.html
+- https://docs.espressif.com/projects/esp-idf/en/v4.1.1/api-reference/peripherals/adc.html
