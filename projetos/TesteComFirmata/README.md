@@ -77,3 +77,75 @@ Sobre o ADC do ESP32:
 - https://docs.espressif.com/projects/esp-idf/en/v4.3/esp32c3/api- reference/peripherals/adc.html
 - https://docs.espressif.com/projects/esp-idf/en/v4.4/esp32c3/api-reference/peripherals/adc.html
 - https://docs.espressif.com/projects/esp-idf/en/v4.1.1/api-reference/peripherals/adc.html
+
+Hoje, dia seguinte, ocorreu-me que pode ser conveniente ter um computador específico para programar e/ou para usar na bancada.
+
+Acontece que é mais fácil comunicar com o Arduino usando um computador com Sistema Operacional (SO) Linux.
+
+Também é mais fácil configurar servidores FTP, HTTP, ... no Linux.
+
+Por outro lado, a maioria dos usuários do laboratório estão acostumados com Windows.
+
+Compartilhar o mesmo computador para vários usos, vários usuários e vários SOs costuma ser desgastante para quem compartilha.
+
+Como resultado, o tamanho do pacote aumenta em um computador.
+
+O pacote 'completo' fica:
+
+- hardware:	
+	- computador;
+	- arduino;
+	- protoboard;
+	- jumpers;
+	- pilhas/baterias;
+- software;
+	- SO Linux;
+	- Python;
+	- Firmata;
+	- Arduino IDE (opcional);
+	- servidor FTP ou HTTP;
+
+Voltando ao programa Python que está em desenvolvimento, falta a parte de coletar e gravar os dados em um arquivo.
+
+Ainda sobre o programa, pequenos ajustes podem ser feitos por quem conduzir o experimento, logo, algum tipo de organização de código-fonte é conveniente.
+
+O instante da medida em formato padrão (ISO8601) também é necessária. Para obter a informação de um servidor NTP e converter para o formato escrevi `myDT.py`. O código abaixo usa a biblioteca:
+
+```python
+import myDT
+[posixt, t]=myDT.requestTimefromNtp()
+isot=myDT.isoformat(t)
+```
+
+O programa completo, que ainda não testei é:
+	
+```python
+import pyfirmata
+import time
+import myDT
+
+board = pyfirmata.ArduinoMega('/dev/ttyACM0')
+it = pyfirmata.util.Iterator(board)
+it.start()
+
+board.analog[0].enable_reporting()
+
+while (true) :
+	time.sleep(10) # espera 10 segundos
+	[posixt, t]=myDT.requestTimefromNtp()
+	isot=myDT.isoformat(t)
+	volt0=board.analog[0].read()
+	linha=[isot, volt0]
+	# https://www.geeksforgeeks.org/how-to-append-a-new-row-to-an-existing-csv-file/
+	# https://realpython.com/python-csv/
+	with open('event.csv', 'a') as f_object:
+ 
+		# Pass this file object to csv.writer()
+		# and get a writer object
+		writer_object = writer(f_object)
+		# Pass the list as an argument into
+		# the writerow()
+		writer_object.writerow(linha)
+
+# não precisa de close: https://stackoverflow.com/questions/45954214/python-automatically-closing
+```
