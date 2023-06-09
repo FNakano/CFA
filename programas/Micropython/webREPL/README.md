@@ -51,6 +51,20 @@ A parte "C" é executada no computador e pode ser baixada de https://github.com/
  
 Para conectar, substituir o IP na caixa de texto ao lado do botão Connect pelo IP apresentado pelo dispositivo durante a configuração do wifi. Manter o `:8266`. Clicar em Connect, digitar a senha usada na execução de `webrepl_setup`, deve aparecer a mensagem WebREPL Connected e o prompt (>>>). Através desse prompt enviam-se comandos, em Python, para o dispositivo.
 
+### ESP como Access Point (AP)
+
+Isto configura o ESP como AP, permitindo que o cliente wifi conecte-se diretamente ao ESP, sem intermediário (roteador). Isto é conveniente quando não se tem roteador ou o ESP é levado para diferentes locais com diferentes roteadores. É inconveniente porque o cliente precisa conectar-se à rede wifi fornecida pelo ESP, que, geralmente, não serve internet simultaneamente.
+
+```python
+import network
+ap = network.WLAN(network.AP_IF)
+ap.active(True)
+ap.config(essid="Micropython-C3", password='123456789')
+# https://randomnerdtutorials.com/micropython-esp32-esp8266-access-point-ap/
+
+```
+
+ 
 ### WebREPL com Thonny
 
 Thonny é uma IDE para Python e MicroPyton. Ela permite conexão através de WebREPL. A referência está em: https://bhave.sh/micropython-webrepl-thonny/ , O screenshot da minha configuração está em: 
