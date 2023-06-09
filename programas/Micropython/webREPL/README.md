@@ -50,6 +50,13 @@ A parte "C" é executada no computador e pode ser baixada de https://github.com/
 ![webREPL e boot.py](./Captura2022-07-13-22-37-39.png)
  
 Para conectar, substituir o IP na caixa de texto ao lado do botão Connect pelo IP apresentado pelo dispositivo durante a configuração do wifi. Manter o `:8266`. Clicar em Connect, digitar a senha usada na execução de `webrepl_setup`, deve aparecer a mensagem WebREPL Connected e o prompt (>>>). Através desse prompt enviam-se comandos, em Python, para o dispositivo.
+
+### WebREPL com Thonny
+
+Thonny é uma IDE para Python e MicroPyton. Ela permite conexão através de WebREPL. A referência está em: https://bhave.sh/micropython-webrepl-thonny/ , O screenshot da minha configuração está em: 
+	
+![](./Captura2023-06-09-14-33-30.png)
+
  
 ### Multitarefa
 
