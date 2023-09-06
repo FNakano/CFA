@@ -33,6 +33,9 @@ Obrigado a todos que contribuiram para minha formação e contribuem para minha 
 
 Obrigado a Isabel Italiano, Luciano Araújo, João Marcicano pelo conhecimento compartilhado e trabalho em conjunto.
 
+(2023-09-06) Obrigado a [Giane](https://github.com/Anemaygi) e a [Otávio](https://github.com/bambans) pelas contribuições e ao [PET-SI](http://www.each.usp.br/petsi/) por várias iniciativas, como o OWLficinas.
+
+
 ## Como navegar neste repositório
 
 Caso esteja interessado na documentação de componentes e ferramentas, pode navegar diretamente para a respectiva pasta.
@@ -83,7 +86,10 @@ Pode interessar dar uma olhada em projetos de Iniciação Científica relacionad
 - [ImageCV - 2019-2020](https://github.com/camilabezerril/ImageCV)
 - [Actímetro - 2019-2020](https://github.com/snorlara/Actimetro)
 
+... ou em projetos do [OWLficinas](#OWLficinas) ...
+
 ... ou em projetos apresentados na disciplina no oferecimento corrente ou nos anteriores...
+
 
 ### 2022
 
@@ -142,6 +148,11 @@ Pode interessar dar uma olhada em projetos de Iniciação Científica relacionad
 [EACHian Smart Mirror](http://eachiansmartmirror.blogspot.com.br/): Nosso objetivo é a construção de um espelho "inteligente", que exiba informações úteis ao usuário na própria superfície espelhada. Nossa ideia é motivada pela área de IoT (Internet of Things), que cresce a passos largos nos últimos anos, e que são fundamentais para popularizar ainda mais a tecnologia no uso cotidiano.
 
 [Site da disciplina até 2018](http://ach2157.blogspot.com/)
+
+## OWLficinas
+
+- https://github.com/biatrizch/ESP32-Projeto-Final
+- https://github.com/RafaCaminag/CaixaDeMusica/tree/main
 
 ## FAQ
 
