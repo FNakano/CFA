@@ -1,10 +1,10 @@
-# Circuito mínimo para ESP8266 e ESP32
+# Circuito mínimo para ESP8266
 
 ## Motivação
 
 Todo ano aparecem pessoas que afirmam que as placas de desenvolvimento são grandes, que as baterias são grandes e assim por diante.
 
-Pretendo apresentar uns poucos motivos técnicos/tecnológicos para embasar os argumentos que pretendo apresentar para chegar a um circuito mínimo para ESP8266 e para ESP32.
+Pretendo apresentar uns poucos motivos técnicos/tecnológicos para embasar os argumentos que pretendo apresentar para chegar a um circuito mínimo para ESP8266.
 
 ## Requisitos
 
@@ -79,6 +79,15 @@ Há alguns reports que informam que webrepl para de funcionar quando o ESP está
 ## Fotos e vídeos do circuito funcionando
 
 [Vídeo no Youtube](https://youtu.be/9JnDZj8tckg). As legendas contém texto explicativo.
+
+### Trabalho futuro
+
+Pretendo apresentar um circuito mínimo com ESP32. Tenho algumas referências:
+	
+- https://thecustomizewindows.com/2019/06/required-circuit-for-bare-minimum-esp32-module/
+- https://electronics.stackexchange.com/questions/448187/esp32-with-ftdi-programmer
+- https://forum.arduino.cc/t/minimum-required-for-esp32/1100515/10
+- https://mischianti.org/2021/03/06/esp32-practical-power-saving-manage-wifi-and-cpu-1/
 
 
 
