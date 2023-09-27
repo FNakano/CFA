@@ -1,5 +1,8 @@
 # Circuito mínimo para ESP8266
 
+![](./2023-09-27-164323.jpg)
+
+
 ## Motivação
 
 Todo ano aparecem pessoas que afirmam que as placas de desenvolvimento são grandes, que as baterias são grandes e assim por diante.
@@ -53,6 +56,8 @@ Fonte dos dados da tabela: http://arduino.esp8266.com/Arduino/versions/2.0.0/doc
 - A conexão é necessária no boot quando com ela o ESP inicia no modo desejado e sem ela o ESP inicia em um modo alternativo (que não é desejável);
    - Sobre modos alternativos de boot: https://docs.espressif.com/projects/esptool/en/latest/esp8266/advanced-topics/boot-mode-selection.html , https://github.com/esp8266/esp8266-wiki/wiki/Boot-Process
 - A conexão é opcional quando não é essencial;
+   - Em especial, esse pino RST equivale ao botão de reset do computador. Deixar o pino desconectado pode causar resets aleatórios. Geralmente isso não é desejado, então convém conectar um resistor pull-up.
+  
 
 ## Software
 
