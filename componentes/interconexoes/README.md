@@ -71,20 +71,21 @@ Por exemplo, num circuito para acender um LED, usa-se um LED, um resistor e duas
 
 Foto 3: Componentes e seus símbolos em diagramas esquemáticos (exceto os fios com garras jacaré desenhados "artisticamente" como arcos. Em diagramas esquemáticos os fios confundem-se com os terminais dos componentes. Pode-se dizer que estão implícitos nas linhas que conectam os terminais dos componentes.)
 
-![](./componentes.jpg)
+![](./20230929_171448.jpg)
+
 
 O circuito pode ser desenhado em um diagrama esquemático (Foto 4), ou montado com cabos e garras jacaré (Foto 5), ou montado com um protoboard (Foto 6).
 
-Foto 4: Diagrama esquemático que representa o circuito usado como exemplo.
+Foto 4: Diagrama esquemático que representa o circuito usado como exemplo. Seguindo o circuito: a partir do polo positivo das pilhas, conecta a um terminal do resistor, passa pelo resistor, conecta o outro terminal do resistor ao catodo do LED, passa pelo LED, conecta o anodo do LED ao polo negativo das pilhas.
 
-![](./20230929_173331.jpg)
+![](./componentes.jpg)
 
-Foto 5: Circuito montado com interconexão com fios e garras jacaré:
+Foto 5: Circuito montado com interconexão com fios e garras jacaré: Seguindo o circuito: a partir do polo positivo das pilhas, conecta com o fio vermelho a um terminal do resistor, passa pelo resistor, conecta com o fio verde o outro terminal do resistor ao catodo do LED, passa pelo LED, conecta com o fio preto o anodo do LED ao polo negativo das pilhas.
 
 ![](./20230929_170456.jpg)
 
-Foto 6: Circuito montado com interconexão com jumpers e protoboard. Nota: Jumper, neste contexto, é o fio com as pontas apropriadas para conexão no protoboard.
- 
+Foto 6: Circuito montado com interconexão com jumpers e protoboard. Nota: Jumper, neste contexto, é o fio com as pontas apropriadas para conexão no protoboard.  Seguindo o circuito: a partir do polo positivo das pilhas, conecta com o jumper vermelho a um ponto do grupo da linha 13, esquerda; em um outro ponto do grupo conecta o catodo do LED; conecta o anodo do LED a um ponto do grupo da linha 13, direita; conecta outro ponto deste grupo a um terminal do resistor, passa pelo resistor, conecta o outro terminal do resistor a um ponto do grupo da linha 9, esquerda; conecta outro ponto da linha 9, esquerda ao polo negativo das pilhas. **nota**: o circuito é ligeiramente diferente do diagrama esquemático e da montagem com fios e garras jacaré.
+
 ![](./20230929_165718.jpg)
 
 
