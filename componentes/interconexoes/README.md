@@ -19,7 +19,74 @@ Na foto abaixo:
     - [o que é - slides no site da UEL](http://www.uel.br/pessoal/ernesto/arduino/00_Protoboard.pdf)
     - [wikipedia](https://pt.wikipedia.org/wiki/Placa_de_Ensaio)
 
+Foto 1: Vários componentes usados para conexão de outros componentes.
+
 ![interconexões](IMG_20201017_121308263.jpg)
+
+# Protoboards, Jumpers, bitolas, lapiseiras e um pouco de pensamento lógico.
+
+## Descrição de *protoboard*
+
+Protoboard, ou breadboard é um componente elétrico usado para construir protótipos de circuitos eletro-eletrônicos. 
+
+A função do protoboard é facilitar a (inter)conexão dos demais componentes que constituem os circuitos. 
+
+Um protoboard é constituído por blocos plásticos encaixados. No interior de cada bloco plástico há contatos metálicos de encaixe. Os contatos são interconectados em uma determinada ordem. Os blocos plásticos servem como suporte mecânico para os contatos (os mantém em posições fixas um em relação aos outros) e como isolante elétrico (evita conexões indesejadas entre contatos). Os contatos estão dentro do bloco e são acessados por furos. O conjunto furo + contato às vezes é chamado ponto (do protoboard). Nesses pontos podem ser inseridos ou os terminais de uma variedade de componentes eletro-eletrônicos, ou uma variedade de conectores elétricos ou uma variedade de fios condutores elétricos.
+
+Se um terminal de um componente é inserido em um ponto, o terminal é conectado (eletricamente) ao contato. Em um ponto espera-se que somente um terminal seja inserido.
+
+Os pontos, ou contatos, usualmente, são interconectados em grupos de cinco e dispostos em linha. A distância entre um ponto (de referência) e um ponto adjacente do mesmo grupo (dada uma linha há no máximo dois pontos adjacentes ao ponto de referência) é de 0,1 polegadas (2,54mm). **nota**: a distância entre dois pontos ser de 0,1 polegadas não é (condição) suficiente para concluir que os pontos estão interconectados. 
+
+Há duas ordens de contatos mais comuns: barramento e matriz. Um barramento é um bloco de plástico com contatos, uma matriz é um bloco de plástico com contatos. Na Foto 1, o protoboard tem três blocos. O bloco mais acima é um barramento, o bloco do meio é uma matriz e o bloco de baixo é outro barramento.
+
+No barramento, geralmente, há duas linhas paralelas constituidas por pontos. Graficamente são representadas por uma linha azul e outra vermelha. Fixada uma linha, todos os pontos na linha devem estar interconectados. A interrupção da conexão é informada pela interrupção das linhas azul e vermelha. 
+
+Na matriz há linhas e colunas. Em uma linha, o mais comum é haver um grupo de cinco pontos alinhados e interconectados, um espaço de 0,3 polegadas sem contatos, seguido de um segundo grupo de cinco pontos alinhados e interconectados. Os grupos não são conectados entre si. Em uma matriz há de 17 a mais de 50 linhas. A distância entre as linhas (também) é de 0,1 polegadas. Para completar a informação: a matriz tem cinco colunas de contatos, uma coluna de espaçamento de 0,3 polegadas e mais cinco colunas de contatos. Fixada uma coluna, na matriz sem componentes adicionais, os pontos da coluna não são interconectados. 
+
+Foto 2: Um protoboard de um só bloco. O tipo do bloco é matriz.
+
+![](./20230929_173608.jpg)
+
+
+Desta forma, visualmente, tome como base o protoboard da Foto 1:
+
+- se a distância entre um ponto e o ponto adjacente é de mais de 0,1 polegadas, é pouco provável que estes pontos estejam interconectados;
+   - exceção: barramento;
+- se há exatamente cinco pontos em linha a 0,1 polegadas um do outro, é muito provavel que estejam interconectados,
+   - desconheço protoboard do tipo matriz com exatamente cinco colunas, se existir, seria exceção a esta regra;
+- se há mais (ou menos) de cinco pontos em linha a 0,1 polegadas um do outro, então é pouco provável que estejam conectados.
+
+### Notas
+
+- Agora percebo porque eu estava adiando escrever sobre protoboard: gastei bastante tempo;
+- A Wikipedia vem sendo completada! (https://en.wikipedia.org/wiki/Breadboard)
+
+### Conectar componentes usando protoboard
+
+A fim de facilitar a leitura, convenciona-se que *grupo* refere-se a um grupo de cinco contatos em linha que são, por construção do protoboard, interconectados.
+
+Se um terminal de um componente é ligado a um contato do grupo e um terminal de outro componente é ligado a outro contato do mesmo grupo, os dois terminais estão (inter)conectados.
+
+Por exemplo, num circuito para acender um LED, usa-se um LED, um resistor e duas pilhas montadas em um suporte para pilhas (Foto 3). 
+
+Foto 3: Componentes e seus símbolos em diagramas esquemáticos (exceto os fios com garras jacaré desenhados "artisticamente" como arcos. Em diagramas esquemáticos os fios confundem-se com os terminais dos componentes. Pode-se dizer que estão implícitos nas linhas que conectam os terminais dos componentes.)
+
+![](./componentes.jpg)
+
+O circuito pode ser desenhado em um diagrama esquemático (Foto 4), ou montado com cabos e garras jacaré (Foto 5), ou montado com um protoboard (Foto 6).
+
+Foto 4: Diagrama esquemático que representa o circuito usado como exemplo.
+
+![](./20230929_173331.jpg)
+
+Foto 5: Circuito montado com interconexão com fios e garras jacaré:
+
+![](./20230929_170456.jpg)
+
+Foto 6: Circuito montado com interconexão com jumpers e protoboard. Nota: Jumper, neste contexto, é o fio com as pontas apropriadas para conexão no protoboard.
+ 
+![](./20230929_165718.jpg)
+
 
 ## Soldar barras de pinos
 
