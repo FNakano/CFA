@@ -88,6 +88,26 @@ Foto 6: Circuito montado com interconexão com jumpers e protoboard. Nota: Jumpe
 
 ![](./20230929_165718.jpg)
 
+### Sobre que terminais e fios são apropriados para usar com protoboard.
+
+Os contatos do protoboard têm tamanho limitado, são feitos de metal e aproveitam o efeito mola do metal para pinçar os fios, terminais ou conectores que são inseridos nos pontos. Portanto, esses fios, terminais e conectores devem "respeitar" o tamanho do contato.
+
+O conector padrão é o conector macho para jumpers DuPont (é a empresa que patenteou o conector há algumas décadas). Até onde procurei, a DuPont não fabrica mais esse tipo de conector mas o nome ficou. Por exemplo *jumper wires with Dupont connectors* (https://www.farnell.com/datasheets/3178883.pdf), *male pin connector for dupont jumper wire*. Nessas referências a ponta do conector é de metal sólido de secção transversal quadrada e 0,64mm de lado.
+
+Esses *DuPont jumper wires* são comparativamente mais caros que suas alternativas. Fios sólidos (ou rígidos) são alternativas viáveis. Fios costumam ter secção (transversal) circular. Na faixa de diâmetros de secção apropriados para protoboard, é mais comum usar o padrão de medida *American Wire Gauge* (AWG). Esta pode ser convertida em milímetros ou em milímetros quadrados, caso a medida desejada seja da superfície da secção transversal. Tabela de conversão em https://en.wikipedia.org/wiki/American_wire_gauge#Tables_of_AWG_wire_sizes . Caso seja necessário usar fios muito finos, ex. 28 AWG, colocar na ponta o conector DuPont diminuirá significativamente a probabilidade de mau contato.
+
+Segundo a tabela de conversão, o diâmetro que mais se aproxima do lado da secção transversal do conector DuPont é o 22 AWG.
+
+Já experimentei com fio tirado de:
+	
+- cabo de rede, geralmente é AWG 24 que é um pouco mais fino que o 22 AWG. A impressão que tenho é de firmeza na conexão com o contato do protoboard [Foto](./20230929_191937.jpg);
+- cabo telefônico CI 50, este tem diâmetro de 0,50 mm. É um pouco mais fino que o 24 AWG. A impressão que tenho é que ele fica um pouco frouxo com o contato do protoboard [Foto](./20230929_192200.jpg).
+
+Atualmente os cabos chatos (*flat cables*) mais comuns no mercado brasileiro têm vias com fio trançado (enamelado) de 26 ou 28 AWG ([Foto](./20230929_193751.jpg)). Para usá-los, é necessário (mandatório?) usar conector DuPont. Caso contrário, a chance de mau contato é alta (o fio é fino) e o fio pode enroscar no ponto do protoboard - puxar com muita força pode danificar o ponto do protoboard.
+
+Alguém pode notar que terminais de resistores, de LEDs, de transistores, ... são mais finos que 24 AWG. De fato são, de fato são bastante sujeitos a mau contato MAS isso é aliviado porque o componente é rígido e tem dois ou mais terminais então o terminal sempre entra enviesado em relação ao conector o que acaba dando mais firmeza no contato.
+
+Barras de pinos (headers, https://en.wikipedia.org/wiki/Pin_header) existem em vários tamanhos. O mais conhecido acredito que seja a barra de pinos que faz par com os contatos do protoboard. Novamente referenciado como DuPont connector. Logo, se quiser ter uma referência de tamanho, é razoável usar o conector da barra de pinos.
 
 ## Soldar barras de pinos
 
