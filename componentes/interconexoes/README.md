@@ -107,6 +107,8 @@ Atualmente os cabos chatos (*flat cables*) mais comuns no mercado brasileiro tê
 
 Alguém pode notar que terminais de resistores, de LEDs, de transistores, ... são mais finos que 24 AWG. De fato são, de fato são bastante sujeitos a mau contato MAS isso é aliviado porque o componente é rígido e tem dois ou mais terminais então o terminal sempre entra enviesado em relação ao conector o que acaba dando mais firmeza no contato.
 
+**nota**: não tenho equipamento para medir diferenças de tamanho muito pequenas (sub-milímetro) mas achei um truque que me serviu. Lapiseiras têm minas de grafite de secção circular e diferentes diâmetros, por exemplo 0,5mm e 0,7mm. A ponta da lapiseira costuma ter um tubo de alguns milímetros de comprimento. Acreditando que esses tubos não sejam muito mais largos que as minas de grafite, se um fio passar (ou não) pelo tubo, então é possível ter noção do diâmetro do fio [Foto](./20230929_195750.jpg).
+
 Barras de pinos (headers, https://en.wikipedia.org/wiki/Pin_header) existem em vários tamanhos. O mais conhecido acredito que seja a barra de pinos que faz par com os contatos do protoboard. Novamente referenciado como DuPont connector. Logo, se quiser ter uma referência de tamanho, é razoável usar o conector da barra de pinos.
 
 ## Soldar barras de pinos
