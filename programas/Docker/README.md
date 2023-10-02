@@ -51,6 +51,36 @@ A documentação para os comandos em letras maiúsculas está em https://docs.do
 
 Yarn é um gerenciador de pacotes. Ele instala o que estiver definido no arquivo `package.json`.
 
+## Como desenvolver incrementalmente uma aplicação com Docker
+
+O desenvolvimento de uma aplicação é incremental. Se a cada incremento tiver que atualizar a imagem, aumenta significativamente o tempo para desenvolver cada incremento.
+
+Busquei um tanto até econtrar algo que eu acho que ajuda: https://docs.docker.com/compose/gettingstarted/#step-7-update-the-application .
+
+Nele atualiza-se o código de um servidor flask sem precisar atualizar a imagem. O que se atualiza é o arquivo contido em um volume montado na imagem.
+
+Nesse exemplo menciona-se um `requirements.txt`. É um arquivo de dependências gerado pelo Python. Ele é usado para instalar na imagem base, que é Python, o flask e o redis. Tem um tutorial sobre o requirements em: https://www.scaler.com/topics/how-to-create-requirements-txt-python/
+
+
+## Links que consultei
+
+https://docs.docker.com/develop/
+https://docs.docker.com/build/building/multi-stage/
+https://docs.docker.com/get-started/kube-deploy/
+https://docs.docker.com/get-started/swarm-deploy/
+https://docs.docker.com/compose/
+https://docs.docker.com/desktop/install/linux-install/
+https://docs.docker.com/desktop/faqs/linuxfaqs/#why-does-docker-desktop-for-linux-run-a-vm
+https://docs.docker.com/compose/gettingstarted/
+https://docs.docker.com/develop/dev-best-practices/
+https://docs.docker.com/engine/reference/builder/
+https://docs.docker.com/build/ci/
+https://docs.docker.com/storage/volumes/
+https://docs.docker.com/storage/bind-mounts/
+https://www.google.com/search?q=python+create+requirements.txt&oq=python+create+requirement&gs_lcrp=EgZjaHJvbWUqBwgAEAAYgAQyBwgAEAAYgAQyBggBEEUYOTIICAIQABgWGB4yCAgDEAAYFhgeMgoIBBAAGAoYFhgeMggIBRAAGBYYHjIICAYQABgWGB4yCAgHEAAYFhgeMgoICBAAGAoYFhgeMggICRAAGBYYHtIBCDkwNTBqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8#ip=1
+https://www.scaler.com/topics/how-to-create-requirements-txt-python/
+
+
 ## Conclusão
 
 Acredito que, agora, fica mais fácil de entender o exemplo em https://docs.docker.com/get-started/02_our_app/ .
@@ -58,6 +88,8 @@ Acredito que, agora, fica mais fácil de entender o exemplo em https://docs.dock
 ## Comentários
 
 O exemplo dá um passo a passo do que fazer para criar e executar uma aplicação mas não deixa claro o que está no domínio de conceitos de Docker e o que está no domínio de conceitos de outras ferramentas. Por exemplo. o conteúdo clonado do github (https://github.com/docker/getting-started-app/tree/main) tem mais a ver com Yarn e (muito mais com) Node.js, que com Docker.
+
+Ele não conta no tutorial do compose (que pretendo usar para desenvolver incrementalmente uma aplicação) que `flask` (re)carrega automaticamente a aplicação em python quando o arquivo fonte é modificado.
 
 A seguir apresento um histórico do que estudei para chegar ao resultado acima:
 
