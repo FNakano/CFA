@@ -5,7 +5,7 @@
 ... então, os usos mais básicos de Docker são:
 
 1. Construir uma aplicação;
-2. Executar uma aplicação.
+2. Executar a aplicação construída.
 
 A aplicação é construída com comandos do tipo `docker build -t getting-started` (https://docs.docker.com/get-started/02_our_app/#build-the-apps-image)
 
@@ -21,7 +21,7 @@ A pegada está em como é feito e que características tem cada um dos jeitos. V
 
 > Docker enables you to separate your applications from your infrastructure so you can deliver software quickly. With Docker, you can manage your infrastructure in the same ways you manage your applications. By taking advantage of Docker's methodologies for shipping, testing, and deploying code, you can significantly reduce the delay between writing code and running it in production. (https://docs.docker.com/get-started/overview/)
 
-A característica que ressaltam na citação acima é que Docker permite separar aplicações de infraestrutura. Aplicação é como o servidor do exemplo, infraestrutura é conjunto de programas que precisam estar rodando para a aplicação poder rodar. Usando linguagens e motores de tempo de execução como exemplo, Docker torna possível que se atualize, na infraestrutura, Python 2 para Python 3 ou; Java 8 para Java 11, sem *quebrar* a aplicação (desde que a atualização não quebre o Docker). A mesma característica permite criar uma aplicação única que pode ser executada em diferentes infraestruturas (desde que tenha Docker nelas). Ié a mesma aplicação roda no Linux, no MacOS e no Windows.
+A característica que ressaltam na citação acima é que Docker permite separar aplicações de infraestrutura. Aplicação é como o servidor do exemplo, infraestrutura é conjunto de programas que precisam estar rodando para a aplicação poder rodar. Usando linguagens e motores de tempo de execução como exemplo, Docker torna possível que se atualize, na infraestrutura, Python 2 para Python 3 ou; Java 8 para Java 11, sem *quebrar* a aplicação (desde que a atualização não quebre o Docker). A mesma característica permite criar uma aplicação única que pode ser executada em diferentes infraestruturas (desde que tenha Docker nelas). Ié a mesma aplicação roda no Linux, no MacOS e no Windows. **nota**: Isso é possível porque o container não usa as ferramentas da infraestrutura. As ferramentas necessárias à aplicação também estão no *container*.
 
 Essa característica, um tipo de portabilidade da aplicação que é muito desejada em desenvolvimento e implantação de programas, é obtida através do uso de *containers*. 
 
@@ -31,7 +31,7 @@ Então, `getting-started`, que é um arquivo, representa um *container*, e cont�
 
 ## Como especificar e construir containers (imagens)
 
-*Containers são construídos com o comando `docker build ...`. Este comando lê a especificação armazenada em um arquivo de nome `Dockerfile`. Copio abaixo o `Dockerfile` do exemplo:
+*Containers* são construídos com o comando `docker build ...`. Este comando lê a especificação armazenada em um arquivo de nome `Dockerfile`. Copio abaixo o `Dockerfile` do exemplo:
 	
 ```
 # syntax=docker/dockerfile:1
@@ -53,7 +53,7 @@ Yarn é um gerenciador de pacotes. Ele instala o que estiver definido no arquivo
 
 ## Como desenvolver incrementalmente uma aplicação com Docker
 
-O desenvolvimento de uma aplicação é incremental. Se a cada incremento tiver que atualizar a imagem, aumenta significativamente o tempo para desenvolver cada incremento.
+Quando desenvolvo, o desenvolvimento de uma aplicação é incremental. Se a cada incremento tiver que atualizar a imagem, aumenta significativamente o tempo para desenvolver cada incremento.
 
 Busquei um tanto até econtrar algo que eu acho que ajuda: https://docs.docker.com/compose/gettingstarted/#step-7-update-the-application .
 
@@ -62,7 +62,7 @@ Nele atualiza-se o código de um servidor flask sem precisar atualizar a imagem.
 Nesse exemplo menciona-se um `requirements.txt`. É um arquivo de dependências gerado pelo Python. Ele é usado para instalar na imagem base, que é Python, o flask e o redis. Tem um tutorial sobre o requirements em: https://www.scaler.com/topics/how-to-create-requirements-txt-python/
 
 
-## Links que consultei
+## Links que consultei para a parte de desenvolvimento incremental
 
 https://docs.docker.com/develop/
 https://docs.docker.com/build/building/multi-stage/
@@ -90,6 +90,9 @@ Acredito que, agora, fica mais fácil de entender o exemplo em https://docs.dock
 O exemplo dá um passo a passo do que fazer para criar e executar uma aplicação mas não deixa claro o que está no domínio de conceitos de Docker e o que está no domínio de conceitos de outras ferramentas. Por exemplo. o conteúdo clonado do github (https://github.com/docker/getting-started-app/tree/main) tem mais a ver com Yarn e (muito mais com) Node.js, que com Docker.
 
 Ele não conta no tutorial do compose (que pretendo usar para desenvolver incrementalmente uma aplicação) que `flask` (re)carrega automaticamente a aplicação em python quando o arquivo fonte é modificado.
+
+O [Otávio](https://github.com/bambans) indicou um outro gerenciador de containers: [Podman](https://podman.io/). Parece que a maior vantagem de Podman sobre Docker é que Podman e a imagem são executados totalmente em modo usuário. Docker tem uma parte em modo superusuário pois precisa de um daemon. Detalhes em https://hub.alfresco.com/t5/alfresco-content-services-blog/using-podman-with-alfresco/ba-p/316257 , aplicado a uma aplicação específica. 
+
 
 A seguir apresento um histórico do que estudei para chegar ao resultado acima:
 
