@@ -39,12 +39,12 @@ Pretende-se demonstrar um uso simples do controle remoto.
 
 ### Conexões
 
-| item | pino | pino | pino | pino | pino | pino |
+| item | pino | pino | pino | pino | pino |
 | --- | --- | --- | --- | --- | --- |
 | fonte 5V | VCC | GND | --- | --- | --- |
 | receptor YK04 | VCC | GND | --- | D3 | --- |
-| LED amarelo | --- | ânodo | catodo | --- | --- | --- |
-| resistor 330$\Omega$ | --- | --- | 1 | 2 | --- | --- |
+| LED amarelo | --- | ânodo | catodo | --- | --- |
+| resistor 330$\Omega$ | --- | --- | 1 | 2 | --- |
 
 ### teste
 
