@@ -30,7 +30,7 @@ Compatible with all TTGO camera products, written by LewisHe
 /***************************************
  *  Function
  **************************************/
-// #define SOFTAP_MODE       //The comment will be connected to the specified ssid
+#define SOFTAP_MODE       //The comment will be connected to the specified ssid
 
 //When there is BME280, set the reading time here
 #define DEFAULT_MEASUR_MILLIS   3000        /* Get sensor time by default (ms)*/
@@ -43,8 +43,8 @@ Compatible with all TTGO camera products, written by LewisHe
 /***************************************
  *  WiFi
  **************************************/
-#define WIFI_SSID   "NOME DA SUA REDE WIFI"
-#define WIFI_PASSWD "SENHA DA SUA REDE WIFI"
+#define WIFI_SSID   "ESPCAM"
+#define WIFI_PASSWD "espcam"
 
 
 #include "select_pins.h"
