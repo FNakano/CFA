@@ -36,3 +36,31 @@ Há momentos em que por mais que se pense e se aja para evitar acidentes, algo p
 	- `configAsAP.moist.read()` lê do sensor de umidade;
 	- `configAsAP.pump.on()` liga a bomba;
 	- `configAsAP.pump.off()` desliga a bomba;
+10. O ESP32 tem dois ADCs. O ADC2 é usado pelo wifi e não pode ser usado junto com o wifi ligado (https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/adc_oneshot.html#hardware-limitations).
+11. Há [relatos de ruído no ADC1](https://esp32.com/viewtopic.php?t=27599 , https://arduino.stackexchange.com/questions/89091/esp32-adc-wifi-issue)
+12. Para saber se o pino é um canal do ADC1 ou do ADC2, recorra à [pinagem do ESP32](https://lobodarobotica.com/blog/wp-content/uploads/2020/09/ESP32-Pinout.jpg)
+
+
+
+```
+Hardware Limitations
+Random Number Generator (RNG) uses ADC as an input source. When ADC adc_oneshot_read() works, the random number generated from RNG will be less random.
+
+A specific ADC unit can only work under one operating mode at any one time, either continuous mode or oneshot mode. adc_oneshot_read() has provided the protection.
+
+ADC2 is also used by Wi-Fi. adc_oneshot_read() has provided protection between the Wi-Fi driver and ADC oneshot mode driver.
+
+ESP32-DevKitC: GPIO0 cannot be used in oneshot mode, because the DevKit has used it for auto-flash.
+
+ESP-WROVER-KIT: GPIO 0, 2, 4, and 15 cannot be used due to external connections for different purposes.
+```
+
+No sensor ADS712-5B o valor de 185mV/A indica que a cada ampére adicionado/subtraído na carga o valor na saída aumenta/diminui em 185mV. 
+
+A resolução do ADC1 do ESP32 é 12-bits, ou seja, 4096 passos. Com a constante `ADC.ATTN_11DB` que uso na configuração do ADC, o valor 4095 corresponde a 3,3V. Consequentemente cada passo corresponde a aproximadamente 0,8mV. 
+
+Juntando a variação da tensão de saída do ADS712-5B com o ADC1 do ESP32, a variação de 1 ampére resulta em variação de 231 passos. 
+
+A tensão da saída do ADS712 com corrente de carga zero é de 2,5V o que corresponde, em tese, a uma leitura de aproximadamente 3100 no ESP32. Se o motor consumir 1A então a leitura irá para 3331, se o motor consumir 2A então a leitura irá para 3562 e assim por diante. 
+
+Na prática pode haver variações. Por exemplo, no protótipo que montei, medindo a corrente do circuito todo, a leitura base é da ordem de 2900 e ligando o motor é da ordem de 3100.
