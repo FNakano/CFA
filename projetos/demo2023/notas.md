@@ -59,6 +59,13 @@ ESP32-DevKitC: GPIO0 cannot be used in oneshot mode, because the DevKit has used
 ESP-WROVER-KIT: GPIO 0, 2, 4, and 15 cannot be used due to external connections for different purposes.
 ```
 
+1. Quando a realidade mostra quem manda: ESP não inicia quando alimentado pelo LM78M05
+	- O brilho do LED de energia do ESP varia periodicamente. Isto indica que em alguma fase do boot ou da execução de programas a tensão da fonte cai (geralmente porque o ESP puxa muita corrente). Isto pode indicar algo mais. Se a tensão da fonte cai demais o ESP reinicia, logo, nunca sai da inicialização. 
+	- Da forma como escrevi o código do `configAsAP.setup()`, se o AP iniciar o LED ligado ao pino 2 acende. Isto não acontece quando o ESP é alimentado pelo 78M05;
+	- Medi a tensão com o multimetro. Aprox. 4,8V quando o LED está com brilho máximo, aprox. 4,6V quando o LED está com brilho mínimo;
+	- A solução que me ocorre é voltar ao projeto inicial, com fonte de 5V.
+	- Toda aquela conversa do LM78M05 e o tempo gasto para implementar jogado fora.
+
 No sensor ADS712-5B o valor de 185mV/A indica que a cada ampére adicionado/subtraído na carga o valor na saída aumenta/diminui em 185mV. 
 
 A resolução do ADC1 do ESP32 é 12-bits, ou seja, 4096 passos. Com a constante `ADC.ATTN_11DB` que uso na configuração do ADC, o valor 4095 corresponde a 3,3V. Consequentemente cada passo corresponde a aproximadamente 0,8mV. 

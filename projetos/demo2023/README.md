@@ -1,3 +1,5 @@
+link para vídeo do teste armazenado no youtube: https://youtu.be/_JRHtYLH2IU
+
 # Bomba de água, medidor de corrente, sensor de umidade
 
 **Atençao**: L298 com motores a 12V e controle a 5V - Aumenta chance de errar conexões e queimar porta USB, ESP32, ... 
