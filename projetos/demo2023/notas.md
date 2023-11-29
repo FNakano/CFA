@@ -20,6 +20,8 @@ Há momentos em que por mais que se pense e se aja para evitar acidentes, algo p
 	- https://www.alldatasheet.com/view.jsp?Searchword=78m05
 	- LM78M05 fornece até 0.5A. O ESP com wifi ligado consome cerca de 0,2A. Até onde sei, é seguro confiar que o restante não passa de 0,3A.
 	- para usar o regulador o jumper J5 deve estar colocado e deve se fornecer 12V no pino apropriado (se olhar a especificação com cuidado, algo entre 6V e 12V deve ser ok. Mais de 12V, embora o LM78M05 suporte tensões de até 35V, considerando a corrente consumida, fará ele esquente demais e queimar.
+	- **Atençao**: L298 com motores a 12V e controle a 5V - Aumenta chance de errar conexões e queimar porta USB, ESP32, ... 
+	- Reguladores lineares (LM78?05, AMS1117) comparados a reguladores chaveados (LM2596, MP1584, XL6009 (Placa), NH-KC24, 134N3P (placa?) ...) comparados a transformadores
 6. [Novo esquema](./Irriga-2.jpg)
 6. [Nova disposição dos componentes](./529f38c9-492b-47de-b30e-7c4bd8c231f5.jpeg)
 7. Gravar micropython no ESP32
@@ -66,3 +68,5 @@ Juntando a variação da tensão de saída do ADS712-5B com o ADC1 do ESP32, a v
 A tensão da saída do ADS712 com corrente de carga zero é de 2,5V o que corresponde, em tese, a uma leitura de aproximadamente 3100 no ESP32. Se o motor consumir 1A então a leitura irá para 3331, se o motor consumir 2A então a leitura irá para 3562 e assim por diante. 
 
 Na prática pode haver variações. Por exemplo, no protótipo que montei, medindo a corrente do circuito todo, a leitura base é da ordem de 2900 e ligando o motor é da ordem de 3100.
+
+O sensor de umidade do solo, para a entrada analógica, é ligado diretamente à entrada ESP32 (https://components101.com/modules/soil-moisture-sensor-module).
