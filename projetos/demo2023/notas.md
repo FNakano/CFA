@@ -9,7 +9,8 @@ Há momentos em que por mais que se pense e se aja para evitar acidentes, algo p
 	No caso, sei que componentes usar então o esquema com nomes de componentes é o caminho. Quando não se sabe que componente usar, pode compensar fazer um esquema com funcionalidades (análise de requisitos);
 2. Nesses projetos um problema comum é a falta de pinos 5V e GND para fornecer energia a todos os componentes, então fiz uma [placa auxiliar](./c289f522-1022-4ce8-b70a-801b4493aef2.jpeg) [frente](./5bce53eb-ee5d-4659-9164-7bf15ba11e90.jpeg)
 3. Inclui um resistor de 2,2\(\Omega\) para impedir que a corrente suba muito (com este resistor o limite é de cerca de 6A)
-4. Tenho os componentes, então [os disponho sobre o que escolhi como base para montagem](./43340fa7-92b3-49b4-8f2d-a6a808e76eb1.jpeg)
+4. Tenho os componentes, então [os disponho sobre o que escolhi como base para montagem nas posições que acho melhor](./43340fa7-92b3-49b4-8f2d-a6a808e76eb1.jpeg)
+	- Podem ser critérios: distâncias mais curtas, ligações mais curtas, minimizar cruzamento de fios, facilitar o acesso aos terminais, ...
 5. Tenho dúvidas sobre como usar alguns componentes. Fui atrás da especificação deles;
 	- https://os.mbed.com/users/mikeb/notebook/acs712-hall-effect-current-sensor/
 	- file:///home/fabio/Downloads/ACS712_AllegroMicroSystems.pdf
@@ -19,7 +20,8 @@ Há momentos em que por mais que se pense e se aja para evitar acidentes, algo p
 	- https://www.alldatasheet.com/view.jsp?Searchword=78m05
 	- LM78M05 fornece até 0.5A. O ESP com wifi ligado consome cerca de 0,2A. Até onde sei, é seguro confiar que o restante não passa de 0,3A.
 	- para usar o regulador o jumper J5 deve estar colocado e deve se fornecer 12V no pino apropriado (se olhar a especificação com cuidado, algo entre 6V e 12V deve ser ok. Mais de 12V, embora o LM78M05 suporte tensões de até 35V, considerando a corrente consumida, fará ele esquente demais e queimar.
-6. [Novo esquema](./529f38c9-492b-47de-b30e-7c4bd8c231f5.jpeg)
+6. [Novo esquema](./Irriga-2.jpg)
+6. [Nova disposição dos componentes](./529f38c9-492b-47de-b30e-7c4bd8c231f5.jpeg)
 7. Gravar micropython no ESP32
 	- fiquei irritado porque senti que gastei muito tempo procurando os arquivos e o comando para transferir; 
 8. Configurar ESP32 com WebREPL e como Access Point
