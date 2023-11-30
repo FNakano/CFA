@@ -77,3 +77,19 @@ A tensão da saída do ADS712 com corrente de carga zero é de 2,5V o que corres
 Na prática pode haver variações. Por exemplo, no protótipo que montei, medindo a corrente do circuito todo, a leitura base é da ordem de 2900 e ligando o motor é da ordem de 3100.
 
 O sensor de umidade do solo, para a entrada analógica, é ligado diretamente à entrada ESP32 (https://components101.com/modules/soil-moisture-sensor-module).
+
+Uma fonte diferente ensinando formas de fornecer energia ao esp: https://techexplorations.com/guides/esp32/begin/power/
+
+Modelos de fontes:
+	
+https://www.google.com/search?q=esp32+devkit+vin&sca_esv=586327572&ei=qmhnZfzNO7_K1sQPoMSFsAU&ved=0ahUKEwj8yuum0umCAxU_pZUCHSBiAVYQ4dUDCBA&uact=5&oq=esp32+devkit+vin&gs_lp=Egxnd3Mtd2l6LXNlcnAiEGVzcDMyIGRldmtpdCB2aW4yBxAAGIAEGBMyBxAAGIAEGBMyCBAAGBYYHhgTMggQABgWGB4YEzIIEAAYFhgeGBMyCBAAGBYYHhgTMggQABgWGB4YEzIIEAAYFhgeGBMyCBAAGBYYHhgTMggQABgWGB4YE0igKVCbDljKIXABeAGQAQCYAY4BoAHKCaoBBDAuMTC4AQPIAQD4AQHCAgoQABhHGNYEGLADwgIFEAAYgATCAgYQABgWGB7CAggQABgWGB4YCsICCxAAGIAEGLEDGIMB4gMEGAAgQYgGAZAGCA&sclient=gws-wiz-serp
+https://techfun.sk/en/product/boost-charging-discharge-circuit-134n3p-for-lithium-batteries-1a/
+https://techfun.sk/wp-content/uploads/2021/09/ce8301-datasheet.pdf
+https://pt.aliexpress.com/item/33061491952.html?src=google&src=google&albch=shopping&acnt=768-202-3196&slnk=&plac=&mtctp=&albbt=Google_7_shopping&isSmbAutoCall=false&needSmbHouyi=false&albcp=18265477163&albag=&trgt=&crea=pt33061491952&netw=x&device=c&albpg=&albpd=pt33061491952&gad_source=1&gclid=Cj0KCQiA35urBhDCARIsAOU7QwmMmn4mhAID6ypPGeTgw3F7wNxhdRtWg4qbWvtldgs-EeaBRFvWqLEaAgHqEALw_wcB&gclsrc=aw.ds&aff_fcid=2e6eba8973aa4aa781ff4d7bb29d2619-1701264141063-06824-UneMJZVf&aff_fsk=UneMJZVf&aff_platform=aaf&sk=UneMJZVf&aff_trace_key=2e6eba8973aa4aa781ff4d7bb29d2619-1701264141063-06824-UneMJZVf&terminal_id=40c46bd3639748708a05cfd36b6cac59&afSmartRedirect=y
+https://www.wjcomponentes.com.br/fontes/regulador-de-tensao-step-up-xl6009?parceiro=6298&gad_source=1&gclid=Cj0KCQiA35urBhDCARIsAOU7Qwn6KP2rjBX36EJRUGKrfmdB1vIDD_xjX02dZO67x3ZzOY2_gMqLkeoaAryOEALw_wcB
+https://produto.mercadolivre.com.br/MLB-1682480893-kit-3-pecas-regulador-de-tenso-step-down-powerbank-5v-usb-_JM?matt_tool=56291529&matt_word=&matt_source=google&matt_campaign_id=14303413604&matt_ad_group_id=133074303519&matt_match_type=&matt_network=g&matt_device=c&matt_creative=584156655498&matt_keyword=&matt_ad_position=&matt_ad_type=pla&matt_merchant_id=109757862&matt_product_id=MLB1682480893&matt_product_partition_id=1799378579933&matt_target_id=pla-1799378579933&gad_source=1&gclid=Cj0KCQiA35urBhDCARIsAOU7QwkVp5UF5E33nw7G0EwlpoS3mgWPURP_UXr-Sp7srNwNZzuJ_U79bLEaAi6aEALw_wcB
+https://www.baudaeletronica.com.br/produto/mini-regulador-conversor-de-tensao-dc-ajustavel.html?utm_source=Site&utm_medium=GoogleMerchant&utm_campaign=GoogleMerchant&gad_source=1&gclid=Cj0KCQiA35urBhDCARIsAOU7QwkXijLE-NO37QwxbzxspXyYBTx9hcHnyuRM8bb1doU3nl1Q_uiab7AaAjN6EALw_wcB
+https://www.baudaeletronica.com.br/produto/modulo-regulador-de-tensao-lm2596-com-ajuste-de-tensao-e-corrente.html?utm_source=Site&utm_medium=GoogleMerchant&utm_campaign=GoogleMerchant&gad_source=1&gclid=Cj0KCQiA35urBhDCARIsAOU7QwkPutfHaklDlhdWQqsEviIsJpayJjVcUtVGsAwTi3NtiNmDxsoS_toaAkNsEALw_wcB
+https://www.baudaeletronica.com.br/produto/mini-regulador-conversor-de-tensao-dc-dc-step-down.html
+https://www.autocorerobotica.com.br/modulo-regulador-de-tensao-step-up-e-carregador-para-bateria-de-litio-134n3p
+
