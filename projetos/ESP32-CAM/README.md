@@ -180,7 +180,7 @@ max tx power=78,ret=0
 
 ```
 
-Como não vi mensagem reconhecível, usei o código do exemplo (versão melhorada da que guardei faz uns anos), fiz ajustes no define do modelo, no ssid e no password, . O stream funciona bem. Usei Arduino IDE 1.8.19 com biblioteca ESPTOOL 4.5.1, placa esp32-wrover module com esquema de partição Huge App (3M App, No OTA, 1M spiffs) mensagens de compilação e gravação abaixo:
+Como não vi mensagem reconhecível, usei o código do exemplo (versão melhorada da que guardei faz uns anos) cópia local [aqui](./CameraWebServer-2023-12-04), fiz ajustes no define do modelo, no ssid e no password, . O stream funciona bem. Usei Arduino IDE 1.8.19 com biblioteca ESPTOOL 4.5.1, placa esp32-wrover module com esquema de partição Huge App (3M App, No OTA, 1M spiffs) mensagens de compilação e gravação abaixo:
 	
 ```
 O sketch usa 1510545 bytes (48%) de espaço de armazenamento para programas. O máximo são 3145728 bytes.
