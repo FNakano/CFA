@@ -90,6 +90,15 @@ Pode interessar dar uma olhada em projetos de Iniciação Científica relacionad
 
 ... ou em projetos apresentados na disciplina no oferecimento corrente ou nos anteriores...
 
+### 2023
+
+- [GuitarHand - Luva com sensores nos dedos](https://github.com/Fabriciolk/GuitarHand)
+- [Medidor de corrente elétrica](https://github.com/rodrigo-birocchi/ESP32-medidor-eletricidade)
+- [Tamagochi remixed](https://github.com/edufiedler/AndreEduardoEzequiel)
+- [MeshNetGame](https://github.com/ViniciusHenriq1402/Projeto-CFA)
+- [WebCar](https://github.com/vitormrts/webcar)
+- [e-Plant](https://github.com/jribeiroabrahao/ep-cfa-usp)
+
 
 ### 2022
 
