@@ -1,4 +1,4 @@
-![](file:///home/fabio/MeuGithub/CFA/programas/MicropythonWithLVGL/Captura%20de%20tela%20de%202024-02-27%2016-35-51.png)
+![](./Captura%20de%20tela%20de%202024-02-27%2016-35-51.png)
 
 Might have done something not trivial...
 
@@ -126,7 +126,7 @@ make
 
 Reference: https://github.com/micropython/micropython/blob/master/ports/esp32/README.md
 
-´make´ messages has many warnings and no errors. Tells what to do at the end:
+´make´ messages have many warnings and no errors. Tells what to do at the end:
 
 <pre>Project build complete. To flash, run this command:
 /home/fabio/.espressif/python_env/idf4.4_py3.11_env/bin/python ../../../esp-idf/components/esptool_py/esptool/esptool.py -p (PORT) -b 460800 --before default_reset --after hard_reset --chip esp32  write_flash --flash_mode dio --flash_size detect --flash_freq 40m 0x1000 build-GENERIC/bootloader/bootloader.bin 0x8000 build-GENERIC/partition_table/partition-table.bin 0x10000 build-GENERIC/micropython.bin
@@ -166,6 +166,10 @@ Warning: I2C(-1, ...) is deprecated, use SoftI2C(...) instead
 >>> 
 ```
 
+Reference: https://github.com/lvgl/lv_binding_micropython/blob/master/README.md#ttgo-twatch-2020-st7789-configuration-example
+
+Library axp202c is in: https://gitlab.com/mooond/t-watch2020-esp32-with-micropython , ili9XXX is LVGL+Micropython built-in (try `help('modules')`)
+
 Now from LVGL documentation, issue:
 	
 ```
@@ -178,6 +182,19 @@ label.set_text('Hello World!')
 lv.screen_load(scr)
 ```
 
+Reference: https://docs.lvgl.io/master/integration/bindings/micropython.html
+
 Resulted in the watch screen below:
 
 ![](./photo1709070659.jpeg)
+
+Old code (might have some hints but probably don't work anymore):
+
+- https://gist.github.com/AngainorDev/63ee2994e6e159daac0c23651eee1005
+- https://github.com/schumixmd/TTGO-ST7789-MicroPython
+- https://y0no.fr/posts/micropython-ttgo-twatch2020/
+
+Discussion about lvgl support to displays: https://forum.lvgl.io/t/micropython-display-drivers/13229/92
+
+This author is mentioned in the above discussion: https://github.com/russhughes/st7789_mpy
+
