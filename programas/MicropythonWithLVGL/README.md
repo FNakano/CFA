@@ -155,6 +155,8 @@ idf.py -p /dev/ttyACM0 flash
 
 After this, open Thonny, connect to the device, get REPL prompt and type `help(modules)` to get the figure at the top.
 
+Now hardware interconnection starts to play a role. ttgo t-watch v.3 hardware pinout is here: https://github.com/Xinyuan-LilyGO/TTGO_TWatch_Library/blob/master/docs/watch_2020_v3.md
+
 I believe more hints on using ST7789 are in https://github.com/lvgl/lv_binding_micropython/blob/master/README.md#st7789-driver-class , instead of other references.
 
 Got backlight on with these  (still there is something strange):
@@ -271,3 +273,6 @@ time.localtime()
 ```
 
 Reference: https://docs.micropython.org/en/latest/library/time.html#functions
+
+Continue in ./touchDisplayButton.md
+
