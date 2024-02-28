@@ -34,6 +34,14 @@ Reference: https://medium.com/python-mvp/upgrade-python-3-10-to-3-11-on-ubuntu-2
 
 To install ESP-IDF version 4.4.6 (current stable version is 5.2). ESP-IDF 4.4.6 is compatible with LVGL binding to ESP32. First switch to python 3.11 and issue these commands:
 
+pre-requisites:
+	
+```
+sudo apt-get install git wget flex bison gperf python3 python3-pip python3-venv cmake ninja-build ccache libffi-dev libssl-dev dfu-util libusb-1.0-0
+```
+
+Reference: https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/linux-macos-setup.html#get-started-prerequisites
+
 ```
 % get IDF ver. 4.4.6
 git clone -b v4.4.6 --recursive https://github.com/espressif/esp-idf.git
@@ -147,9 +155,46 @@ After this, open Thonny, connect to the device, get REPL prompt and type `help(m
 
 I believe more hints on using ST7789 are in https://github.com/lvgl/lv_binding_micropython/blob/master/README.md#st7789-driver-class , instead of other references.
 
-Got backlight on with these commands in Thonny:
+Got backlight on with these  (still there is something strange):
+
+Clone `https://gitlab.com/mooond/t-watch2020-esp32-with-micropython` and upload files to watch (need adafruit-ampy, and edit `writeall.sh` shell script to setup right USB port)
+
+```
+pip install adafruit-ampy
+git clone https://gitlab.com/mooond/t-watch2020-esp32-with-micropython.git
+cd t-watch2020-esp32-with-micropython/
+% edit writeall.sh and run it
+./writeall.sh % may take a minute remember to free access to dev/tty???? port (shut off Thonny)
+```
+
+References: https://learn.adafruit.com/micropython-basics-load-files-and-run-code/install-ampy , https://gitlab.com/mooond/t-watch2020-esp32-with-micropython
+
+issue commands in Thonny:
+
+```
+import lily
+li=lily.LILY() # there is some command(s) in lily.LILY() which is needed by LVGL example code.
+import lvgl as lv
+from ili9XXX import st7789
+import axp202c
+axp=axp202c.PMU()
+axp.setLDO2Voltage(2800)
+disp = st7789(
+  mosi=19, clk=18, cs=5, dc=27, rst=-1, backlight=12, power=-1,
+  width=240, height=240, factor=4)
+```
+
+commands with messages:
 	
 ```
+>>> import lily
+>>> li=lily.LILY() # there is some command(s) in lily.LILY() which is needed by LVGL example code.
+* initializing pins
+* initializing i2c
+Warning: I2C(-1, ...) is deprecated, use SoftI2C(...) instead
+* initializing mpu
+* Detect PMU Type is AXP202
+>>> 
 >>> import lvgl as lv
 >>> from ili9XXX import st7789
 >>> import axp202c
