@@ -1,5 +1,7 @@
 ![](./Captura%20de%20tela%20de%202024-02-27%2016-35-51.png)
 
+(instructions tested in feb 28, 2024)
+
 Might have done something not trivial...
 
 I wanted to install Micropython with LVGL support in a ttgo t-watch.
