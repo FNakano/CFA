@@ -274,5 +274,5 @@ time.localtime()
 
 Reference: https://docs.micropython.org/en/latest/library/time.html#functions
 
-Continue in [touchDisplayButton.md]s(./touchDisplayButton.md)
+Continue in [touchDisplayButton.md](./touchDisplayButton.md)
 
