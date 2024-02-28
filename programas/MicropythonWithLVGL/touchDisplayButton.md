@@ -1,6 +1,6 @@
 (instructions tested in feb 28, 2024)
 
-Previous in ./README.md
+Previous in [README](./README.md)
 
 Aiming to get display, touch, event loop and screen button to function.
 
