@@ -245,3 +245,29 @@ Discussion about lvgl support to displays: https://forum.lvgl.io/t/micropython-d
 
 This author is mentioned in the above discussion: https://github.com/russhughes/st7789_mpy
 
+*feel like I'm lifting a piano...*
+
+after running:
+
+```
+import lily
+li=lily.LILY() # there is some command(s) in lily.LILY() which is needed by LVGL example code.
+```
+
+one can access hardware rtc using:
+
+```
+li.hwrtc.datetime()
+```
+
+Reference: https://gitlab.com/mooond/t-watch2020-esp32-with-micropython/-/blob/master/lily.py?ref_type=heads
+
+and can access python time using:
+
+```
+import time
+time.localtime()
+# (2024, 2, 28, 11, 32, 23, 2, 59)
+```
+
+Reference: https://docs.micropython.org/en/latest/library/time.html#functions
