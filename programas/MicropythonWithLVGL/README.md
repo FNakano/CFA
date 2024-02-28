@@ -276,3 +276,4 @@ Reference: https://docs.micropython.org/en/latest/library/time.html#functions
 
 Continue in [touchDisplayButton.md](./touchDisplayButton.md)
 
+Examples of LVGL+Micropython: https://baxterbuilds.com/micropython-lvgl-roller-example/
