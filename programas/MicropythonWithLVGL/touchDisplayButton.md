@@ -20,7 +20,7 @@ disp = st7789(
   mosi=19, clk=18, cs=5, dc=27, rst=-1, backlight=12, power=-1,
   width=240, height=240, factor=4)
 from ft6x36 import ft6x36 # https://github.com/lvgl/lv_binding_micropython?tab=readme-ov-file#micropython-bindings-usage
-touch = ft6x36(sda=23, scl=32, width=240, height=240, inv_y=True)
+touch = ft6x36(sda=23, scl=32, width=240, height=240, inv_y=True, inv_x=True)
 # Create a button with a label - https://docs.lvgl.io/master/get-started/quick-overview.html#micropython
 scr = lv.obj()
 btn = lv.button(scr)
