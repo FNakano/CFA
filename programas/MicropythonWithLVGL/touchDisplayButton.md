@@ -38,6 +38,9 @@ lv.screen_load(scr)
 
 Reference to lvgl.roller: https://baxterbuilds.com/micropython-lvgl-roller-example/
 
+Next in [changeButtonFont](./changeButtonFont.md)
+
+
 **note**: when swipe down, roller scrolls up. Screen touch area and button image also are "inverted". This is about INVERSE_PORTRAIT mentioned in https://github.com/lvgl/lv_binding_micropython/tree/master?tab=readme-ov-file#ttgo-twatch-2020-st7789-configuration-example 
 
 **note**: tried `disp = st7789(mosi=19, clk=18, cs=5, dc=27, rst=-1, backlight=12, power=-1, width=240, height=240, factor=4, rot=st7789.INVERSE_PORTRAIT)`, `REVERSE_PORTRAIT`, `FLIP_VERTICAL`, 0, 2. None flipped the image. I gave up and decided to flip the touch panel. It was much easier to find out what to do, just edited `ft6X33.py` file. 
