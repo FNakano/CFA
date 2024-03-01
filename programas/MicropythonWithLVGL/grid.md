@@ -49,4 +49,4 @@ Reference: https://baxterbuilds.com/micropython-lvgl-layout-examples/
 
 **note**: some constant's names have substitutions, eg. replace dot with underscore
 
-<!--- Next in Previous in [grid.md](./grid.md) --->
+Next in [deepSleep.md](./deepSleep.md)
