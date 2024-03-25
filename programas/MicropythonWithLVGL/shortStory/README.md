@@ -107,6 +107,28 @@ class WATCH:
 
 ```
 
+`setHardware()`: turns all axp202 channels on, configures display and touch screen. In T-Watch display is upside down (needs `rot=REVERSE_PORTRAIT` and its size is 240x240 (needs start_y=80)
+
+`drawProgrammingFace()`: Contains buttons to suspend/start deepsleep timer and shut the watch down.
+
+`drawTimeFace()`: Draws month/mday, battery charge buttons at the top of the screen and hour numbers (labels) forming a circle centered on the screen.
+
+`drawLogButtons()`: Draws and configures (callbacks) for eject, right, stop, left and pause buttons. These buttons write an entry on the log file.
+
+`drawRing (...)`: Used by `drawDateTempHourMin` to draw minutes arc
+
+`drawNeedleAndRing (...)`: Used by `drawDateTempHourMin` to draw hours hand
+
+`drawDateTempHourMin()`: Draws temperature, date, hours, minutes.
+
+`sleepNow (...)`: Configure wake on touch and calls `machine.deepsleep()`
+
+`sleepOnTimer()`:Set a LVGL timer to call `sleepNow()`
+
+`cancelSleep()`: Unset LVGL timer 
+
+`log (...)`: Open `logfile.csv`, writes a line containing DateTTime, Battery Level, Event name and closes the file. Event is one of {'VerHora','Caminhar','Rodar','Chegar','Voltar','Esperar'}
+
 ## User Journey
 
 ### See date/hour
@@ -142,7 +164,7 @@ class WATCH:
   -  `from ili9XXX import REVERSE_PORTRAIT` (see: https://forum.lvgl.io/t/rotating-display/1447/10).
 - autocomplete tool may not properly function in ESP32+LVGL+Micropython due to low RAM;
 - ST7789 driver supports 320x240 display but T-WATCH display is 240x240. Just REVERSE_PORTRAIT results in cropping part of the watch face. Should set y-coordinate to correct it.
-- LVGL functions are asynchronous so issuing `machine.deepsleep(...)` may turn ESP32 off before lv.obj_clean() complete. 
+- LVGL functions are asynchronous so issuing `machine.deepsleep(...)` may turn ESP32 off before lv.obj_clean() complete. Another example: Turn backlight on after issuing commands to draw the screen: the backlight is turned on before the screen is drawn; 
 - axp202 temperature sensor does not sense environment temperature accurately;
   - removed temperature from watch face;
   - tried on a hot day (33 Celsius or above from train temperature report and weather forecast), it measured arround 27 Celsius most of the time;
