@@ -105,3 +105,40 @@ class WATCH:
     ...
 
 ```
+
+## User Journey
+
+### See date/hour
+
+1. touch watch face;
+
+### Log an event
+
+1. touch watch face;
+2. touch some log button;
+  - log buttons are at 12, 3, 6, 9 hours and at the center. I use them as 12(Eject) = walk by foot, 3(right arrow) = ride (car,bus,train,...), 6(Stop) = arrived in some noticeable place, 9(left arrow) = going back home, center(Pause) = waiting(for the train to ride, for the bus to come,...)
+  
+### Program/download/upload files
+
+1. touch watch face;
+2. touch battery percentage button;
+  - this switches face to programming face
+3. touch play button;
+  - PLAY button stops the sleep timer;
+  - STOP button starts the sleep timer;
+4. Use Thonny or AMPY to navigate/upload/download files
+
+## Considerations
+
+- In current compilation of Micropython+LVGL (as of March, 2024), LVGL version is 9.0 and Micropython version is 1.20.0;
+  - ![](Captura%20de%20tela%20de%202024-03-25%2011-35-33.png)
+- naming conventions in LVGL+Micropython are different from native LVGL (C language);
+  - ex.: C `lv_act_scr()` function is equivalent to Micropython+LVGL `lv.active_screen()` function.
+  - ex.: C `lv_obj_clean()` function is equivalent to Micropython+LVGL `lv.obj.clean()` function (see: https://forum.lvgl.io/t/calling-lv-obj-clean-lv-scr-act-to-clear-the-current-screen-prevents-further-object-creation/3484.
+  - ex.: C `LV_PART_KNOB()` constant is equivalent to Micropython+LVGL `lv.PART.KNOB` constant.
+- peek at ESP32 LVGL bindings, such as https://github.com/lvgl/lv_binding_micropython/blob/master/driver/esp32/ili9XXX.py, may give some hints;
+- some constants shoud be imported in Micropython
+  -  `from ili9XXX import REVERSE_PORTRAIT` (see: https://forum.lvgl.io/t/rotating-display/1447/10).
+- autocomplete tool may not properly function in ESP32+LVGL+Micropython due to low RAM;
+- ST7789 driver supports 320x240 display but T-WATCH display is 240x240. Just REVERSE_PORTRAIT results in cropping part of the watch face. Should set y-coordinate to correct it.
+- LVGL functions are asynchronous so issuing `machine.deepsleep(...)` may turn ESP32 off before lv.obj_clean() complete. 
