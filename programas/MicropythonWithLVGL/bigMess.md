@@ -22,3 +22,5 @@ I belive I have all the necessary elements to build the watch application but th
 12. Upload/download of logged data is provided by Micropython/Thonny
 
 https://docs.lvgl.io/8.3/overview/object.html#create-and-delete-objects
+
+Next in https://github.com/FNakano/CFA/tree/master/programas/MicropythonWithLVGL/shortStory

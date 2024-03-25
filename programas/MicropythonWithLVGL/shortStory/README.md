@@ -1,4 +1,5 @@
-photo1711372193.jpeg
+![](photo1711372193.jpeg)
+
 
 prev: [bigMess](../bigMess.md)
 
@@ -142,3 +143,6 @@ class WATCH:
 - autocomplete tool may not properly function in ESP32+LVGL+Micropython due to low RAM;
 - ST7789 driver supports 320x240 display but T-WATCH display is 240x240. Just REVERSE_PORTRAIT results in cropping part of the watch face. Should set y-coordinate to correct it.
 - LVGL functions are asynchronous so issuing `machine.deepsleep(...)` may turn ESP32 off before lv.obj_clean() complete. 
+- axp202 temperature sensor does not sense environment temperature accurately;
+  - removed temperature from watch face;
+  - tried on a hot day (33 Celsius or above from train temperature report and weather forecast), it measured arround 27 Celsius most of the time;
