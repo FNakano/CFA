@@ -47,7 +47,7 @@ Foi acrescentado um diodo de sinal para atenuar a corrente transiente de desliga
 
 ### Construção e teste no protoboard
 
-![](/photo1711635588.jpeg)
+![](./photo1711635588.jpeg)
 
 ### Construção e teste em placa de circuito impresso padrão
 
