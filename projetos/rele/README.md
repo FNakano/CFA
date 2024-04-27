@@ -55,6 +55,6 @@ Foi acrescentado um diodo de sinal para atenuar a corrente transiente de desliga
 
 #### Posicionamento dos componentes na placa de circuito impresso
 
-[](.//msg2111134040-2389.jpg)
+[](./msg2111134040-2389.jpg)
 
-Os três pinos próximos ao optoacoplador acionam o LED e devem ser ligados à placa controladora. Os dois pinos do outro lado fornecem energia para o relé e para o transistor. Os conectores parafusados (ao fundo) estão conectados aos polos do relé. O diodo será soldado pelo lado das trilhas. O resistor é colocado por conveniência para a aplicação.
+Os três pinos próximos ao optoacoplador acionam o LED e podem ser ligados à placa controladora. Os dois pinos do outro lado fornecem energia para o relé e para o transistor. Os conectores parafusados (ao fundo) estão conectados aos polos do relé. O resistor é colocado por conveniência para a aplicação.
