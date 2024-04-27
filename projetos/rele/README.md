@@ -53,14 +53,6 @@ Serve também para dimensionar valores de componentes como resistores.
 
 ### Construção e teste em placa de circuito impresso padrão
 
-Lado dos componentes
-![](./photo1711635671.jpeg)
-
-![](./msg2111134040-2395.jpg)
-
-
-Lado das ligações
-![](./msg2111134040-2396.jpg)
 
 #### Posicionamento dos componentes na placa de circuito impresso
 
@@ -69,6 +61,17 @@ O posicionamento foi pensado considerando as funções (conexão com outras plac
 ![](./msg2111134040-2389.jpg)
 
 Os três pinos próximos ao optoacoplador acionam o LED e podem ser ligados à placa controladora. Os dois pinos do outro lado fornecem energia para o relé e para o transistor. Os conectores parafusados (ao fundo) estão conectados aos polos do relé. O resistor é colocado por conveniência para a aplicação.
+
+#### Produto final
+
+Lado dos componentes
+![](./photo1711635671.jpeg)
+
+![](./msg2111134040-2395.jpg)
+
+
+Lado das ligações
+![](./msg2111134040-2396.jpg)
 
 ### Documentação para aplicação
 
