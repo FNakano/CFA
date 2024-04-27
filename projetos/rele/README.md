@@ -47,6 +47,8 @@ Foi acrescentado um diodo de sinal para atenuar a corrente transiente de desliga
 
 ### Construção e teste no protoboard
 
+Serve também para dimensionar valores de componentes como resistores.
+
 ![](./photo1711635588.jpeg)
 
 ### Construção e teste em placa de circuito impresso padrão
@@ -55,6 +57,23 @@ Foi acrescentado um diodo de sinal para atenuar a corrente transiente de desliga
 
 #### Posicionamento dos componentes na placa de circuito impresso
 
-[](./msg2111134040-2389.jpg)
+O posicionamento foi pensado considerando as funções (conexão com outras placas são posicionadas preferencialmente nas bordas, seções do circuito (acoplamento com circuito de controle longe da bobina e esta longe das conexões com contatos - pois estes podem ser ligados a níveis de tensão de até 250V. Por último, convém que as conexões sejam feitas dobrando e soldando os terminais dos componentes, isto garante que um dos componentes está conectado e poupa o montador de lidar com fios muito curtos. ).
+
+![](./msg2111134040-2389.jpg)
 
 Os três pinos próximos ao optoacoplador acionam o LED e podem ser ligados à placa controladora. Os dois pinos do outro lado fornecem energia para o relé e para o transistor. Os conectores parafusados (ao fundo) estão conectados aos polos do relé. O resistor é colocado por conveniência para a aplicação.
+
+### Documentação para aplicação
+
+
+![](./LigacaoDosReatores.svg)
+
+./msg2111134040-2395.jpg
+
+
+
+## Discussão
+
+- A posição dos conectores dos contatos do relé pode levar a engano pois, considerando os dois polos do mesmo relé, eles são espelhados ao invés de serem iguais.
+
+
