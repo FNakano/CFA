@@ -53,7 +53,14 @@ Serve também para dimensionar valores de componentes como resistores.
 
 ### Construção e teste em placa de circuito impresso padrão
 
+Lado dos componentes
 ![](./photo1711635671.jpeg)
+
+![](./msg2111134040-2395.jpg)
+
+
+Lado das ligações
+![](./msg2111134040-2396.jpg)
 
 #### Posicionamento dos componentes na placa de circuito impresso
 
@@ -68,9 +75,12 @@ Os três pinos próximos ao optoacoplador acionam o LED e podem ser ligados à p
 
 ![](./LigacaoDosReatores.svg)
 
-./msg2111134040-2395.jpg
+Cada relé controla as duas ligações de um reator ao instrumento de medição (ex. multímetro). Para isto, cada terminal do multímetro deve ser ligado ao terminal Comum (C) de cada polo do mesmo relé (ex. relé 1) e cada terminal do reator deve ser ligado ao contato normalmente aberto (NA) de cada polo desse mesmo relé. Quando o relé for acionado fecha-se a ligação entre o instrumento de ligação e o reator, tal qual o faria um operador humano. Caso mais de um reator seja conectado, faz-se a mesma ligação no relé 2 com o reator 2. **Importante** caso os dois relés sejam acionados simultaneamente os reatores serão conectados em paralelo.
+ 
 
+![](./LigacaoDosControles.png)
 
+Cada circuito tem três pinos de controle: Opto+, Opto- e Opto1k. O LED do optoacoplador é ligado diretamente a Opto+ e a Opto-. Frequentemente convém haver um resistor para limitar a corrente para o LED. Um resistor de 1k$Omega$ é intercalado entre Opto- e Opto1k para prover essa facilidade.
 
 ## Discussão
 
