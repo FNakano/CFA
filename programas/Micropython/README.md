@@ -189,3 +189,28 @@ os.listdir()
 os.rename('boot.py', 'originalboot.py')
 # envia novo boot.py pela página web
 ```
+
+Seriam contribuições úteis se conseguirmos 
+
+1. Em um ESP32 em modo AP, listar todos os clientes conectados (como num roteador doméstico em que todos os aparelhos conectados a ele são listados);
+2. Em um ESP32 em modo Station, anunciar sua existência via mDNS (multicast DNS);
+3. Em um ESP32 em modo AP, testar se este consegue encaminhar (forward) os pacotes mDNS;
+
+Referências:
+
+- https://randomnerdtutorials.com/micropython-esp32-esp8266-access-point-ap/
+- https://docs.micropython.org/en/latest/esp8266/tutorial/network_basics.html
+- https://github.com/micropython/micropython-esp32/issues/186
+- https://micropython.org/download/ESP32_GENERIC/
+- https://www.google.com/search?q=micropython+esp32+mdns+example&oq=micropython+esp32+mdns+&gs_lcrp=EgZjaHJvbWUqBwgBECEYoAEyCQgAEEUYORifBTIHCAEQIRigATIHCAIQIRigAdIBCTExNjIwajBqN6gCALACAA&sourceid=chrome&ie=UTF-8
+- https://github.com/cbrand/micropython-mdns
+- https://forum.micropython.org/viewtopic.php?t=9535
+- https://forum.micropython.org/viewtopic.php?t=10979
+- https://www.google.com/search?q=micropython+esp32+install+upip&oq=micropython+esp32+install+upip&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQIRigATIHCAIQIRigATIHCAMQIRigAdIBCTEzODc1ajBqN6gCALACAA&sourceid=chrome&ie=UTF-8
+- https://pypi.org/project/micropython-upip/
+- https://docs.micropython.org/en/latest/search.html?q=pip&check_keywords=yes&area=default#
+- https://docs.micropython.org/en/latest/esp32/tutorial/intro.html
+- https://docs.micropython.org/en/latest/reference/packages.html
+- https://docs.micropython.org/en/latest/reference/mpremote.html
+- https://null-byte.wonderhowto.com/how-to/use-upip-load-micropython-libraries-onto-microcontroller-over-wi-fi-0237888/
+- https://forum.micropython.org/viewtopic.php?t=12727
