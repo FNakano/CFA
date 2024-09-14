@@ -230,3 +230,45 @@ sequenceDiagram
     ESP32-->>-Neopixels: blip!
     Navegador-->>Dib: render botoes.html  
 ```
+
+## Mais informação sobre comunicação com ESP32S
+
+Não sei bem em que arquivo colocar essa informação então vai neste arquivo.
+
+### Quantas conexões TCP o ESP32S consegue gerenciar?
+
+Segundo o fabricante, oito conexões (https://docs.espressif.com/projects/esp-faq/en/latest/software-framework/wifi.html#connect-how-many-devices-is-esp8266-able-to-connect-in-softap-mode)
+
+https://esp32.com/viewtopic.php?t=9130
+
+### Quantos sockets podem estar abertos simultaneamente?
+
+A pergunta vem em uma postagem (https://www.reddit.com/r/esp32/comments/12v4i3e/how_many_clients_can_an_esp32_as_a_mqtt_broker/) sobre MQTT, que é um protocolo de interesse. A resposta é "...limitado pela quantidade de memória disponível" e controlado pela constante CONFIG_LWIP_MAX_SOCKETS que tem valor default 10 (acredito que, quando usando ESP-IDF). (https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/kconfig.html#config-lwip-max-sockets)
+
+Referências acessadas 
+
+- https://www.esp32.com/viewtopic.php?t=5163#:~:text=In%20the%20make%20menuconfig%20we,and%20leave%20the%20connections%20live.
+- https://esp32.com/viewtopic.php?t=319
+- https://docs.micropython.org/en/latest/esp8266/tutorial/network_tcp.html#network-tcp-sockets
+- https://medium.com/@rabeeqiblawi/harnessing-the-power-of-esp32-for-socket-communication-27fbd0ee5184
+- https://github.com/orgs/micropython/discussions/11019
+
+### Domain Name Service
+
+Trata-se do protocolo de resolução de nomes de domínios na Internet.
+A mensagem no protocolo tem vários registros. Nem todos são suportados no ESP32 o que limita sua aplicação.
+
+Referências consultadas
+
+- https://www.ibm.com/topics/dns-records
+- https://www.reddit.com/r/esp32/comments/18zt9tz/howto_query_dns_txt_records/
+- https://stackoverflow.com/questions/1128409/how-might-i-perform-dns-lookups-using-c-c-on-linux
+- https://gist.github.com/fffaraz/9d9170b57791c28ccda9255b48315168
+
+### Comparação entre web socket e http
+
+HTTP é um protocolo request-response enquanto Web Socket cria uma conexão permanente.
+
+- https://www.geeksforgeeks.org/what-is-web-socket-and-how-it-is-different-from-the-http/
+
+
