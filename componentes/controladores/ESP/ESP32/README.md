@@ -1,5 +1,61 @@
 ## ESP32
 
+Atualmente há uma variedade de ESP32, inclusive com diferentes arquiteturas de processador. Os ESP32 mais comuns ainda são os ESP32 que têm dois núcleos com arquitetura XTENSA LX6, 520kBytes de RAM estática (as placas de desenvolvimento podem ser marcadas WROOM ou WROOVER). Segundo o fabricante, esses componentes serão fabricados até 2031 (https://www.espressif.com/en/products/longevity-commitment) mas já não são recomendados para novos projetos (https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32_datasheet_en.pdf (tem cópia neste repositório)).
+
+Vou dar mais ênfase a este modelo pois é o mais comum.
+
+Quanto às placas de desenvolvimento, há placas com 30 pinos e com 38 pinos. Parece que as com 30 pinos são mais comuns. Um diagrama da placa de 30 pinos pode ser visto neste site: https://randomnerdtutorials.com/esp32-pinout-reference-gpios/
+
+Sobre os pinos, nem todos podem ser usados para qualquer aplicação. Citando a referência acima:
+  
+> The ADC (analog to digital converter) and DAC (digital to analog converter) features are assigned to specific static pins. However, you can decide which pins are UART, I2C, SPI, PWM, etc – you just need to assign them in the code. This is possible due to the ESP32 chip’s multiplexing feature.
+
+### Que pinos usar?
+
+Há pinos usados para controlar o modo de inicialização do processador, pinos usados para comunicação com a memória FLASH interna (que pode ser pensada como armazenamento secundário - um SSD de, geralmente, 4MBytes), pinos usados para comunicação com o PC. Acabam restando proporcionalmente poucos que podem de fato serem usados. A partir da tabela de pinos usáveis em https://randomnerdtutorials.com/esp32-pinout-reference-gpios/ , separei alguns com as funcionalidades potenciais anotadas.
+
+| GPIO | obs | usos possíveis | usos que reservei |
+| --- | --- | --- | --- |
+| 4 | --- | ~~ADC2_CH0~~, TOUCH0, RTC_GPIO10 | SCL |
+| 5 | outputs PWM signals at boot, strapping pin | VSPI_CS0 its in this list for a reason... | SDA |
+| 13 | --- | ~~ADC2_CH4~~, TOUCH4, RTC_GPIO14, HSPI_MOSI | TOUCH |
+| 14 | --- | ~~ADC2_CH6~~, TOUCH6, RTC_GPIO16, HSPI_CLK | TOUCH |
+| 15 | --- | ~~ADC2_CH3~~, TOUCH3, RTC_GPIO13, HSPI_CS0 | TOUCH |
+| 16 | --- | UART2_RX | UART_RX |
+| 17 | --- | UART2_TX | UART_TX |
+| 18 | --- | VSPI_CLK | PWM |
+| 19 | --- | VSPI_MISO | PWM |
+| 21 | --- | I2C_SDA | PWM |
+| 22 | --- | I2C_SCL | PWM |
+| 23 | --- | VSPI_MOSI | PWM |
+| 25 | --- | ~~ADC2_CH8~~, RTC_GPIO6, DAC1 | DAC/I2S |
+| 26 | --- | ~~ADC2_CH9~~, RTC_GPIO7, DAC2 | DAC/I2S |
+| 27 | --- | ~~ADC2_CH7~~, TOUCH7, RTC_GPIO17 | TOUCH |
+| 32 | --- | ADC1_CH4, TOUCH9, RTC_GPIO9 | ADC |
+| 33 | --- | ADC1_CH5, TOUCH8, RTC_GPIO8 | ADC |
+| 34 | somente entrada | ADC1_CH6, RTC_GPIO4 | TOUCH |
+| 35 | somente entrada | ADC1_CH7, RTC_GPIO5 | TOUCH |
+| 36 | somente entrada | ADC1_CH0, RTC_GPIO0, Sensor_VP | ADC |
+| 39 | somente entrada | ADC1_CH3, RTC_GPIO3, Sensor_VN | ADC |
+
+A última coluna, dos usos que pretendo dar para os pinos, baseia-se num critério de abundância.
+
+O ADC2 é usado pelo WiFi, como a maioria das aplicações deste repositório usa WiFi, então o ADC2 não é usável (https://docs.espressif.com/projects/esp-idf/en/v4.2/esp32/api-reference/peripherals/adc.html#analog-to-digital-converter , https://randomnerdtutorials.com/esp32-pinout-reference-gpios/). Os pinos podem ser usados com outra função.
+
+O ESP32 tem hardware para I2S (protocolo para periféricos de som). Não entendi se os mesmos pinos do DAC precisam ser usados para I2S ou se os sinais I2S podem ser roteados para qualquer pino e só por questão de preferência a documentação se refere a eles (https://docs.espressif.com/projects/esp-idf/en/v4.2/esp32/api-reference/peripherals/i2s.html)
+
+> The ESP32 LED PWM controller has 16 independent channels that can be configured to generate PWM signals with different properties. All pins that can act as outputs can be used as PWM pins 
+(...)
+> The GPIOs routed to the RTC low-power subsystem can be used when the ESP32 is in deep sleep.
+> The ESP32 has 10 internal capacitive touch sensors. These can sense variations in anything that holds an electrical charge, like the human skin. (...) The capacitive touch pins can also be used to wake up the ESP32 from deep sleep.
+
+
+1. A segunda interface serial pode ser usada para comunicar com Arduino;
+2. DACs (e I2S?) são interessantes para síntese de som;
+3. Em placas alternativas, como wemos lolin32, usa-se para I2C os pinos SCL=GPIO4, SDA=GPIO5. Tenho algumas dessas e a interface com o display funciona bem. Isto quer dizer que o pino 5, que também serve para configurar o boot, serve para I2C.
+4. Parece que Sensor_VP e Sensor_VN são entradas diferenciais para um amplificador de baixo ruído mas não funciona bem (https://esp32.com/viewtopic.php?t=3206) "The low noise amplifier in the ESP32 is removed from the specs and documentation as it never really worked well. As such, you can't use those pins for low voltage measurements. You can still use them as ADC pins, but they have the same range as other ADC pins."
+
+
 - [Site contendo modelos e esquemáticos](http://esp32.net/)
 - [URL do esquemático que baixei da ESPRESSIF](https://dl.espressif.com/dl/schematics/ESP32-Core-Board-V2_sch.pdf)
 - [Cópia local do esquemático da ESPRESSIF](ESP32-Core-Board-V2_sch.pdf)
@@ -15,6 +71,16 @@ Mais modelos no projeto [ESP32-CAM](/projetos/ESP32-CAM/README.md)
 ## ESP32-C3 (Aprox. 4h de trabalho e documentação)
 
 ## 12F (AiThinker)
+
+(2024-09-23) Testei uma dessas placas durante a semana que passou. É cômodo ter um LED RGB à disposição.
+
+Parece que o ADC não funciona bem (ou tem algum sinal adicional que o Micropython não expõe. A documentação do ESP32C3 informa que há condições para usar o ADC e a conversão pode falhar e que há sinais que indicam sucesso (https://docs.espressif.com/projects/esp-idf/en/v4.3/esp32c3/api-reference/peripherals/adc.html#overview).  Não dá para ter certeza que o Micropython considera essas condições (https://docs.micropython.org/en/latest/esp32/quickref.html#adc-analog-to-digital-conversion). Achei uma discussão no fórum do Micropython que não me deixa muito esperançoso (https://github.com/orgs/micropython/discussions/11013#discussioncomment-5279756) pois as características do ADC do ESP32C3 são diferentes das do ESP32 e ninguém no fórum deu uma boa resposta e fechou a questão, até agora, 2024-09-23.
+
+Há postagens em outros fóruns apontando problemas:
+  - https://forum.arduino.cc/t/problem-with-analogread-on-esp32-c3/892651
+  - https://github.com/espressif/arduino-esp32/issues/5502
+
+
 
 ## 01Space
 
