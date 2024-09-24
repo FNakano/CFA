@@ -4,9 +4,11 @@ Atualmente há uma variedade de ESP32, inclusive com diferentes arquiteturas de 
 
 Vou dar mais ênfase a este modelo pois é o mais comum.
 
-Quanto às placas de desenvolvimento, há placas com 30 pinos e com 38 pinos. Parece que as com 30 pinos são mais comuns. Um diagrama da placa de 30 pinos pode ser visto neste site: https://randomnerdtutorials.com/esp32-pinout-reference-gpios/
+Quanto às placas de desenvolvimento, há placas com 30 pinos e com 38 pinos. Parece que as com 30 pinos são mais comuns. Um diagrama da placa de 30 pinos pode ser visto neste site: https://randomnerdtutorials.com/esp32-pinout-reference-gpios/ . Um diagrama da placa de 38 pinos pode ser visto neste outro site: https://www.studiopieters.nl/esp32-pinout/
 
-Sobre os pinos, nem todos podem ser usados para qualquer aplicação. Citando a referência acima:
+Para mim, não há vantagem em usar a placa de 38 pinos pois passam a ser acessíveis pinos que não são fáceis de usar como GPIO0, GPIO6, GPIO7, GPIO8, GPIO9, GPIO10, GPIO11. Por outro lado, talvez seja possível conectar um cartão SD usando esses pinos. 
+
+Sobre os pinos, nem todos podem ser usados para qualquer aplicação. Citando a referência https://randomnerdtutorials.com/esp32-pinout-reference-gpios/:
   
 > The ADC (analog to digital converter) and DAC (digital to analog converter) features are assigned to specific static pins. However, you can decide which pins are UART, I2C, SPI, PWM, etc – you just need to assign them in the code. This is possible due to the ESP32 chip’s multiplexing feature.
 
@@ -16,8 +18,10 @@ Há pinos usados para controlar o modo de inicialização do processador, pinos 
 
 | GPIO | obs | usos possíveis | usos que reservei |
 | --- | --- | --- | --- |
+| (0) | strapping pin | ~~ADC2_CH1~~, TOUCH1, HSPI_HD |  |
 | 4 | --- | ~~ADC2_CH0~~, TOUCH0, RTC_GPIO10 | SCL |
 | 5 | outputs PWM signals at boot, strapping pin | VSPI_CS0 its in this list for a reason... | SDA |
+| ~~12~~ | --- | ADC2_5, TOUCH5, HSPIQ, HS2_DATA2 | boot fails if pulled HIGH |
 | 13 | --- | ~~ADC2_CH4~~, TOUCH4, RTC_GPIO14, HSPI_MOSI | TOUCH |
 | 14 | --- | ~~ADC2_CH6~~, TOUCH6, RTC_GPIO16, HSPI_CLK | TOUCH |
 | 15 | --- | ~~ADC2_CH3~~, TOUCH3, RTC_GPIO13, HSPI_CS0 | TOUCH |
@@ -25,18 +29,28 @@ Há pinos usados para controlar o modo de inicialização do processador, pinos 
 | 17 | --- | UART2_TX | UART_TX |
 | 18 | --- | VSPI_CLK | PWM |
 | 19 | --- | VSPI_MISO | PWM |
+| SD2 (9) | internal SPI Flash | | |
+| SD3 (10) | internal SPI Flash | | |
+| CMD (11) | internal SPI Flash | | |
 | 21 | --- | I2C_SDA | PWM |
 | 22 | --- | I2C_SCL | PWM |
 | 23 | --- | VSPI_MOSI | PWM |
 | 25 | --- | ~~ADC2_CH8~~, RTC_GPIO6, DAC1 | DAC/I2S |
 | 26 | --- | ~~ADC2_CH9~~, RTC_GPIO7, DAC2 | DAC/I2S |
 | 27 | --- | ~~ADC2_CH7~~, TOUCH7, RTC_GPIO17 | TOUCH |
+| CLK(6) | internal SPI Flash  | | |
+| SD0(7) | internal SPI Flash  | | |
+| SD1(8) | internal SPI Flash  | | |
 | 32 | --- | ADC1_CH4, TOUCH9, RTC_GPIO9 | ADC |
 | 33 | --- | ADC1_CH5, TOUCH8, RTC_GPIO8 | ADC |
 | 34 | somente entrada | ADC1_CH6, RTC_GPIO4 | TOUCH |
 | 35 | somente entrada | ADC1_CH7, RTC_GPIO5 | TOUCH |
 | 36 | somente entrada | ADC1_CH0, RTC_GPIO0, Sensor_VP | ADC |
 | 39 | somente entrada | ADC1_CH3, RTC_GPIO3, Sensor_VN | ADC |
+
+Na coluna GPIO, entre parêntesis estão as GPIOs que são acessíveis somente na placa de 38 pinos. Como a marcação na placa é diferente, ela também é apresentada na coluna.
+
+Pinos e usos que escolhi excluir estão riscados (strikethrough).
 
 A última coluna, dos usos que pretendo dar para os pinos, baseia-se num critério de abundância.
 
