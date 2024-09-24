@@ -55,6 +55,17 @@ O ESP32 tem hardware para I2S (protocolo para periféricos de som). Não entendi
 3. Em placas alternativas, como wemos lolin32, usa-se para I2C os pinos SCL=GPIO4, SDA=GPIO5. Tenho algumas dessas e a interface com o display funciona bem. Isto quer dizer que o pino 5, que também serve para configurar o boot, serve para I2C.
 4. Parece que Sensor_VP e Sensor_VN são entradas diferenciais para um amplificador de baixo ruído mas não funciona bem (https://esp32.com/viewtopic.php?t=3206) "The low noise amplifier in the ESP32 is removed from the specs and documentation as it never really worked well. As such, you can't use those pins for low voltage measurements. You can still use them as ADC pins, but they have the same range as other ADC pins."
 
+## Usar bateria ou battery pack (carregador portátil)
+
+O carregador portátil desliga automaticamente em menos de um minuto quando a corrente de carga é muito baixa (não medi, mas, do uso, "corrente muito baixa" é da ordem de 100mA).
+
+Bateria de 3,6V ou mais não podem ser conectadas diretamente ao ESP32 pois a tensão fornecida supera a tensão máxima aceita pelo ESP32 (o ESP vai queimar).
+
+Os reguladores de tensão das placas de desenvolvimento para ESP32 costumam ser AMS1117. Ele precisa que a tensão fornecida seja pelo menos 4,3V então conectar baterias no pino de 5V provavelmente não faz o ESP32 funcionar.
+
+Tem uma placa cujo regulador permite usar bateria. O teste está neste projeto: https://github.com/FNakano/CFA/tree/master/projetos/Teste3V6
+
+Há alguns modelos novos de ESP e de placas de desenvolvimento que podem ser bem interessantes. Além das listadas abaixo, tem algumas que estão para chegar para mim.
 
 - [Site contendo modelos e esquemáticos](http://esp32.net/)
 - [URL do esquemático que baixei da ESPRESSIF](https://dl.espressif.com/dl/schematics/ESP32-Core-Board-V2_sch.pdf)
