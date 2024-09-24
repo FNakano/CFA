@@ -79,6 +79,12 @@ Há alguns modelos novos de ESP e de placas de desenvolvimento que podem ser bem
 
 Mais modelos no projeto [ESP32-CAM](/projetos/ESP32-CAM/README.md)
 
+## ESP32-C3 super mini
+
+Esta placa comprei em 2024-09-24 pelo mercado livre a um pouco menos de R$40. Atraiu meu interesse porque é pequena e porque o regulador de tensão não é AMS1117. Fui atrás de documentação. Achei uma pinagem: https://forum.arduino.cc/t/esp32-c3-supermini-pinout/1189850 , um esquemático: https://imgse.com/i/pCUheR1 - neste mostra que o regulador de tensão é um ME6211. Segundo o datasheet (https://stm32-base.org/assets/pdf/regulators/ME6211.pdf), a corrente máxima de saída é 500mA, com dropout de 1V nesta condiçao não é melhor que o AMS1117, mas a 100mA o dropout é de 100mV e, com este dropout, é possível usar uma bateria de 3,6V ligada no pino de 5V.
+
+Tem um tutorial: https://github.com/sidharthmohannair/Tutorial-ESP32-C3-Super-Mini
+
 ## ESP32-C3 (Aprox. 4h de trabalho e documentação)
 
 ## 12F (AiThinker)
