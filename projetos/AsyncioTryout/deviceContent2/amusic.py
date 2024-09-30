@@ -32,7 +32,7 @@ fig={'semifusa':1,'fusa':2,'semicolcheia': 3, 'colcheia': 4,
 
 pitch= 1  # whole note (semibreve) = 1 sec
 
-baseFreq=65.4064 #c1 
+baseFreq=34.7032 #c1 
 
 def setPitch (newPitch):
     pitch=newPitch

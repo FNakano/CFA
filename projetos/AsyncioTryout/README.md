@@ -50,7 +50,7 @@ Also makes a lot of sense that after a program is started automatically, through
 
 ## Results 2
 
-`music.py` is a synchronous library to play a song. It deals with music concepts (more details in . Copy file to device an play it with
+`music.py` is a synchronous library to play a song. It deals with music concepts (more details in https://github.com/FNakano/CFA/tree/master/projetos/AsyncioTryout#about-musicpy ). Copy file to device an play it with
 
 ```python
 import music
@@ -113,4 +113,16 @@ So does `playAquarela()` which must await for `playFig()`
 notice that `print()` is a standard function and that `playFig(...)` is a coroutine (`async def playFig(...))` 
 
 ## About `music.py`
+
+O modelo que permite calcular as frequências das notas musicais está aqui: https://en.wikipedia.org/wiki/Musical_note#Pitch_frequency_in_hertz - São potências fracionárias de dois.
+
+Tanto as oitavas quanto as durações são potências inteiras de dois.
+
+Como calcular potências demanda processamento, tabelei os valores mais usados em arrays. O array `notepow` contém as potências fracionárias de dois em passos de 1/12. Isto contém a relação entre as frequências na escala cromática (doze notas). Para ajustar as oitavas uso o array `pow2`. A terceira oitava corresponde a multiplicar por `pow2[3]`. A frequência base é a do Dó da primeira oitava (f=34.7032Hz). A partir dessa nota as outras são calculadas multiplicando por `notepow` e pela oitava.
+
+O jeito mais comum de nomear as notas é com os nomes da escala diatônica mais os acidentes. Então usei dicionários para mapear os nomes às frequências. O nome do dicionário é `diat`
+
+Mapeei também as durações das notas nos nomes das figuras. O nome do dicionário é `fig`.
+
+Para tocar uma nota a função `def playFig (figure, note, octave=lastoctave)` recebe o nome da figura (por exemplo, `'colcheia'`, a nota, por exemplo `'a+'` para um Lá sustenido e, se a oitava for a mesma da nota anterior ela não precisa ser passada, resultando em ` playFig ('colcheia', 'a+')`. Se a oitava mudar, ela pode ser passada, por exemplo: ` playFig ('colcheia', 'a+', 3)`. Na inicialização a oitava usada é a quarta.
 
