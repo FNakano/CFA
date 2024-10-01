@@ -4,6 +4,8 @@ There are two examples. The first one blinks leds and serves static pages. The s
 
 ## Results 1
 
+In an AI-Thinker ESP32C3 board Red led is connected to IO 3, Green led to IO 4, Blue led to IO 5.
+
 `coro.py`: the example in https://github.com/peterhinch/micropython-async/blob/master/v3/docs/TUTORIAL.md#21-program-structure tested.
 `ada.py`: `coro.py` adapted to light LEDs (they are built-in in Ai-Thinker ESP32c3 Dev Kit (
 
@@ -30,7 +32,8 @@ In sequence: `asyncio.run()` interfaces the single-threaded REPL with multi-thre
 What makes things hard to understand: Frequently programmers sequentially schedule tasks using `asyncio.create_task()` and await for some time using `await asyncio.sleep()` see `coro.py` for instance. The created tasks have no relation to the time the function is put to sleep (but I expected they were related). Explaining out what happens then is harder:
   
 In sequence: `asyncio.run()` interfaces the single-threaded REPL with multi-threaded `asyncio` environment. `asyncio.run()` makes REPL actually start executing `asyncio` functions. It is done by scheduling tasks to be run in an auxiliary `main()` coroutine, using `asyncio.create_task` and awaiting for some time. This awaiting is mandatory, on the contrary, the function `main()`, which is async, finishes almost immediately (cancelling the scheduled tasks) and returns control to REPL. Try commenting out the command `await asyncio.sleep(10)` in function `main()` in coro.py` and executing it.
-  
+
+
 ### About running REPL/WebREPL simultaneously to other threads 1
 
 
@@ -50,7 +53,11 @@ Also makes a lot of sense that after a program is started automatically, through
 
 ## Results 2
 
-`music.py` is a synchronous library to play a song. It deals with music concepts (more details in https://github.com/FNakano/CFA/tree/master/projetos/AsyncioTryout#about-musicpy ). Copy file to device an play it with
+`music.py` is a synchronous library to play a song. It deals with music concepts (more details in https://github.com/FNakano/CFA/tree/master/projetos/AsyncioTryout#about-musicpy ). 
+
+Attach a passive buzzer between pin 27 and GND to hear the tones.
+
+Copy file to device an play it with:
 
 ```python
 import music
@@ -79,7 +86,7 @@ asyncio.run(main())
 
 I missed something very important. Simply put: "a coroutine must be awaited for."
 
-Explanation: When a programmer defines corroutines (uses `async def func():`), the defined coroutine is not executed by issuing `func()`. It should be scheduled or awaited for.
+Explanation: When a programmer defines corroutines (uses `async def func():`), the defined coroutine is not executed by issuing `func()`. Instead, it should be scheduled or awaited for.
 
 For instance, in `amusic.py` I initially wrote:
   
@@ -114,15 +121,23 @@ notice that `print()` is a standard function and that `playFig(...)` is a corout
 
 ## About `music.py`
 
-O modelo que permite calcular as frequências das notas musicais está aqui: https://en.wikipedia.org/wiki/Musical_note#Pitch_frequency_in_hertz - São potências fracionárias de dois.
+The model to calculate musical notes frequencies is in https://en.wikipedia.org/wiki/Musical_note#Pitch_frequency_in_hertz - Notes are fractionary powers of two.
 
-Tanto as oitavas quanto as durações são potências inteiras de dois.
+Octaves (https://en.wikipedia.org/wiki/Octave) and note values (https://en.wikipedia.org/wiki/Note_value) are integer powers of two.
 
-Como calcular potências demanda processamento, tabelei os valores mais usados em arrays. O array `notepow` contém as potências fracionárias de dois em passos de 1/12. Isto contém a relação entre as frequências na escala cromática (doze notas). Para ajustar as oitavas uso o array `pow2`. A terceira oitava corresponde a multiplicar por `pow2[3]`. A frequência base é a do Dó da primeira oitava (f=34.7032Hz). A partir dessa nota as outras são calculadas multiplicando por `notepow` e pela oitava.
+Calculate powers of numbers requires processing power. I chose to group powers of numbers into arrays.
 
-O jeito mais comum de nomear as notas é com os nomes da escala diatônica mais os acidentes. Então usei dicionários para mapear os nomes às frequências. O nome do dicionário é `diat`
+`notepow` array contains fractionary powers of two in 1/12 steps - it encodes note pitch (https://en.wikipedia.org/wiki/Pitch_(music)) relations in chromatic scale (https://en.wikipedia.org/wiki/Chromatic_scale). 
 
-Mapeei também as durações das notas nos nomes das figuras. O nome do dicionário é `fig`.
+`pow2` array encodes octaves and note values.
 
-Para tocar uma nota a função `def playFig (figure, note, octave=lastoctave)` recebe o nome da figura (por exemplo, `'colcheia'`, a nota, por exemplo `'a+'` para um Lá sustenido e, se a oitava for a mesma da nota anterior ela não precisa ser passada, resultando em ` playFig ('colcheia', 'a+')`. Se a oitava mudar, ela pode ser passada, por exemplo: ` playFig ('colcheia', 'a+', 3)`. Na inicialização a oitava usada é a quarta.
+The fourth octave corresponds to multiply by `pow2[4]`. 
+
+`basefreq` corresponds to f=34.7032Hz - the first octave C. Other notes frequencies derive from base frequency by multiplying `basefreq`, `notepow` and `pow2[octave]`.
+
+I believe the most common way of naming notes is in the diatonic scale with accidentals (https://en.wikipedia.org/wiki/Diatonic_scale https://en.wikipedia.org/wiki/Accidental_(music)). In the program I use `diat` dictionaries to map note names to note frequencies. Flat is represented by sufix '-', sharp is represented by sufix '+'.
+
+`fig` dictionary maps note values to note names (in Portuguese).
+
+Function `def playFig (figure, note, octave=lastoctave)` arguments are `figure` e.g.:  `'colcheia'`, note name e.g.: `'a+'`. `octave` can be ommited if desired octave is the same as the last played note octave resulting in `playFig ('colcheia', 'a+')`. Octave can be passed if it is different from the last, e.g.: `playFig ('colcheia', 'a+', 3)`. On initialization, default octave is the fourth.
 

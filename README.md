@@ -42,7 +42,7 @@ Caso esteja interessado na documentação de componentes e ferramentas, pode nav
 
 Os componentes são divididos em categorias funcionais: atuadores, controladores, interconexões, protocolos, sensores e vestíveis;
 
-Os programas, no momento, são app Inventor, arduino IDE, fritzing, Linux.
+Os programas, no momento, são Micropython, Thonny, app Inventor, arduino IDE, fritzing, Linux.
 
 Os projetos completos, no momento, são:
 1. [Relógio Conectado](projetos/RelogioConectado), 
@@ -190,6 +190,26 @@ Pode interessar dar uma olhada em projetos de Iniciação Científica relacionad
     - [Modelos e Justificativas para os modelos](modelos/README.md)
 
 A leitura linear do texto apresenta os conceitos na sequência de construção: dos mais elementares, combinando-os, até chegar a aplicações que foram usadas ou apresentadas na disciplina.
+
+## Tópicos "especiais"
+
+Durante o semestre, frequentemente surgem perguntas sobre os mesmos assuntos ou necessidades iguais. Nem sempre é possível apresentar (como um repositório ou pasta no Github) a resposta a essas demandas no mesmo semestre. Deixo as anotações e links nesta seção.
+
+1. Algum tipo de multiprogramação
+  - motivação: o microcontrolador pode controlar vários sensores e atuadores simultaneamente, bem como administrar conexões com outros dispositivos. Nesse contexto, algum tipo de multiprogramação é conveniente. As alternativas que conheço são:
+  - FreeRTOS: https://www.freertos.org/ (linguagem: C)
+  - asyncio: https://github.com/peterhinch/micropython-async (linguagem: (Micro)Python)
+2. Protocolos de comunicação
+  - motivação: há sensores e atuadores relativamente sofisticados, que se comunicam com o microcontrolador através de protocolos. Também há controladores que implementam camadas TCP/IP. Ambas são oportunidades para estudar e ver operando conceitos de redes de computadores.
+  - microdot: https://github.com/miguelgrinberg/microdot - Servidor HTTP criado sobre *sockets* TCP
+  - I2C
+  - SPI
+  - One Wire
+  - MQTT
+  - CoAP(?)
+3. Circuitos elétricos com mais detalhes
+  - motivação: um dos primeiros exercícios com microcontroladore é acender um LED. Há quem queira saber como não queimar um LED, há quem queira saber a relação entre potência elétrica e luminosidade, há quem queira saber a relação entre potência elétrica e calor (temperatura). Isto (tudo) é inter-relacionado.
+  
 
 ## Soluções para gerar este documento 
 
