@@ -90,6 +90,12 @@ Pode interessar dar uma olhada em projetos de Iniciação Científica relacionad
 
 ... ou em projetos apresentados na disciplina no oferecimento corrente ou nos anteriores...
 
+### 2024
+
+- [ESP e API do Spotify](https://github.com/AdryelliReiz/ASPMicrodotServerSpotifyAPI)
+- [Acelerômetro](https://github.com/otaviorosa17/cfa_projects)
+
+
 ### 2023
 
 - [GuitarHand - Luva com sensores nos dedos](https://github.com/Fabriciolk/GuitarHand)
