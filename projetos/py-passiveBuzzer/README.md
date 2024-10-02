@@ -10,6 +10,9 @@ Micropython `asyncio` do not rely on hardware timers (`asyncio` is not preemptiv
 
 I will try to implement a simple webserver (using microdot) which plays one tone.
 
+The second test case in https://github.com/FNakano/CFA/tree/master/projetos/AsyncioTryout plays a song and (simultaneously) serves web pages.
+
+## References for this (superseded) project
 
 https://www.google.com/search?q=micropython+asyncio+use+hardware+timers&oq=micropython+asyncio+use+hardware+timers&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIKCAEQABiABBiiBDIKCAIQABiABBiiBNIBCTI0MTMyajBqN6gCCLACAQ&sourceid=chrome&ie=UTF-8
 https://forum.micropython.org/viewtopic.php?t=9449
