@@ -71,7 +71,7 @@ i2c.scan()
 ```
 
 No fragmento de código abaixo instancia-se um objeto SSD1306_I2C que representa o display. O comando `oled.text("Hello!!!", 0, 0, 1)
-` preenche o buffer com o padrão de acendimento dos pixels, o comando `oled.show()` envia o buffer para o display.
+` preenche o buffer com o padrão de acendimento dos pixels, o comando `oled.show()` envia o conteúdo do buffer para o display.
 
 ```python
 from ssd1306 import SSD1306_I2C
