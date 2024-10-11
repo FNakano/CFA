@@ -1,19 +1,23 @@
 
-A proposta é armazenar nesta pasta tanto os programas quanto a documentação relativa a um *setup* básico para ESP32 com Micropython de maneira que o ESP32 sirva as páginas ou em HTML ou em Markdown.
+A proposta é armazenar nesta pasta tanto os programas quanto a documentação relativa a um *setup* básico para ESP32 com Micropython de maneira que o ESP32 sirva as páginas ou em HTML ou em Markdown. 
 
-1. Como instalar Micropython no ESP32;
+1. [Como instalar Micropython no ESP32](/programas/Micropython) ;
   - use um cabo USB para dados e energia em bom estado;
-  - se o LED que indica que o ESP está ligado tiver oscilações no brilho, desconfie;
+  - se o LED que indica que o ESP está ligado tiver oscilações no brilho, desconfie que o cabo ou os conectores não estão em bom estado;
 2. Para acessar o Micropyton (linha de comando, REPL - Read, Evaluate, Print Loop) convém instalar uma IDE para Python, por exemplo, Thonny
 3. Testar o ESP32: acender e apagar o LED embutido;
 4. Como habilitar um console Python (REPL) via WiFi (WebREPL) no ESP32;
-5. Limitações no uso concomitante de WebREPL e Thonny;
-6. Como conectar e usar um display OLED no ESP32;
-  - i2c = I2C(sda=Pin(5), scl=Pin(4))
-  - placas difíceis de encontrar documentação
-7. Como iniciar o ESP32 como Ponto de Acesso Wi-Fi;
-8. Como Implementar um servidor web no ESP32;
-9. `boot.py` e `main.py` são arquivos *especiais* - como usá-los;
+5. Não é possível usar WebREPL e Thonny simultaneamente;
+  - permitir o uso concomitante de WebREPL e Thonny é possível mas levanta questões como *Como gerenciar múltiplos REPL com segurança?*.
+  - Em versões anteriores as mensagens enviadas em um eram, também, ecoadas no outro mas isso pode ser um problema de segurança.
+  - Escolheu-se congelar o terminal web (WebREPL) quando a conexão por cabo (REPL) estiver ativa.
+  - Alguns indicadores em https://github.com/FNakano/CFA/tree/master/projetos/AsyncioTryout#about-running-replwebrepl-simultaneously-to-other-threads-1 
+6. `boot.py` e `main.py` são arquivos *especiais* - como usá-los;
+  - `boot.py` é executado sempre que REPL ou WebREPL inicia. Ele pode ser modificado automaticamente (por exemplo quando WebREPL é habilitado) então, caso você escreva comandos nesse arquivo, eles podem ser sobrescritos;
+  - `main.py`, quando existe, é executado sempre que REPL ou WebREPL inicia. Este arquivo não é modificado automaticamente, então, caso você escreva comandos nesse arquivo, eles não correm o risco de serem sobrescritos;
+7. [Como conectar e usar um display OLED (tela 128x96) no ESP32](/projetos/py-OLED);
+8. Como iniciar o ESP32 como Ponto de Acesso Wi-Fi;
+9. Como Implementar um servidor web no ESP32;
 
 
 https://www.google.com/search?q=esp32+micropython+why+simultaneous+use+of+webrepl+and+thonny+is+not+possible&oq=esp32+micropython+why+simultaneous+use+of+webrepl+and+thonny+is+not+possible&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBCTQzMzM1ajBqNKgCALACAQ&sourceid=chrome&ie=UTF-8

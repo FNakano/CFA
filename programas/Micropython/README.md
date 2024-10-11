@@ -16,8 +16,11 @@ Por outro lado, há diferenças que podem dificultar certos usos e a criação d
 2. Um interpretador acumula informação como que bibliotecas foram carregadas, que variáveis foram criadas, que valores essas variáveis contém,... e "transporta" essa informação entre os programas que executar. Nesse contexto, é muito fácil usar funções e variáveis criadas para um programa em outro programa. Isto cria dependências implícitas entre os programas. Em um novo uso de algum programa, pode ser necessário reproduzir todo o histórico de comandos, algo que o programador terá dificuldade em lembrar;
 3. Usar linguagem interpretada em um produto implica em embarcar no produto tanto o interpretador quanto o código-fonte (script) (portanto, é essencial que o programador que criou o produto saiba administrar o código-fonte que criou) e
 4. Embarcar interpretador e código-fonte pode não ser desejado, dependendo do produto. 
+5. Há funcionalidades, em particular do ESP32, que podem ser usadas em C mas que não são acessíveis através de Micropython, como WiFi Protected Setup (WPS), Descoberta de serviços por Domain Name Service (DNS-SD) - (em 2024 na versão 1.23);
 
 Ainda assim, o uso de linguagem interpretada acelera a criação de protótipos. Tendo em vista aproveitar esta vantagem, segue-se, com as instruções de instalação do MicroPython. 
+
+Para transferir a imagem binária (arquivo) do Micropython para o ESP, é necessário ter `esptool`. Caso você já tenha a IDE do Arduino com o pacote para programar ESP32 instalado, `esptool` já está instalado no seu sistema. No Ubuntu fica em `~/.arduino15/packages/esp32/tools/esptool_py/4.5.1/esptool.py`. Você pode executar com `python3 -m esptool ...`
 
 ### Como instalar Micropython no ESP8266
 
@@ -26,19 +29,39 @@ Este procedimento deve ser feito quando o dispositivo não tem MicroPython insta
 1. Instalar `esptool` com `pip install esptool`; (https://docs.espressif.com/projects/esptool/en/latest/esp32/);
 2. Baixar a imagem do micropython de https://micropython.org/download/?port=esp8266 (eu usei a de 1MB, a de 2MB não executou, embora o ESP8266 que usei tenha 4MB);
 3. Conectar o ESP (seja Node-MCU, seja outro) pela porta USB;
+  - use um cabo USB para dados e energia em bom estado;
+  - se o LED que indica que o ESP está ligado tiver oscilações no brilho, desconfie que o cabo ou os conectores USB não estão em bom estado;
+4. No LINUX, dar permissão ao usuário para acessar a porta USB com os comandos convenientes (para Ubuntu: `sudo usermod -a -G dialout $USER` - ref.: https://askubuntu.com/questions/58119/changing-permissions-on-serial-port)
+  - Um bug de instalação conhecido: no Ubuntu 22.04 um driver de terminal braille impede que aplicações reconheçam que há um ESP conectado à USB, para corrigir, desinstalar o driver com `sudo apt-get remove brltty` - ref.: https://github.com/arduino/help-center-content/issues/155
 4. Checar em que porta o ESP foi detectado (ex. /dev/ttyUSB0);
 5. Limpar o conteúdo da memória FLASH do ESP com `esptool.py --port /dev/ttyUSB0 erase_flash`
+  - esta etapa pode falhar se o cabo não estiver em bom estado;
 6. Transferir a imagem com `esptool.py --port /dev/ttyUSB0 --baud 460800 write_flash --flash_size=detect 0 esp8266-20170108-v1.8.7.bin` (ajustar o nome do arquivo, se necessário).
+  - esta etapa pode falhar se o cabo não estiver em bom estado;
 
 Caso seu usuário não tenha acesso a `/dev/ttyUSB0` (permission denied) pode ser que precise acrescentar o seu usuário ao grupo `dialout`. No Ubuntu e no Mint isto é feito como o comando: `sudo usermod -a -G dialout <your-username>`. Talvez funcione em outras distribuições baseadas em Debian.
 
 Detalhes em: https://docs.micropython.org/en/latest/esp8266/tutorial/intro.html
 
-### Como instalar Micropython no ESP32
+### Como instalar Micropython no ESP32S
 
-Para instalar Micropython do ESP32, o passo 6 deve ser algo como: `esptool.py --chip esp32 --port /dev/ttyUSB0 write_flash -z 0x1000 esp32-20180511-v1.9.4.bin`. Ref.: https://docs.micropython.org/en/latest/esp32/tutorial/intro.html
+Para instalar Micropython do ESP32S, o passo 2 é baixar a imagem de https://micropython.org/download/?mcu=esp32
+
+o passo 6 deve ser algo como: `esptool.py --chip esp32 --port /dev/ttyUSB0 write_flash -z 0x1000 esp32-20180511-v1.9.4.bin`. Ref.: https://docs.micropython.org/en/latest/esp32/tutorial/intro.html
 
 Testei esse procedimento com NodeMCU-32s e com MH-ET Live ESP32-MiniKit.
+
+### Como instalar Micropython no ESP32C3
+
+Para instalar Micropython do ESP32C3, 
+
+o passo 2 é baixar a imagem de https://micropython.org/download/ESP32_GENERIC_C3/
+
+o passo 5 deve ser algo como: `esptool.py --chip esp32c3 --port /dev/ttyUSB0 erase_flash`. Ref.: https://docs.micropython.org/en/latest/esp32/tutorial/intro.html
+
+O passo 6 deve ser algo como: `esptool.py --chip esp32c3 --port /dev/ttyUSB0 --baud 460800 write_flash -z 0x0 esp32c3-20220117-v1.18.bin`
+
+Testei esse procedimento com AiThinker ESP-C3-32S-Kit em 2024.
 
 ### Como comunicar com Micropython no ESP8266 e no ESP32
 

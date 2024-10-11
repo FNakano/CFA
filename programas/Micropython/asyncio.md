@@ -2,7 +2,7 @@
 
 ## The problem
 
-Apply the capitalism way applied to computer systems: A computer system costs resources (time, money, ...) performs some tasks and provide results (which are profitable). It is reasonable to maximize profit= result/cost. This is achiavable by reducing costs or by improving results. To improve resuts, the computer system should provide more results using the same (or less) resources (time). Considering the hardware cost as already spent, how can one *use the maximum of the hardware?*
+Apply the capitalist way to computer systems: A computer system costs resources (time, money, ...) performs some tasks and provide results (which are profitable). It is reasonable to maximize profit= result/cost. This is achiavable by reducing costs or by improving results. To improve resuts, the computer system should provide more results using the same (or less) resources (time). Considering the hardware cost as already spent, how can one *use the maximum of the hardware?*
 
 ## More context
 

@@ -209,7 +209,11 @@ Durante o semestre, frequentemente surgem perguntas sobre os mesmos assuntos ou 
   - CoAP(?)
 3. Circuitos elétricos com mais detalhes
   - motivação: um dos primeiros exercícios com microcontroladore é acender um LED. Há quem queira saber como não queimar um LED, há quem queira saber a relação entre potência elétrica e luminosidade, há quem queira saber a relação entre potência elétrica e calor (temperatura). Isto (tudo) é inter-relacionado.
-  
+
+## Informação útil mas sem contexto
+
+[Pieces Of Information](piecesOfInformation/README.md)
+
 
 ## Soluções para gerar este documento 
 
