@@ -56,7 +56,7 @@ A tabela de conexões faz parte da camada de Hardware. As APIs podem ser conside
 
 ## Pacotes necessários
 
-O pacote (arquivo) `ssd1306.py` é necessário no microcontrolador. Que eu saiba, não há comando `upip` ou `mip` para baixá-lo. A solução é qualquer variação de baixar (inclusive copiar e colar). O arquivo mais recente (em 2024-10) está em https://github.com/micropython/micropython-lib/blob/master/micropython/drivers/display/ssd1306/ssd1306.py .
+O pacote (arquivo) `ssd1306.py` é necessário no microcontrolador. Ele pode ficar na raiz (mesma pasta que contém o `boot.py`). Que eu saiba, não há comando `upip` ou `mip` para baixá-lo. A solução é qualquer variação de baixar (inclusive copiar e colar). O arquivo mais recente (em 2024-10) está em https://github.com/micropython/micropython-lib/blob/master/micropython/drivers/display/ssd1306/ssd1306.py .
 
 ## Programa e comandos
 
