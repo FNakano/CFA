@@ -54,6 +54,10 @@ Cada linha da tabela acima corresponde a um jumper que conecta o pino do display
 
 A tabela de conexões faz parte da camada de Hardware. As APIs podem ser consideradas interfaces entre hardware e software. Seu programa pode ser considerado software.
 
+## Pacotes necessários
+
+O pacote (arquivo) `ssd1306.py` é necessário no microcontrolador. Que eu saiba, não há comando `upip` ou `mip` para baixá-lo. A solução é qualquer variação de baixar (inclusive copiar e colar). O arquivo mais recente (em 2024-10) está em https://github.com/micropython/micropython-lib/blob/master/micropython/drivers/display/ssd1306/ssd1306.py .
+
 ## Programa e comandos
 
 Seu programa contém chamadas de função tanto para a API do display (ssd1306) quanto para a API do i2c (I2C). O construtor de I2C recebe o número do canal, o construtor de SSD1306_I2C recebe as dimensões do display e a instância de i2c que representa a conexão com o display.
