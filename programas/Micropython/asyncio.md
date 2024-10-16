@@ -73,4 +73,11 @@ Micropython has its syncronous `machine.I2C` API and `asyncio` is put on top of 
 
 `asyncio` has async I2C modules: `asi2c.py asi2c_i.py i2c_esp.py i2c_init.py i2c_resp.py` (https://github.com/peterhinch/micropython-async/tree/master/v3/as_drivers/i2c). The files implement a sender/receiver example documented in https://github.com/peterhinch/micropython-async/blob/master/v3/docs/I2C.md 
 
-An easier (for me) to understand example builds a class to comunicate (asyncrhonously) to an I2C sensor. The documentation is here: https://github.com/peterhinch/micropython-async/blob/master/v3/docs/HTU21D.md .  Notice that the author needed to estimate the time to complete reading.
+An easier (for me) to understand example builds a class to comunicate (asyncrhonously) to an I2C sensor. The documentation is here: https://github.com/peterhinch/micropython-async/blob/master/v3/docs/HTU21D.md .  Notice that the author needed to estimate the time to complete reading and the function `htu` awaits for an amount of time (see https://github.com/peterhinch/micropython-async/blob/master/v3/as_drivers/htu21d/htu21d_mc.py).
+
+In my opinion, await for an amount of time is not desirable because it is an estimated time. If one miss the estimation, or wrong data can be read or data could be read more frequently. It would be better do raise an event (interruption?) to inform that data is ready. BUT implement this behavior requires changes in Micropython.
+
+More time estimates: https://forum.micropython.org/viewtopic.php?t=9527
+
+I2C API for Arduino IDE documentation: https://docs.espressif.com/projects/arduino-esp32/en/latest/api/i2c.html
+
