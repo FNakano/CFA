@@ -213,10 +213,23 @@ os.rename('boot.py', 'originalboot.py')
 # envia novo boot.py pela página web
 ```
 
+## Utilitários
+
+Uma pergunta comum: *Como copiar arquivos de/para a placa microcontroladora (todos de uma vez)?*
+
+A melhor resposta, por enquanto (2024-10) é usar `rshell` (https://github.com/dhylands/rshell). O comando para copiar todos os arquivos do dispositivo para o desktop é `cp /pyboard/* (https://github.com/dhylands/rshell?tab=readme-ov-file#cp).` (de dentro do rshell, após o comando de terminal `rshell -p /dev/ttyACM0`, o dispositivo conectado à porta tty recebe o nome `pyboard` e seu sistema de arquivos é acessado com `/pyboard`
+
+Parece que mpremote copia do desktop para o dispositivo mas não o contrário. Tentei com mpremote (https://docs.micropython.org/en/latest/reference/mpremote.html) mas o comando (de desktop) `mpremote cp :/* .` não faz nada e o comando `mpremote cp -r :/* .` resulta na mensagem `mpremote: 'cp -r' destination must be ':'` . Consultei muitas referências mas nenhuma traz uma solução.
+
+Tentei com mpr (https://github.com/bulletmark/mpr) mas parece ter o mesmo "problema" do mpremote.
+
+`mpremote` é uma ferramenta construída para atender as necessidades dos desenvolvedores de micropython (https://forum.micropython.org/viewtopic.php?t=12600#p68356). No workflow deles é mais útil montar o diretório do desktop no dispositivo e executar os arquivos a copiar os arquivos para o dispositivo e executá-los. A mim isso faz sentido por causa da quantidade limitada de vezes que uma memória FLASH pode ser reescrita, mas, num certo sentido, não atende ao usuário médio (como apontado pelo autor de mpr: https://github.com/bulletmark/mpr )
+
 Seriam contribuições úteis se conseguirmos 
 
 1. Em um ESP32 em modo AP, listar todos os clientes conectados (como num roteador doméstico em que todos os aparelhos conectados a ele são listados);
-2. Em um ESP32 em modo Station, anunciar sua existência via mDNS (multicast DNS);
+2. ~~Em um ESP32 em modo Station, anunciar sua existência via mDNS (multicast DNS)~~;
+  - Isto foi resolvido (acho que a partir de micropython 1.12: o nome padrão para um ESP32 é espressif, então ele pode ser acessado, por exemplo com `ping espressif.local`. Esse nome pode ser mudado com o comando `network.hostname() ` (https://docs.micropython.org/en/latest/library/network.html#network.hostname)
 3. Em um ESP32 em modo AP, testar se este consegue encaminhar (forward) os pacotes mDNS;
 
 Referências:

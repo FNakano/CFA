@@ -32,8 +32,8 @@ Há pinos usados para controlar o modo de inicialização do processador, pinos 
 | SD2 (9) | internal SPI Flash | | |
 | SD3 (10) | internal SPI Flash | | |
 | CMD (11) | internal SPI Flash | | |
-| 21 | --- | I2C_SDA | PWM |
-| 22 | --- | I2C_SCL | PWM |
+| 21 | --- | I2C_SDA* | PWM |
+| 22 | --- | I2C_SCL* | PWM |
 | 23 | --- | VSPI_MOSI | PWM |
 | 25 | --- | ~~ADC2_CH8~~, RTC_GPIO6, DAC1 | DAC/I2S |
 | 26 | --- | ~~ADC2_CH9~~, RTC_GPIO7, DAC2 | DAC/I2S |
@@ -68,6 +68,7 @@ O ESP32 tem hardware para I2S (protocolo para periféricos de som). Não entendi
 2. DACs (e I2S?) são interessantes para síntese de som;
 3. Em placas alternativas, como wemos lolin32, usa-se para I2C os pinos SCL=GPIO4, SDA=GPIO5. Tenho algumas dessas e a interface com o display funciona bem. Isto quer dizer que o pino 5, que também serve para configurar o boot, serve para I2C.
 4. Parece que Sensor_VP e Sensor_VN são entradas diferenciais para um amplificador de baixo ruído mas não funciona bem (https://esp32.com/viewtopic.php?t=3206) "The low noise amplifier in the ESP32 is removed from the specs and documentation as it never really worked well. As such, you can't use those pins for low voltage measurements. You can still use them as ADC pins, but they have the same range as other ADC pins."
+5. No Micropython os pinos padrão para I2C são diferentes dos colocados aqui (https://docs.micropython.org/en/latest/esp32/quickref.html#hardware-i2c-bus) , pior, não sei se o I2C do ESP-IDF ou do Arduino é por hardware ou por software (bit-banging) . Pela referência do Micropython, o ESP32 tem dois controladores I2C. No Micropython é possível escolher I2C por hardware ou por software.
 
 ## Usar bateria ou battery pack (carregador portátil)
 
