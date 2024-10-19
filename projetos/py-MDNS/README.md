@@ -27,6 +27,6 @@ The straight recipe to run an example is:
 
 ### Result
 
-![](./Captura%20de%20tela%20de%202024-10-19%2012-07-44.png))
+![](./Captura%20de%20tela%20de%202024-10-19%2012-07-44.png)
 
 **note**: I have thing-directory (https://github.com/narcisoleedev/thing-directory/blob/master/customInstall.md) configured and running. It responds to mDNS so running the example does not return an empty list.

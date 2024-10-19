@@ -1,12 +1,18 @@
 
 A proposta é armazenar nesta pasta tanto os programas quanto a documentação relativa a um *setup* básico para ESP32 com Micropython de maneira que o ESP32 sirva as páginas ou em HTML ou em Markdown. 
 
-1. [Como instalar Micropython no ESP32](/programas/Micropython) ;
+1. [Como instalar Micropython no ESP32](https://github.com/FNakano/CFA/tree/master/programas/Micropython#como-instalar-micropython-no-esp32s) ;
   - use um cabo USB para dados e energia em bom estado;
   - se o LED que indica que o ESP está ligado tiver oscilações no brilho, desconfie que o cabo ou os conectores não estão em bom estado;
-2. Para acessar o Micropyton (linha de comando, REPL - Read, Evaluate, Print Loop) convém instalar uma IDE para Python, por exemplo, Thonny
+2. Para acessar o Micropyton (linha de comando, REPL - Read, Evaluate, Print Loop) convém instalar uma IDE para Python, por exemplo, Thonny (https://thonny.org/)
 3. Testar o ESP32: acender e apagar o LED embutido;
-4. Como habilitar um console Python (REPL) via WiFi (WebREPL) no ESP32;
+  - o LED embutido está conectado ao pino 2, o código para acender é:
+```python
+import machine
+dois=machine.Pin(2, machine.Pin.OUT)
+dois.on()
+```
+4. Como habilitar um console Python (REPL) via WiFi (WebREPL) no ESP32 (https://github.com/FNakano/CFA/tree/master/programas/Micropython/webREPL);
 5. Não é possível usar WebREPL e Thonny simultaneamente;
   - permitir o uso concomitante de WebREPL e Thonny é possível mas levanta questões como *Como gerenciar múltiplos REPL com segurança?*.
   - Em versões anteriores as mensagens enviadas em um eram, também, ecoadas no outro mas isso pode ser um problema de segurança.
@@ -16,9 +22,61 @@ A proposta é armazenar nesta pasta tanto os programas quanto a documentação r
   - `boot.py` é executado sempre que REPL ou WebREPL inicia. Ele pode ser modificado automaticamente (por exemplo quando WebREPL é habilitado) então, caso você escreva comandos nesse arquivo, eles podem ser sobrescritos;
   - `main.py`, quando existe, é executado sempre que REPL ou WebREPL inicia. Este arquivo não é modificado automaticamente, então, caso você escreva comandos nesse arquivo, eles não correm o risco de serem sobrescritos;
 7. [Como conectar e usar um display OLED (tela 128x96) no ESP32](/projetos/py-OLED);
-8. Como iniciar o ESP32 como Ponto de Acesso Wi-Fi;
-9. Como Implementar um servidor web no ESP32;
+8. Como iniciar o ESP32 como Ponto de Acesso Wi-Fi (https://github.com/FNakano/CFA/tree/master/programas/Micropython/webREPL#esp-como-access-point-ap);
+9. Como Implementar um servidor web no ESP32 (https://github.com/FNakano/CFA/tree/master/projetos/AsyncioTryout);
 
+### Hardware
+
+ESP32S Dev Kit, SSD1306 OLED display, passive buzzer, LED, LDR, 2 touch sensors. $82\Omega$ resistor, $1k\Omega$ resistor.
+
+Component list:
+| aaa | bbb | ccc |
+| --- | --- | --- |
+| 1 | ESP32S dev kit | --- |
+| 1 | $1k\Omega$ resistor  | name one lead as A, other as B |
+| 1 | LDR  | name one lead as A, other as B |
+| 1 | SSD1306 OLED display  | Information on how to use it in https://github.com/FNakano/CFA/tree/master/projetos/py-OLED |
+| 1 | Passive Buzzer | Information on how to use it in https://github.com/FNakano/CFA/tree/master/projetos/AsyncioTryout#results-2 |
+| 1 | $82\Omega$ resistor  | name one lead as A, other as B |
+| 1 | LED  | name one lead as A, other as B |
+
+Wiring
+
+| 1k resistor lead | LDR lead | Pino do ESP32 |
+| --- | --- | --- |
+| A | - | GND |
+| B | B | 34 |
+| - | A | 3V3 |
+
+| Pino no display | Pino do ESP32 |
+| --- | --- |
+| SCL ou SCK | 18 |
+| SDA | 19 |
+| GND | GND |
+| VCC | VCC |
+
+| Pino no buzzer | Pino do ESP32 |
+| --- | --- |
+| + | 27 |
+| - | GND |
+
+| 82 resistor lead | LED lead | Pino do ESP32 |
+| --- | --- | --- |
+| A | - | GND |
+| B | B | --- |
+| - | A | 23 |
+
+| touch sensor 1 | Pino do ESP32 |
+| --- | --- |
+| GND | GND |
+| VCC | 3V3 |
+| IO | 21 |
+
+| touch sensor 2 | Pino do ESP32 |
+| --- | --- |
+| GND | GND |
+| VCC | 3V3 |
+| IO | 22 |
 
 https://www.google.com/search?q=esp32+micropython+why+simultaneous+use+of+webrepl+and+thonny+is+not+possible&oq=esp32+micropython+why+simultaneous+use+of+webrepl+and+thonny+is+not+possible&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBCTQzMzM1ajBqNKgCALACAQ&sourceid=chrome&ie=UTF-8
 https://forum.micropython.org/viewtopic.php?t=9187
