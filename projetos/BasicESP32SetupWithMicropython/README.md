@@ -45,13 +45,13 @@ Wiring
 | 1k resistor lead | LDR lead | Pino do ESP32 |
 | --- | --- | --- |
 | A | - | GND |
-| B | B | 34 |
+| B | B | 39 |
 | - | A | 3V3 |
 
-| Pino no display | Pino do ESP32 |
+| Pino no display | Pino do ESP32 (to be tested on Micropython)|
 | --- | --- |
-| SCL ou SCK | 18 |
-| SDA | 19 |
+| SCL ou SCK | 32 |
+| SDA | 33 |
 | GND | GND |
 | VCC | VCC |
 
@@ -64,19 +64,29 @@ Wiring
 | --- | --- | --- |
 | A | - | GND |
 | B | B | --- |
-| - | A | 23 |
+| - | A | 14 |
 
-| touch sensor 1 | Pino do ESP32 |
+| touch sensor 1 | Pino do ESP32 (to be tested on Micropython)|
 | --- | --- |
 | GND | GND |
 | VCC | 3V3 |
-| IO | 21 |
+| IO | 34 |
 
-| touch sensor 2 | Pino do ESP32 |
+| touch sensor 2 | Pino do ESP32 (to be tested on Micropython)|
 | --- | --- |
 | GND | GND |
 | VCC | 3V3 |
-| IO | 22 |
+| IO | 35 |
+
+Nesta montagem o pino 13 (IO) e o pino 36 (I) ainda podem ser usados.
+
+Ordem para teste incremental:
+
+1. O buzzer já está montado e testado;
+2. Display
+3. LDR
+4. LED
+5. Touch
 
 https://www.google.com/search?q=esp32+micropython+why+simultaneous+use+of+webrepl+and+thonny+is+not+possible&oq=esp32+micropython+why+simultaneous+use+of+webrepl+and+thonny+is+not+possible&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBCTQzMzM1ajBqNKgCALACAQ&sourceid=chrome&ie=UTF-8
 https://forum.micropython.org/viewtopic.php?t=9187

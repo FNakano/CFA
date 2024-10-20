@@ -16,37 +16,38 @@ Sobre os pinos, nem todos podem ser usados para qualquer aplicação. Citando a 
 
 Há pinos usados para controlar o modo de inicialização do processador, pinos usados para comunicação com a memória FLASH interna (que pode ser pensada como armazenamento secundário - um SSD de, geralmente, 4MBytes), pinos usados para comunicação com o PC. Acabam restando proporcionalmente poucos que podem de fato serem usados. A partir da tabela de pinos usáveis em https://randomnerdtutorials.com/esp32-pinout-reference-gpios/ , separei alguns com as funcionalidades potenciais anotadas.
 
-| GPIO | obs | usos possíveis | usos que reservei |
-| --- | --- | --- | --- |
-| (0) | strapping pin | ~~ADC2_CH1~~, TOUCH1, HSPI_HD |  |
-| 4 | --- | ~~ADC2_CH0~~, TOUCH0, RTC_GPIO10 | SCL |
-| 5 | outputs PWM signals at boot, strapping pin | VSPI_CS0 its in this list for a reason... | SDA |
-| ~~12~~ | --- | ADC2_5, TOUCH5, HSPIQ, HS2_DATA2 | boot fails if pulled HIGH |
-| 13 | --- | ~~ADC2_CH4~~, TOUCH4, RTC_GPIO14, HSPI_MOSI | TOUCH |
-| 14 | --- | ~~ADC2_CH6~~, TOUCH6, RTC_GPIO16, HSPI_CLK | TOUCH |
-| 15 | --- | ~~ADC2_CH3~~, TOUCH3, RTC_GPIO13, HSPI_CS0 | TOUCH |
-| 16 | --- | UART2_RX | UART_RX |
-| 17 | --- | UART2_TX | UART_TX |
-| 18 | --- | VSPI_CLK | PWM |
-| 19 | --- | VSPI_MISO | PWM |
-| SD2 (9) | internal SPI Flash | | |
-| SD3 (10) | internal SPI Flash | | |
-| CMD (11) | internal SPI Flash | | |
-| 21 | --- | I2C_SDA* | PWM |
-| 22 | --- | I2C_SCL* | PWM |
-| 23 | --- | VSPI_MOSI | PWM |
-| 25 | --- | ~~ADC2_CH8~~, RTC_GPIO6, DAC1 | DAC/I2S |
-| 26 | --- | ~~ADC2_CH9~~, RTC_GPIO7, DAC2 | DAC/I2S |
-| 27 | --- | ~~ADC2_CH7~~, TOUCH7, RTC_GPIO17 | TOUCH |
-| CLK(6) | internal SPI Flash  | | |
-| SD0(7) | internal SPI Flash  | | |
-| SD1(8) | internal SPI Flash  | | |
-| 32 | --- | ADC1_CH4, TOUCH9, RTC_GPIO9 | ADC |
-| 33 | --- | ADC1_CH5, TOUCH8, RTC_GPIO8 | ADC |
-| 34 | somente entrada | ADC1_CH6, RTC_GPIO4 | TOUCH |
-| 35 | somente entrada | ADC1_CH7, RTC_GPIO5 | TOUCH |
-| 36 | somente entrada | ADC1_CH0, RTC_GPIO0, Sensor_VP | ADC |
-| 39 | somente entrada | ADC1_CH3, RTC_GPIO3, Sensor_VN | ADC |
+
+| GPIO | obs | usos possíveis | usos que reservei | lado do dev kit, olhando para o lado dos componentes da placa, com o conector USB para baixo e a antena do ESP para cima |
+| --- | --- | --- | --- | --- |
+| (0) | strapping pin | ~~ADC2_CH1~~, TOUCH1, HSPI_HD |  | D |
+| 4 | --- | ~~ADC2_CH0~~, TOUCH0, RTC_GPIO10 | SCL** | D |
+| 5 | outputs PWM signals at boot, strapping pin | VSPI_CS0 its in this list for a reason... | SDA** | D |
+| ~~12~~ | --- | ADC2_5, TOUCH5, HSPIQ, HS2_DATA2 | boot fails if pulled HIGH | D |
+| 13 | --- | ~~ADC2_CH4~~, TOUCH4, RTC_GPIO14, HSPI_MOSI | TOUCH | E |
+| 14 | --- | ~~ADC2_CH6~~, TOUCH6, RTC_GPIO16, HSPI_CLK | TOUCH | E |
+| 15 | --- | ~~ADC2_CH3~~, TOUCH3, RTC_GPIO13, HSPI_CS0 | TOUCH | D |
+| 16 | --- | UART2_RX | UART_RX | D |
+| 17 | --- | UART2_TX | UART_TX | D |
+| 18 | --- | VSPI_CLK | PWM | D |
+| 19 | --- | VSPI_MISO | PWM | D |
+| SD2 (9) | internal SPI Flash | | | E |
+| SD3 (10) | internal SPI Flash | | | E |
+| CMD (11) | internal SPI Flash | | | E |
+| 21 | --- | I2C_SDA* | PWM | D |
+| 22 | --- | I2C_SCL* | PWM | D |
+| 23 | --- | VSPI_MOSI | PWM | D |
+| 25 | --- | ~~ADC2_CH8~~, RTC_GPIO6, DAC1 | DAC/I2S | E |
+| 26 | --- | ~~ADC2_CH9~~, RTC_GPIO7, DAC2 | DAC/I2S | E |
+| 27 | --- | ~~ADC2_CH7~~, TOUCH7, RTC_GPIO17 | TOUCH | E |
+| CLK(6) | internal SPI Flash  | | | D |
+| SD0(7) | internal SPI Flash  | | | D |
+| SD1(8) | internal SPI Flash  | | | D |
+| 32 | --- | ADC1_CH4, TOUCH9, RTC_GPIO9 | ADC | E |
+| 33 | --- | ADC1_CH5, TOUCH8, RTC_GPIO8 | ADC | E |
+| 34 | somente entrada | ADC1_CH6, RTC_GPIO4 | TOUCH | E |
+| 35 | somente entrada | ADC1_CH7, RTC_GPIO5 | TOUCH | E |
+| 36 | somente entrada | ADC1_CH0, RTC_GPIO0, Sensor_VP | ADC | E |
+| 39 | somente entrada | ADC1_CH3, RTC_GPIO3, Sensor_VN | ADC | E |
 
 Na coluna GPIO, entre parêntesis estão as GPIOs que são acessíveis somente na placa de 38 pinos. Como a marcação na placa é diferente, ela também é apresentada na coluna.
 
@@ -65,10 +66,12 @@ O ESP32 tem hardware para I2S (protocolo para periféricos de som). Não entendi
 
 
 1. A segunda interface serial pode ser usada para comunicar com Arduino;
+  - segundo https://microcontrollerslab.com/esp32-uart-communication-pins-example/ e https://circuits4you.com/2018/12/31/esp32-hardware-serial2-example/ é possível reatribuir os pinos da interface serial então não vou me ocupar de atribuir agora.
 2. DACs (e I2S?) são interessantes para síntese de som;
 3. Em placas alternativas, como wemos lolin32, usa-se para I2C os pinos SCL=GPIO4, SDA=GPIO5. Tenho algumas dessas e a interface com o display funciona bem. Isto quer dizer que o pino 5, que também serve para configurar o boot, serve para I2C.
 4. Parece que Sensor_VP e Sensor_VN são entradas diferenciais para um amplificador de baixo ruído mas não funciona bem (https://esp32.com/viewtopic.php?t=3206) "The low noise amplifier in the ESP32 is removed from the specs and documentation as it never really worked well. As such, you can't use those pins for low voltage measurements. You can still use them as ADC pins, but they have the same range as other ADC pins."
-5. No Micropython os pinos padrão para I2C são diferentes dos colocados aqui (https://docs.micropython.org/en/latest/esp32/quickref.html#hardware-i2c-bus) , pior, não sei se o I2C do ESP-IDF ou do Arduino é por hardware ou por software (bit-banging) . Pela referência do Micropython, o ESP32 tem dois controladores I2C. No Micropython é possível escolher I2C por hardware ou por software.
+5. sobre * e **: (*) No Micropython os pinos padrão para I2C são diferentes dos colocados aqui (https://docs.micropython.org/en/latest/esp32/quickref.html#hardware-i2c-bus) , pior, não sei se o I2C ~~do ESP-IDF ou~~ do Arduino é por hardware ou por software (bit-banging) . Pela referência do Micropython, o ESP32 tem dois controladores I2C. No Micropython é possível escolher I2C por hardware ou por software. A documentação do ESP-IDF não menciona I2C por software então presumo que não há suporte para I2C por software no ESP-IDF. (**) Ainda não testei essa atribuição de pinos com I2C por hardware no Micropython.
+6. Olhando para o lado dos componentes da placa, com o conector USB para baixo e a antena do ESP para cima, os pinos 3V3, 5V estão do lado Esquerdo e, no lado Direito, não há pinos que possam ter esse uso, então provavelmente será mais conveniente numa montagem com o ESP conectado ao protoboard de um lado só, usar os pinos do lado Esquerdo.  
 
 ## Usar bateria ou battery pack (carregador portátil)
 
