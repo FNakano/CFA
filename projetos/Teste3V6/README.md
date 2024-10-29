@@ -20,7 +20,7 @@ Na dúvida, convém testar se uma bateria com tensão de 3.6V conectada a Vcc é
 
 ## Procedimento
 
-- Desenvolver a plataforma de teste;
+- Desenvolver a plataforma de teste (novo: [Plataforma de teste](../PlataformaTeste));
 - Testar;
 
 ## Resultados

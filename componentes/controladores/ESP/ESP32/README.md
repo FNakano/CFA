@@ -99,6 +99,8 @@ Mais modelos no projeto [ESP32-CAM](/projetos/ESP32-CAM/README.md)
 
 ## ESP32-C3 super mini
 
+2024-10-29: Este componente parece bom para ser usado.
+
 ![](./5163561549456059615.jpg)
 
 Esta placa comprei em 2024-09-24 pelo mercado livre a um pouco menos de R$40. Atraiu meu interesse porque é pequena (2,2x1,9cm) e porque o regulador de tensão não é AMS1117. Fui atrás de documentação. Achei uma pinagem: https://forum.arduino.cc/t/esp32-c3-supermini-pinout/1189850 , um esquemático: https://imgse.com/i/pCUheR1 - neste mostra que o regulador de tensão é um ME6211. Segundo o datasheet (https://stm32-base.org/assets/pdf/regulators/ME6211.pdf), a corrente máxima de saída é 500mA, com dropout de 1V nesta condiçao não é melhor que o AMS1117, mas a 100mA o dropout é de 100mV e, com este dropout, é possível usar uma bateria de 3,6V ligada no pino de 5V (AINDA NÃO TESTEI). A placa é capaz de executar Micropython (ESP32_GENERIC_C3-20240602-v1)
@@ -124,7 +126,24 @@ Há postagens em outros fóruns apontando problemas:
 
 ## 01Space
 
-Começo a achar estes controladores interessantes (2022-08-21). Explico:
+2024-10-29: Não usar em novos projetos (nem o com matriz de LEDs nem o com display OLED) - em uma das placas um terminal do botão não estava soldado. Dependendo das condições ele entrava em contato com os componentes vizinhos, ou, não fazia o esperado (RESET). Em alguma condição o microcontrolador deixa de receber programas (upload do firmware micropython com esptool da o erro: 
+  
+<pre><font color="#8AE234"><b>fabio@super</b></font>:<font color="#729FCF"><b>~/.arduino15/packages/esp32/tools/esptool_py/4.6</b></font>$ python3 -m esptool --chip esp32c3 --baud 115200 --port /dev/ttyACM0 erase_flash
+esptool.py v4.6
+Serial port /dev/ttyACM0
+Connecting...
+Chip is ESP32-C3 (revision v0.3)
+Features: WiFi, BLE
+Crystal is 40MHz
+MAC: 84:f7:03:68:06:88
+Uploading stub...
+Running stub...
+Stub running...
+
+A fatal error occurred: Unable to verify flash chip connection (No serial data received.).
+</pre>
+
+Opinião antiga: ~~Começo a achar estes controladores interessantes (2022-08-21).~~ Explico:
 
 Até agora, é o único controlador que aceita, de maneira descomplicada, ser ligado a baterias de 3,6V, usuais em telefones celulares.
 
