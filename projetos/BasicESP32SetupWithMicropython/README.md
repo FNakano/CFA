@@ -82,11 +82,17 @@ Nesta montagem o pino 13 (IO) e o pino 36 (I) ainda podem ser usados.
 
 Ordem para teste incremental:
 
-1. O buzzer já está montado e testado;
+1. O buzzer ~~já está montado e testado~~;
 2. Display
 3. LDR
 4. LED
 5. Touch
+
+Vou mudar um tanto este projeto pois pretendo colocar tudo em uma placa só, com alimentação de 3V6. Fica com esta disposição física:
+
+![](./BasicESP32SetupWithMicropython/4987774168732905136.jpg)
+
+O componente que escolhi parece ser relativamente abundante. Em uma próxima vez, talvez eu substitua pelo ESP32C3 Super Mini, quando este tiver Micropython com suporte para mDNS...
 
 https://www.google.com/search?q=esp32+micropython+why+simultaneous+use+of+webrepl+and+thonny+is+not+possible&oq=esp32+micropython+why+simultaneous+use+of+webrepl+and+thonny+is+not+possible&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBCTQzMzM1ajBqNKgCALACAQ&sourceid=chrome&ie=UTF-8
 https://forum.micropython.org/viewtopic.php?t=9187
@@ -145,3 +151,9 @@ fabio@super:~/.arduino15/packages/esp32/tools/esptool_py/4.5.1$ python3 -m espto
 python3 -m esptool --chip esp32 --port /dev/ttyUSB0 --baud 460800 write_flash -z 0x1000 ~/Downloads/ESP32_GENERIC-20240602-v1.23.0.bin
 
 
+https://doc.riot-os.org/group__boards__esp32__mh-et-live-minikit.html
+https://github.com/MHEtLive?tab=repositories
+https://community.openmqttgateway.com/t/esp32-mini-kit-pinout-is-there-a-mapping-table-to-lolin-esp32-pinout/2320
+http://esp32.io/viewtopic.php?t=2781
+https://docs.platformio.org/en/stable/boards/espressif32/wemos_d1_uno32.html
+https://pt.aliexpress.com/item/1005006629784548.html?spm=a2g0o.productlist.main.1.2b15QSHfQSHfOL&algo_pvid=c44eaac0-b6d6-44bb-8e1d-67b429b7f689&algo_exp_id=c44eaac0-b6d6-44bb-8e1d-67b429b7f689-0&pdp_npi=4%40dis%21BRL%2120.50%2119.59%21%21%2124.11%2123.04%21%402101c5c217306483031946017e989a%2112000037871352986%21sea%21BR%21822079684%21X&curPageLogUid=eNmNmzCwqxd2&utparam-url=scene%3Asearch%7Cquery_from%3A
