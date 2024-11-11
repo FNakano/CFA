@@ -107,3 +107,16 @@ Using my desktop USB as power supply, I did not notice any communication fail be
 
 I like Knight Rider TV series... and Ultraman TV series...
 
+### Details
+
+#### How Neopixels 'work'
+
+A plain RGB LED is a grouping of three LEDs in one package. Packaging may vary. For example round *hat* shaped (https://www.farnell.com/datasheets/3497864.pdf) and square *flat* (https://www.lc-led.com/products/slt-5050rgb.html). Light color is a combination of Red, Green, Blue light intensities.
+
+An addressable RGB LED has a microcontroller which keeps track of communication and RGB LED driving and consequent light intensities. Something similar to TLC59731 (https://www.ti.com/document-viewer/TLC59731/datasheet), resulting in RGB adressable LEDS (https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf)
+
+#### Power consumption and electrical current profile
+
+According to TLC59731 datasheet, the microcontroller uses 2-3mA and each LED (Red, Green, Blue) can use up to 20mA (WS2812B datasheet does not contain this information). 24-bit(?) data is transmitted in approx. $400\mu s$ Approx. $80\mu s$ after completing data reception LEDs are turned on, I believe, simultaneously. LED PWM period is approx. $400\mu s$. It is expected that different RGB LEDs will display different light colors and intensities (different duty cycles). Added to data transmission time, somehow avoids a large current peak followed by a low current interval.
+
+
