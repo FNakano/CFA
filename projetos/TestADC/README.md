@@ -46,7 +46,14 @@ Theory on voltage dividers in https://en.wikipedia.org/wiki/Voltage_divider#Resi
 
 ## Program
 
+Micropython constants for ESP32S: https://docs.espressif.com/projects/esp-idf/en/v4.4/esp32/api-reference/peripherals/adc.html#macros
+
+Micropython constants for ESP32-C3: https://docs.espressif.com/projects/esp-idf/en/latest/esp32c3/api-reference/peripherals/adc_oneshot.html#enumerations 
+
 ## Test example
 
 ## Test example result
 
+## More references
+
+Micropython discussion on ESP32 attenuation: https://forum.micropython.org/viewtopic.php?t=12024
