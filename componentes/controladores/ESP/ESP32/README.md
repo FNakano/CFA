@@ -397,3 +397,9 @@ HTTP é um protocolo request-response enquanto Web Socket cria uma conexão perm
 - https://www.geeksforgeeks.org/what-is-web-socket-and-how-it-is-different-from-the-http/
 
 
+### De vez em quando não dá para gravar/atualizar o Micropython - é o que me aconteceu com as placas Zero-1 Space
+
+- https://forum.arduino.cc/t/cant-upload-programm-to-esp32c3-xiao-seed/1146904/2
+- https://forum.arduino.cc/t/bricked-xiao-esp32c3-suddenly-unable-to-push-code-to-several-boards/1054364
+
+... às vezes é o esptool, às vezes é placa defeituosa... as de Zero-1 Space parecem ter uma combinação de fusíveis que me impediu de repetir a gravação...
