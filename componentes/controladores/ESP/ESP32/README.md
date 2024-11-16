@@ -186,6 +186,7 @@ Esta placa controladora contém um display OLED com controlador SSD1306. Para te
    - captura de tela de 01space mostrando que é esse firmware mesmo: https://github.com/01Space/ESP32-C3-0.42LCD/blob/main/micropython/image/4.png
    - firmware sem conversor serial para usb: https://micropython.org/download/esp32c3-usb/
    - usei um comando para apagar a memória flash e outro para gravar o firmware. IMPORTANTE: não mudar o endereço de gravação. Se fizer isso não dá para gravar outro firmware - o `esptool.py` falha com mensagens na operação de leitura, tentando ler o efuse de habilitação de criptografia. Corrigi isso instalando a placa na IDE do Arduino e enviando `blink`. Por sorte, isto reescreveu o programa, o que  "consertou" o problema.
+   - (2024-11-16) Faz alguns dias que tentei gravar um firmware (Micropython) mais recente nessa mesma placa. Não consegui. Talvez a gravação no endereço errado tenha modificado essa configuração do efuse...
    - `esptool.py -p /dev/ttyACM0 erase_flash`, `esptool.py --chip esp32c3 --port /dev/ttyACM0 --baud 460800 write_flash -z 0x0 esp32c3-usb-20220618-v1.19.1.bin`
 2. Configurei webREPL [Referência neste repositório](https://github.com/FNakano/CFA/tree/master/programas/Micropython/webREPL);
 3. Ajustei o `boot.py` para reconectar ao meu WiFi e escrever no display qual é o IP;
@@ -213,6 +214,28 @@ oled.show() # envia o conteúdo do framebuffer para o oled
 ```
 
 A placa com display tem um LED RGB endereçável ligado ao pino 2.
+
+Os pinos de comuncação para comunicação I2C entre ESP e ssd1306 são SDA=Pin(5) e SCL=Pin(6)
+
+## MINI ESP32-C3 Placa de Desenvolvimento 2.4G Wifi 4 BT Módulo com 0, 42 Polegada OLED Display 4MB Flash Antena Cerâmica USB Tipo-C ESP32 C3
+
+(2024-11-16)
+
+Isto foi uma combinação de ingenuidade e ganância.
+
+Um dev kit com display é bastante conveniente e uma porção deles está a venda no AliExpress. Escolhi um específico para testar (tomara que a foto ajude a identificar o modelo):
+
+![](./5028359934642859079.jpg)
+
+Escolhi esse porque estava barato (esta é a parte da ganância), comprei três; e porque achei que sabia o que estava/não estava na placa (esta é a parte da ingenuidade).
+
+Tirei um do pacote, liguei, o controlador ligou, apresentou um mensagem no display. Pixels muito fracos. Instalei Micropython e tentei usar o display com driver ssd1306. Não funcionou: aparecem umas linhas ou uns padrões aleatórios em resposta ao comando de inicialização. O endereço I2C é o 0x3C mas parece não ser o ssd1306.
+
+Achei uma pista sobre documentação no site de outro vendedor do Ali Express: [imagem em arquivo local](./Sce07b0b3b47a4463944ec7daa4807aceK.avif) na imagem há instruções padrão para instalação do ESP32 na IDE do Arduino e, em seguida, instruções (sem links) para baixar o programa HW_675_WIFI_AP_OLED1, compilar e gravar no ESP... vai dar um trabalho colocar esse display para funcionar...
+
+Com o segundo pretendo inspecionar o programa que veio gravado, o terceiro vai continuar lacrado, por enquanto.
+
+A lição aprendida: não comprar esses combos (ESP+Display, ESP+LED-RGB, ...). Geralmente são pouco ou mal documentados.
 
 ## <a id="2022-08-06-205959" href="#2022-08-06-205959">2022-08-06-205959</a>
 

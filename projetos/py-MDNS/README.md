@@ -17,6 +17,16 @@ The straight recipe to run an example is:
 2. Flash it to ESP32 board (instructions at https://micropython.org/download/ESP32_GENERIC/)
   - `python3 -m esptool --chip esp32 --port /dev/ttyACM0 erase_flash`
   - `python3 -m esptool --chip esp32 --port /dev/ttyACM0  --baud 460800 write_flash -z 0x1000 ~/Downloads/firmware.mp.1.23.esp32.bin `
+3. Connect ESP32 to the Internet (aka activate WiFi client)
+  - enter commands in ESP32 REPL - eg.: Thonny shell
+  ```python
+import network
+staif=network.WLAN(network.STA_IF) 
+staif.active(True) 
+staif.connect('WiFi-Name', 'WiFi-password') 
+  ```
+  - True means connected
+
 3. Install mDNS package in ESP32 board (enter commands in ESP32 REPL - eg.: Thonny shell) (instructions in https://github.com/cbrand/micropython-mdns?tab=readme-ov-file#installation)
   - `import mip`
   - `mip.install("github:cbrand/micropython-mdns")`
