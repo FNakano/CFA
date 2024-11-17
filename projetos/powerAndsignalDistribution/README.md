@@ -79,6 +79,6 @@ Connection table - each column except the last one correspond to a component. Th
 
 From the table above, 4 distribution rows are necessary, two pairs of them are connected with one strap each. 
 
-Figure 2 - Finished distributors. Six row distributor above, with its left-side rows 2 and 3 connected with a strap; four row distributor below, with left side rows connected with a strap and right side rows connected with another strap.
+Figure 2 - Finished distributors. Six row distributor above, with its left-side rows 2 and 3 connected with a strap; four row distributor below, with left side rows connected with a strap and right side rows connected with another strap. Scale is in centimeters.
 ![](./5028552426487132021.jpg)
 
