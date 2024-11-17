@@ -39,7 +39,7 @@ In this particular stdPCB a PCB row has 10 holes and a distribution row has 4 ho
 
 For the two examples, stdPCB (figure 1 left) is cut in two pieces. One piece (figure 1 middle) has four distribution rows the other has six ditribution rows (figure 1 right). One distribution row has four eyelets (holes) connected by a copper track.
 
-All holes in a distribution row are soldered to a header pin consequently all pins are electrically connected. One distribution row with header pins inserted (not soldered) can be seen on figure 1 middle.
+All holes in a distribution row are soldered to a pin in a header consequently all pins are electrically connected. One distribution row with header pins inserted (not soldered) can be seen on figure 1 middle.
 
 ### Examples
 
