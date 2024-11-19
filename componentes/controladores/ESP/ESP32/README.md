@@ -17,37 +17,47 @@ Sobre os pinos, nem todos podem ser usados para qualquer aplicação. Citando a 
 Há pinos usados para controlar o modo de inicialização do processador, pinos usados para comunicação com a memória FLASH interna (que pode ser pensada como armazenamento secundário - um SSD de, geralmente, 4MBytes), pinos usados para comunicação com o PC. Acabam restando proporcionalmente poucos que podem de fato serem usados. A partir da tabela de pinos usáveis em https://randomnerdtutorials.com/esp32-pinout-reference-gpios/ , separei alguns com as funcionalidades potenciais anotadas.
 
 
-| GPIO | obs | usos possíveis | usos que reservei | lado do dev kit, olhando para o lado dos componentes da placa, com o conector USB para baixo e a antena do ESP para cima |
-| --- | --- | --- | --- | --- |
-| (0) | strapping pin | ~~ADC2_CH1~~, TOUCH1, HSPI_HD |  | D |
-| 4 | --- | ~~ADC2_CH0~~, TOUCH0, RTC_GPIO10 | SCL** | D |
-| 5 | outputs PWM signals at boot, strapping pin | VSPI_CS0 its in this list for a reason... | SDA** | D |
-| ~~12~~ | --- | ADC2_5, TOUCH5, HSPIQ, HS2_DATA2 | boot fails if pulled HIGH | D |
-| 13 | --- | ~~ADC2_CH4~~, TOUCH4, RTC_GPIO14, HSPI_MOSI | TOUCH | E |
-| 14 | --- | ~~ADC2_CH6~~, TOUCH6, RTC_GPIO16, HSPI_CLK | TOUCH | E |
-| 15 | --- | ~~ADC2_CH3~~, TOUCH3, RTC_GPIO13, HSPI_CS0 | TOUCH | D |
-| 16 | --- | UART2_RX | UART_RX | D |
-| 17 | --- | UART2_TX | UART_TX | D |
-| 18 | --- | VSPI_CLK | PWM | D |
-| 19 | --- | VSPI_MISO | PWM | D |
-| SD2 (9) | internal SPI Flash | | | E |
-| SD3 (10) | internal SPI Flash | | | E |
-| CMD (11) | internal SPI Flash | | | E |
-| 21 | --- | I2C_SDA* | PWM | D |
-| 22 | --- | I2C_SCL* | PWM | D |
-| 23 | --- | VSPI_MOSI | PWM | D |
-| 25 | --- | ~~ADC2_CH8~~, RTC_GPIO6, DAC1 | DAC/I2S | E |
-| 26 | --- | ~~ADC2_CH9~~, RTC_GPIO7, DAC2 | DAC/I2S | E |
-| 27 | --- | ~~ADC2_CH7~~, TOUCH7, RTC_GPIO17 | TOUCH | E |
-| CLK(6) | internal SPI Flash  | | | D |
-| SD0(7) | internal SPI Flash  | | | D |
-| SD1(8) | internal SPI Flash  | | | D |
-| 32 | --- | ADC1_CH4, TOUCH9, RTC_GPIO9 | ADC | E |
-| 33 | --- | ADC1_CH5, TOUCH8, RTC_GPIO8 | ADC | E |
-| 34 | somente entrada | ADC1_CH6, RTC_GPIO4 | TOUCH | E |
-| 35 | somente entrada | ADC1_CH7, RTC_GPIO5 | TOUCH | E |
-| 36 | somente entrada | ADC1_CH0, RTC_GPIO0, Sensor_VP | ADC | E |
-| 39 | somente entrada | ADC1_CH3, RTC_GPIO3, Sensor_VN | ADC | E |
+| GPIO | obs | usos possíveis | usos que reservei | lado do dev kit, olhando para o lado dos componentes da placa, com o conector USB para baixo e a antena do ESP para cima | lado do dev kit MH-ET LIVE, olhando para o lado dos TERMINAIS da placa, com o conector USB para baixo e a antena do ESP para cima |
+| --- | --- | --- | --- | --- | --- |
+| (0) | strapping pin | ~~ADC2_CH1~~, TOUCH1, HSPI_HD |  | D | E |
+| 4 | --- | ~~ADC2_CH0~~, TOUCH0, RTC_GPIO10 | SCL** | D | E |
+| 5 | outputs PWM signals at boot, strapping pin | VSPI_CS0 its in this list for a reason... | SDA** | D | D |
+| ~~12~~ | --- | ADC2_5, TOUCH5, HSPIQ, HS2_DATA2 | boot fails if pulled HIGH | D | --- |
+| 13 | --- | ~~ADC2_CH4~~, TOUCH4, RTC_GPIO14, HSPI_MOSI | TOUCH | E | --- |
+| 14 | --- | ~~ADC2_CH6~~, TOUCH6, RTC_GPIO16, HSPI_CLK | TOUCH | E | --- |
+| 15 | --- | ~~ADC2_CH3~~, TOUCH3, RTC_GPIO13, HSPI_CS0 | TOUCH | D | --- |
+| 16 | --- | UART2_RX | UART_RX | D | E |
+| 17 | --- | UART2_TX | UART_TX | D | E |
+| 18 | --- | VSPI_CLK | PWM | D | D |
+| 19 | --- | VSPI_MISO | PWM | D | D |
+| SD2 (9) | internal SPI Flash | | | E | D |
+| SD3 (10) | internal SPI Flash | | | E | D |
+| CMD (11) | internal SPI Flash | | | E | D |
+| 21 | --- | I2C_SDA* | PWM | D | E |
+| 22 | --- | I2C_SCL* | PWM | D | E |
+| 23 | --- | VSPI_MOSI | PWM | D | E |
+| 25 | --- | ~~ADC2_CH8~~, RTC_GPIO6, DAC1 | DAC/I2S | E | E |
+| 26 | --- | ~~ADC2_CH9~~, RTC_GPIO7, DAC2 | DAC/I2S | E | D |
+| 27 | --- | ~~ADC2_CH7~~, TOUCH7, RTC_GPIO17 | TOUCH | E | E |
+| CLK(6) | internal SPI Flash  | | | D | E  |
+| SD0(7) | internal SPI Flash  | | | D | E |
+| SD1(8) | internal SPI Flash  | | | D | E |
+| 32 | --- | ADC1_CH4, TOUCH9, RTC_GPIO9 | ADC | E | E |
+| 33 | --- | ADC1_CH5, TOUCH8, RTC_GPIO8 | ADC | E | E |
+| 34 | somente entrada | ADC1_CH6, RTC_GPIO4 | TOUCH | E | D |
+| 35 | somente entrada | ADC1_CH7, RTC_GPIO5 | TOUCH | E | D |
+| 36[SVN] | somente entrada | ADC1_CH0, RTC_GPIO0, Sensor_VP | ADC | E | D |
+| 39[SVP] | somente entrada | ADC1_CH3, RTC_GPIO3, Sensor_VN | ADC | E | D |
+| 5V |  | | | D | E |
+| 3V3 |  | | | D | D |
+| GND |  | | | D | E, D |
+
+td0?
+TD1?
+GPIO2?
+TCK?
+TMS?
+
 
 Na coluna GPIO, entre parêntesis estão as GPIOs que são acessíveis somente na placa de 38 pinos. Como a marcação na placa é diferente, ela também é apresentada na coluna.
 
@@ -236,6 +246,13 @@ Achei uma pista sobre documentação no site de outro vendedor do Ali Express: [
 Com o segundo pretendo inspecionar o programa que veio gravado, o terceiro vai continuar lacrado, por enquanto.
 
 A lição aprendida: não comprar esses combos (ESP+Display, ESP+LED-RGB, ...). Geralmente são pouco ou mal documentados.
+
+## LIVE D1 mini ESP32 ESP-32
+
+Parece que ainda há muito destes kits de desenvolvimento à venda (vi no aliexpress), embora a empresa com o nome impresso na placa parece não existir mais. (MH-ET: o domínio mhetlive.com está disponível em 2024-11-18, o github https://github.com/MHEtLive teve o último commit em 2021-02-18)
+
+![](./5035254220441366341.jpg)
+
 
 ## <a id="2022-08-06-205959" href="#2022-08-06-205959">2022-08-06-205959</a>
 

@@ -14,7 +14,7 @@ A construção mínima convém ter pilha ou bateria recarregável e um display (
 ## Construção física
 
 
-
+<!---
 ## Unidade de suprimento de energia
 
 ### Protótipo 
@@ -42,9 +42,45 @@ A escolha dessas placas se deve ao regulador de tensão usado nelas. O ESP32 Dev
     - no caso, foram usados quatro pinos para essa conexão. Isto permite ligar a placa microcontroladora, o display e mais dois dispositivos;
   - Soldar outro fio na outra mola (digamos, a que se conecta ao negativo da bateria), soldar a outra ponta do fio ao outro header;
     - no caso, também foram usados quatro pinos para essa conexão. Isto permite ligar a placa microcontroladora, o display e mais dois dispositivos;
+--->
 
-### Programas
+#### Lista de materiais
+
+- Um suporte para bateria 16340 (esse não achei no Brasil, tive que trazer via ali express);
+- Uma bateria recarregável de 3,6V: código 16340 (ou CR123) (esse achei no Mercado Livre);
+- Uma placa padrão, ilhada, face simples, 10x5 (https://www.rscomponentes.com/placa-5x10-universal-padrao-perfurada-ilhada-fibra-fenolite)
+- Um kit de desenvolvimento LIVE D1 mini ESP32 (a minha tem a marcação MH-ET Live) veja https://github.com/FNakano/CFA/tree/master/projetos/Teste3V6 para entender a escolha;
+- Um display OLED com driver SSD1306 (https://www.wjcomponentes.com.br/tela-oled-0-91) - este, em 2024-11-19 é razoavelmente mais barato que o modelo mais comum de 0.96"
+- Um LED (usei um verde porque a intensidade (lm) é mais alta;
+- Um resistor $82\Omega$ (calculado para fornecer os 20mA ao LED);
+- Um LDR (há questões de fabricação desses componentes que os tornam pouco padronizados. O que uso tem resistência de $300k\Omega$ no escuro um sensor de luz como o BH1750 pode ser alternativa;
+- Um resistor de $1k\Omega$ (forma um *bom conjunto* com o ADC de 12 bits e o LDR de $300k\Omega$) 
+- Fios, ferro de solda, headers (conectores Du Pont tanto macho quanto fêmea).
+
+#### Lista de conexões
+
+| ESP | R ($1k\Omega$) | LDR | R ($82\Omega$) | LED | Display |
+| --- | --- | --- | --- | --- | --- |
+| VCC | --- | A | --- | --- | VCC |
+| GND | A | --- | --- | K | GND |
+| GPIO36 (used as analog input) | B | B | --- | --- | --- |
+| GPIO18 (used as digital output) | --- | --- | A | --- | --- |
+| --- | --- | --- | B | A | --- |
+| GPIO21 (used as SCL) | --- | --- | --- | --- | SCL |
+| GPIO22 (used as SDA) | --- | --- | --- | --- | SDA |
+
+#### Placa montada
+
+![](./5037506020255051236.jpg)
+
+
+### Programas e testes
 
 - Micropython
-- driver para display SSD1306
-- `main.py`
+  - fazer download e instalar conforme https://micropython.org/download/ESP32_GENERIC/
+  - com o microcontrolador conectado por USB, ativar webrepl (https://github.com/micropython/webrepl)
+- transferir os arquivos da pasta src para a pasta raiz do microcontrolador
+- executar no microcontrolador (seja pelo webREPL, seja pelo Thonny) `import test`
+  - em operação normal o LED embutido (azul) vai acender (e, talvez apagar); o LED verde deve acender por um segundo; o display deve acender todos os pixels e, após um segundo, apresentar a mensagem contendo IP, leitura analógica e estado do pino em que o LED verde está conectado. 
+
+
