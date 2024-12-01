@@ -1,8 +1,11 @@
 ## ESP32
 
-Atualmente há uma variedade de ESP32, inclusive com diferentes arquiteturas de processador. Os ESP32 mais comuns ainda são os ESP32 que têm dois núcleos com arquitetura XTENSA LX6, 520kBytes de RAM estática (as placas de desenvolvimento podem ser marcadas WROOM ou WROOVER). Segundo o fabricante, esses componentes serão fabricados até 2031 (https://www.espressif.com/en/products/longevity-commitment) mas já não são recomendados para novos projetos (https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32_datasheet_en.pdf (tem cópia neste repositório)).
+Atualmente há uma variedade de ESP32, inclusive com diferentes arquiteturas de processador. Os ESP32 mais comuns ainda são os ESP32 WROOM que têm dois núcleos com arquitetura XTENSA LX6, 520kBytes de RAM estática ((https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-guides/memory-types.html#dram-data-ram)) . Segundo o fabricante, esses componentes serão fabricados até 2031 (https://www.espressif.com/en/products/longevity-commitment) mas já não são recomendados para novos projetos (https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32_datasheet_en.pdf (tem cópia neste repositório)).
 
-Vou dar mais ênfase a este modelo pois é o mais comum.
+**spoiler**: Com Micropython instalado, 150k de RAM fica disponível para aplicações. Há modelos com mais RAM (veja https://docs.espressif.com/projects/esp-idf/en/release-v3.3/hw-reference/modules-and-boards.html#wroom-solo-and-wrover-modules) mais informação em [RAM.md](./RAM.md)
+
+
+Vou dar mais ênfase ao WROOM-32 pois é o mais comum.
 
 Quanto às placas de desenvolvimento, há placas com 30 pinos e com 38 pinos. Parece que as com 30 pinos são mais comuns. Um diagrama da placa de 30 pinos pode ser visto neste site: https://randomnerdtutorials.com/esp32-pinout-reference-gpios/ . Um diagrama da placa de 38 pinos pode ser visto neste outro site: https://www.studiopieters.nl/esp32-pinout/
 
@@ -28,14 +31,14 @@ Há pinos usados para controlar o modo de inicialização do processador, pinos 
 | 15 | --- | ~~ADC2_CH3~~, TOUCH3, RTC_GPIO13, HSPI_CS0 | TOUCH | D | --- |
 | 16 | --- | UART2_RX | UART_RX | D | E |
 | 17 | --- | UART2_TX | UART_TX | D | E |
-| 18 | --- | VSPI_CLK | PWM | D | D |
-| 19 | --- | VSPI_MISO | PWM | D | D |
+| 18 | --- | VSPI_CLK | ~~PWM~~ não funciona nessa função no MH-ET | D | D |
+| 19 | --- | VSPI_MISO | ~~PWM~~ não funciona nessa função no MH-ET | D | D |
 | SD2 (9) | internal SPI Flash | | | E | D |
 | SD3 (10) | internal SPI Flash | | | E | D |
 | CMD (11) | internal SPI Flash | | | E | D |
-| 21 | --- | I2C_SDA* | PWM | D | E |
-| 22 | --- | I2C_SCL* | PWM | D | E |
-| 23 | --- | VSPI_MOSI | PWM | D | E |
+| 21 | --- | I2C_SDA* | I2C_SDA | D | E |
+| 22 | --- | I2C_SCL* | I2C_SCL | D | E |
+| 23 | --- | VSPI_MOSI | ~~PWM~~ não funciona nessa função no MH-ET | D | E |
 | 25 | --- | ~~ADC2_CH8~~, RTC_GPIO6, DAC1 | DAC/I2S | E | E |
 | 26 | --- | ~~ADC2_CH9~~, RTC_GPIO7, DAC2 | DAC/I2S | E | D |
 | 27 | --- | ~~ADC2_CH7~~, TOUCH7, RTC_GPIO17 | TOUCH | E | E |

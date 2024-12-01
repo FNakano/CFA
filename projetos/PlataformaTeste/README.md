@@ -59,15 +59,70 @@ A escolha dessas placas se deve ao regulador de tensão usado nelas. O ESP32 Dev
 
 #### Lista de conexões
 
-| ESP | R ($1k\Omega$) | LDR | R ($82\Omega$) | LED | Display |
-| --- | --- | --- | --- | --- | --- |
-| VCC | --- | A | --- | --- | VCC |
-| GND | A | --- | --- | K | GND |
-| GPIO36 (used as analog input) | B | B | --- | --- | --- |
-| GPIO18 (used as digital output) | --- | --- | A | --- | --- |
-| --- | --- | --- | B | A | --- |
-| GPIO21 (used as SCL) | --- | --- | --- | --- | SCL |
-| GPIO22 (used as SDA) | --- | --- | --- | --- | SDA |
+| ESP | R ($1k\Omega$) | LDR | R ($82\Omega$) | LED | Display | Touch Sensor | Buzzer |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| VCC | --- | A | --- | --- | VCC | VCC | --- |
+| GND | A | --- | --- | K | GND | GND | - GND |
+| GPIO36 aka SVP (used as analog input) | B | B | --- | --- | --- | --- | --- |
+| GPIO18 (used as digital output) | --- | --- | A | --- | --- | --- | --- |
+| --- | --- | --- | B | A | --- | --- | --- |
+| GPIO21 (used as SCL) | --- | --- | --- | --- | SCL | --- | --- |
+| GPIO22 (used as SDA) | --- | --- | --- | --- | SDA | --- | --- |
+| GPIO39 aka SVN (used as digital input) | --- | --- | --- | --- | --- | IO | --- |
+| GPIO33 (used as PWM output) | --- | --- | --- | --- | --- | --- | + |
+
+alguma conexão ou sujeira na placa ou na mesa faz o ESP entrar em modo de programação quando está conectado nessa placa.
+
+```
+>>> ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+c��ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0����vets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:4728
+load:0x40078000,len:14888
+load:0x40080400,len:3368
+entry 0x400805cc
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_dr�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:4728
+load:0x40078000,len:14888
+load:0x40080400,len:3368
+entry 0x400805cc
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERONets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip:
+Backend terminated or disconnected. Use 'Stop/Restart' to restart.
+
+```
+
+~~tirei o conector fêmea em que o rst estava ligado.~~ o RST estava ligado no GND, eu removi o conector em que o GND estava conectado e por isso eliminei o problema.
+
+
 
 #### Placa montada
 
@@ -84,3 +139,19 @@ A escolha dessas placas se deve ao regulador de tensão usado nelas. O ESP32 Dev
   - em operação normal o LED embutido (azul) vai acender (e, talvez apagar); o LED verde deve acender por um segundo; o display deve acender todos os pixels e, após um segundo, apresentar a mensagem contendo IP, leitura analógica e estado do pino em que o LED verde está conectado. 
 
 
+Se logo que a placa for resetada e o micropython começar a executar (LED verde aceso), o sensor touch for acionado então o programa interrompe a inicialização (do display, do wifi, asyncio e outros componentes) e o LED verde dá duas piscadas. Como um problema na inicialização potencialmente interromperá a execução do script, no final dele dexarei um comando para apagar o LED verde, então, dado tempo suficientemente grande, se o LED verde não apagar então houve erro na inicialização.
+
+``` 
+>>> import machine
+>>> t=machine.Pin(39, machine.Pin.IN)
+>>> t.value()
+0
+>>> t.value()
+1
+```
+
+referência que mostra que svn é pino 39: https://forum.micropython.org/viewtopic.php?t=5909
+
+todos os pinos foram testados e funcionam para as funções atribuídas.
+
+soldei o sensor touch e o buzzer.
