@@ -62,3 +62,4 @@ ex. Tower Pro SG90
 
 <https://www.curtocircuito.com.br/servo-motor-sg90.html>
 
+Estudo abrangente sobre o funcionamento do SG90: https://github.com/FNakano/Asas/blob/main/guideToSG90.md
