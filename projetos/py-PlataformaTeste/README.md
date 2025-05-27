@@ -9,8 +9,6 @@ Após alguns anos acompanhando o desenvolvimento do ESP32, de ferramentas para e
 
 ## Construção física
 
-<!---
-## Unidade de suprimento de energia
 
 ### Protótipo 
 
