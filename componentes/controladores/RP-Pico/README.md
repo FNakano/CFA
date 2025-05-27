@@ -2,7 +2,7 @@
 
 ## Introdução
 
-Comprei um RP Pico Zero (RP2040) e um RP Pico 2 (RP2035 com flash de 4MB). O uso inicial é testar se é boa plataforma para aprender/treinar programação em *assembly*. É só nessa plataforma que Micropython dá suporte para programação em *assembly*.
+Comprei um RP Pico Zero (RP2040) e um RP Pico 2 (RP2040 com flash de 4MB). O uso inicial é testar se é boa plataforma para aprender/treinar programação em *assembly*. É só nessa plataforma que Micropython dá suporte para programação em *assembly*.
 
 Pretendo desenvolver o texto mais tarde. Por exemplo, tenho dúvidas sobre haver um emulador de ARM com Thumb 16 dentro do Micropython ou se o código assembly é convertido para LM e executado... o que exatamente é executado? Deixo uma captura de tela para documentar que funciona no RP Pico Zero:
 
@@ -13,6 +13,11 @@ Pretendo desenvolver o texto mais tarde. Deixo uma captura de tela para document
 ![Captura de tela, Thonny RP Pico 2](./Captura%20de%20tela%20de%202025-05-27%2015-14-50.png)
 
 Referência: https://docs.micropython.org/en/latest/reference/asm_thumb2_index.html
+
+## Curiosidades mais
+
+Além do assembly, saber se RP-Pico trabalha bem com LoRa (SX1276 https://forum.micropython.org/viewtopic.php?t=3871). A frequência de operação padrão no BR é 915MHz mas, segundo um blog, a frequência de 433MHz é permitida para uso não comercial (https://blog.eletrogate.com/rede-lora-integrada-com-web-server/)
+
 
 ## RAM e Flash
 
