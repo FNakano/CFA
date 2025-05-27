@@ -1,6 +1,6 @@
 # Plataforma de teste
 
-![Foto da plataforma de teste](./py-PlataformaTeste/5019641065132633783.jpg)
+![Foto da plataforma de teste](./5019641065132633783.jpg)
 
 
 ## Motivação 
