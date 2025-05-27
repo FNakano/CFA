@@ -1,6 +1,9 @@
 # Plataforma de teste
 
-veja também: https://github.com/FNakano/CFA/tree/master/projetos/Teste3V6
+![Foto da plataforma de teste](./py-PlataformaTeste/5019641065132633783.jpg)
+
+
+## Motivação 
 
 Após alguns anos acompanhando o desenvolvimento do ESP32, de ferramentas para ele e usando-o em projetos, uma plataforma de hardware baseada em ESP32 para a construção de dispositivos para aplicações que julgo interessantes tornou-se suficientemente clara.
 
@@ -19,18 +22,27 @@ A construção mínima convém ter pilha ou bateria recarregável e um display (
 
 ### Protótipo 
 
-Para desenvolver protótipos da unidade de suprimento de energia, convém que o protótipo possa ser usado com diferentes controladores, permitir a recarga da bateria e a conexão do cabo de dados. No protótipo da foto a bateria pode ser removida para recarga e a chave desconecta a bateria do restante do circuito o que permite a conexão do cabo de dados. Os modelos de placas com ESP32 testados são MH-ET Live ESP32 Minikit (https://github.com/FNakano/CFA/tree/master/projetos/Teste3V6) e ESP32-C3 super mini (https://github.com/FNakano/CFA/tree/master/componentes/controladores/ESP/ESP32#esp32-c3-super-mini)
+Para desenvolver protótipos da unidade de suprimento de energia, convém que o protótipo possa ser usado com diferentes controladores, permitir a recarga da bateria e a conexão do cabo de dados. No protótipo da foto a bateria pode ser removida para recarga e a chave desconecta a bateria do restante do circuito o que permite a conexão do cabo de dados. Os modelos de placas com ESP32 testados são MH-ET Live ESP32 Minikit (https://github.com/FNakano/CFA/tree/master/projetos/py-Teste3V6) e ESP32-C3 super mini (https://github.com/FNakano/CFA/tree/master/componentes/controladores/ESP/ESP32#esp32-c3-super-mini)
 
-A escolha dessas placas se deve ao regulador de tensão usado nelas. O ESP32 Dev Kit mais comum não funciona, por falta de energia, se ligado da forma como fiz. Mais informação em https://github.com/FNakano/CFA/tree/master/projetos/Teste3V6#justificativa
+A escolha dessas placas se deve ao regulador de tensão usado nelas. O ESP32 Dev Kit mais comum não funciona, por falta de energia, se ligado da forma como fiz. Mais informação em https://github.com/FNakano/CFA/tree/master/projetos/py-Teste3V6#justificativa
 
 ![](./4974620333172698345.jpg)
 
 #### Lista de materiais
 
-- Uma tomada velha (para desmontar);
-- Uma chave (foi usado o modelo deslizante de um polo);
-- Uma placa padrão 2x7
-- Fios, ferro de solda, headers.
+| Quantidade | identificador | descrição e obervações |
+| --- | --- | --- |
+| 1 | ESP32 MH-ET | --- |
+| 1 | PCI padrão 5X10 | --- |
+| --- | --- | --- |
+| --- | --- | --- |
+| --- | --- | --- |
+| --- | --- | --- |
+| --- | --- | --- |
+| --- | --- | --- |
+| --- | --- | --- |
+| --- | --- | --- |
+| --- | --- | --- |
 
 #### Montagem
 
