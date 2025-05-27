@@ -16,7 +16,7 @@ def testLDR() :
   a.atten(ADC.ATTN_11DB)
   global light
   light=a.read()
-  return a
+  return light
 
 from machine import Pin
 def testLED() :

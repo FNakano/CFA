@@ -5,17 +5,9 @@
 
 ## Motivação 
 
-Após alguns anos acompanhando o desenvolvimento do ESP32, de ferramentas para ele e usando-o em projetos, uma plataforma de hardware baseada em ESP32 para a construção de dispositivos para aplicações que julgo interessantes tornou-se suficientemente clara.
-
-É desejável que a plataforma:
-- seja **programável sem o uso de fios**; 
-- possa **funcionar sem conexão com um computador** (por exemplo conexão USB para energia e dados);
-- seja toda montada em uma única placa/caixa;
-
-A construção mínima convém ter pilha ou bateria recarregável e um display (tela) para mostrar mensagens.
+Após alguns anos acompanhando o desenvolvimento do ESP32, de ferramentas para ele, usando-o em projetos e acompanhando projetos de estudantes, ficou suficientemente claro o que uma plataforma de hardware baseada em ESP32 para a construção de dispositivos para aplicações que julgo interessantes é.
 
 ## Construção física
-
 
 <!---
 ## Unidade de suprimento de energia
@@ -26,48 +18,30 @@ Para desenvolver protótipos da unidade de suprimento de energia, convém que o 
 
 A escolha dessas placas se deve ao regulador de tensão usado nelas. O ESP32 Dev Kit mais comum não funciona, por falta de energia, se ligado da forma como fiz. Mais informação em https://github.com/FNakano/CFA/tree/master/projetos/py-Teste3V6#justificativa
 
-![](./4974620333172698345.jpg)
 
 #### Lista de materiais
 
 | Quantidade | identificador | descrição e obervações |
 | --- | --- | --- |
-| 1 | ESP32 MH-ET | --- |
-| 1 | PCI padrão 5X10 | --- |
-| --- | --- | --- |
-| --- | --- | --- |
-| --- | --- | --- |
-| --- | --- | --- |
-| --- | --- | --- |
-| --- | --- | --- |
-| --- | --- | --- |
-| --- | --- | --- |
-| --- | --- | --- |
+| 1 | ESP32 MH-ET | https://github.com/FNakano/CFA/tree/master/projetos/py-Teste3V6 |
+| 1 | PCI padrão 5X10 | https://www.rscomponentes.com/placa-5x10-universal-padrao-perfurada-ilhada-fibra-fenolite |
+| 1 | display OLED 0.91" 128x32 | https://www.wjcomponentes.com.br/tela-oled-0-91 |
+| 1 | sensor touch TTP223B   | --- |
+| 1 | LDR | O que uso tem resistência de $300k\Omega$ no escuro |
+| 1 | Resistor $1k \Omega$ 1/8W | forma um *bom conjunto* com o ADC de 12 bits e o LDR de $300k\Omega$ |
+| 1 | LED | --- |
+| 1 | Buzzer Passivo | --- |
+| 1 | Resistor $82 \Omega$ 1/8W | calculado para fornecer os 20mA ao LED |
+| 1 | Suporte para bateria 16340 | esse não achei no Brasil, tive que trazer via ali express |
+| 1 | Bateria recarregável 16340 | ou CR123 |
+|  | fio sólido | para fazer jumpers |
+|  | headers | tanto retos quanto 90 graus |
+|  | conectores MODU | para conectar aos headers |
 
-#### Montagem
+#### Lista de ferramentas e consumíveis
 
-- Retirar as molas (contatos) da tomada (no caso, desrosquear os parafusos). Elas serão usadas para conectar a bateria;
-- Usar uma mola para o polo positivo da bateria, outra mola para o polo negativo da bateria [Foto](./4974620333172698295.jpg).
-  - No modelo de tomada usado há duas molas por parafuso, separá-las cortando a chapa com um alicate de corte [Foto](./4974620333172698296.jpg);
-  - Soldar uma mola perto da extremidade da placa, definir a posição da outra mola usando a pilha como base - procurar uma posição em que a força seja suficiente para manter o contado das molas com a bateria mas não grande demais a ponto de arquear a placa ou forçar as soldas;
-  - Soldar um fio em uma das molas (digamos, a que se conecta ao positivo da bateria), soldar a outra ponta do fio a um dos contatos do interruptor, soldar outro fio ao outro contato do interruptor, soldar a outra ponta do fio ao header;
-    - no caso, foram usados quatro pinos para essa conexão. Isto permite ligar a placa microcontroladora, o display e mais dois dispositivos;
-  - Soldar outro fio na outra mola (digamos, a que se conecta ao negativo da bateria), soldar a outra ponta do fio ao outro header;
-    - no caso, também foram usados quatro pinos para essa conexão. Isto permite ligar a placa microcontroladora, o display e mais dois dispositivos;
---->
-
-#### Lista de materiais
-
-- Um suporte para bateria 16340 (esse não achei no Brasil, tive que trazer via ali express);
-- Uma bateria recarregável de 3,6V: código 16340 (ou CR123) (esse achei no Mercado Livre);
-- Uma placa padrão, ilhada, face simples, 10x5 (https://www.rscomponentes.com/placa-5x10-universal-padrao-perfurada-ilhada-fibra-fenolite)
-- Um kit de desenvolvimento LIVE D1 mini ESP32 (a minha tem a marcação MH-ET Live) veja https://github.com/FNakano/CFA/tree/master/projetos/Teste3V6 para entender a escolha;
-- Um display OLED com driver SSD1306 (https://www.wjcomponentes.com.br/tela-oled-0-91) - este, em 2024-11-19 é razoavelmente mais barato que o modelo mais comum de 0.96"
-- Um LED (usei um verde porque a intensidade (lm) é mais alta;
-- Um resistor $82\Omega$ (calculado para fornecer os 20mA ao LED);
-- Um LDR (há questões de fabricação desses componentes que os tornam pouco padronizados. O que uso tem resistência de $300k\Omega$ no escuro um sensor de luz como o BH1750 pode ser alternativa;
-- Um resistor de $1k\Omega$ (forma um *bom conjunto* com o ADC de 12 bits e o LDR de $300k\Omega$) 
-- Fios, ferro de solda, headers (conectores Du Pont tanto macho quanto fêmea).
+- ferro de solda
+- solda
 
 #### Lista de conexões
 
@@ -85,63 +59,18 @@ A escolha dessas placas se deve ao regulador de tensão usado nelas. O ESP32 Dev
 
 alguma conexão ou sujeira na placa ou na mesa faz o ESP entrar em modo de programação quando está conectado nessa placa.
 
-```
->>> ets Jul 29 2019 12:21:46
+### Montagem
 
-rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
-configsip: 0, SPIWP:0xee
-c��ets Jul 29 2019 12:21:46
+Dispor os componentes na placa e soldar fios quando necessário.
 
-rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
-configsip: 0, SPIWP:0xee
-clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0����vets Jul 29 2019 12:21:46
-
-rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
-configsip: 0, SPIWP:0xee
-clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv�ets Jul 29 2019 12:21:46
-
-rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
-configsip: 0, SPIWP:0xee
-clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
-mode:DIO, clock div:2
-load:0x3fff0030,len:4728
-load:0x40078000,len:14888
-load:0x40080400,len:3368
-entry 0x400805cc
-ets Jul 29 2019 12:21:46
-
-rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
-configsip: 0, SPIWP:0xee
-clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_dr�ets Jul 29 2019 12:21:46
-
-rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
-configsip: 0, SPIWP:0xee
-clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
-mode:DIO, clock div:2
-load:0x3fff0030,len:4728
-load:0x40078000,len:14888
-load:0x40080400,len:3368
-entry 0x400805cc
-ets Jul 29 2019 12:21:46
-
-rst:0x1 (POWERONets Jul 29 2019 12:21:46
-
-rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
-configsip:
-Backend terminated or disconnected. Use 'Stop/Restart' to restart.
-
-```
-
-~~tirei o conector fêmea em que o rst estava ligado.~~ o RST estava ligado no GND, eu removi o conector em que o GND estava conectado e por isso eliminei o problema.
+- Conexões retas curtas podem ser feitas com os terminais dos resistores e outros componentes;
+- Conexões muito longas (que cruzam outras conexões) podem ser feitas com fio sólido encapado. Este pode ser conseguido em cabos telefônicos e cabos de rede;
+- Para soldar um header, solde um pino de uma extremidade, reaqueça para alinhar o header, quando estiver alinhado solde o restante dos pinos;
 
 
+### Programas
 
-#### Placa montada
-
-![](./5037506020255051236.jpg)
-
-
-### Programas e testes
+#### teste
 
 - Micropython
   - fazer download e instalar conforme https://micropython.org/download/ESP32_GENERIC/
@@ -166,4 +95,28 @@ referência que mostra que svn é pino 39: https://forum.micropython.org/viewtop
 
 todos os pinos foram testados e funcionam para as funções atribuídas.
 
-soldei o sensor touch e o buzzer.
+#### cliente WiFi 
+
+Edite `lab8.py`, ajuste o comando `wifi_if.connect(SSID, PWD)` com o nome da rede e a senha. Salve o arquivo (no ESP) e importe o módulo com `import lab8`.
+
+#### Display OLED
+
+Conecte-se ao wifi (siga as intruções e `import lab8`) e importe `teste.py` com o comando `import teste`.
+
+#### Tocar música
+
+Importe o módulo `music.py` com o comando `import music` e execute a função com `music.playAquarela()`.
+
+#### Tocar música (programação assíncrona)
+
+Programação assíncrona é usada quando deseja-se liberar o computador/microcontrolador para executar várias tarefas ao "mesmo tempo". Por exemplo, um dispositivo que atende a requisições HTTP e toca música simultaneamente.
+
+No Micropython a programação assíncrona é feita com o módulo `asyncio` que compartilha o tempo de processamento entre co-rotinas. A sintaxe para definir e usar co-rotinas é um pouco diferente da sintaxe para definir e usar funções.
+
+Importe o módulo `amusic.py` com o comando `import amusic`, importe o módulo `asyncio.py` com o comando `import asyncio` e execute a função com `asyncio.run(amusic.loopAquarela())`.
+
+Como a execução das notas é interrompida pela passagem de controle a qualidade da música cai...
+
+#### Servidor web e música (programação assíncrona)
+
+Conecte-se ao wifi (siga as intruções e `import lab8`), importe o módulo `playandserve.py` com o comando `import playandserve`, importe o módulo `asyncio.py` com o comando `import asyncio` e execute com o comando `asyncio.run(main())`.
