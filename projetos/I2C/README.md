@@ -113,6 +113,12 @@ Request-response está além do escopo do protocolo I2C, mas é implementado no 
 
 ![circuito](photo1665601688.jpeg)
 
+informação adicional em:
+
+- https://github.com/FNakano/CFA/tree/master/componentes/controladores/ESP#i2c
+- https://github.com/FNakano/CFA/tree/master/componentes/controladores/ESP#multiprograma%C3%A7%C3%A3o-com-esp32
+- https://github.com/FNakano/CFA/tree/master/projetos/I2C
+- https://github.com/FNakano/CFA/tree/master/projetos/py-I2C
 
 #### Próximos passos
 

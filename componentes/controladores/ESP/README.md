@@ -102,6 +102,12 @@ Uma grande variedade de componentes implementam esse protocolo. Por exemplo GY-9
 
 - [tutorial sobre I2C em diy0t](https://diyi0t.com/i2c-tutorial-for-arduino-and-esp8266/)
 
+informação adicional em:
+
+- https://github.com/FNakano/CFA/tree/master/componentes/controladores/ESP#i2c
+- https://github.com/FNakano/CFA/tree/master/componentes/controladores/ESP#multiprograma%C3%A7%C3%A3o-com-esp32
+- https://github.com/FNakano/CFA/tree/master/projetos/I2C
+- https://github.com/FNakano/CFA/tree/master/projetos/py-I2C
 
 ### Limite na quantidade de leituras e escritas em memória FLASH
 
