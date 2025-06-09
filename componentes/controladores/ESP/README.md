@@ -121,3 +121,21 @@ Para o ESP32, o fabricante informa que há biblioteca para *wear levelling* <htt
 
 <https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/storage/fatfs.html>
 
+## Multiprogramação com ESP32
+
+Multiprogramação é um recurso útil pois permite de, maneira mais ou menos transparente, executar vários programas *simultaneamente*. Por exemplo, um ESP que ao mesmo tempo é Servidor HTTP e cliente HTTP (para transmitir e disponibilizar dados), tem uma quantidade de sensores e atuadores e alguma autonomia (ié, um sistema remoto não tem uma cópia confiável dos estados dos sensores e atuadores pois o controlador pode mudar esses estados). Importante notar que isso pode ser codificado sem o apoio de ferramentas como FreeRTOS, mas o programa fica muito complexo.
+
+O ESP programado em C usando ESP-IDF tem sua própria versão de FreeRTOS (https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/system/freertos.html)
+
+Multiprogramação em (Micro)Pyton é baseada em `asyncio`, que define co-rotinas e comandos (`async def`, `await`, `run`, `gather`, ...) para trocar tarefas em função do uso de E/S ou de esperas (`sleeps`) comuns em microcontroladores. (https://docs.micropython.org/en/latest/library/asyncio.html)
+
+Eu fui procurar se a pilha de ferramentas que permite MicroPyton usar I2C no ESP32 implementava algo melhor que *polling*. Por exemplo: A unidade de controle (UC) configura a unidade de comunicação I2C (UI2C) para requisitar de um dispositivo algum conteúdo; quando o conteúdo estiver, na UI2C, disponível para a UC, a primeira gera uma interrupção, essa interrupção é atendida por um ISR que grava esse conteúdo em alguma variável do Micropython, Micropython (ou seu programa monitor) tem alguma lista de processos de usuário para saber para qual processo enviar a informação e que este deve ser acordado (de um `await`).
+
+Parece que no ESP32 há tal comportamento da UI2C mas não é como o driver da Espressif funciona. O driver bloqueia a execução ([Captura de tela](./Captura%20de%20tela%20de%202025-06-09%2014-15-55.png)). Ainda conforme o forum do desenvolvedor (https://esp32.com/viewtopic.php?t=37211), isso foi feito para *conveniência de uso*. Independente de juízo, em 2023, o fabricante não oferecia suporte a programas de usuário para funções I2C que não causassem o bloqueio de execução do programa de usuário, mesmo que esse bloqueio pudesse fazer o OS passar o controle para outro programa de usuário.
+
+Pensando o Micropython como um programa de usuário, este é bloqueado. O controle poderia passar para outra instância de Micropython, se ela existisse, mas não passaria para outra co-rotina (de asyncio) dentro da mesma instância de Micropython. Agora dá para entender esta frase: > The blocking nature of the MicroPython I2C device driver is mitigated by hardware synchronisation on two wires. This ensures that the slave is configured for a transfer before the master attempts to access it. ([Captura de tela](./Captura%20de%20tela%20de%202025-06-09%2014-32-34.png) , https://github.com/peterhinch/micropython-async/blob/master/v3/docs/I2C.md ). Desta forma, por enquanto, não há no I2C em Micropython, de evitar coisas como `await asyncio.sleep(...)`.
+
+Note que há problemas reportados em Micropython em 2023 (https://github.com/orgs/micropython/discussions/12527) e em 2020 (https://github.com/micropython/micropython/issues/5714#issuecomment-617838375) e que tentou-se fazer algo melhor, desde 2018 (https://github.com/peterhinch/micropython-async/blob/i2c_hard_irq/i2c/README.md#5-limitations)
+
+Documentação da Espressif sobre I2C no ESP32 (https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/peripherals/i2c.html)
+
