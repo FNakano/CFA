@@ -4,7 +4,8 @@
 
 Comprei um RP Pico Zero (RP2040) e um RP Pico 2 (RP2040 com flash de 4MB). O uso inicial é testar se é boa plataforma para aprender/treinar programação em *assembly*. É só nessa plataforma que Micropython dá suporte para programação em *assembly*.
 
-Pretendo desenvolver o texto mais tarde. Por exemplo, tenho dúvidas sobre haver um emulador de ARM com Thumb 16 dentro do Micropython ou se o código assembly é convertido para LM e executado... o que exatamente é executado? Deixo uma captura de tela para documentar que funciona no RP Pico Zero:
+Pretendo desenvolver o texto mais tarde. Por exemplo, [tenho dúvidas sobre haver um emulador de ARM com Thumb 16 dentro do Micropython ou se o código assembly é convertido para LM e executado]()
+... o que exatamente é executado? Deixo uma captura de tela para documentar que funciona no RP Pico Zero:
 
 ![Captura de tela, Thonny RP Pico Zero](./Captura%20de%20tela%20de%202025-05-27%2015-05-16.png)
 
@@ -55,4 +56,6 @@ No RP-2:
 ```
 
 Interpretando os resultados, há aprox. 170kB ou 216kB de RAM livre e aprox. (350*4)=1.4MB de FLASH livre.
+
+## Programação em assembly
 
