@@ -1,6 +1,14 @@
 # CFA
 Computação Física e Aplicações
 
+## Para 2025
+
+- É possível criar uma placa de desenvolvimento menor, baseada em ESP32-C3 com todas as funcionalidades de https://github.com/FNakano/CFA/tree/master/projetos/py-PlataformaTeste ?
+- É possível fazer acordes com buzzer passivo?
+
+
+
+
 ## Apresentação
 
 A quem ler este trabalho, gostaria de agradecer a visita e desejar boa leitura.
