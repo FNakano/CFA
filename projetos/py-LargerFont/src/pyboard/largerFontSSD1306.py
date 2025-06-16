@@ -5,7 +5,7 @@ import time
 from writer import Writer
 from ssd1306 import SSD1306_I2C
 
-i2c=machine.I2C(0)  # the only i2c in esp32 c3 supermini
+i2c=machine.I2C(0, sda=machine.Pin(5), scl=machine.Pin(6))  # the only i2c in esp32 c3 supermini
 oled = SSD1306_I2C(72, 40, i2c)
 oled.fill(0)
 

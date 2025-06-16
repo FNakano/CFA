@@ -1,8 +1,8 @@
 # Display OLED e fontes maiores no ESP32-c3 supermini
 
-![Modelos testados](./5073575761197248572.jpg)
+![Modelos testados](./5080064937090461103.jpg)
 
-Na foto, o da esquerda é o da 01Space (https://github.com/FNakano/CFA/tree/master/componentes/controladores/ESP/ESP32#esp32-c3-042lcd), o da direita é um genérico que encontrei no aliexpress ...
+Na foto, o da direita é o da 01Space (https://github.com/FNakano/CFA/tree/master/componentes/controladores/ESP/ESP32#esp32-c3-042lcd), o da esquerda é um genérico que encontrei no aliexpress ...
 
 ## Conclusão
 
@@ -32,7 +32,14 @@ Foi encontrada a solução https://github.com/peterhinch/micropython-font-to-py/
 
 Esta solução foi testada em um 01Space ESP32-C3 com display OLED de 0.42" e em um ESP32-C3 supermini com display de mesmo tamanho. O código fonte para 01Space está em ./src/pyboard e o código fonte para ESP32-C3 supermini está em ./src-sh1106/pyboard.
 
-Para testar o funcionamento, em um REPL ou em uma IDE como Thonny, depois de conectar a placa, transferir todos os arquivos do /src/pyboard adequado e usar o comando `import largerFontSSD1306` ou o comando `import largerFontSH1106`, conforme a placa e driver de display que estiver usando. Este teste é autocontido no sentido de não necessitar de mais módulos nem mais informação (ex. via web) para ser executado.
+Para testar o funcionamento, em um REPL ou em uma IDE como Thonny, depois de conectar a placa, transferir todos os arquivos do /src/pyboard adequado e usar o comando `import largerFontSSD1306` ou o comando `import largerFontSH1106`, conforme a placa e driver de display que estiver usando. Este teste é autocontido no sentido de não necessitar de mais módulos nem mais informação (ex. via web) para ser executado. O resultado é apresentado na foto inicial (acima).
+
+### Outros resultados
+
+- `import scani2c` configura I2C e busca por dispositivos conectados. Tanto SSD1306 quanto SH1106 respondem no endereço 0x3C, em decimal, 60;
+- `import dispsh1106` e/ou `import dispssd1306` imprimem uma mensagem com fontes no tamanho padrão, que costuma ser 8pt.
+
+Para informação sobre eventos inesperados, veja a seção Comentários, abaixo. 
 
 
 ## Comentários
@@ -44,6 +51,16 @@ Sobre os componentes, o da 01Space tem a distância entre as fileiras de termina
 Tive algum problema com o da 01Space que me impede de atualizar o Micropython - o componenente não aceita ser programado com `esptool` então não tenho como atualizar o Micropython instalado nele. A versão instalada é 1.19.0 . No genérico posso atualizar. A versão instalada é 1.23.0 . Instruções para download e instalação de Micropython em https://micropython.org/download/ESP32_GENERIC_C3/ - para mim esta versão serviu para o ESP32-C3 supermini e para o 01Space.
 
 O da 01Space usa driver de display modelo SSD1306 (https://github.com/micropython/micropython-esp32/blob/esp32/drivers/display/ssd1306.py), o genérico usa driver de display modelo SH1106 (https://github.com/robert-hh/SH1106).
+
+O display do supermini tem intensidade menor que a do display do 01Space.
+
+Não pretendo usar o componente da 01Space novamente. Não consigo atualizar o firmware e tenho crescente dificuldade em fazê-lo conectar com Thonny (https://thonny.org/).
+
+A interface (ou o driver) I2C do ESP32-C3 parece ter algum problema - talvez inicialização de variáveis - pois:
+
+- Num teste ontem `i2c=machine.I2C(0)` foi suficiente para o I2C enviar as mensagens para o display, mas num teste hoje, fazia o 01Space desconectar do Thonny;
+- Hoje tive que usar `i2c=machine.I2C(0, sda=machine.Pin(5), scl=machine.Pin(6))`, mas a mensagem quando digito `i2c` é `I2C(0, scl=6, sda=5, freq=851063)`. Essa frequência deve ser entre 100000 e 400000, segundo a especificação do barramento i2c e, quando ajustada no construtor, é de 40000 (um zero a menos): `i2c  = I2C(0, scl=Pin(6), sda=Pin(5), freq=40000)` - talvez isso dê problema em algum momento...
+
 
 ## Outras referências acessadas mas não citadas
 
