@@ -9,8 +9,9 @@ YES!
 
 Achieved it with `aiorepl` - https://github.com/micropython/micropython-lib/tree/master/micropython/aiorepl
 
+I was trying it in the wrong way...
 
-#### Proved wrong!
+#### I thought it was not possible to run Microdot and WebREPL in parallel ... Proved wrong!
  
 As far as I tried, I did not achieve it.
 
@@ -31,7 +32,7 @@ I designed the following test:
 
 In my interpretation, there is a single REPL. In my test it is running `main.py`. REPL can be accessed through (only one) USB or Web (not both simultaneously). A keyboard interrupt (CTRL-C) will interrupt `main.py` and reactivate REPL.
 
-### Results
+### Results (the right way)
 
 Install `aiorepl` with 
 
