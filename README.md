@@ -5,7 +5,8 @@ Computação Física e Aplicações
 
 - É possível criar uma placa de desenvolvimento menor, baseada em ESP32-C3 com todas as funcionalidades de https://github.com/FNakano/CFA/tree/master/projetos/py-PlataformaTeste ?
 - É possível fazer acordes com buzzer passivo?
-
+- ESP32S parece ter problemas com o hardware I2C. No meu caso, quando tenho SSD1306 e BME280 conectados, wifi e código Microdot carregado (mas não executando), a interface de rede começa a falhar, dando host unreacheable.
+  - no ESP32-C3 ocorre o mesmo problema?
 
 
 
