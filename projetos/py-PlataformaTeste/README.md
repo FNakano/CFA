@@ -1,7 +1,6 @@
 # Plataforma de teste
 
-![Foto da plataforma de teste](./5019641065132633783.jpg)
-
+![Foto da plataforma de teste](./5105267680629337722.jpg)
 
 ## Motivação 
 
@@ -32,6 +31,8 @@ A escolha dessas placas se deve ao regulador de tensão usado nelas. O ESP32 Dev
 | 1 | Resistor $82 \Omega$ 1/8W | calculado para fornecer os 20mA ao LED |
 | 1 | Suporte para bateria 16340 | esse não achei no Brasil, tive que trazer via ali express |
 | 1 | Bateria recarregável 16340 | ou CR123 |
+| 1 | DS18B20 sensor de temperatura | usei um com proteção para água |
+| 1 | Resistor $4k7 \Omega$ 1/8W | resistor de pull up para o pino de dados do DS18B20 |
 |  | fio sólido | para fazer jumpers |
 |  | headers | tanto retos quanto 90 graus |
 |  | conectores MODU | para conectar aos headers |
@@ -43,17 +44,18 @@ A escolha dessas placas se deve ao regulador de tensão usado nelas. O ESP32 Dev
 
 #### Lista de conexões
 
-| ESP | R ($1k\Omega$) | LDR | R ($82\Omega$) | LED | Display | Touch Sensor | Buzzer |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| VCC | --- | A | --- | --- | VCC | VCC | --- |
-| GND | A | --- | --- | K | GND | GND | - GND |
-| GPIO36 aka SVP (used as analog input) | B | B | --- | --- | --- | --- | --- |
-| GPIO18 (used as digital output) | --- | --- | A | --- | --- | --- | --- |
-| --- | --- | --- | B | A | --- | --- | --- |
-| GPIO21 (used as SCL) | --- | --- | --- | --- | SCL | --- | --- |
-| GPIO22 (used as SDA) | --- | --- | --- | --- | SDA | --- | --- |
-| GPIO39 aka SVN (used as digital input) | --- | --- | --- | --- | --- | IO | --- |
-| GPIO33 (used as PWM output) | --- | --- | --- | --- | --- | --- | + |
+| ESP | R ($1k\Omega$) | LDR | R ($82\Omega$) | LED | Display | Touch Sensor | Buzzer | R ($4k7\Omega$) | DS18B20 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| VCC | --- | A | --- | --- | VCC | VCC | --- | A | VCC |
+| GND | A | --- | --- | K | GND | GND | - GND | --- | GND |
+| GPIO36 aka SVP (used as analog input) | B | B | --- | --- | --- | --- | --- | --- | --- |
+| GPIO18 (used as digital output) | --- | --- | A | --- | --- | --- | --- | --- | --- |
+| --- | --- | --- | B | A | --- | --- | --- | --- | --- |
+| GPIO21 (used as SCL) | --- | --- | --- | --- | SCL | --- | --- | --- | --- |
+| GPIO22 (used as SDA) | --- | --- | --- | --- | SDA | --- | --- | --- | --- |
+| GPIO39 aka SVN (used as digital input) | --- | --- | --- | --- | --- | IO | --- | --- | --- |
+| GPIO33 (used as PWM output) | --- | --- | --- | --- | --- | --- | + | --- | --- |
+| GPIO19 | --- | --- | --- | --- | --- | --- | --- | B | Data |
 
 alguma conexão ou sujeira na placa ou na mesa faz o ESP entrar em modo de programação quando está conectado nessa placa.
 
@@ -64,7 +66,7 @@ Dispor os componentes na placa e soldar fios quando necessário.
 - Conexões retas curtas podem ser feitas com os terminais dos resistores e outros componentes;
 - Conexões muito longas (que cruzam outras conexões) podem ser feitas com fio sólido encapado. Este pode ser conseguido em cabos telefônicos e cabos de rede;
 - Para soldar um header, solde um pino de uma extremidade, reaqueça para alinhar o header, quando estiver alinhado solde o restante dos pinos;
-
+- Crimpar conectores Du Pont fêmea nos fios do DS18B20;
 
 ### Programas
 
@@ -118,3 +120,8 @@ Como a execução das notas é interrompida pela passagem de controle a qualidad
 #### Servidor web e música (programação assíncrona)
 
 Conecte-se ao wifi (siga as intruções e `import lab8`), importe o módulo `playandserve.py` com o comando `import playandserve`, importe o módulo `asyncio.py` com o comando `import asyncio` e execute com o comando `asyncio.run(main())`.
+
+#### Sensor de temperatura (acrescentado depois)
+
+ver https://github.com/FNakano/CFA/tree/master/projetos/py-DS18B20
+
