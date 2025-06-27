@@ -7,7 +7,12 @@ Computação Física e Aplicações
 - É possível fazer acordes com buzzer passivo?
 - ESP32S parece ter problemas com o hardware I2C. No meu caso, quando tenho SSD1306 e BME280 conectados, wifi e código Microdot carregado (mas não executando), a interface de rede começa a falhar, dando host unreacheable.
   - no ESP32-C3 ocorre o mesmo problema?
-
+- Micropython em ESP-CAM
+  - https://github.com/lemariva/micropython-camera-driver
+  - https://dev.to/shilleh/how-to-use-esp32-cam-with-micropython-4odo
+  - https://github.com/AlcindoSchleder/esp32-cam-micropython
+  - https://www.instructables.com/How-to-Use-ESP32-CAM-With-MicroPython/
+  - https://github.com/shariltumin/esp32-cam-micropython-2022
 
 
 ## Apresentação
