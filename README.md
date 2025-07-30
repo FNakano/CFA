@@ -3,6 +3,10 @@ Computação Física e Aplicações
 
 ## Para 2025
 
+[Diretrizes](./diretrizes.md)
+
+### Projetos que seriam úteis para mim
+
 - É possível criar uma placa de desenvolvimento menor, baseada em ESP32-C3 com todas as funcionalidades de https://github.com/FNakano/CFA/tree/master/projetos/py-PlataformaTeste ?
 - É possível fazer acordes com buzzer passivo?
 - ESP32S parece ter problemas com o hardware I2C. No meu caso, quando tenho SSD1306 e BME280 conectados, wifi e código Microdot carregado (mas não executando), a interface de rede começa a falhar, dando host unreacheable.
@@ -13,7 +17,7 @@ Computação Física e Aplicações
   - https://github.com/AlcindoSchleder/esp32-cam-micropython
   - https://www.instructables.com/How-to-Use-ESP32-CAM-With-MicroPython/
   - https://github.com/shariltumin/esp32-cam-micropython-2022
-
+- Compilar versões personalizadas de Micropython que exponham APIs como DNS-SD e WPS button
 
 ## Apresentação
 
