@@ -3,6 +3,14 @@
 ## Diretrizes
 
 - Na disciplina:
+  - nossos objetivos: aprender algo
+    - construir objetos físicos (ex. dispositivos);
+    - construir sistemas (simples) de informação;
+    - programação web;
+    - bancos de dados;
+    - programação;
+    - segurança(!);
+    - soft skills;
   - uso aprendizagem por projeto;
   - haverá algumas aulas expositivas;
     - serão apresentados, com algum detalhamento, projetos e componentes;
