@@ -3,7 +3,7 @@
 ## Diretrizes
 
 - Na disciplina:
-  - nossos objetivos: aprender algo
+  - nossos objetivos: aprender algo juntos
     - construir objetos físicos (ex. dispositivos);
     - construir sistemas (simples) de informação;
     - programação web;
