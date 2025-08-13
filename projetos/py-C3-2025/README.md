@@ -35,7 +35,7 @@ from machine import Pin, I2C, ADC
 # i2c=I2C(0, sda=Pin(21), scl=Pin(22)) # este é para ESP32S na Plataforma de teste
 i2c=I2C(0, scl=Pin(6), sda=Pin(5)) # no ESP32-C3 supermini com display OLED de 0.42" embutido os pinos são 5 e 6
 
-print (i2c.scan()) # if 60 is displayed ssd1306 display was found
+print (i2c.scan()) # if 60 is displayed or ssd1306 or sh1106 display was found
 
 ```
 

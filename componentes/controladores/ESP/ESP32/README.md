@@ -248,9 +248,11 @@ Achei uma pista sobre documentação no site de outro vendedor do Ali Express: [
 
 Com o segundo pretendo inspecionar o programa que veio gravado, o terceiro vai continuar lacrado, por enquanto.
 
-~~A lição aprendida: não comprar esses combos (ESP+Display, ESP+LED-RGB, ...). Geralmente são pouco ou mal documentados.~~
+A lição aprendida: ~~não comprar~~ esses combos (ESP+Display, ESP+LED-RGB, ...). Geralmente são pouco ou mal documentados.
 
 Retornei a esse componente, consegui usar o display OLED, documentei (parcialmente) em https://github.com/FNakano/CFA/tree/master/projetos/py-LargerFont . Ocorre que diferentes instâncias do componente parecem ter comportamentos diferentes. Esse que foi documentado é o primeiro que testei. O segundo que testei, em 2025-08-13, não funcionou com o programa para SH1106 que documentei no projeto que citei neste parágrafo. Testei todos os programas para Micropython para esse componente com SH1106, nenhum funcionou. Como eu havia usado tanto o driver para SH1106 quanto o driver para SSD1306 e desconfiei que isto poderia ter modificado alguma configuração do hardware (embora eu ache que modificar configuração de um display desse jeito seja improvável...), resolvi executar um programa para SSD1306. Surpreendentemente, o display funcionou!! Mais supreendentemente ainda, o programa do projeto (deste parágrafo, o que não tinha funcionado) passou a funcionar. Onde funcionar significa mostrar mensagens no display.
+
+MISTÉRIO RESOLVIDO: HÁ FORNECEDORES/FABRICANTES QUE USAM SSD1306 E OUTROS QUE USAM SH1106 . QUANDO GRAVAR MICROPYTHON, TESTAR QUAL DISPLAY É COM O PROJETO https://github.com/FNakano/CFA/tree/master/projetos/py-C3-2025
 
 
 ## LIVE D1 mini ESP32 ESP-32
