@@ -228,7 +228,7 @@ oled.show() # envia o conteúdo do framebuffer para o oled
 
 A placa com display tem um LED RGB endereçável ligado ao pino 2.
 
-Os pinos de comuncação para comunicação I2C entre ESP e ssd1306 são SDA=Pin(5) e SCL=Pin(6)
+Os pinos de comunicação para comunicação I2C entre ESP e ssd1306 são SDA=Pin(5) e SCL=Pin(6)
 
 ## MINI ESP32-C3 Placa de Desenvolvimento 2.4G Wifi 4 BT Módulo com 0, 42 Polegada OLED Display 4MB Flash Antena Cerâmica USB Tipo-C ESP32 C3
 
@@ -242,13 +242,16 @@ Um dev kit com display é bastante conveniente e uma porção deles está a vend
 
 Escolhi esse porque estava barato (esta é a parte da ganância), comprei três; e porque achei que sabia o que estava/não estava na placa (esta é a parte da ingenuidade).
 
-Tirei um do pacote, liguei, o controlador ligou, apresentou um mensagem no display. Pixels muito fracos. Instalei Micropython e tentei usar o display com driver ssd1306. Não funcionou: aparecem umas linhas ou uns padrões aleatórios em resposta ao comando de inicialização. O endereço I2C é o 0x3C mas parece não ser o ssd1306.
+Tirei um do pacote, liguei, o controlador ligou, apresentou a mensagem "ABRobot" no display. Pixels muito fracos. Instalei Micropython e tentei usar o display com driver ssd1306. Não funcionou: aparecem umas linhas ou uns padrões aleatórios em resposta ao comando de inicialização. O endereço I2C é o 0x3C mas parece não ser o ssd1306.
 
-Achei uma pista sobre documentação no site de outro vendedor do Ali Express: [imagem em arquivo local](./Sce07b0b3b47a4463944ec7daa4807aceK.avif) na imagem há instruções padrão para instalação do ESP32 na IDE do Arduino e, em seguida, instruções (sem links) para baixar o programa HW_675_WIFI_AP_OLED1, compilar e gravar no ESP... vai dar um trabalho colocar esse display para funcionar...
+Achei uma pista sobre documentação no site de outro vendedor do Ali Express: [imagem em arquivo local](./Sce07b0b3b47a4463944ec7daa4807aceK.avif) na imagem há instruções padrão para instalação do ESP32 na IDE do Arduino e, em seguida, instruções (sem links) para baixar o programa HW_675_WIFI_AP_OLED1, compilar e gravar no ESP... vai dar um trabalho colocar esse display para funcionar... (*2025-08-13 deu trabalho mas talvez valha a pena...*)
 
 Com o segundo pretendo inspecionar o programa que veio gravado, o terceiro vai continuar lacrado, por enquanto.
 
-A lição aprendida: não comprar esses combos (ESP+Display, ESP+LED-RGB, ...). Geralmente são pouco ou mal documentados.
+~~A lição aprendida: não comprar esses combos (ESP+Display, ESP+LED-RGB, ...). Geralmente são pouco ou mal documentados.~~
+
+Retornei a esse componente, consegui usar o display OLED, documentei (parcialmente) em https://github.com/FNakano/CFA/tree/master/projetos/py-LargerFont . Ocorre que diferentes instâncias do componente parecem ter comportamentos diferentes. Esse que foi documentado é o primeiro que testei. O segundo que testei, em 2025-08-13, não funcionou com o programa para SH1106 que documentei no projeto que citei neste parágrafo. Testei todos os programas para Micropython para esse componente com SH1106, nenhum funcionou. Como eu havia usado tanto o driver para SH1106 quanto o driver para SSD1306 e desconfiei que isto poderia ter modificado alguma configuração do hardware (embora eu ache que modificar configuração de um display desse jeito seja improvável...), resolvi executar um programa para SSD1306. Surpreendentemente, o display funcionou!! Mais supreendentemente ainda, o programa do projeto (deste parágrafo, o que não tinha funcionado) passou a funcionar. Onde funcionar significa mostrar mensagens no display.
+
 
 ## LIVE D1 mini ESP32 ESP-32
 
