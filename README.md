@@ -5,6 +5,9 @@ Computação Física e Aplicações
 
 [Diretrizes](./diretrizes.md)
 
+[Ponto de partida para os trabalhos da disciplina](./partirDoZero.md) - feito depois do início do semestre.
+
+
 ### Projetos que seriam úteis para mim
 
 - É possível criar uma placa de desenvolvimento menor, baseada em ESP32-C3 com todas as funcionalidades de https://github.com/FNakano/CFA/tree/master/projetos/py-PlataformaTeste ?
