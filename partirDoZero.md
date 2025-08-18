@@ -19,9 +19,9 @@ O conteúdo de cada elemento e uma breve explicação é apresentada abaixo.
    - o resultado pode ser um programa, neste caso, espera-se que o código-fonte e a documentação desse programa seja anexada ao relatório (como um link)
    - se houver dados gerados, convém apresentar no relatório uma amostra ou um link para o conjunto de dados;
      
-A estratégia consiste em, dado um projeto com objetivo, método, resultados esperados, ... pouco claros, definir sub-projetos cujo resultado contribua para esclarecer o objetivo, método, resultados esperados, ... Cada sub-projeto, preferencialmente, deve ter curta duração e usar poucos recursos, entre eles, o seu esforço e tempo.
+A estratégia consiste em, dado um *grande* projeto com objetivo, método, resultados esperados, ... pouco claros, definir sub-projetos cujos resultados *possam contribuir* para esclarecer o objetivo, método, resultados esperados, ... do *grande* projeto. Cada sub-projeto, preferencialmente, deve ter curta duração e usar poucos recursos, entre eles, o seu esforço e tempo. A cada *volta* sobre propor, executar e relatar, seja um sub-projeto novo, seja um sub-projeto em andamento (nova versão), atualizar o texto do *grande* projeto até que este esteja suficientemente definido e coeso. 
 
-**nota**: para projetos/relatórios com objetivos ainda menos claros, pode ser conveniente usar um objetivo vago como *explorar o firmware/software/hardware do ESP32 buscando algo interessante para construir* como um *container* de sub-projetos curtos e ir criando esses sub-projetos. Entenda (criar sub-projetos) como propor executar e relatar dentro de um período curto como um dia ou uma semana - ou um *sprint* nestes sub-projetos (curtos) cujo relatório pretende-se entreguar na próxima reunião, a proposta não precisa conter resultados esperados, indicadores de progresso e sucesso e cronograma pois o relatório final do sub-projeto será apresentado.
+Para ter algo no *grande* projeto (não deixar a folha em branco), pode ser conveniente usar um objetivo vago como *explorar o firmware/software/hardware do ESP32 para, ao final, construir algo interessante/relevante* e usar o projeto como um *container* de sub-projetos curtos e ir criando esses sub-projetos. Entenda *criar sub-projetos* como propor, executar e relatar dentro de um período curto como um dia ou uma semana - ou um *sprint* .  Caso sejam sub-projetos de curtíssima duração, cujo relatório pretende-se entreguar na próxima reunião, a proposta não precisa conter resultados esperados, indicadores de progresso e sucesso e cronograma pois o relatório final do sub-projeto, contendo seus resultados, será apresentado.
 
 Vamos a um exemplo...
 
@@ -33,6 +33,7 @@ Este *projeto indefinido* específico começou sem um objetivo muito claro e com
    - motivado por perguntas de colegas;
    - motivado pela experiência de uso de pilhas, baterias diversas e powerbanks;
    - essa exploração deve incluir um teste (benchmark) de duração realista para o tipo de projeto da disciplina;
+   - o projeto [py-TestSupplyPower](/projetos/py-TestSupplyPower) busca responder este ponto;
 2. *Experimentar usar aiorepl e microdot simultaneamente*... Isto é algo que não consegui fazer quando tentei faz alguns meses. Na época fui ingênuo, pensando que todas as funções de todos os módulos funcionariam e que não haveria problemas de integração entre aiorepl e microdot. O contexto a esperar é o *inverso*: alguma(s) funções de algum(ns) módulos não funcionam, e há problemas de integração.
    - o subprojeto 2 ganhou um filho: [py-Path](projetos/py-Path)  
    - poder usar o micropython do dispositivo enquanto ele executa um programa *maior* (um servidor HTTP) pode ser útil, por exemplo, para depurar o programa *maior* ou mesmo elimininar algum *bug* sem interromper a operação (ié desligar, eliminar e religar o dispositivo);

@@ -1,5 +1,8 @@
 # Recursos do Micropython para organizar módulos
 
+**Conclusão (2025-08-18)**: Até o momento, não há forma de organizar melhor os módulos em `/lib`. Eles precisam ficar todos juntos (misturados) nessa pasta.
+
+
 ## Objetivo
 
 Documentar e apresentar os recursos do Micropython para organizar módulos em seu sistema de arquivos.
@@ -51,14 +54,17 @@ Na situação 2 a tentativa de `aiorepl` através de `import runaiorepl` e a ten
 
 Comparando a situação 1 com a situação 2, nota-se que a mudança na localização dos arquivos (módulos) modifica a execução dos programas.
 
+Testou-se com `runaiorepl` também a seguinte solução: na situação 2, modificar a variável `sys.path`, acrescentando na lista as pastas dos módulos. Por exemplo, ´sys.path=['', '.frozen', '/lib', '/lib/microdot', '/lib/aiorepl']. Isto transformaria a questão da organização dos módulos em uma questão de onde armazenar de maneira permanente e recarregar a variável `sys.path`. Uma solução seria inicializar `sys.path` em `boot.py`. Houve problemas. O resultado é mostrado abaixo.
+
+![](./Captura%20de%20tela%20de%202025-08-18%2019-19-35.png)
+
+
 ## Comentários e Conclusões
 
 Fica claro que a localização dos arquivos dentro do diretório `/lib` modifica a execução dos programas tanto para `import` quanto para `from lib import class`. 
 
+Testou-se, sem sucesso, a inclusão dos subdiretórios de `/lib` na variável `sys.path`.
+
 Isto pode ser contornado até certo ponto. Por exemplo, na situação 2, no arquivo `runmicrodot.py`, substituir o comando `from microdot import Microdot` pelo comando `from microdot.microdot import Microdot` é suficiente para obter o resultado da situação 1 para o `microdot` mas esta solução não é capaz de contornar situações em que (neste caso, hipoteticamente) o módulo armazenado em `/lib/modulo` usa outros módulos também armazenados em `/lib`.
 
-Uma solução que ainda não foi testada é: na situação 2, modificar a variável `sys.path`, acrescentando na lista as pastas dos módulos. Por exemplo, ´sys.path=['', '.frozen', '/lib', '/lib/microdot', '/lib/aiorepl']. Isto transformaria a questão da organização dos módulos em uma questão de onde armazenar de maneira permanente e recarregar a variável `sys.path`. Uma solução seria inicializar `sys.path` em `boot.py` já que este arquivo é o primeiro a ser executado após um reset. Outra solução usual seria criar um arquivo `config.py` contendo as variáveis globais e comandos para configuração do dispositivo e importar `config.py` em `boot.py` ou em `main.py`.
-
-
-
-  
+Até o momento, não há forma de organizar melhor os módulos em `/lib`. Eles precisam ficar todos juntos nessa pasta.
