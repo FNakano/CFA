@@ -37,8 +37,12 @@ Este *projeto indefinido* específico começou sem um objetivo muito claro e com
 2. *Experimentar usar aiorepl e microdot simultaneamente*... Isto é algo que não consegui fazer quando tentei faz alguns meses. Na época fui ingênuo, pensando que todas as funções de todos os módulos funcionariam e que não haveria problemas de integração entre aiorepl e microdot. O contexto a esperar é o *inverso*: alguma(s) funções de algum(ns) módulos não funcionam, e há problemas de integração.
    - o subprojeto 2 ganhou um filho: [py-Path](projetos/py-Path)  
    - poder usar o micropython do dispositivo enquanto ele executa um programa *maior* (um servidor HTTP) pode ser útil, por exemplo, para depurar o programa *maior* ou mesmo elimininar algum *bug* sem interromper a operação (ié desligar, eliminar e religar o dispositivo);
+  - isto acabou sendo uma retomada do projeto [py-MicrodotAndWebREPL](/projetos/py-MicrodotAndWebREPL)
 3. *Explorar ESPCAM* se é possível usar com micropython, webrepl, asyncio, servidor web,... ( ESPCAM não tem porta USB).
    - programar ESPCAM não é confortável pela falta de porta USB e não é confortável porque a maioria dos tutoriais usa linguagem C.
    - falhar ao hackear a câmera do ESPCAM, ao ponto de inutilizá-la, é barato comparado com falhar com uma webcam, um celular ou uma câmera fotográfica;
+4. *Retomar [py-Tomadas](./projetos/py-tomadas) e [controlar tomadas pela internet](./projetos/ControlarTomadaPelaInternet)* Juntar e atualizar framework (usar aiorepl, microdot)
+
+
 
  

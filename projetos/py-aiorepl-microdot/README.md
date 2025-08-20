@@ -2,6 +2,8 @@
 
 Executando REPL e microdot "simultaneamente"
 
+Veja outra instância (mais antiga e mais detalhada) deste mesmo projeto em https://github.com/FNakano/CFA/tree/master/projetos/py-MicrodotAndWebREPL
+
 Captura de tela mostrando a execução simultânea de aiorepl e microdot. Durante a execução, ping também foi usado. 
 
 ![](./Captura%20de%20tela%20de%202025-08-18%2020-03-33.png)
@@ -16,4 +18,5 @@ Captura de tela mostrando processo de cópia do código-fonte do dispositivo par
 
 ![](./Captura%20de%20tela%20de%202025-08-18%2020-13-59.png)
 
-A partir deste projeto consigo criar um controle dos relés do controle de tomadas.
+A partir deste projeto consigo criar um controle dos relés do controle de tomadas (https://github.com/FNakano/CFA/tree/master/projetos/py-tomadas-2025).
+

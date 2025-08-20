@@ -1,9 +1,13 @@
-#Is it possible to run Microdot and WebREPL in parallel?#
+(2025-08-19) This project is formatted as an informal note/log/diary it could be reordered as a report (with intro, obj, method, result and comments/conclusions.
+
+# Is it possible to run Microdot and WebREPL in parallel?
 
 ![](./Captura%20de%20tela%20de%202025-06-16%2018-41-27.png)
 
 
 YES!
+
+(2025-08-19) There is some loosely defined limitation. AFAIK ten routes, two I2C devices and five processes. To be investigated.
 
 ### Motivation
 
@@ -56,5 +60,7 @@ The files in this test are in ./src/pyboard folder. The route was changed from `
 ### Comments
 
 I searched for a solution again in 2025-06-16. Got https://github.com/orgs/micropython/discussions/17133 . It then was straightforward.
+see another instance of this *same* project at https://github.com/FNakano/CFA/tree/master/projetos/py-aiorepl-microdot
+
 
 
