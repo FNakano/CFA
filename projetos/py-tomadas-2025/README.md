@@ -151,7 +151,7 @@ Com esta visualização notei que há arquivos que usei para teste de funcionali
 
 #### Conteúdo
 
-![](../doc/myuses.png)
+![](./doc/myuses.png)
 
 #### API
 
