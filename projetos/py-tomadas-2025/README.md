@@ -112,6 +112,7 @@ Para mostrar a mensagem "ttt" no display, na barra de endereço do navegador dig
 As rotas que podem ser acessadas no servidor são:
 
 | rota | efeito no navegador | efeito no dispositivo |
+| --- | --- | --- |
 | / | mostra a página index.html | - |
 | /hello | mostra o texto 'hello from device001.local' | - |
 | /red | mostra o texto on caso o LED da cor esteja aceso, off caso o LED esteja apagado | - |
