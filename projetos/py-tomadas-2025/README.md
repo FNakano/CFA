@@ -127,9 +127,12 @@ As rotas que podem ser acessadas no servidor são:
 | /message?text="xxx" | mostra o texto passado como argumento em 'text' | mostra no display o texto passado como argumento em 'text' |
 | /static/webrepl/webrepl.html | Mostra a página para acesso a interface de comando (REPL) | - |
 
+O aplicativo é iniciado com o comando `import startsystem` digitado no REPL (Thonny).
+
 ### Manual do desenvolvedor
 
 #### Anotações
+
 Algo muito desejável seria um grafo de chamada. Encontrei pyAn (https://github.com/Technologicat/pyan). Parece que a ferramenta já funcionou bem e parece que muitos programadores a usam. Apesar da utilidade o desenvolvedor tem dificuldade em encontrar colaboradores para manter a ferramenta... 
 
 Precisaram recomendar downgrade para poder usar: https://github.com/Technologicat/pyan/issues/72#issuecomment-2021297633
@@ -151,15 +154,22 @@ Com esta visualização notei que há arquivos que usei para teste de funcionali
 
 #### Conteúdo
 
+
+O módulo `config.py` contém as variáveis globais. Na primeira parte, as variáveis que um usuário/desenvolvedor poderia configurar. Na segunda parte as variáveis inicializadas durante a execução do programa e usadas para acessar algum objeto do sistema.
+
+O aplicativo é iniciado com o comando `import startsystem`. Neste módulo são carregados outros módulos. A ordem de carga é importante pois módulos carregados antes fornecem funções e variáveis para módulos carregados depois. Por exemplo, o módulo `led.py` inicia as variáveis globais que permitem controlar os LEDs. Em seguida, o módulo `wifi.py` usa os LEDs para indicar estados da inicialização do WiFi.
+
 ![](./doc/myuses.png)
+
+Diagrama de chamadas de funções e módulos. Os vértices sem cor de fundo correspondem a módulos. O módulo `startsystem` importa os outros módulos, inclusive `config.py` que contém variáveis para acessar objetos do sistema. A ordem de carga dos módulos é importante. As caixas que contém sub-grafos são agrupamentos, que também correspondem a módulos. Os sub-grafos são funções definidas dentro desses módulos. Por exemplo, em `httpserver.py` são definidas todas as funções que respondem a rotas do servidor web, como acender/apagar LEDs, navegar para webrepl e enviar mensagens para o display.
 
 #### API
 
-Ler comentários nas funções no código-fonte
+Ler comentários nas funções no código-fonte (em andamento)
 
 ## Conclusão e Comentários
 
-Desenvolver este projeto levou muito mais tempo do que o esperado. Acredito que os motivos sejam:
+Desenvolver este projeto levou muito mais tempo do que o esperado (eu esperava dois dias, usei uma semana e ainda há o que fazer). Acredito que os motivos sejam:
   
 1. Redefinições de objetivo, método, ferramentas durante o projeto;
    - Inclusão de funcionalidades como Webrepl;
