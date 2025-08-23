@@ -56,13 +56,13 @@ Ver Figura 1
 | Protoboard | 1 | Na figura 1, bloco branco contendo contatos. Serve para conectar os terminais dos componentes e construir o circuito | 
 | [Relé Shield](../../componentes/atuadores/rele/README.md) | 3 | [três módulos, esquerda das tomadas, com o relé azul](a acrescentar) |
 | Fonte 5V (carregador para celular, battery pack ou equivalente) | 1 | [a acrescentar) |
-| tomada | 4 | [entre os fios verdes](IMG_20201011_143947403.jpg) |
-| plugue | 1 | [já conectado ao cabo de par, parte inferior da foto](IMG_20201011_143947403.jpg) |
-| chapadur para apoiar montagem | 1 | [chapa perfurada embaixo dos componentes](IMG_20201011_143947403.jpg) |
-| cabo de par 1.0mm | 1 | [branco, enrolado, parte inferior da foto](IMG_20201011_143947403.jpg) |
-| segmentos 2.5mm^2 | 1 | [verde, acima e abaixo das tomadas](IMG_20201011_143947403.jpg) |
-| Conector Sindal | 1 | [embaixo à direita, entre os fios verdes, o cabo de par e as tomadas](IMG_20201011_143947403.jpg) |
-| placa de distribuição de energia | 1 | [foto da placa](IMG_20201016_181147909.jpg) | 
+| tomada | 4 | ver https://github.com/FNakano/CFA/tree/master/projetos/py-tomadas#dispositivo |
+| plugue | 1 | ver https://github.com/FNakano/CFA/tree/master/projetos/py-tomadas#dispositivo |
+| chapadur para apoiar montagem | 1 | ver https://github.com/FNakano/CFA/tree/master/projetos/ControlarTomadaPelaInternet#materiais-e-m%C3%A9todos--quais-s%C3%A3o-os-ingredientes-e-o-que-fazer-com-eles-para-chegar-nos-resultados |
+| cabo de par 1.0mm | 1 | ver https://github.com/FNakano/CFA/tree/master/projetos/ControlarTomadaPelaInternet#materiais-e-m%C3%A9todos--quais-s%C3%A3o-os-ingredientes-e-o-que-fazer-com-eles-para-chegar-nos-resultados |
+| segmentos 2.5mm^2 | 1 | ver https://github.com/FNakano/CFA/tree/master/projetos/ControlarTomadaPelaInternet#materiais-e-m%C3%A9todos--quais-s%C3%A3o-os-ingredientes-e-o-que-fazer-com-eles-para-chegar-nos-resultados |
+| Conector Sindal | 1 | ver https://github.com/FNakano/CFA/tree/master/projetos/ControlarTomadaPelaInternet#materiais-e-m%C3%A9todos--quais-s%C3%A3o-os-ingredientes-e-o-que-fazer-com-eles-para-chegar-nos-resultados |
+| placa de distribuição de energia | 1 | ver https://github.com/FNakano/CFA/tree/master/projetos/ControlarTomadaPelaInternet#materiais-e-m%C3%A9todos--quais-s%C3%A3o-os-ingredientes-e-o-que-fazer-com-eles-para-chegar-nos-resultados | 
 
 
 #### Montagem
