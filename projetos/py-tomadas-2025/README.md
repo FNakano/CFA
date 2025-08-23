@@ -29,7 +29,8 @@ Usou-se o método descrito em https://github.com/FNakano/CFA/blob/master/partirD
 
 ## Resultados
 
-![](./Captura%20de%20tela%20de%202025-08-23%2010-11-47.png)
+![](./Captura%20de%20tela%20de%202025-08-23%2010-26-08.png)
+
 Foto representativa do estado de desenvolvimento em 2025-08-23 - Aplicativo iniciado com comando `import startsystem` no Thonny (direita embaixo na foto). Navegador com webrepl e comandos enviados através dele (direita, centro na foto). Navegador com requisição para acender o LED vermelho (esquerda acima na foto). Navegador com requisição para mostrar mensagem no display (direita acima na foto). Dispositivo com LED vermelho aceso e mensagem no display (direita abaixo na foto)
 
 
