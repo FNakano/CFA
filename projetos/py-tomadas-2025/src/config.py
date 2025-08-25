@@ -1,9 +1,21 @@
+"""
+O que é:
+  Arquivo de definição de variáveis globais
+O que faz:
+  Cria variáveis globais (ao aplicativo) Algumas podem
+  ser configuradas pelo usuário, outras são internas ao
+  programa e são apropriadamente inicializadas durante a
+  execução do programa.
+O que espera-se que esteja neste arquivo:
+  Definição das variáveis globais ao aplicativo.
+"""
+
 # User configured global variables (users may modify)
-wifi_id = 'lab8'
-wifi_password = 'lab8arduino'
-myhostname = 'device001'
-disp_width = 128
-disp_height = 64
+wifi_id = 'lab8'               # nome da rede
+wifi_password = 'lab8arduino'  # senha da rede
+myhostname = 'device001'       # nome do dispositivo
+disp_width = 128               # largura do display OLED
+disp_height = 64               # altura do display
 
 # Program internal global variables (users should not modify)
 disp=None       # handle for the display

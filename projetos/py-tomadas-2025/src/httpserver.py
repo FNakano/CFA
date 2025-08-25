@@ -1,3 +1,13 @@
+"""
+O que é:
+  Arquivo de configuração e execução do servidor HTTP
+O que faz:
+  Define rotas e as co-rotinas que são escutadas para
+  atendimento das requisições (de rotas)
+  Cria o servidor HTTP na variável local app
+O que espera-se que esteja neste arquivo:
+  Todas as definições de rotas.
+"""
 import config
 from microdot import Microdot, send_file
 

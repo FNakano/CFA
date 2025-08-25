@@ -51,8 +51,9 @@ Ver Figura 1
 
 | Nome | Quantidade | link para foto do componente, de fato, utilizado|
 | --- | --- | --- |
-| Placa de desenvolvimento Ai-Thinker ESP32-C3 | 1 | Na figura 1, placa conectada ao protoboard que contém o LED vermelho aceso | 
+| Placa de desenvolvimento Ai-Thinker ESP32-C3 | 1 | Na figura 1, placa conectada ao protoboard que contém o LED vermelho aceso. Este componente é conveniente pois tem um LED RGB. | 
 | Display OLED 128x64 com interface I2C | 1 | Na figura 1, display mostrando letras em azul, conectada ao protoboard | 
+| Resistor $4k7\Omega$ | 2 | Resistores de pull-up para SDA e SCL, conectados ao protoboard | 
 | Protoboard | 1 | Na figura 1, bloco branco contendo contatos. Serve para conectar os terminais dos componentes e construir o circuito | 
 | [Relé Shield](../../componentes/atuadores/rele/README.md) | 3 | [três módulos, esquerda das tomadas, com o relé azul](a acrescentar) |
 | Fonte 5V (carregador para celular, battery pack ou equivalente) | 1 | [a acrescentar) |
@@ -70,16 +71,18 @@ Ver Figura 1
 ##### Lista de conexões (não é versão final)
 
 Tabela de conexões:
-| Pino no display | Pino da placa de desenvolvimento |
-| --- | --- |
-| SCL ou SCK | 8 |
-| SDA | 9 |
-| GND | GND |
-| VCC | VCC |
+| Pino no display | Pino da placa de desenvolvimento | Resistor 1 | Resistor 2 |
+| --- | --- | --- | --- |
+| SCL ou SCK | 8 | A | --- |
+| SDA | 9 | --- | A |
+| GND | GND | --- | --- |
+| VCC | VCC | B | B |
 
 **nota**: Tanto o display quanto o ESP operam a 3,3V e têm reguladores de tensão para baixar os 5V da USB para os 3,3V necessários por isso os níveis lógicos dos sinais de controle do display e do ESP são iguais.
 
 Cada linha da tabela acima corresponde a um jumper que conecta o pino do display ao pino do ESP32. O display se comunica com o ESP através do protocolo i2c. Os pinos 8 e 9 da placa de desenvolvimento são configurados para corresponder a SCL e SDA do  canal 0 do i2c por *hardware* - isto é feito no arquivo `i2c.py` no Micropython. Há muito mais informação sobre esse assunto, aqui limito-me ao (que acho) mínimo necessário. Enquanto eu não escrever sobre i2c, um ponto de partida é https://docs.micropython.org/en/latest/esp32/quickref.html#hardware-i2c-bus .
+
+Os terminais dos resistores são iguais (em contraste com o LED). Escolheu-se identificá-los como A e B.
 
 
 #### Carga do programa em um novo dispositivo
@@ -165,6 +168,8 @@ O aplicativo é iniciado com o comando `import startsystem`. Neste módulo são 
 Diagrama de chamadas de funções e módulos. Os vértices sem cor de fundo correspondem a módulos. O módulo `startsystem` importa os outros módulos, inclusive `config.py` que contém variáveis para acessar objetos do sistema. A ordem de carga dos módulos é importante. As caixas que contém sub-grafos são agrupamentos, que também correspondem a módulos. Os sub-grafos são funções definidas dentro desses módulos. Por exemplo, em `httpserver.py` são definidas todas as funções que respondem a rotas do servidor web, como acender/apagar LEDs, navegar para webrepl e enviar mensagens para o display.
 
 #### API
+
+No futuro, usarei algum documentador automático. Estes usam Python docstrings então nos módulos há docstrings (por enquanto explicando o que há nos módulos, sem detalhes das funções).
 
 Ler comentários nas funções no código-fonte (em andamento)
 

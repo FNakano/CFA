@@ -1,3 +1,13 @@
+"""
+O que é: Arquivo de início de execução do aplicativo.
+O que faz:
+  Executa a inicialização de todos os módulos globais (ao aplicativo)
+  Mostra informação sobre wifi no display OLED mas não a atualiza
+O que espera-se que esteja neste arquivo:
+  definição da co-rotina principal (main()) e sua execução
+  (asyncio.run(main()))
+"""
+
 import config   # set this app global variables
 import led      # setup built-in LEDs
 import wifi     # setup wifi communication

@@ -1,3 +1,10 @@
+"""
+O que é: Arquivo de configuração do hardware dos LEDs.
+O que faz:
+  Cria variáveis globais (ao aplicativo) para acesso aos LEDs
+O que espera-se que esteja neste arquivo:
+  Criação das variáveis e funções para uso dos LEDs.
+"""
 from machine import Pin
 import config
 config.redled=Pin(3, Pin.OUT);

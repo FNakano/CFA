@@ -1,3 +1,13 @@
+"""
+O que é:
+  Arquivo de configuração do hardware display OLED
+  com controlador SSD1306.
+O que faz:
+  Cria variáveis globais (ao aplicativo) uso do display OLED
+  Usa i2c.py através da variável config.i2c
+O que espera-se que esteja neste arquivo:
+  Criação das variáveis e funções para uso do display.
+"""
 import config
 import ssd1306
 from machine import Pin, I2C, ADC
