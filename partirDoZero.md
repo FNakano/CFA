@@ -6,7 +6,7 @@ projeto indefinido: o que fazer quando, no momento, é difícil e necessário de
 
 Este documento pretende apresentar uma estratégia e pretende ser um guia para elaboração de projetos.
 
-Aqui penso em um projeto como um conjunto com três elementos: proposta, execução e relatório. A elaboração de cada um dos elementos e do conjunto pode ser feita em espirais, revisitando cada elemento e acrescentando informação até que se encontre um projeto suficientemente definido e coeso. 
+Aqui penso em um projeto como um conjunto com três elementos: proposta, execução e relatório. A elaboração de cada um dos elementos e do conjunto pode ser feita em espirais, revisitando cada elemento e acrescentando informação até que se encontre um projeto suficientemente definido e coeso.
 
 O conteúdo de cada elemento e uma breve explicação é apresentada abaixo.
 
@@ -22,6 +22,10 @@ O conteúdo de cada elemento e uma breve explicação é apresentada abaixo.
 A estratégia consiste em, dado um *grande* projeto com objetivo, método, resultados esperados, ... pouco claros, definir sub-projetos cujos resultados *possam contribuir* para esclarecer o objetivo, método, resultados esperados, ... do *grande* projeto. Cada sub-projeto, preferencialmente, deve ter curta duração e usar poucos recursos, entre eles, o seu esforço e tempo. A cada *volta* sobre propor, executar e relatar, seja um sub-projeto novo, seja um sub-projeto em andamento (nova versão), atualizar o texto do *grande* projeto até que este esteja suficientemente definido e coeso. 
 
 Para ter algo no *grande* projeto (não deixar a folha em branco), pode ser conveniente usar um objetivo vago como *explorar o firmware/software/hardware do ESP32 para, ao final, construir algo interessante/relevante* e usar o projeto como um *container* de sub-projetos curtos e ir criando esses sub-projetos. Entenda *criar sub-projetos* como propor, executar e relatar dentro de um período curto como um dia ou uma semana - ou um *sprint* .  Caso sejam sub-projetos de curtíssima duração, cujo relatório pretende-se entreguar na próxima reunião, a proposta não precisa conter resultados esperados, indicadores de progresso e sucesso e cronograma pois o relatório final do sub-projeto, contendo seus resultados, será apresentado.
+
+Uma pergunta que pode ocorrer é: *se faço sub-projetos durante a fase de proposta então, ao final de todos os sub-projetos não obtenho o projeto pronto?*. Se os sub-projetos contemplam (testam) todas as integrações usadas no projeto (por exemplo em desenvolvimento incremental) a resposta é *sim* mas se as integrações não forem testadas no específico uso do projeto então a resposta é *não* e pode haver imprevistos que demandarão tempo e trabalho. 
+
+Outra pergunta/observação: *É permitido remover informação?* A resposta é *sim*, destacando que essa escolha requer justificativa e revisão de objetivos. A fim de mostrar que houve tempo e trabalho dedicado ao projeto quando há remoções, convém ter um diário, documentação de sub-projetos e/ou versões anteriores do projeto. Ainda assim, o projeto final pode ser insuficiente.
 
 Vamos a um exemplo...
 
@@ -43,6 +47,9 @@ Este *projeto indefinido* específico começou sem um objetivo muito claro e com
    - falhar ao hackear a câmera do ESPCAM, ao ponto de inutilizá-la, é barato comparado com falhar com uma webcam, um celular ou uma câmera fotográfica;
 4. *Retomar [py-Tomadas](./projetos/py-tomadas) e [controlar tomadas pela internet](./projetos/ControlarTomadaPelaInternet)* Juntar e atualizar framework (usar aiorepl, microdot)
 
+### Resultado (para apresentar em 2025-08-28)
+
+https://github.com/FNakano/CFA2025-SampleProject
 
 
  
