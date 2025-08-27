@@ -7,6 +7,8 @@ Computação Física e Aplicações
 
 [Ponto de partida para os trabalhos da disciplina](./partirDoZero.md) - feito depois do início do semestre.
 
+[Sugestão para relatório a ser entregue na disciplina](https://github.com/FNakano/CFA2025-SampleProject)
+
 
 ### Projetos que seriam úteis para mim
 
