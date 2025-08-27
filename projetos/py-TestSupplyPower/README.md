@@ -16,8 +16,8 @@
 ### Introduction
 
 BJT based voltage regulators (eg. AMS1117-3.3) have, at least 0.6V dropout voltage (information from datasheet).
-MOSFET based voltage regulators (eg. AP2112-3.3) have, at leaast 0.3V dropout voltage (information from datasheet).
-maximum current may not be sufficient to microcontroler's operation. It might fail in specific situations (eg. boot is ok but wifi activation (peak current) surpass voltage regulator maximum current, resulting in microcontroler's shutoff (brownout))
+MOSFET based voltage regulators (eg. AP2112-3.3) have, at least 0.3V dropout voltage (information from datasheet).
+maximum current may not be enough to microcontroler's operation. It might fail in specific situations (eg. boot is ok but wifi activation (peak current) exceed voltage regulator maximum current, resulting in microcontroler's shutoff (brownout))
 
 make it difficult to choose from specs without experimental tests.
 
