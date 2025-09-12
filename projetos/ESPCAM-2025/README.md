@@ -70,10 +70,12 @@ Em `Camerawebserver.ino` ajustar `ssid` e `password`
 
 Em `board_config.h` selecionar o modelo :comentar outros modelos e descomentar `#define CAMERA_MODEL_XIAO_ESP32S3`.
 
+Tem algo sobre usar este dispositivo em machine learning: https://github.com/Mjrovai/XIAO-ESP32S3-Sense
 
 ## Comentários e conclusões
 
 ### Na ESP-CAM
+
  
 Acho que estou traumatizado... ESP-CAM é um componente que me toma tempo... precisei me esforçar bastante para começar esta exploração...
 
