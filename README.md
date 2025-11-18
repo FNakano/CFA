@@ -113,6 +113,14 @@ Pode interessar dar uma olhada em projetos de Iniciação Científica relacionad
 
 ... ou em projetos apresentados na disciplina no oferecimento corrente ou nos anteriores...
 
+### 2025
+
+- [Patinhas](https://github.com/willianjsf/Patinhas-CFA)
+- [Card for RPG](https://github.com/Felipe256/CardForRPG)
+- [Chaveiro BLE](https://github.com/malthus42/chaveiroBLE)
+- [Reconhecedor de placas](https://github.com/bernardo1mw/CFA/)
+- [Garra Robótica](https://github.com/rMarcosDSS/Projeto-CFA)
+
 ### 2024
 
 - [ESP e API do Spotify](https://github.com/AdryelliReiz/ASPMicrodotServerSpotifyAPI)
