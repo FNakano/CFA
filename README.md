@@ -117,9 +117,13 @@ Pode interessar dar uma olhada em projetos de Iniciação Científica relacionad
 
 - [Patinhas](https://github.com/willianjsf/Patinhas-CFA)
 - [Card for RPG](https://github.com/Felipe256/CardForRPG)
-- [Chaveiro BLE](https://github.com/malthus42/chaveiroBLE)
-- [Reconhecedor de placas](https://github.com/bernardo1mw/CFA/)
-- [Garra Robótica](https://github.com/rMarcosDSS/Projeto-CFA)
+- [Chaveiro IOT](https://github.com/malthus42/chaveiroBLE)
+- [PlacaView – Estacionamento com OCR e MongoDB](https://github.com/bernardo1mw/CFA/)
+- [Braço Robótico](https://github.com/rMarcosDSS/Projeto-CFA)
+- [UOLI - Sistema de controle de Robô](https://github.com/joaoneves11/eva)
+- [Projeto Morse](https://github.com/FelipeAkiraDias/projeto_morse/tree/main)
+- [Cofre Digital Biométrico](https://github.com/arcahyter/CFA-2025?tab=readme-ov-file#cofre-digital-biom%C3%A9trico---cfa-2025)
+
 
 ### 2024
 
