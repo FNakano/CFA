@@ -123,6 +123,8 @@ Pode interessar dar uma olhada em projetos de Iniciação Científica relacionad
 - [UOLI - Sistema de controle de Robô](https://github.com/joaoneves11/eva)
 - [Projeto Morse](https://github.com/FelipeAkiraDias/projeto_morse/tree/main)
 - [Cofre Digital Biométrico](https://github.com/arcahyter/CFA-2025?tab=readme-ov-file#cofre-digital-biom%C3%A9trico---cfa-2025)
+- [Tap-Home](https://github.com/Thalessns/tap-home.git)
+- [Deauth study](https://github.com/Phar187/computacao-fisica-deauth-study)
 
 
 ### 2024
