@@ -76,15 +76,15 @@ import utime as time
 import framebuf
 
 
-# a few register definitions
-_SET_CONTRAST        = const(0x81)
-_SET_NORM_INV        = const(0xa6)
-_SET_DISP            = const(0xae)
-_SET_SCAN_DIR        = const(0xc0)
-_SET_SEG_REMAP       = const(0xa0)
-_LOW_COLUMN_ADDRESS  = const(0x00)
-_HIGH_COLUMN_ADDRESS = const(0x10)
-_SET_PAGE_ADDRESS    = const(0xB0)
+# a few register definitions # sh1106_datasheet.pdf Commands section for details
+_SET_CONTRAST        = const(0x81) # 5.Set Contrast Control Register (Double Bytes Command) - Contrast control Mode Set (81H)
+_SET_NORM_INV        = const(0xa6) # 8.Set Normal/Reverse Display (A6H - A7H)
+_SET_DISP            = const(0xae) # 11.Display OFF/ON (AEH - AFH)
+_SET_SCAN_DIR        = const(0xc0) # 13.Set Common Output Scan Direction (C0H - C8H)
+_SET_SEG_REMAP       = const(0xa0) # 6.Set Segment Re-map (A0H - A1H)
+_LOW_COLUMN_ADDRESS  = const(0x00) # 1.Set Lower Column Address (00H - 0FH)
+_HIGH_COLUMN_ADDRESS = const(0x10) # 2.Set Higher Column Address (10H - 1FH)
+_SET_PAGE_ADDRESS    = const(0xB0) # 12. Set Page Address (B0H - B7H)
 
 
 class SH1106(framebuf.FrameBuffer):
@@ -200,8 +200,8 @@ Also, can the contrast value be sent along with the set contrast opcode?? (My te
 answer is 'probably no') 
         '''
         if True : # original code
-          self.write_cmd(_SET_CONTRAST)
-          self.write_cmd(contrast)
+          self.write_cmd(_SET_CONTRAST) # \80, \81
+          self.write_cmd(contrast)      # \80, contrast
         else :
           ''' this caused OSError: [Errno 19] ENODEV
 probably the display did not acknowledged the i2c message '''
@@ -229,10 +229,55 @@ probably the display did not acknowledged the i2c message '''
         #print("Updating pages: {:08b}".format(pages_to_update))
         for page in range(self.pages):
             if (pages_to_update & (1 << page)):
+                # pages_to_update é um campo de bits. Cada bit corresponde a uma página
+                # caso a página tenha sido modificada o bit correspondente é setado.
+                # a operação pages_to_update & (1 << page) verifica se o page-ésimo bit
+                # está setado, se sim, executa os comandos abaixo, senão, os salta.
                 self.write_cmd(_SET_PAGE_ADDRESS | page)
-                self.write_cmd(_LOW_COLUMN_ADDRESS | 2)
+                self.write_cmd(_LOW_COLUMN_ADDRESS | 2) # este 2 hardcoded pode ser relevante
+                # segundo o datasheet do sh1106, ele consegue controlar displays de até 132 x 64
+                # pixels (colunas x linhas)
+                # um display ("propriamente" dito) é um conjunto de pontos luminosos em que cada
+                # ponto pode ser controlado individualmente (acender, apagar, mudar de cor, ...)
+                # displays que podem ser controlados pelo SH1106 são monocromáticos (então não
+                # é possível mudar a cor). Nesses displays e no SH1106 também não é possível
+                # controlar a intensidade (contraste) de um particular pixel, embora seja possível
+                # controlar a intensidade de todos os pixels (coletivamente), então os pixels
+                # acesos no display podem ficar mais intensos (coletivamente).
+                # A organização dos pixels no display é o de uma matriz retangular (ié, fisicamente,
+                # cada pixel é colocado/construído na matriz retangular. Mais que isso, para selecionar
+                # um particular pixel usa-se um par de sinais. No vocabulário usado no datasheet, os
+                # sinais chamam-se Common (COM) e Segment (SEG) e mapeiam um para um (biunivocamente)
+                # nos pinos do display e nos pinos do SH1106. Como o SH1106 consegue controlar displays
+                # de até 132x64, é de se esperar que haja 132 pinos de um tipo e 64 pinos de outro.
+                # No caso, verifica-se no datasheet em Pad Configuration que há 132 SEG e
+                # 64 COM
+                # Até onde sei, os displays OLED atualmente disponíveis no mercado de dimensões
+                # em pixels mais próximas de 132x64 são 128x64, de maneira que, suponho, quatro
+                # SEG do SH1106 ficam desconectados do display OLED. Ainda nas suposições,
+                # é mais provável que sejam os das extremidades e sejam contíguos (numa matriz
+                # é pouco provável que a sequencia dos pinos seja diferente da sequencia das
+                # linhas ou das colunas)
+                # iniciar o endereço de coluna em 2 indica que dois SEG do SH1106 não foram
+                # usados e, fazendo as contas, outros dois SEG na outra ponta não foram usa-
+                # dos também.
+                # IMPORTANTE: displays de tamanho diferente, como 128x32, 70x40 têm outra
+                # quantidade de pinos SEG e COM. Em princípio, não há como saber quais
+                # pinos são usados. Até agora, não há nada que indique que
+                # esses diferentes tamanhos foram considerados. Desta forma, usar displays
+                # de outros tamanhos pode não gerar os resultados esperados. Ainda na
+                # inspeção do código, o framebuffer é alocado com o tamanho "certo" mas isso
+                # não garante que os resultados esperados sejam obtidos.
+                # Vou interromper meu estudo aqui pois tenho evidências que indicam que
+                # a placa que me interessa usa SSD1306. Estudar SH1106 foi esclarecedor
+                # pois tem menos parâmetros que o SSD1306.
                 self.write_cmd(_HIGH_COLUMN_ADDRESS | 0)
                 self.write_data(db[(w*page):(w*page+w)])
+                # segundo o datasheet, cada página tem 8 linhas de pixels, o índice da
+                # página não é incrementado automaticamente a cada escrita de dados,
+                # o índice de colunas é incrementado a cada escrita de dados. Isto explica
+                # que, neste ponto do programa, o loop itere pelas páginas (e não pelas
+                # linhas ou pelas colunas)
         self.pages_to_update = 0
 
     def pixel(self, x, y, color=None):
