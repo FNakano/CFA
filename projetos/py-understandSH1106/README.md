@@ -303,3 +303,84 @@ disp.show()
 resultado da aplicação do script acima: ![](./5050798415758953294.jpg)
 
 São mostradas as últimas 5 linhas. Isto indica que os 24 primeiros SEG não são usados. Um tanto inesperado, se dependesse somente de intuição, eu não acertaria...
+
+----
+2026-01-30
+
+Após uma loooonga pausa neste assunto, estou de volta.
+
+Decidi usar esse componente nas aulas de 2026 que começarão em menos de um mês.
+
+1. O driver de display é um SSD1306. Esse driver tem um buffer de 128x64.
+2. Alocando o tamanho total do buffer é possível saber qual é o recorte do buffer que é mostrado em algum particular display.
+3. O display que vem montado do ESP32 tem offset de 27 em X e offset de 24 em Y, por inspeção visual.
+4. É mais provável que o display tenha 72x40, por inspeção visual.
+
+
+```python
+# Executei este programa para gerar a imagem no display apresentado na fotografia abaixo.
+from machine import Pin, I2C
+i2c=I2C(0, scl=Pin(6), sda=Pin(5)) # ok, neste ESP os pinos são 5 e 6
+
+print('Scan i2c bus...')
+devices = i2c.scan()  # ok, ele acha o display em 0x3c
+
+if len(devices) == 0:
+  print("No i2c device !")
+else:
+  print('i2c devices found:',len(devices))
+
+  for device in devices:  
+    print("Decimal address: ",device," | Hexa address: ",hex(device))
+
+import ssd1306
+disp=ssd1306.SSD1306_I2C(128, 64, i2c) # https://goldenmorninglcd.com/pt/exibi%C3%A7%C3%A3o-oled/0.42-polegadas-oled-72x40-ssd1306-branco-gme7240-01/
+disp.text("DDDDDDDDDD", 26, 24, 1)
+disp.text("ABCDEFGHIJ", 26, 32, 1)
+disp.text("DDDDDDDDDD", 27, 40, 1)
+disp.text("MMMMMMMMMM", 27, 48, 1)
+disp.text("DDDDDDDDDD", 27, 56, 1)
+disp.show()
+```
+
+![](./5181479732111936435.jpg)
+Note nas duas primeiras linhas que a primeira coluna de pixels do primeiro caracter da linha está faltando e há pixels acesos (do décimo caracter) na última coluna dessas duas linhas. Isto indica que o offset não deve ser 26 e que a quantidade de pixels na linha deve ser 9x8=72. Nas linhas seguintes o primeiro caracter parece inteiro e não se vê pixels do décimo caracter.
+
+### O que ocorre se pusermos as dimensões certas na instanciação do display??
+
+```python
+from machine import Pin, I2C
+i2c=I2C(0, scl=Pin(6), sda=Pin(5)) # ok, neste ESP os pinos são 5 e 6
+
+print('Scan i2c bus...')
+devices = i2c.scan()  # ok, ele acha o display em 0x3c
+
+if len(devices) == 0:
+  print("No i2c device !")
+else:
+  print('i2c devices found:',len(devices))
+
+  for device in devices:  
+    print("Decimal address: ",device," | Hexa address: ",hex(device))
+
+import ssd1306
+disp=ssd1306.SSD1306_I2C(72, 40, i2c) # https://goldenmorninglcd.com/pt/exibi%C3%A7%C3%A3o-oled/0.42-polegadas-oled-72x40-ssd1306-branco-gme7240-01/
+disp.text("DDDDDDDDDD", 0, 0, 1)
+disp.text("ABCDEFGHIJ", 0, 8, 1)
+disp.text("DDDDDDDDDD", 0, 16, 1)
+disp.text("MMMMMMMMMM", 0, 24, 1)
+disp.text("DDDDDDDDDD", 0, 32, 1)
+disp.show()
+```
+
+![](./5181479732111936442.jpg)
+Em relação à imagem esperada, a imagem obtida é um recorte que mostra todas as linhas mas trunca as colunas até o pixel 26. Explicação presumida e parcial: a função `SSD1306_I2C.write_data(...)` tem, implícito, o mapeamento da coluna zero do display físico no zero-ésimo bit do zero-ésimo elemento do vetor, mas, no display físico, as primeiras 27 linhas não existem - o chip driver não tem esses pinos conectados ao display.
+
+com a explicação parcial, se o display for criado com 72+27 colunas e o eixo x tiver um offset de 27, as linhas devem ser mostradas até o nono caracter... vamos testar... o resultado obtido não foi o esperado, preciso estudar mais o código do programa driver micropython. Em todo caso, já tenho uma forma de mostrar mensagens no display - alocando o buffer do tamanho total e usando offset de 27 e as 5 últimas linhas. Tem um desperdício mas acho aceitável...
+
+
+
+Achei uma chamada estranha a uma função `i2c.writevto(...)`, que eu não conhecia, está na documentação do micropython. Ela escreve um vetor no barramento i2c (https://docs.micropython.org/en/latest/library/machine.I2C.html#machine.I2C.writevto)
+
+
+A pasta `src` contém as versões mais recentes dos programas que testei. Vou usar o ESP32 para preparar a aula 1 de CFA-2026.
