@@ -4,7 +4,7 @@ Há algumas questões cujos efeitos se sobrepõe. Isolar e, se possível, elimin
 
 
 
-Presumo que este seja um ESP32 com display OLED 72x40 com circuito driver SH1106 (a confirmar) e biblioteca (pacote micropython) SSD1306. Pode-se dizer que a biblioteca não é apropriada para o circuito então podem ocorrer eventos inesperados. O código abaixo deveria inicializar o display e acendê-lo todo preenchendo o buffer de memória. Acredito que, por não ser a biblioteca adequada, uma parte do display mostra dados não inicializados e outra parte mostra todos os pixels acesos.
+Inicialmente presumi que este fosse um ESP32 com display OLED 72x40 com circuito driver SH1106 (a confirmar) e biblioteca (pacote micropython) SSD1306. Pode-se dizer que a biblioteca não é apropriada para o circuito então podem ocorrer eventos inesperados. O código abaixo deveria inicializar o display e acendê-lo todo preenchendo o buffer de memória. Acredito que, por não ser a biblioteca adequada, uma parte do display mostra dados não inicializados e outra parte mostra todos os pixels acesos.
 
 ```python
 import ssd1306

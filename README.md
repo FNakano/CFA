@@ -1,6 +1,10 @@
 # CFA
 Computação Física e Aplicações
 
+Muitos projetos neste repositório estão desatualizados pois as ferramentas usadas para desenvolvê-los mudaram ao longo do tempo o que pode ter descontinuado APIs.
+
+Como aviso para projetos futuros, anotar as versões das ferramentas usadas.
+
 ## Para 2025
 
 [Diretrizes](./diretrizes.md)
