@@ -74,3 +74,13 @@ Scripts explicados:
 
 ToDocument
 
+### Projetos relacionados neste repositório
+
+https://github.com/FNakano/CFA/tree/master/projetos/SensorMeteorologico-ESP32
+
+Diagrama de blocos de um uso típico: https://github.com/FNakano/CFA/tree/master/projetos/ControlarTomadaPelaInternet#resultados-e-indicadores-de-avalia%C3%A7%C3%A3o
+
+https://github.com/FNakano/CFA/tree/master/projetos/SensorMeteorologico
+
+https://github.com/FNakano/CFA/tree/master/projetos/py-ProgramandoESPEmPython
+
