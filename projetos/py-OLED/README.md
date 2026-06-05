@@ -2,23 +2,23 @@
 
 ## Objetivo geral
 
-Apresentar informação compilada a respeito do uso do display OLED no ESP32 programado com Micropython.
+Apresentar informação compilada a respeito do uso do display OLED no ESP32 original (ié modelo S) programado com Micropython.
 
 ## Objetivo específico
 
-Montar um circuito que mostra uma mensagem de texto em um display OLED conectado a um ESP32
+Montar um circuito que mostra uma mensagem de texto em um display OLED conectado a um ESP32 original (ié modelo S)
 
 ## Introdução
 
 Displays OLED, no contexto de *Faça você mesmo*, Arduino, ... são pequenas telas monocromáticas, muito úteis para mostrar mensagens no ESP quando este não está conectado no computador ou no WiFi.
 
-Há vários tipos de display OLED, uns com 128x96 pixels, outros com 128x32 pixels, uns com pixels brancos, outros com pixels azuis, ... Todos usam o controlador SSD1306 (sim, o controlador de display comunica-se com o microcontrolador ESP).
+Há vários tipos de display OLED, uns com 128x96 pixels, outros com 128x32 pixels, uns com pixels brancos, outros com pixels azuis, ... O chip  controlador mais comum é SSD1306. Há displays OLED com controladores SH1106. Esses dois controladores usam programas drivers parcialmente compatíveis (ié usar um programa driver em outro chip driver não causa mensagem de erro nem danifica o hardware. O display pode mostrar alguma imagem, dificilmente a imagem esperada ).
 
 Algumas placas suportadas por MicroPython têm o pacote que contém a API do display pré-compilada e empacotada no Micropython, não é o caso de ESP32 (tente `help ('modules')` no ESP para ver uma lista mais ou menos completa de pacotes disponíveis sem necessidade de *download*).
 
 Há várias maneiras de obter o pacote que contém a API do display, lembrando que cada uma pode gravar versões diferentes do pacote em pastas diferentes no ESP, o que pode causar alguma confusão.
 
-É difícil dizer qual fonte é a melhor pois Micropython é um projeto em andamento e ocorrem grandes modificações. No momento (2024-10), o código do driver que tem suporte de micropython.org está em https://github.com/micropython/micropython-lib/tree/master/micropython/drivers/display/ssd1306 . Meu buscador ainda retorna com mais importância o driver no repositório arquivado: https://github.com/micropython/micropython-esp32/blob/esp32/drivers/display/ssd1306.py
+É difícil dizer qual fonte é a melhor pois Micropython é um projeto em andamento e ocorrem grandes modificações. Em 2024-10, o código do driver que tem suporte de micropython.org está em https://github.com/micropython/micropython-lib/tree/master/micropython/drivers/display/ssd1306 . Meu buscador ainda retorna com mais importância o driver no repositório arquivado: https://github.com/micropython/micropython-esp32/blob/esp32/drivers/display/ssd1306.py
 
 A documentação sobre como usar o driver é mais completa para ESP8266 (https://docs.micropython.org/en/latest/esp8266/tutorial/ssd1306.html#using-a-ssd1306-oled-display) que para ESP32 (inexistente). Embora muita informação se aplique pois a API é a mesma, alguma informação, como a atribuição de pinos de comunicação, é diferente, o que pode gerar confusão.
 
