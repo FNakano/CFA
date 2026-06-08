@@ -73,6 +73,61 @@ Os scripts necessários estão na pasta `pyboard` deste repositório.
 Scripts explicados:
 
 ToDocument
+## Simulacao local sem hardware
+
+Para testar o fluxo no Windows/Linux/macOS sem ESP32, BME280 e display, use o script [simulate.py](simulate.py).
+
+O que ele simula:
+- `machine` (GPIO/I2C/deepsleep)
+- `network` (conexao Wi-Fi)
+- `bme280_float` (leituras de sensor)
+- `requests` (resposta HTTP no formato ThingSpeak)
+- `sh1106` (saida do display no terminal)
+
+Execucao:
+
+```bash
+python3 simulate.py
+```
+
+Para publicar no ThingSpeak de verdade (sem hardware), use:
+
+```bash
+python3 simulate.py --real-http
+```
+
+No Windows (PowerShell), pode usar:
+
+```powershell
+python simulate.py
+```
+
+No Windows (PowerShell), para publicar de verdade:
+
+```powershell
+python simulate.py --real-http
+```
+
+Links diretos para validar publicacao no ThingSpeak:
+
+- Canal (graficos): https://thingspeak.mathworks.com/channels/3399532
+- Ultimo registro (JSON): https://api.thingspeak.com/channels/3399532/feeds/last.json
+- Feed recente (JSON, 100 pontos): https://api.thingspeak.com/channels/3399532/feeds.json?results=100
+
+Graficos diretos por campo:
+
+- Temperatura (field1): https://thingspeak.mathworks.com/channels/3399532/charts/1
+- Pressao (field2): https://thingspeak.mathworks.com/channels/3399532/charts/2
+- Umidade (field3): https://thingspeak.mathworks.com/channels/3399532/charts/3
+
+Saida esperada (resumo):
+- linha com configuracao Wi-Fi
+- lista de dispositivos I2C encontrados
+- bloco `[sim-display]` com data/temperatura/pressao/umidade
+- mensagem `[sim] deepsleep called: 60000 ms`
+
+Observacao:
+- a simulacao valida o fluxo de software, mas nao valida hardware real (pinos, eletrica, temporizacao e sensor/display fisicos).
 
 ### Projetos relacionados neste repositório
 
