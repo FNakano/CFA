@@ -25,6 +25,11 @@ def displayresp(r):
   if r.status_code==200 :
     d=json.loads(r.text)
     display.message([d["created_at"], d["field1"], d["field2"], d["field3"]])
+    created_at=str(d.get("created_at", "created_at n/a"))
+    field1=str(d.get("field1", "field1 n/a"))
+    field2=str(d.get("field2", "field2 n/a"))
+    field3=str(d.get("field3", "field3 n/a"))
+    display.message([created_at, field1, field2, field3])
   else :
     display.message(["http stat", str(r.status_code)])
       
