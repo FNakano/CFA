@@ -117,6 +117,15 @@ Pode interessar dar uma olhada em projetos de Iniciação Científica relacionad
 
 ... ou em projetos apresentados na disciplina no oferecimento corrente ou nos anteriores...
 
+### 2026
+
+- [GitHub - Giovanilucass/CFA-OrquestraBuzzers: Este repositório possuí as etapas para a criação de uma &quot;orquestra&quot; de buzzers. · GitHub](https://github.com/Giovanilucass/CFA-OrquestraBuzzers)
+- [GitHub - Rafragon/Patinhas_Continuacao-CFA: Repositório público para apresentação da continuidade de um projeto desenvolvido por alunos do curso de Sistemas de Informação na disciplina Computação Física e Aplicações na EACH-USP com orientação do professor doutor Fábio Nakano. · GitHub](https://github.com/Rafragon/Patinhas_Continuacao-CFA/tree/main)
+- [GitHub - stoneparker/cfa-water-intake · GitHub](https://github.com/stoneparker/cfa-water-intake)
+- [GitHub - erikye02/Detector_fadiga_emg: Projeto da disciplica CFA 2026 · GitHub](https://github.com/erikye02/Detector_fadiga_emg)
+- [Plant Sensor Analysis](https://github.com/irpedro/ICF)
+
+
 ### 2025
 
 - [Patinhas](https://github.com/willianjsf/Patinhas-CFA)
