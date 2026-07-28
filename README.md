@@ -124,6 +124,7 @@ Pode interessar dar uma olhada em projetos de Iniciação Científica relacionad
 - [GitHub - stoneparker/cfa-water-intake · GitHub](https://github.com/stoneparker/cfa-water-intake)
 - [GitHub - erikye02/Detector_fadiga_emg: Projeto da disciplica CFA 2026 · GitHub](https://github.com/erikye02/Detector_fadiga_emg)
 - [Plant Sensor Analysis](https://github.com/irpedro/ICF)
+- [Priorizah - Cartão de NFC e sistema de sensores para assentos preferênciais](https://github.com/Rafa-Cami/CFA_NFC_trem_assentos)
 
 
 ### 2025
