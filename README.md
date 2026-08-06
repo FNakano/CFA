@@ -125,7 +125,9 @@ Pode interessar dar uma olhada em projetos de Iniciação Científica relacionad
 - [GitHub - erikye02/Detector_fadiga_emg: Projeto da disciplica CFA 2026 · GitHub](https://github.com/erikye02/Detector_fadiga_emg)
 - [Plant Sensor Analysis](https://github.com/irpedro/ICF)
 - [Priorizah - Cartão de NFC e sistema de sensores para assentos preferênciais](https://github.com/Rafa-Cami/CFA_NFC_trem_assentos)
-
+- [GitHub - Dont-Freeze/Tallymaker: An ESP32-powered people counter with a mechanical seven-segment display driven by cams and shafts. · GitHub](https://github.com/Dont-Freeze/Tallymaker/tree/main)
+- [GitHub - Rafa-Cami/CFA_NFC_trem_assentos: Projeto em Grupo para a disciplina de Computação Física Aplicada · GitHub](https://github.com/Rafa-Cami/CFA_NFC_trem_assentos)
+- [GitHub - vivikruppa/smart-cane · GitHub](https://github.com/vivikruppa/smart-cane)
 
 ### 2025
 
